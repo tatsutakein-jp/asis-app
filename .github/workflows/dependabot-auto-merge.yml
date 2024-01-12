@@ -1,0 +1,57 @@
+name: "Dependabot Auto Merge"
+
+on:
+  pull_request: ~
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-22.04
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      # https://github.com/marketplace/actions/create-github-app-token
+      - name: Create GitHub App Token
+        uses: actions/create-github-app-token@v1.6.3
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      # https://github.com/marketplace/actions/fetch-metadata-from-dependabot-prs
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.6.0
+        with:
+          github-token: "${{ steps.app-token.outputs.token }}"
+
+      - name: Enable auto-merge for Dependabot PRs
+        if: |
+          github.event.review.state != 'APPROVED' &&
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+        run: gh pr review --approve "$PR_URL"
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      # https://github.com/marketplace/actions/find-comment
+      - name: Find Comment
+        if: github.event.review.state == 'APPROVED'
+        uses: peter-evans/find-comment@v2.4.0
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'tatsutakeinjp-bot[bot]'
+          body-includes: This comment was written by a bot!
+
+      # https://github.com/marketplace/actions/create-or-update-comment
+      - name: Create comment
+        if: steps.fc.outputs.comment-id == ''
+        uses: peter-evans/create-or-update-comment@v3.1.0
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            @dependabot merge
+          reactions: rocket
