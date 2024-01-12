@@ -1,0 +1,26 @@
+name: Feature request
+description: 機能要望を提出する
+title: "[Feature]: "
+labels: [ "enhancement" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        機能要望をご提出していただき、ありがとうございます。
+
+  - type: checkboxes
+    attributes:
+      label: 同様の機能要望はございませんか？
+      description: 既に同様の機能要望が存在していないか、ご検索ください。
+      options:
+        - label: 同様の機能要望はありませんでした。
+          required: true
+
+  - type: textarea
+    id: what-is-feature
+    attributes:
+      label: 機能要望の内容を教えてください。
+      description: また、具体的な実装方法（ライブラリ等）がある場合、教えてください。
+      placeholder: 機能要望の内容を教えてください。
+    validations:
+      required: true

@@ -1,0 +1,23 @@
+# https://coderabbit.ai/docs/get-started/customize-coderabbit
+
+language: "jp"
+early_access: true
+reviews:
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: true
+  review_status: true
+  collapse_walkthrough: false
+  path_filters:
+    - "!**/.xml"
+  path_instructions:
+    - path: "**.dart"
+      instructions: "Review the Dart code for conformity with the Google Dart style guide, highlighting any deviations."
+  auto_review:
+    enabled: true
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT MERGE"
+    drafts: false
+chat:
+  auto_reply: true

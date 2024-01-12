@@ -1,0 +1,8 @@
+# When you use this template, you must change this name field.
+name: flutter_template
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+dev_dependencies:
+  melos: 4.0.0
+  yumemi_lints: 1.3.0

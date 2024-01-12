@@ -1,0 +1,80 @@
+# When you use this template, you must change this name field.
+name: flutter_template
+
+sdkPath: .fvm/flutter_sdk
+
+packages:
+  - app
+  - core/*
+  - feature/*
+
+ide:
+  intellij:
+    moduleNamePrefix: asis_
+
+command:
+  bootstrap:
+    environment:
+      sdk: '>=3.2.3 <4.0.0'
+      flutter: "3.16.5"
+    dev_dependencies:
+      yumemi_lints: 1.3.0
+
+scripts:
+  analyze:
+    run: |
+      melos exec -- "flutter analyze"
+    description: Run analyze.
+    packageFilters:
+      flutter: true
+      dirExists: lib
+  gen:code:
+    run: |
+      melos exec -c 1 -- "flutter gen-l10n"
+    description: Run build_runner.
+    packageFilters:
+      flutter: true
+      fileExists: "l10n.yaml"
+  gen:l10n:
+    run: |
+      melos exec -c 1 -- "flutter pub run build_runner build --delete-conflicting-outputs"
+    description: Run build_runner.
+    packageFilters:
+      flutter: true
+      dependsOn: "build_runner"
+  fix:
+    run: |
+      melos exec -- "dart fix --apply lib"
+    description: Run dart fix.
+    packageFilters:
+      flutter: true
+      dirExists: lib
+  fix:check:
+    run: |
+      melos exec -- "dart fix --dry-run lib"
+    description: Check dart fix.
+    packageFilters:
+      flutter: true
+      dirExists: lib
+  format:
+    run: |
+      melos exec -- "dart format lib"
+    description: Run format.
+    packageFilters:
+      flutter: true
+      dirExists: lib
+  format:check:
+    run: |
+      melos exec -- "dart format lib --dry-run --set-exit-if-changed"
+    description: Check format.
+    packageFilters:
+      flutter: true
+      dirExists: lib
+
+  test:
+    run: |
+      melos exec --fail-fast -- flutter test --coverage
+    description: Run flutter test.
+    packageFilters:
+      flutter: true
+      dirExists: test

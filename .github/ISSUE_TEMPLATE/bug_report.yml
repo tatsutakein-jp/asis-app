@@ -1,0 +1,48 @@
+name: Bug Report
+description: バグレポートを提出する
+title: "[Bug]: "
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグレポートをご提出していただき、ありがとうございます。
+
+  - type: checkboxes
+    attributes:
+      label: 同様のバグレポートはございませんか？
+      description: 既に同様のバグレポートが存在していないか、ご検索ください。
+      options:
+        - label: 同様のバグレポートはありませんでした。
+          required: true
+
+  - type: checkboxes
+    attributes:
+      label: StackOverflow 上に質問はございますか？
+      description: 今回のバグについて、[StackOverflow](https://stackoverflow.com/questions/tagged/flutter) をご検索ください。
+      options:
+        - label: StackOverflow を検索しました。
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: バグの内容を教えてください。
+      description: また、想定されていた動作（改善案）を教えてください。
+      placeholder: バグの内容を教えてください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: バグ発生時の Log を添付してください。
+      description: バグ発生時の Log がある場合、添付してください。
+      render: shell
+
+  - type: textarea
+    id: how-to-reproduce
+    attributes:
+      label: バグの再現手順を教えてください。
+      description: Log がない場合、バグの再現手順を教えてください。
+      placeholder: バグの再現手順を教えてください。

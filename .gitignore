@@ -1,0 +1,34 @@
+# Miscellaneous
+.DS_Store
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/*
+# Keep the project icon.
+!/.idea/icon.png
+
+# Editor User Setting Files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+!default.code-workspace
+.classpath
+.project
+
+# Files and directories created by pub
+.dart_tool/
+
+# dotenv environment variables file
+.env*
+
+# fvm
+.fvm/flutter_sdk
+
+# melos
+pubspec_overrides.yaml
