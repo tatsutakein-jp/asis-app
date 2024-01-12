@@ -73,7 +73,7 @@ scripts:
 
   test:
     run: |
-      melos exec --fail-fast -- flutter test --coverage
+      melos exec -c 10 --fail-fast -- flutter test --coverage
     description: Run flutter test.
     packageFilters:
       flutter: true

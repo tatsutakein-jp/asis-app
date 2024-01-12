@@ -32,3 +32,6 @@
 
 # melos
 pubspec_overrides.yaml
+
+# Coverage
+coverage/
