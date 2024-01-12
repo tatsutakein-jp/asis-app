@@ -30,9 +30,11 @@ jobs:
           flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
           channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
 
-      # https://github.com/marketplace/actions/melos-action
-      - name: Melos action
-        uses: bluefireteam/melos-action@v3
+      - name: Setup melos
+        run: |
+          ln -s $FLUTTER_ROOT .fvm/flutter_sdk
+          dart pub global activate melos
+          melos bootstrap
 
       - name: Run test
         run: melos run test --no-select
