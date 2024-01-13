@@ -18,6 +18,7 @@ command:
       sdk: 3.2.4
       flutter: 3.16.7
     dev_dependencies:
+      test: 1.24.0
       yumemi_lints: 1.3.0
 
 scripts:
