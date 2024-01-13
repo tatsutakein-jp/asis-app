@@ -3,8 +3,8 @@ description: This package provides use cases and domain models.
 publish_to: "none"
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
-  flutter: 3.16.5
+  sdk: 3.2.4
+  flutter: 3.16.7
 
 dependencies:
   flutter:
