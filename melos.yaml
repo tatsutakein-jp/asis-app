@@ -74,7 +74,18 @@ scripts:
 
   test:
     run: |
-      melos exec -c 10 --fail-fast -- flutter test --coverage
+      melos run test:dart --no-select && melos run test:flutter --no-select
+    description: Run flutter test.
+  test:dart:
+    run: |
+      melos exec -c 10 --fail-fast -- "dart test"
+    description: Run Dart test.
+    packageFilters:
+      flutter: false
+      dirExists: test
+  test:flutter:
+    run: |
+      melos exec -c 10 --fail-fast -- "flutter test --coverage"
     description: Run flutter test.
     packageFilters:
       flutter: true
