@@ -15,8 +15,8 @@ ide:
 command:
   bootstrap:
     environment:
-      sdk: '>=3.2.3 <4.0.0'
-      flutter: "3.16.5"
+      sdk: 3.2.4
+      flutter: 3.16.7
     dev_dependencies:
       yumemi_lints: 1.3.0
 
