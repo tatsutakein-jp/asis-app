@@ -1,4 +1,3 @@
-## core testing
+# core_testing package
 
-> [!NOTE]
-> TBD
+![Dependency graph](../../docs/images/graphs/dep_graph_core_testing.svg)

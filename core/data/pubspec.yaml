@@ -6,6 +6,20 @@ publish_to: "none"
 environment:
   sdk: 3.2.4
 
+dependencies:
+  core_common:
+    path: ../common
+  core_database:
+    path: ../database
+  core_datastore:
+    path: ../datastore
+  core_model:
+    path: ../model
+  core_network:
+    path: ../network
+
 dev_dependencies:
+  core_testing:
+    path: ../testing
   test: 1.24.0
   yumemi_lints: 1.3.0

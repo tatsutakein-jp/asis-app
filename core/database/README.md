@@ -1,4 +1,3 @@
-## core database
+# core_database package
 
-> [!NOTE]
-> TBD
+![Dependency graph](../../docs/images/graphs/dep_graph_core_database.svg)

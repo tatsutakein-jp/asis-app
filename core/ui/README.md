@@ -1,4 +1,3 @@
-## core ui
+# core_common ui
 
-> [!NOTE]
-> TBD
+![Dependency graph](../../docs/images/graphs/dep_graph_core_ui.svg)

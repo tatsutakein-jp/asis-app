@@ -1,4 +1,3 @@
-## core common
+# core_common package
 
-> [!NOTE]
-> TBD
+![Dependency graph](../../docs/images/graphs/dep_graph_core_common.svg)

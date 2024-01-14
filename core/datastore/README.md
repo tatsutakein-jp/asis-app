@@ -1,4 +1,3 @@
-## core datastore
+# core_datastore package
 
-> [!NOTE]
-> TBD
+![Dependency graph](../../docs/images/graphs/dep_graph_core_datastore.svg)

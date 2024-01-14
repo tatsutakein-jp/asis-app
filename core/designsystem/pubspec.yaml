@@ -8,10 +8,14 @@ environment:
   flutter: 3.16.7
 
 dependencies:
+  core_common:
+    path: ../common
   flutter:
     sdk: flutter
 
 dev_dependencies:
+  core_testing:
+    path: ../testing
   flutter_test:
     sdk: flutter
   yumemi_lints: 1.3.0
