@@ -6,6 +6,8 @@ environment:
   sdk: 3.2.4
 
 dependencies:
+  core_common:
+    path: ../common
   core_data:
     path: ../data
   core_model:

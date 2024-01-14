@@ -8,6 +8,8 @@ environment:
   flutter: 3.16.7
 
 dependencies:
+  core_common:
+    path: ../common
   flutter:
     sdk: flutter
 
