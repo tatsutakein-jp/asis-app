@@ -1,0 +1,29 @@
+name: feature_settings
+description: "This package provides settings features."
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: 3.2.4
+  flutter: 3.16.7
+
+dependencies:
+  core_common:
+    path: ../../core/common
+  core_designsystem:
+    path: ../../core/designsystem
+  core_domain:
+    path: ../../core/domain
+  core_model:
+    path: ../../core/model
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  core_testing:
+    path: ../../core/testing
+  flutter_test:
+    sdk: flutter
+  yumemi_lints: 1.3.0
+
+flutter:
