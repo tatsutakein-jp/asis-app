@@ -1,4 +1,3 @@
-## core domain
+# core_domain package
 
-> [!NOTE]
-> TBD
+![Dependency graph](../../docs/images/graphs/dep_graph_core_domain.svg)
