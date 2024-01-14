@@ -1,5 +1,5 @@
 # When you use this template, you must change this name field.
-name: flutter_template
+name: asis
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
