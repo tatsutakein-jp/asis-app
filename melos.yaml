@@ -1,5 +1,5 @@
 # When you use this template, you must change this name field.
-name: flutter_template
+name: asis
 
 sdkPath: .fvm/flutter_sdk
 
@@ -7,10 +7,6 @@ packages:
   - app
   - core/*
   - feature/*
-
-ide:
-  intellij:
-    moduleNamePrefix: asis_
 
 command:
   bootstrap:
