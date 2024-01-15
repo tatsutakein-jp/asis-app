@@ -34,6 +34,7 @@ jobs:
           steps.metadata.outputs.update-type == 'version-update:semver-minor'
         run: gh pr review --approve "$PR_URL"
         env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
 
       # https://github.com/marketplace/actions/find-comment
