@@ -52,6 +52,7 @@ jobs:
         if: steps.fc.outputs.comment-id == ''
         uses: peter-evans/create-or-update-comment@v3.1.0
         with:
+          token: ${{ steps.app-token.outputs.token }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             @dependabot merge
