@@ -1,0 +1,20 @@
+name: asis_app
+description: "ASIS App"
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: 3.2.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: 1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  yumemi_lints: 1.4.0
+
+flutter:
+  uses-material-design: true
