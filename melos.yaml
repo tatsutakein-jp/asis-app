@@ -23,69 +23,68 @@ command:
 
 scripts:
   analyze:
-    run: |
-      melos exec -- "flutter analyze"
+    exec: flutter analyze
     description: Run analyze.
     packageFilters:
       flutter: true
       dirExists: lib
   gen:code:
-    run: |
-      melos exec -c 1 -- "flutter gen-l10n"
+    run: dart pub run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
     description: Run build_runner.
+    packageFilters:
+      dependsOn: "build_runner"
+  gen:l10n:
+    run: flutter gen-l10n
+    exec:
+      concurrency: 1
+    description: Generate l10n.
     packageFilters:
       flutter: true
       fileExists: "l10n.yaml"
-  gen:l10n:
-    run: |
-      melos exec -c 1 -- "flutter pub run build_runner build --delete-conflicting-outputs"
-    description: Run build_runner.
-    packageFilters:
-      flutter: true
-      dependsOn: "build_runner"
   fix:
-    run: |
-      melos exec -- "dart fix --apply lib"
+    exec: dart fix --apply lib
     description: Run dart fix.
     packageFilters:
       flutter: true
       dirExists: lib
   fix:check:
-    run: |
-      melos exec -- "dart fix --dry-run lib"
+    exec: dart fix --dry-run lib
     description: Check dart fix.
     packageFilters:
       flutter: true
       dirExists: lib
   format:
-    run: |
-      melos exec -- "dart format lib"
+    exec: dart format lib
     description: Run format.
     packageFilters:
       flutter: true
       dirExists: lib
   format:check:
-    run: |
-      melos exec -- "dart format lib --dry-run --set-exit-if-changed"
+    exec: dart format lib --output=none --set-exit-if-changed
     description: Check format.
     packageFilters:
       flutter: true
       dirExists: lib
 
   test:
-    run: |
-      melos run test:dart --no-select && melos run test:flutter --no-select
+    run: melos run test:dart --no-select && melos run test:flutter --no-select
     description: Run flutter test.
   test:dart:
-    run: |
-      melos exec -c 10 --fail-fast -- "dart test"
+    run: dart test
+    exec:
+      concurrency: 10
+      failFast: true
     description: Run Dart test.
     packageFilters:
       flutter: false
       dirExists: test
   test:flutter:
-    run: |
-      melos exec -c 10 --fail-fast -- "flutter test --coverage"
+    run: flutter test --coverage
+    exec:
+      concurrency: 10
+      failFast: true
     description: Run flutter test.
     packageFilters:
       flutter: true
