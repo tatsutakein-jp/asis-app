@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+; generated files
+*.g.dart linguist-generated=true
+*.freezed.dart linguist-generated=true
+l10n*.dart linguist-generated=true
+pubspec.lock linguist-generated=true
