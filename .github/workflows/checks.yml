@@ -10,22 +10,55 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  changed:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      all: ${{ steps.needs.outputs.all }}
+    steps:
+      # https://github.com/marketplace/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      # https://github.com/marketplace/actions/paths-changes-filter
+      - name: Paths Changes Filter
+        uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
+        id: changes
+        with:
+          filters: |
+            all:
+              - '.github/workflows/checks.yml'
+              - 'app/**/*'
+              - 'core/**/lib/**/*'
+              - 'feature/**/lib/**/*'
+              - '**/pubspec.lock'
+              - '**/pubspec.yaml'
+      - name: Output Needs
+        id: needs
+        run: |
+          echo "all=${{ steps.changes.outputs.all == 'true' }}" >> $GITHUB_OUTPUT
+
   check:
     runs-on: ubuntu-22.04
+    needs: changed
+    if: needs.changed.outputs.all == 'true'
     timeout-minutes: 10
 
     steps:
+      # https://github.com/marketplace/actions/checkout
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       # https://github.com/kuhnroyal/flutter-fvm-config-action
       - name: Fetch flutter config
-        uses: kuhnroyal/flutter-fvm-config-action@v2.0
+        uses: kuhnroyal/flutter-fvm-config-action@34c3905bc939a4ff9d9cb07d5a977493fa73b2aa # v2.0
         id: fvm-config-action
 
       # https://github.com/subosito/flutter-action
       - name: Setup flutter
-        uses: subosito/flutter-action@v2.12.0
+        uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225 # v2.12.0
         with:
           flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
           channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
