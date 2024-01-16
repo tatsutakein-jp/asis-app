@@ -1,7 +1,11 @@
+import 'package:asis_app/app_build_config.dart';
+import 'package:core_common/extension.dart';
 import 'package:core_designsystem/theme.dart';
+import 'package:core_model/build_config.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 void main() async {
@@ -9,10 +13,25 @@ void main() async {
   // is called before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
-  // TODO: #27 アプリのパッケージ情報を core / feature パッケージで利用できるようにする
-  final _ = await PackageInfo.fromPlatform();
+  final buildConfig = (await PackageInfo.fromPlatform()).let(
+    (it) => AppBuildConfig(
+      appName: it.appName,
+      packageName: it.packageName,
+      version: it.version,
+      buildNumber: it.buildNumber,
+      buildSignature: it.buildSignature,
+      installerStore: it.installerStore,
+    ),
+  );
 
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      overrides: [
+        buildConfigProvider.overrideWithValue(buildConfig),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

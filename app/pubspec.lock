@@ -42,7 +42,7 @@ packages:
     source: hosted
     version: "1.18.0"
   core_common:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../core/common"
       relative: true
@@ -52,6 +52,13 @@ packages:
     dependency: "direct main"
     description:
       path: "../core/designsystem"
+      relative: true
+    source: path
+    version: "1.0.0"
+  core_model:
+    dependency: "direct main"
+    description:
+      path: "../core/model"
       relative: true
     source: path
     version: "1.0.0"
@@ -190,6 +197,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.9"
+  riverpod_annotation:
+    dependency: transitive
+    description:
+      name: riverpod_annotation
+      sha256: b70e95fbd5ca7ce42f5148092022971bb2e9843b6ab71e97d479e8ab52e98979
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.3"
   sky_engine:
     dependency: transitive
     description: flutter
