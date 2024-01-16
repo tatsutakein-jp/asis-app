@@ -36,13 +36,13 @@ scripts:
     packageFilters:
       dependsOn: "build_runner"
   gen:l10n:
-    run: flutter pub run build_runner build --delete-conflicting-outputs
+    run: flutter gen-l10n
     exec:
       concurrency: 1
-    description: Run build_runner.
+    description: Generate l10n.
     packageFilters:
       flutter: true
-      dependsOn: "build_runner"
+      fileExists: "l10n.yaml"
   fix:
     exec: dart fix --apply lib
     description: Run dart fix.
