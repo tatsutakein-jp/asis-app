@@ -1,8 +1,16 @@
 import 'package:core_designsystem/theme.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
-void main() {
+void main() async {
+  // Be sure to add this line if `PackageInfo.fromPlatform()`
+  // is called before runApp()
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // TODO: #27 アプリのパッケージ情報を core / feature パッケージで利用できるようにする
+  final _ = await PackageInfo.fromPlatform();
+
   runApp(const MyApp());
 }
 
