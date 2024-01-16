@@ -1,5 +1,3 @@
-library feature_home;
-
 /// A Calculator.
 class Calculator {
   /// Returns [value] plus 1.

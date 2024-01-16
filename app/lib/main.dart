@@ -1,5 +1,6 @@
 import 'package:core_designsystem/theme.dart';
 import 'package:dynamic_color/dynamic_color.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -21,20 +22,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DynamicColorBuilder(
-        builder: (lightDynamic, darkDynamic) {
-          return MaterialApp(
-            title: 'Flutter Demo',
-            theme: lightTheme(lightDynamic),
-            darkTheme: darkTheme(darkDynamic),
-            home: const MyHomePage(title: 'Flutter Demo Home Page'),
-          );
-        }
+      builder: (lightDynamic, darkDynamic) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: lightTheme(lightDynamic),
+          darkTheme: darkTheme(darkDynamic),
+          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        );
+      },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({required this.title, super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -49,6 +50,12 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('title', title));
+  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
