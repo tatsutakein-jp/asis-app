@@ -63,7 +63,7 @@ scripts:
       flutter: true
       dirExists: lib
   format:check:
-    exec: dart format lib --dry-run --set-exit-if-changed
+    exec: dart format lib --output=none --set-exit-if-changed
     description: Check format.
     packageFilters:
       flutter: true
