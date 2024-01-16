@@ -29,13 +29,12 @@ scripts:
       flutter: true
       dirExists: lib
   gen:code:
-    run: flutter gen-l10n
+    run: dart pub run build_runner build --delete-conflicting-outputs
     exec:
       concurrency: 1
     description: Run build_runner.
     packageFilters:
-      flutter: true
-      fileExists: "l10n.yaml"
+      dependsOn: "build_runner"
   gen:l10n:
     run: flutter pub run build_runner build --delete-conflicting-outputs
     exec:
