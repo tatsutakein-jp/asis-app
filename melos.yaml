@@ -8,6 +8,10 @@ packages:
   - core/*
   - feature/*
 
+ide:
+  intellij:
+    enabled: true
+
 command:
   bootstrap:
     environment:
