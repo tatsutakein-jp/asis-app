@@ -31,7 +31,6 @@ if type git >/dev/null 2>&1; then
 else
   echo "⚠️ Git commit message: Skip the git command as it could not be found."
 fi
-echo "🚀 Git commit message: Finished"
 
 ##############################################################################
 ##
