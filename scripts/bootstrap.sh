@@ -34,6 +34,24 @@ fi
 
 ##############################################################################
 ##
+##  Melos
+##
+##############################################################################
+echo ""
+echo "🚀 Melos bootstrap: Start"
+if type melos >/dev/null 2>&1; then
+  if melos bs; then
+    echo "✅ Melos bootstrap: Success"
+  else
+    echo "🚫 Melos bootstrap: Failed"
+  fi
+else
+  echo "⚠️ Melos bootstrap: Skip melos because it could not be found."
+  echo "⚠️ Melos bootstrap: See https://melos.invertase.dev/getting-started for installation."
+fi
+
+##############################################################################
+##
 ##  Finish
 ##
 ##############################################################################
