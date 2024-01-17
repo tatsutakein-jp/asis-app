@@ -33,5 +33,10 @@
 # melos
 pubspec_overrides.yaml
 
+# mason
+.mason
+# https://github.com/felangel/mason/issues/947
+mason-lock.json
+
 # Coverage
 coverage/
