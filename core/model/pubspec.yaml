@@ -9,6 +9,7 @@ environment:
 dependencies:
   core_common:
     path: ../common
+  riverpod: 2.4.9
   riverpod_annotation: 2.3.3
 
 dev_dependencies:
