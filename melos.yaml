@@ -13,7 +13,7 @@ ide:
     enabled: true
 
 versions:
-  riverpod: &riverpod_version 2.4.9
+  - &riverpod 2.4.9
 
 command:
   bootstrap:
@@ -21,9 +21,9 @@ command:
       sdk: 3.2.4
       flutter: 3.16.7
     dependencies:
-      flutter_riverpod: *riverpod_version
-      hooks_riverpod: *riverpod_version
-      riverpod: *riverpod_version
+      flutter_riverpod: *riverpod
+      hooks_riverpod: *riverpod
+      riverpod: *riverpod
       riverpod_annotation: 2.3.3
     dev_dependencies:
       build_runner: 2.4.8
