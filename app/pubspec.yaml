@@ -7,13 +7,20 @@ environment:
   sdk: 3.2.4
 
 dependencies:
+  core_common:
+    # noinspection DartPathPackageReference
+    path: ../core/common
   core_designsystem:
     # noinspection DartPathPackageReference
     path: ../core/designsystem
+  core_model:
+    # noinspection DartPathPackageReference
+    path: ../core/model
   cupertino_icons: 1.0.6
   dynamic_color: 1.6.9
   flutter:
     sdk: flutter
+  flutter_riverpod: 2.4.9
   package_info_plus: 5.0.1
 
 dev_dependencies:
