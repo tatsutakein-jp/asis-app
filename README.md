@@ -12,6 +12,14 @@ TBD
 
 TBD
 
+## Get Started
+
+After git clone, run the following command
+
+```shell
+$ make bs
+```
+
 ## Development Environment
 
 TBD
