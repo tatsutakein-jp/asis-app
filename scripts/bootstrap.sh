@@ -34,20 +34,20 @@ fi
 
 ##############################################################################
 ##
-##  fvm
+##  mise
 ##
 ##############################################################################
 echo ""
-echo "🚀 fvm install: Start"
-if type fvm >/dev/null 2>&1; then
-  if fvm install; then
-    echo "✅ fvm install: Success"
+echo "🚀 mise install: Start"
+if type mise >/dev/null 2>&1; then
+  if mise install; then
+    echo "✅ mise install: Success"
   else
-    echo "🚫 fvm install: Failed"
+    echo "🚫 mise install: Failed"
   fi
 else
-  echo "⚠️ fvm install: Skip fvm because it could not be found."
-  echo "⚠️ fvm install: See https://fvm.app/docs/getting_started/installation for installation."
+  echo "⚠️ mise install: Skip mise because it could not be found."
+  echo "⚠️ mise install: See https://mise.jdx.dev/getting-started.html for installation."
 fi
 
 ##############################################################################
