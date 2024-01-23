@@ -4,7 +4,7 @@ version: 1.0.0
 publish_to: "none"
 
 environment:
-  sdk: 3.2.4
+  sdk: 3.2.5
 
 dependencies:
   core_common:
@@ -22,4 +22,4 @@ dev_dependencies:
   core_testing:
     path: ../testing
   test: 1.25.1
-  yumemi_lints: 1.4.0
+  yumemi_lints: 1.5.0
