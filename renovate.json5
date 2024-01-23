@@ -9,7 +9,7 @@
   "commitMessagePrefix": ":wrench:",
   "dependencyDashboard": false,
   "enabledManagers": [
-    "fvm",
+    "asdf",
     "pub",
     "gradle",
     "cocoapods",
