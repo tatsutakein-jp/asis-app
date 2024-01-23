@@ -23,12 +23,20 @@
   "rangeStrategy": "pin",
   "packageRules": [
     {
+      "groupName": "flutter-lint",
+      "matchPackageNames": [
+        "dart",
+        "flutter",
+        "yumemi_lints",
+      ],
+    },
+    {
       "groupName": "riverpod",
       "matchPackageNames": [
         "flutter_riverpod",
         "hooks_riverpod",
         "riverpod",
       ],
-    }
+    },
   ]
 }
