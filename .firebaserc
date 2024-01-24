@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "asis-quest-dev",
+    "staging": "asis-quest-stg",
+    "production": "asis-quest"
+  }
+}
