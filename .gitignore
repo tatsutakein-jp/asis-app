@@ -37,3 +37,6 @@ mason-lock.json
 
 # Coverage
 coverage/
+
+# Firebase
+.firebase
