@@ -2,6 +2,7 @@ import 'package:asis_app/app_build_config.dart';
 import 'package:core_common/extension.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_model/build_config.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +30,19 @@ void main() async {
       overrides: [
         buildConfigProvider.overrideWithValue(buildConfig),
       ],
-      child: const MyApp(),
+      child: DevicePreview(
+        enabled: devicePreviewEnabled,
+        builder: (context) => const MyApp(),
+      ),
     ),
   );
 }
+
+final devicePreviewEnabled = !kReleaseMode &&
+    !{
+      TargetPlatform.iOS,
+      TargetPlatform.android,
+    }.contains(defaultTargetPlatform);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
