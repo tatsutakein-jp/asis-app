@@ -16,7 +16,7 @@ jobs:
       contents: read
       pull-requests: read
     outputs:
-      all: ${{ steps.needs.outputs.all }}
+      all: ${{ steps.changes.outputs.all }}
     steps:
       # https://github.com/marketplace/actions/checkout
       - name: Checkout
@@ -37,10 +37,6 @@ jobs:
               - 'feature/**/lib/**/*'
               - '**/pubspec.lock'
               - '**/pubspec.yaml'
-      - name: Output Needs
-        id: needs
-        run: |
-          echo "all=${{ steps.changes.outputs.all == 'true' }}" >> $GITHUB_OUTPUT
 
   check:
     runs-on: ubuntu-22.04
