@@ -1,0 +1,24 @@
+name: catalog
+description: "ASIS Catalog"
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: 3.2.5
+
+dependencies:
+  core_designsystem:
+    # noinspection DartPathPackageReference
+    path: ../core/designsystem
+  cupertino_icons: 1.0.6
+  dynamic_color: 1.6.9
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  yumemi_lints: 1.5.0
+
+flutter:
+  uses-material-design: true
