@@ -12,6 +12,7 @@ ide:
     enabled: true
 
 versions:
+  - &isar 4.0.0-dev.14
   - &riverpod 2.4.9
 
 command:
@@ -22,6 +23,8 @@ command:
     dependencies:
       flutter_riverpod: *riverpod
       hooks_riverpod: *riverpod
+      isar: *isar
+      isar_flutter_libs: *isar
       riverpod: *riverpod
       riverpod_annotation: 2.3.3
     dev_dependencies:
