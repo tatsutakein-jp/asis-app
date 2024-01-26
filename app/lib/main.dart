@@ -38,11 +38,10 @@ void main() async {
   );
 }
 
-final devicePreviewEnabled = !kReleaseMode &&
-    !{
-      TargetPlatform.iOS,
-      TargetPlatform.android,
-    }.contains(defaultTargetPlatform);
+final devicePreviewEnabled = !{
+  TargetPlatform.iOS,
+  TargetPlatform.android,
+}.contains(defaultTargetPlatform);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
