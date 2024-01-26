@@ -1,4 +1,5 @@
 import 'package:asis_app/app_build_config.dart';
+import 'package:asis_app/app_initializer.dart';
 import 'package:core_common/extension.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_model/build_config.dart';
@@ -24,6 +25,8 @@ void main() async {
       installerStore: it.installerStore,
     ),
   );
+
+  await AppInitializer.initialize();
 
   runApp(
     ProviderScope(
