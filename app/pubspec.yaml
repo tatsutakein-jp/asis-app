@@ -10,6 +10,9 @@ dependencies:
   core_common:
     # noinspection DartPathPackageReference
     path: ../core/common
+  core_database:
+    # noinspection DartPathPackageReference
+    path: ../core/database
   core_designsystem:
     # noinspection DartPathPackageReference
     path: ../core/designsystem
