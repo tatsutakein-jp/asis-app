@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 Widget greenContainerUseCase(BuildContext context) {
   return Column(
     children: [
-      Container(
+      ColoredBox(
         color: Colors.green,
         child: const SizedBox.square(
           dimension: 100,

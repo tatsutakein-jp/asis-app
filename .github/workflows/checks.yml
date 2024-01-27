@@ -57,5 +57,8 @@ jobs:
       - name: Melos action
         uses: bluefireteam/melos-action@63916098bc0ef1e403907e419b61b284108d755e # v3
 
+      - name: Run analyze
+        run: melos run analyze
+
       - name: Run test
         run: melos run test --no-select
