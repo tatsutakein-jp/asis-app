@@ -26,10 +26,6 @@ jobs:
       - name: Melos action
         uses: bluefireteam/melos-action@63916098bc0ef1e403907e419b61b284108d755e # v3
 
-      - name: Build
-        run: flutter build web --web-renderer html --release
-        working-directory: ./app
-
       # https://github.com/marketplace/actions/deploy-to-firebase-hosting
       - uses: FirebaseExtended/action-hosting-deploy@120e124148ab7016bec2374e5050f15051255ba2 # v0.7.1
         with:
