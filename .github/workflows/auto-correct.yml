@@ -1,0 +1,83 @@
+name: 'Correct codes by auto generation'
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/auto-correct.yml'
+      - '**.dart'
+      - '!**.g.dart'
+      - '!**.freezed.dart'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+
+    steps:
+      # https://github.com/marketplace/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      # https://github.com/marketplace/actions/mise-action
+      - name: mise action
+        uses: jdx/mise-action@3bc85396a273ed82bba5e53a15174bbf9dba095c # v2.0.2
+
+      # https://github.com/marketplace/actions/melos-action
+      - name: Melos action
+        uses: bluefireteam/melos-action@63916098bc0ef1e403907e419b61b284108d755e # v3
+
+      - name: Run Melos Format
+        run: melos run format --no-select
+
+      - name: Check for differences
+        id: diff
+        run: |
+          git diff --quiet -- '*.dart' && echo "::set-output name=has_diff::false" || echo "::set-output name=has_diff::true"
+
+      # https://github.com/marketplace/actions/create-github-app-token
+      - name: Create GitHub App Token
+        if: steps.diff.outputs.has_diff == 'true'
+        uses: actions/create-github-app-token@86576b355dd19da0519e0bdb63d8edb5bcf76a25 # v1.7.0
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      # https://github.com/marketplace/actions/github-script
+      - name: Commit and push changes
+        if: steps.diff.outputs.has_diff == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            // Create a new tree containing the changed blobs.
+            // const tree = await github.rest.git.createTree({
+            //   ...context.repo,
+            //   tree: treeObjs,
+            //   base_tree: '${{github.event.workflow_run.head_commit.tree_id}}'
+            // });
+
+            // Create a commit for the tree. This will be signed automatically.
+            const gitCommit = await github.rest.git.createCommit({
+              ...context.repo,
+              message: 'chore(gen): auto correct some files',
+              // tree: tree.data.sha,
+              tree: await github.git.getCommit({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                commit_sha: context.sha
+              }).then(res => res.data.tree.sha),
+              parents: ['${{github.event.workflow_run.head_commit.id}}'],
+            });
+
+            // Update the branch HEAD to the new commit.
+            const ref = await github.rest.git.updateRef({
+              ...context.repo,
+              ref: 'heads/${{github.event.workflow_run.head_branch}}',
+              sha: gitCommit.data.sha,
+            });
+        env:
+          github-token: ${{ steps.app-token.outputs.token }}
