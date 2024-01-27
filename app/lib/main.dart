@@ -34,7 +34,6 @@ void main() async {
 
 
 
-
         buildConfigProvider.overrideWithValue(buildConfig),
       ],
       child: DevicePreview(
