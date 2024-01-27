@@ -23,7 +23,6 @@ void main() async {
 
 
 
-
         buildConfigProvider.overrideWithValue(buildConfig),
         ...isarDatabaseProviders(isar: isar),
         dataStoreProvider.overrideWithValue(dataStore),
