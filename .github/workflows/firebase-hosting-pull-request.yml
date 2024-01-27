@@ -11,26 +11,15 @@ concurrency:
 
 jobs:
   build-and-preview:
-    environment: development
-    runs-on: ubuntu-22.04
-    steps:
-      # https://github.com/marketplace/actions/checkout
-      - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-
-      # https://github.com/marketplace/actions/mise-action
-      - name: mise action
-        uses: jdx/mise-action@3bc85396a273ed82bba5e53a15174bbf9dba095c # v2.0.2
-
-      # https://github.com/marketplace/actions/melos-action
-      - name: Melos action
-        uses: bluefireteam/melos-action@63916098bc0ef1e403907e419b61b284108d755e # v3
-
-      # https://github.com/marketplace/actions/deploy-to-firebase-hosting
-      - uses: FirebaseExtended/action-hosting-deploy@120e124148ab7016bec2374e5050f15051255ba2 # v0.7.1
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-          projectId: asis-quest-dev
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
+    uses: ./.github/workflows/wc-firebase-hosting.yml
+    permissions:
+      contents: read
+      pull-requests: write
+      deployments: write
+    with:
+      gh-app-id: ${{ vars.BOT_APP_ID }}
+      environment: 'development'
+      project-id: 'asis-quest-dev'
+    secrets:
+      gh-app-private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
