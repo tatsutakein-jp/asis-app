@@ -36,9 +36,7 @@ jobs:
       - name: Check for differences
         id: diff
         run: |
-          - run: |
-          git diff --quiet -- '*.dart'
-          if [ $? -eq 0 ]; then
+          if git diff --quiet -- '*.dart'; then
             echo "has_diff=false" >> $GITHUB_OUTPUT
           else
             echo "has_diff=true" >> $GITHUB_OUTPUT
