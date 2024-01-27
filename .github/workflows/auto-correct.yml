@@ -36,7 +36,13 @@ jobs:
       - name: Check for differences
         id: diff
         run: |
-          git diff --quiet -- '*.dart' && echo "::set-output name=has_diff::false" || echo "::set-output name=has_diff::true"
+          - run: |
+          git diff --quiet -- '*.dart'
+          if [ $? -eq 0 ]; then
+            echo "has_diff=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_diff=true" >> $GITHUB_OUTPUT
+          fi
 
       # https://github.com/marketplace/actions/create-github-app-token
       - name: Create GitHub App Token
