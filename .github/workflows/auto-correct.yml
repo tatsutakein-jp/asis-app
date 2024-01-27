@@ -57,23 +57,46 @@ jobs:
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
+            const fs = require('fs');
+            const changesPath = '${{github.workspace}}/changes/';
+            const globberOptions = {
+              followSymbolicLinks: false,
+              matchDirectories: false,
+            };
+            const globber = await glob.create(`${changesPath}**`, globberOptions);
+
+            // Add the modified files to treeObjs.
+            const treeObjs = [];
+            for await (const file of globber.globGenerator()) {
+              const stat = fs.statSync(file);
+              if (!stat.isFile()) continue;
+              const content = fs.readFileSync(file, { encoding: 'utf8' });
+
+              treeObjs.push({
+                path: file.substring(changesPath.length),
+                mode: stat.mode.toString(8),
+                type: 'blob',
+                content: content
+              });
+            }
+
+            if (treeObjs.length < 1) {
+              console.log('No files to upload');
+              return;
+            }
+
             // Create a new tree containing the changed blobs.
-            // const tree = await github.rest.git.createTree({
-            //   ...context.repo,
-            //   tree: treeObjs,
-            //   base_tree: '${{github.event.workflow_run.head_commit.tree_id}}'
-            // });
+            const tree = await github.rest.git.createTree({
+              ...context.repo,
+              tree: treeObjs,
+              base_tree: '${{github.event.workflow_run.head_commit.tree_id}}'
+            });
 
             // Create a commit for the tree. This will be signed automatically.
             const gitCommit = await github.rest.git.createCommit({
               ...context.repo,
               message: 'chore(gen): auto correct some files',
-              // tree: tree.data.sha,
-              tree: await github.git.getCommit({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                commit_sha: context.sha
-              }).then(res => res.data.tree.sha),
+              tree: tree.data.sha,
               parents: ['${{github.event.workflow_run.head_commit.id}}'],
             });
 
