@@ -18,8 +18,8 @@ versions:
 command:
   bootstrap:
     environment:
-      sdk: 3.2.5
-      flutter: 3.16.8
+      sdk: 3.2.6
+      flutter: 3.16.9
     dependencies:
       flutter_riverpod: *riverpod
       hooks_riverpod: *riverpod
