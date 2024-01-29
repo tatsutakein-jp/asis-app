@@ -1,0 +1,29 @@
+name: feature_quest
+description: "This package provides quest features."
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: 3.2.6
+  flutter: 3.16.9
+
+dependencies:
+  core_common:
+    path: ../../core/common
+  core_designsystem:
+    path: ../../core/designsystem
+  core_domain:
+    path: ../../core/domain
+  core_model:
+    path: ../../core/model
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  core_testing:
+    path: ../../core/testing
+  flutter_test:
+    sdk: flutter
+  yumemi_lints: 1.5.0
+
+flutter:
