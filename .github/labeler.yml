@@ -1,38 +1,57 @@
+# noinspection YAMLSchemaValidation
 version: 1
 
 labels:
   # Type labels
-  - label: "@type/fix"
-    title: '^:bug:.*'
-
-  - label: "@type/feature"
-    title: '^(:sparkles:|:tada:|:art:).*'
-
-  - label: "@type/improve"
-    title: '^(:\+1:|:recycle:|:rocket:).*'
-
-  - label: "@type/docs"
-    title: '^:books:.*'
-    files:
-      - "docs/.+"
-      - "**/README\.md"
-
   - label: "@type/build"
-    title: '^:up:.*'
+    title: '^build(?:\(.+\))?\!?:'
     files:
-      - "**/pubspec\.yaml"
-      - "**/melos\.yaml"
+      - "**/pubspec.yaml$"
+      - "**/melos.yaml$"
 
   - label: "@type/ci"
-    title: '^:wrench:.*'
+    title: '^ci(?:\(.+\))?\!?:'
     files:
       - '\.github/.+'
-      - 'tools/.+'
+      - "scripts/.+"
+      - "tools/.+"
+
+  - label: "@type/docs"
+    title: '^docs:(?:\(.+\))?\!?:'
+    files:
+      - "docs/.+"
+      - "**/README.md$"
+
+  - label: "@type/feature"
+    title: '^feat:(?:\(.+\))?\!?:'
+
+  - label: "@type/fix"
+    title: '^fix:(?:\(.+\))?\!?:'
+
+  - label: "@type/improve"
+    title: '^(style|refactor|perf)(?:\(.+\))?\!?:'
+
+  # App Package labels
+  - label: "@application"
+    files:
+      - "app/.+"
+
+  - label: "@backend"
+    files:
+      - "backend/.+"
+
+  - label: "@catalog"
+    files:
+      - "catalog/.+"
 
   # Core Package labels
-  - label: "@core/network"
+  - label: "@core/common"
     files:
-      - "core/network/.+"
+      - "core/common/.+"
+
+  - label: "@core/data"
+    files:
+      - "core/data/.+"
 
   - label: "@core/database"
     files:
@@ -42,17 +61,21 @@ labels:
     files:
       - "core/datastore/.+"
 
-  - label: "@core/data"
+  - label: "@core/designsystem"
     files:
-      - "core/data/.+"
+      - "core/designsystem/.+"
+
+  - label: "@core/domain"
+    files:
+      - "core/domain/.+"
 
   - label: "@core/model"
     files:
       - "core/model/.+"
 
-  - label: "@core/domain"
+  - label: "@core/network"
     files:
-      - "core/domain/.+"
+      - "core/network/.+"
 
   - label: "@core/testing"
     files:
@@ -62,18 +85,19 @@ labels:
     files:
       - "core/ui/.+"
 
-  - label: "@core/design"
-    files:
-      - "core/design/.+"
-
-  - label: "@core/common"
-    files:
-      - "core/common/.+"
-
   # Feature Package labels
-  # TBD
-
-  # App labels
-  - label: "@application"
+  - label: "@feature/auth"
     files:
-      - "app/.+"
+      - "feature/auth/.+"
+
+  - label: "@feature/home"
+    files:
+      - "feature/home/.+"
+
+  - label: "@feature/quest"
+    files:
+      - "feature/quest/.+"
+
+  - label: "@feature/settings"
+    files:
+      - "feature/settings/.+"
