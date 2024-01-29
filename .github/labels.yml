@@ -102,6 +102,9 @@
 - name: "@core/testing"
   color: "667168"
 
+- name: "@core/ui"
+  color: "b1ade8"
+
 # Feature Package labels
 - name: "@feature/auth"
   color: "48360E"
