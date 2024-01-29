@@ -3,6 +3,7 @@ include: package:yumemi_lints/dart/3.2.5/recommended.yaml
 
 analyzer:
   exclude:
+    - "**/build/**"
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "tools/bricks/**"

@@ -3,6 +3,7 @@ name: asis
 
 packages:
   - app
+  - backend
   - catalog
   - core/*
   - feature/*
