@@ -19,7 +19,7 @@
   description: "This issue or pull request already exists"
 
 - name: "enhancement"
-  color: "a22eef"
+  color: "a2eeef"
   description: "New feature or request"
 
 - name: "good first issue"
@@ -67,11 +67,11 @@
   description: "Application development"
 
 - name: "@backend"
-  color: "f89c0f"
+  color: "4372d0"
   description: "Backend development"
 
 - name: "@catalog"
-  color: "f89c0f"
+  color: "d4f227"
   description: "Catalog development"
 
 # Core Package labels
@@ -82,7 +82,7 @@
   color: "50D413"
 
 - name: "@core/database"
-  color: "88651D"
+  color: "90bf94"
 
 - name: "@core/datastore"
   color: "1997D2"
@@ -100,17 +100,17 @@
   color: "630D81"
 
 - name: "@core/testing"
-  color: "29033D"
+  color: "667168"
 
 # Feature Package labels
 - name: "@feature/auth"
   color: "48360E"
 
 - name: "@feature/home"
-  color: "c22752"
+  color: "3bc0ec"
 
 - name: "@feature/quest"
-  color: "c22752"
+  color: "6fe0ba"
 
 - name: "@feature/settings"
-  color: "c22752"
+  color: "1e266d"
