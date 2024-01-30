@@ -31,7 +31,7 @@ void main() async {
   await AppInitializer.initialize();
 
   // ignore: do_not_use_environment
-  const flavor = String.fromEnvironment('FLAVOR');
+  const flavor = String.fromEnvironment('FLAVOR', defaultValue: 'dev');
 
   await Firebase.initializeApp(
     options: switch (flavor) {
