@@ -1,10 +1,12 @@
 import 'package:asis_app/app_build_config.dart';
 import 'package:asis_app/app_initializer.dart';
+import 'package:asis_app/firebase_options/firebase_options_dev.dart' as dev;
 import 'package:core_common/extension.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_model/build_config.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_color/dynamic_color.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,6 +29,16 @@ void main() async {
   );
 
   await AppInitializer.initialize();
+
+  // ignore: do_not_use_environment
+  const flavor = String.fromEnvironment('FLAVOR');
+
+  await Firebase.initializeApp(
+    options: switch (flavor) {
+      'dev' => dev.DefaultFirebaseOptions.currentPlatform,
+      _ => throw UnsupportedError('Unsupported flavor for firebase: $flavor'),
+    },
+  );
 
   runApp(
     ProviderScope(
