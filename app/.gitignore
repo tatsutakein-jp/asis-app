@@ -57,3 +57,7 @@ app.*.map.json
 **/ios/firebase_app_id_file.json
 **/ios/stg/firebase_app_id_file.json
 **/ios/prod/firebase_app_id_file.json
+
+# firebase_options
+**/lib/firebase_options/firebase_options_stg.dart
+**/lib/firebase_options/firebase_options_prod.dart
