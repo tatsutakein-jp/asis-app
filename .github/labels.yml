@@ -75,6 +75,9 @@
   description: "Catalog development"
 
 # Core Package labels
+- name: "@core/analytics"
+  color: "0b2ebd"
+
 - name: "@core/common"
   color: "e99695"
 
