@@ -45,6 +45,10 @@ labels:
       - "catalog/.+"
 
   # Core Package labels
+  - label: "@core/analytics"
+    files:
+      - "core/analytics/.+"
+
   - label: "@core/common"
     files:
       - "core/common/.+"
