@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651997738463",
+    "project_id": "asis-quest-dev",
+    "storage_bucket": "asis-quest-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651997738463:android:21596fec0e3a02cab2c06a",
+        "android_client_info": {
+          "package_name": "quest.asis.app.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF-ryp9Y1o9Kmrlv5FvOLOErhlzg-bGv0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

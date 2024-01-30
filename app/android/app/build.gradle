@@ -33,6 +33,18 @@ if (project.hasProperty('dart-defines')) {
             }
 }
 
+// flavorに応じたgoogle-services.jsonをコピーする
+task selectGoogleServicesJson(type: Copy) {
+    from "src/${dartEnvironmentVariables.FLAVOR}/google-services.json"
+    into './'
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'processDebugGoogleServices' || task.name == 'processReleaseGoogleServices') {
+        task.dependsOn selectGoogleServicesJson
+    }
+}
+
 android {
     namespace "quest.asis.app"
     compileSdkVersion flutter.compileSdkVersion

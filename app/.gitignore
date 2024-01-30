@@ -41,3 +41,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# firebase(Android)
+**/android/app/google-services.json
+**/android/app/src/stg/google-services.json
+**/android/app/src/prod/google-services.json
