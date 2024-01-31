@@ -43,21 +43,21 @@ app.*.map.json
 /android/app/release
 
 # ios flavor
-**/ios/Flutter/DartDefines.xcconfig
+/ios/Flutter/DartDefines.xcconfig
 
 # firebase(Android)
-**/android/app/google-services.json
-**/android/app/src/stg/google-services.json
-**/android/app/src/prod/google-services.json
+/android/app/google-services.json
+/android/app/src/stg/google-services.json
+/android/app/src/prod/google-services.json
 
 # firebase(iOS)
-**/ios/GoogleService-Info.plist
-**/ios/stg/GoogleService-Info.plist
-**/ios/prod/GoogleService-Info.plist
-**/ios/firebase_app_id_file.json
-**/ios/stg/firebase_app_id_file.json
-**/ios/prod/firebase_app_id_file.json
+/ios/GoogleService-Info.plist
+/ios/stg/GoogleService-Info.plist
+/ios/prod/GoogleService-Info.plist
+/ios/firebase_app_id_file.json
+/ios/stg/firebase_app_id_file.json
+/ios/prod/firebase_app_id_file.json
 
 # firebase_options
-**/lib/firebase_options/firebase_options_stg.dart
-**/lib/firebase_options/firebase_options_prod.dart
+/lib/firebase_options/firebase_options_stg.dart
+/lib/firebase_options/firebase_options_prod.dart
