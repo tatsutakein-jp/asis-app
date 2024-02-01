@@ -1,5 +1,5 @@
 # When flutter version is updated, you should update this version.
-include: package:yumemi_lints/dart/3.2.5/recommended.yaml
+include: package:yumemi_lints/dart/3.2.6/recommended.yaml
 
 analyzer:
   exclude:

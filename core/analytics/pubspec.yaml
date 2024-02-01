@@ -8,4 +8,4 @@ environment:
 
 dev_dependencies:
   test: 1.25.2
-  yumemi_lints: 1.5.0
+  yumemi_lints: 1.6.0
