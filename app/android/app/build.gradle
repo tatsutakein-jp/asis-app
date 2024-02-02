@@ -5,7 +5,7 @@ plugins {
 }
 
 def keystorePropertiesFile = project.file("keystore.properties")
-def keystoreExits = keystorePropertiesFile.exists()
+def keystoreExists = keystorePropertiesFile.exists()
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -60,7 +60,7 @@ android {
             keyPassword = "android"
         }
 
-        if (keystoreExits) {
+        if (keystoreExists) {
             def keystoreProperties = new Properties()
             keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
             release {
@@ -94,7 +94,7 @@ android {
         }
         release {
             signingConfig signingConfigs.debug
-            if (keystoreExits) {
+            if (keystoreExists) {
                 signingConfig = signingConfigs.getByName("release")
             } else {
                 signingConfig = signingConfigs.getByName("debug")
