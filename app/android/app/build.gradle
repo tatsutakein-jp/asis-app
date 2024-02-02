@@ -72,6 +72,22 @@ android {
         }
     }
 
+    flavorDimensions += "network"
+    productFlavors {
+        dev {
+            isDefault = true
+            applicationIdSuffix = ".dev"
+            dimension = "network"
+        }
+        stg {
+            applicationIdSuffix = ".stg"
+            dimension = "network"
+        }
+        prod {
+            dimension = "network"
+        }
+    }
+
     buildTypes {
         debug {
             signingConfig = signingConfigs.getByName("debug")
