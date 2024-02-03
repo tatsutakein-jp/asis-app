@@ -8,6 +8,10 @@
 .idea/*
 # Keep the project icon.
 !/.idea/icon.png
+# Keep the run configurations.
+!/.idea/runConfigurations/flutter_run_asis_app_dev.xml
+!/.idea/runConfigurations/flutter_run_asis_app_stg.xml
+!/.idea/runConfigurations/flutter_run_asis_app_prod.xml
 
 # Editor User Setting Files
 .vscode/*
