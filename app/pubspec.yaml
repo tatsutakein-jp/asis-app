@@ -24,7 +24,7 @@ dependencies:
   dynamic_color: 1.6.9
   flutter:
     sdk: flutter
-  flutter_riverpod: 2.4.9
+  flutter_riverpod: 2.4.10
   isar_flutter_libs: 4.0.0-dev.14
   package_info_plus: 5.0.1
 
