@@ -6,7 +6,6 @@
     ":prHourlyLimitNone",
     ":timezone(Asia/Tokyo)",
   ],
-  "commitMessagePrefix": ":wrench:",
   "dependencyDashboard": false,
   "enabledManagers": [
     "asdf",
