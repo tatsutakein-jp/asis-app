@@ -62,3 +62,12 @@ jobs:
 
       - name: Run test
         run: melos run test --no-select
+
+  status-check:
+    runs-on: ubuntu-22.04
+    needs:
+      - check
+    permissions: { }
+    if: failure()
+    steps:
+      - run: exit 1
