@@ -36,6 +36,9 @@
         "flutter_riverpod",
         "hooks_riverpod",
         "riverpod",
+        "riverpod_annotation",
+        "riverpod_generator",
+        "riverpod_lint",
       ],
     },
   ]
