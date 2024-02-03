@@ -7,8 +7,15 @@ final class AppBuildConfig implements BuildConfig {
     required this.version,
     required this.buildNumber,
     required this.buildSignature,
+    required String? appFlavor,
     this.installerStore,
-  });
+  }) : flavor = switch (appFlavor) {
+          'dev' => Flavor.dev,
+          'stg' => Flavor.stg,
+          'prod' => Flavor.prod,
+          // default flavor
+          _ => Flavor.dev,
+        };
 
   @override
   String appName;
@@ -24,6 +31,9 @@ final class AppBuildConfig implements BuildConfig {
 
   @override
   String buildSignature;
+
+  @override
+  Flavor flavor;
 
   @override
   String? installerStore;

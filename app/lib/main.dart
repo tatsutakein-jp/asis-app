@@ -7,6 +7,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -22,6 +23,7 @@ void main() async {
       version: it.version,
       buildNumber: it.buildNumber,
       buildSignature: it.buildSignature,
+      appFlavor: appFlavor,
       installerStore: it.installerStore,
     ),
   );
