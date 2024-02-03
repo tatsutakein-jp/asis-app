@@ -703,6 +703,7 @@
 				DEVELOPMENT_TEAM = V3Y8WJSRKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Dev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Asis-dev";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -727,6 +728,7 @@
 				DEVELOPMENT_TEAM = V3Y8WJSRKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Dev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Asis-dev";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,6 +752,7 @@
 				DEVELOPMENT_TEAM = V3Y8WJSRKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Dev/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Asis-dev";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,7 +776,7 @@
 				DEVELOPMENT_TEAM = V3Y8WJSRKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Stg/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Asis;
+				INFOPLIST_KEY_CFBundleDisplayName = "Asis-stg";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -798,7 +801,7 @@
 				DEVELOPMENT_TEAM = V3Y8WJSRKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Stg/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Asis;
+				INFOPLIST_KEY_CFBundleDisplayName = "Asis-stg";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -822,7 +825,7 @@
 				DEVELOPMENT_TEAM = V3Y8WJSRKA;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Stg/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Asis;
+				INFOPLIST_KEY_CFBundleDisplayName = "Asis-stg";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
