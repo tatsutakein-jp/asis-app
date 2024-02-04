@@ -1,34 +1,18 @@
-import 'package:asis_app/app_build_config.dart';
 import 'package:asis_app/app_initializer.dart';
-import 'package:core_common/extension.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_model/build_config.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 
 void main() async {
   // Be sure to add this line if `PackageInfo.fromPlatform()`
   // is called before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
-  final buildConfig = (await PackageInfo.fromPlatform()).let(
-    (it) => AppBuildConfig(
-      appName: it.appName,
-      packageName: it.packageName,
-      version: it.version,
-      buildNumber: it.buildNumber,
-      buildSignature: it.buildSignature,
-      appFlavor: appFlavor,
-      installerStore: it.installerStore,
-    ),
-  );
-
-  await AppInitializer.initialize();
+  final buildConfig = await AppInitializer.initialize();
 
   runApp(
     ProviderScope(

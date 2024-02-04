@@ -2,12 +2,12 @@ import 'package:core_model/build_config.dart';
 
 final class AppBuildConfig implements BuildConfig {
   AppBuildConfig({
+    required String? appFlavor,
     required this.appName,
     required this.packageName,
     required this.version,
     required this.buildNumber,
     required this.buildSignature,
-    required String? appFlavor,
     this.installerStore,
   }) : flavor = switch (appFlavor) {
           'dev' => Flavor.dev,
