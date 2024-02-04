@@ -1,3 +1,4 @@
+import 'package:core_model/build_config.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'build_config.g.dart';
@@ -13,5 +14,6 @@ abstract interface class BuildConfig {
   abstract final String version;
   abstract final String buildNumber;
   abstract final String buildSignature;
+  abstract final Flavor flavor;
   abstract final String? installerStore;
 }
