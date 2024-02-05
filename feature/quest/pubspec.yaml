@@ -16,6 +16,8 @@ dependencies:
     path: ../../core/domain
   core_model:
     path: ../../core/model
+  core_ui:
+    path: ../../core/ui
   flutter:
     sdk: flutter
 

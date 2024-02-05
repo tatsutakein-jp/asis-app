@@ -144,6 +144,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  core_ui:
+    dependency: "direct main"
+    description:
+      path: "../../core/ui"
+      relative: true
+    source: path
+    version: "1.0.0"
   crypto:
     dependency: transitive
     description:
