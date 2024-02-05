@@ -6,6 +6,9 @@ publish_to: "none"
 environment:
   sdk: 3.2.6
 
+dependencies:
+  simple_logger: 1.9.0+3
+
 dev_dependencies:
   test: 1.25.2
   yumemi_lints: 1.6.0
