@@ -18,7 +18,7 @@ final class AppInitializer {
 
     final buildConfig = await _initializeBuildConfig();
     await _initializeDatabase();
-    await _initializeFirebase();
+    await _initializeFirebase(flavor: buildConfig.flavor);
 
     return buildConfig;
   }
@@ -45,14 +45,15 @@ final class AppInitializer {
     await Database.initialize();
   }
 
-  static Future<void> _initializeFirebase() async {
+  static Future<void> _initializeFirebase({
+    required Flavor flavor,
+  }) async {
     await Firebase.initializeApp(
       /// MEMO(@chippy-ao): 後々、環境によってFirebaseOptionsを切り替える
-      options: switch (appFlavor) {
-        'dev' => dev.AppFirebaseOptions.currentPlatform,
-        'stg' => dev.AppFirebaseOptions.currentPlatform,
-        'prod' => dev.AppFirebaseOptions.currentPlatform,
-        _ => throw UnsupportedError('Unsupported flavor: $appFlavor'),
+      options: switch (flavor) {
+        Flavor.dev => dev.AppFirebaseOptions.currentPlatform,
+        Flavor.stg => dev.AppFirebaseOptions.currentPlatform,
+        Flavor.prod => dev.AppFirebaseOptions.currentPlatform,
       },
     );
   }
