@@ -12,6 +12,7 @@ dependencies:
     path: ../common
   flutter:
     sdk: flutter
+  flutter_adaptive_scaffold: 0.1.8
 
 dev_dependencies:
   core_testing:
