@@ -18,7 +18,7 @@ final class AppInitializer {
 
     final buildConfig = await _initializeBuildConfig();
     await _initializeDatabase();
-    await _initializeFirebase(buildConfig: buildConfig);
+    await _initializeFirebase(flavor: buildConfig.flavor);
 
     return buildConfig;
   }
