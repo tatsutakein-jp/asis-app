@@ -50,7 +50,7 @@ final class AppInitializer {
   }) async {
     await Firebase.initializeApp(
       /// MEMO(@chippy-ao): 後々、環境によってFirebaseOptionsを切り替える
-      options: switch (buildConfig.flavor) {
+      options: switch (flavor) {
         Flavor.dev => dev.AppFirebaseOptions.currentPlatform,
         Flavor.stg => dev.AppFirebaseOptions.currentPlatform,
         Flavor.prod => dev.AppFirebaseOptions.currentPlatform,
