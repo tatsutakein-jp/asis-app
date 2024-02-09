@@ -1,2 +1,2 @@
+export 'auth_page.dart';
 export 'component/index.dart';
-export 'quest_page.dart';
