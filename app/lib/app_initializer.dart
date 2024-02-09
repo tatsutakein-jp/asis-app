@@ -46,7 +46,7 @@ final class AppInitializer {
   }
 
   static Future<void> _initializeFirebase({
-    required BuildConfig buildConfig,
+    required Flavor flavor,
   }) async {
     await Firebase.initializeApp(
       /// MEMO(@chippy-ao): 後々、環境によってFirebaseOptionsを切り替える
