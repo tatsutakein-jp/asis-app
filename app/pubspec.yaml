@@ -22,6 +22,18 @@ dependencies:
   cupertino_icons: 1.0.6
   device_preview: 1.1.0
   dynamic_color: 1.6.9
+  feature_auth:
+    # noinspection DartPathPackageReference
+    path: ../feature/auth
+  feature_home:
+    # noinspection DartPathPackageReference
+    path: ../feature/home
+  feature_quest:
+    # noinspection DartPathPackageReference
+    path: ../feature/quest
+  feature_settings:
+    # noinspection DartPathPackageReference
+    path: ../feature/settings
   firebase_core: 2.25.4
   flutter:
     sdk: flutter
