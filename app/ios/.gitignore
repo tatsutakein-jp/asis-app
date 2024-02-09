@@ -32,3 +32,9 @@ Runner/GeneratedPluginRegistrant.*
 !default.mode2v3
 !default.pbxuser
 !default.perspectivev3
+
+# firebase
+Runner/Stg/GoogleService-Info.plist
+Runner/Stg/firebase_app_id_file.json
+Runner/Prod/GoogleService-Info.plist
+Runner/Prod/firebase_app_id_file.json

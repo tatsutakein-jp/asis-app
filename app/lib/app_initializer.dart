@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:asis_app/app_build_config.dart';
+import 'package:asis_app/dev/firebase_options.dart' as dev;
 import 'package:core_common/log.dart';
 import 'package:core_database/initializer.dart';
 import 'package:core_model/build_config.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -16,6 +18,7 @@ final class AppInitializer {
 
     final buildConfig = await _initializeBuildConfig();
     await _initializeDatabase();
+    await _initializeFirebase();
 
     return buildConfig;
   }
@@ -40,5 +43,17 @@ final class AppInitializer {
 
   static Future<void> _initializeDatabase() async {
     await Database.initialize();
+  }
+
+  static Future<void> _initializeFirebase() async {
+    await Firebase.initializeApp(
+      /// MEMO(@chippy-ao): 後々、環境によってFirebaseOptionsを切り替える
+      options: switch (appFlavor) {
+        'dev' => dev.AppFirebaseOptions.currentPlatform,
+        'stg' => dev.AppFirebaseOptions.currentPlatform,
+        'prod' => dev.AppFirebaseOptions.currentPlatform,
+        _ => throw UnsupportedError('Unsupported flavor: $appFlavor'),
+      },
+    );
   }
 }
