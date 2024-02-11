@@ -293,6 +293,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  feature_settings:
+    dependency: "direct main"
+    description:
+      path: "../feature/settings"
+      relative: true
+    source: path
+    version: "1.0.0"
   ffi:
     dependency: transitive
     description:

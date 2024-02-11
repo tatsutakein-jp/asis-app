@@ -21,6 +21,9 @@ dependencies:
   feature_quest:
     # noinspection DartPathPackageReference
     path: ../feature/quest
+  feature_settings:
+    # noinspection DartPathPackageReference
+    path: ../feature/settings
   flutter:
     sdk: flutter
   widgetbook: 3.7.1
