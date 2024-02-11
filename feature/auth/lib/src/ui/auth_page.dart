@@ -1,3 +1,4 @@
+import 'package:core_designsystem/component.dart';
 import 'package:flutter/material.dart';
 
 final class AuthPage extends StatelessWidget {
@@ -5,7 +6,7 @@ final class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AsisScaffold(
       appBar: AppBar(
         title: const Text('Auth'),
       ),
