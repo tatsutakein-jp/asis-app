@@ -12,6 +12,18 @@ dependencies:
     path: ../core/designsystem
   cupertino_icons: 1.0.6
   dynamic_color: 1.6.9
+  feature_auth:
+    # noinspection DartPathPackageReference
+    path: ../feature/auth
+  feature_home:
+    # noinspection DartPathPackageReference
+    path: ../feature/home
+  feature_quest:
+    # noinspection DartPathPackageReference
+    path: ../feature/quest
+  feature_settings:
+    # noinspection DartPathPackageReference
+    path: ../feature/settings
   flutter:
     sdk: flutter
   widgetbook: 3.7.1
