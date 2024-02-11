@@ -1,4 +1,5 @@
 import 'package:catalog/widgetbook.directories.g.dart';
+import 'package:core_designsystem/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
@@ -12,7 +13,20 @@ class WidgetbookApp extends StatelessWidget {
     return Widgetbook.material(
       // Use the generated directories variable
       directories: directories,
-      addons: [],
+      addons: <WidgetbookAddon>[
+        MaterialThemeAddon(
+          themes: <WidgetbookTheme<ThemeData>>[
+            WidgetbookTheme<ThemeData>(
+              name: 'Light',
+              data: lightTheme(null),
+            ),
+            WidgetbookTheme<ThemeData>(
+              name: 'Dark',
+              data: darkTheme(null),
+            ),
+          ],
+        ),
+      ],
       integrations: [
         // To make addons & knobs work with Widgetbook Cloud
         WidgetbookCloudIntegration(),
