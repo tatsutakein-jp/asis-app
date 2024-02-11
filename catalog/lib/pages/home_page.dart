@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(
-  name: 'Light theme',
+  name: 'homePage',
   type: HomePage,
   path: '[Pages]',
 )
-Widget lightThemeUseCase(BuildContext context) {
+HomePage homePageUseCase(BuildContext context) {
   return HomePage();
 }
