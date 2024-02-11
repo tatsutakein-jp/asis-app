@@ -12,7 +12,8 @@
 import 'package:catalog/pages/auth_page.dart' as _i2;
 import 'package:catalog/pages/home_page.dart' as _i3;
 import 'package:catalog/pages/quest_page.dart' as _i4;
-import 'package:catalog/widgets/green_container.dart' as _i5;
+import 'package:catalog/pages/settings_page.dart' as _i5;
+import 'package:catalog/widgets/green_container.dart' as _i6;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -40,6 +41,13 @@ final directories = <_i1.WidgetbookNode>[
           builder: _i4.lightThemeUseCase,
         ),
       ),
+      _i1.WidgetbookLeafComponent(
+        name: 'SettingsPage',
+        useCase: _i1.WidgetbookUseCase(
+          name: 'Light theme',
+          builder: _i5.lightThemeUseCase,
+        ),
+      ),
     ],
   ),
   _i1.WidgetbookFolder(
@@ -49,7 +57,7 @@ final directories = <_i1.WidgetbookNode>[
         name: 'Container',
         useCase: _i1.WidgetbookUseCase(
           name: 'with green color',
-          builder: _i5.greenContainerUseCase,
+          builder: _i6.greenContainerUseCase,
         ),
       )
     ],
