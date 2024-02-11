@@ -13,7 +13,7 @@ import 'package:catalog/pages/auth_page.dart' as _i2;
 import 'package:catalog/pages/home_page.dart' as _i3;
 import 'package:catalog/pages/quest_page.dart' as _i4;
 import 'package:catalog/pages/settings_page.dart' as _i5;
-import 'package:catalog/widgets/green_container.dart' as _i6;
+import 'package:catalog/widgets/primary_color_container.dart' as _i6;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -23,29 +23,29 @@ final directories = <_i1.WidgetbookNode>[
       _i1.WidgetbookLeafComponent(
         name: 'AuthPage',
         useCase: _i1.WidgetbookUseCase(
-          name: 'Light theme',
-          builder: _i2.lightThemeUseCase,
+          name: 'AuthPage',
+          builder: _i2.authPageUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
         name: 'HomePage',
         useCase: _i1.WidgetbookUseCase(
-          name: 'Light theme',
-          builder: _i3.lightThemeUseCase,
+          name: 'homePage',
+          builder: _i3.homePageUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
         name: 'QuestPage',
         useCase: _i1.WidgetbookUseCase(
-          name: 'Light theme',
-          builder: _i4.lightThemeUseCase,
+          name: 'QuestPage',
+          builder: _i4.questPageUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
         name: 'SettingsPage',
         useCase: _i1.WidgetbookUseCase(
-          name: 'Light theme',
-          builder: _i5.lightThemeUseCase,
+          name: 'SettingsPage',
+          builder: _i5.settingsPageUseCase,
         ),
       ),
     ],
@@ -56,8 +56,8 @@ final directories = <_i1.WidgetbookNode>[
       _i1.WidgetbookLeafComponent(
         name: 'Container',
         useCase: _i1.WidgetbookUseCase(
-          name: 'with green color',
-          builder: _i6.greenContainerUseCase,
+          name: 'with primary color',
+          builder: _i6.primaryColorContainerUseCase,
         ),
       )
     ],
