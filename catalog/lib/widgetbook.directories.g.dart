@@ -9,7 +9,6 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:catalog/components/primary_color_container.dart' as _i7;
 import 'package:catalog/components/scaffold.dart' as _i2;
 import 'package:catalog/pages/auth_page.dart' as _i3;
 import 'package:catalog/pages/home_page.dart' as _i4;
@@ -61,18 +60,6 @@ final directories = <_i1.WidgetbookNode>[
           builder: _i6.settingsPageUseCase,
         ),
       ),
-    ],
-  ),
-  _i1.WidgetbookFolder(
-    name: 'widgets',
-    children: [
-      _i1.WidgetbookLeafComponent(
-        name: 'Container',
-        useCase: _i1.WidgetbookUseCase(
-          name: 'with primary color',
-          builder: _i7.primaryColorContainerUseCase,
-        ),
-      )
     ],
   ),
 ];
