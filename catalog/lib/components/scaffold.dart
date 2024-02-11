@@ -10,10 +10,20 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 Widget asisScaffoldUseCase(BuildContext context) {
   return AsisScaffold(
     appBar: AppBar(
-      title: const Text('AsisScaffold'),
+      title: Text(
+        context.knobs.string(
+          label: 'AppBar Title',
+          initialValue: 'AsisScaffold',
+        ),
+      ),
     ),
     body: Center(
-      child: Text('AsisScaffold'),
+      child: Text(
+        context.knobs.string(
+          label: 'Body Text',
+          initialValue: 'AsisScaffold',
+        ),
+      ),
     ),
   );
 }
