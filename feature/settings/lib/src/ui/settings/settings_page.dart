@@ -1,13 +1,15 @@
 import 'package:core_designsystem/component.dart';
 import 'package:flutter/material.dart';
 
+typedef OnTapOpenSourceLicenseCallback = void Function(BuildContext context);
+
 final class SettingsPage extends StatelessWidget {
   const SettingsPage({
-    required void Function(BuildContext context) onTapOpenSourceLicense,
+    required OnTapOpenSourceLicenseCallback onTapOpenSourceLicense,
     super.key,
   }) : _onTapOpenSourceLicense = onTapOpenSourceLicense;
 
-  final void Function(BuildContext context) _onTapOpenSourceLicense;
+  final OnTapOpenSourceLicenseCallback _onTapOpenSourceLicense;
 
   @override
   Widget build(BuildContext context) {
