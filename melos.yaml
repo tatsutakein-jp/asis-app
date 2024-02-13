@@ -23,6 +23,7 @@ command:
     dependencies:
       flutter_riverpod: 2.4.10
       freezed_annotation: 2.4.1
+      go_router: 13.2.0
       hooks_riverpod: 2.4.10
       isar: *isar
       isar_flutter_libs: *isar
