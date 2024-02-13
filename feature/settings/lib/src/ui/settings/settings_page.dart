@@ -1,9 +1,12 @@
 import 'package:core_designsystem/component.dart';
+import 'package:core_model/build_config.dart';
+import 'package:feature_settings/src/ui/settings/component/index.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 typedef OnTapOpenSourceLicenseCallback = void Function(BuildContext context);
 
-final class SettingsPage extends StatelessWidget {
+final class SettingsPage extends ConsumerWidget {
   const SettingsPage({
     required OnTapOpenSourceLicenseCallback onTapOpenSourceLicense,
     super.key,
@@ -11,8 +14,12 @@ final class SettingsPage extends StatelessWidget {
 
   final OnTapOpenSourceLicenseCallback _onTapOpenSourceLicense;
 
+  static const buildConfigKey = Key('buildConfig');
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final buildConfig = ref.watch(buildConfigProvider);
+
     return AsisScaffold(
       appBar: AppBar(
         title: const Text('Settings'),
@@ -26,6 +33,16 @@ final class SettingsPage extends StatelessWidget {
             ),
             title: const Text('オープンソースライセンス'),
             onTap: () => _onTapOpenSourceLicense(context),
+          ),
+          ListTile(
+            contentPadding: EdgeInsets.symmetric(
+              vertical: 24,
+              horizontal: 16,
+            ),
+            title: BuildConfigTileContent(
+              buildConfig: buildConfig,
+              key: buildConfigKey,
+            ),
           ),
         ],
       ),
