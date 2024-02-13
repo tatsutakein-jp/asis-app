@@ -204,7 +204,7 @@ packages:
     source: path
     version: "0.0.0"
   core_model:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../core/model"
       relative: true
@@ -346,7 +346,7 @@ packages:
     source: hosted
     version: "0.20.5"
   flutter_riverpod:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_riverpod
       sha256: "4bce556b7ecbfea26109638d5237684538d4abc509d253e6c5c4c5733b360098"
