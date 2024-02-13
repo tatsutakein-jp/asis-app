@@ -10,6 +10,9 @@ dependencies:
   core_designsystem:
     # noinspection DartPathPackageReference
     path: ../core/designsystem
+  core_model:
+    # noinspection DartPathPackageReference
+    path: ../core/model
   cupertino_icons: 1.0.6
   dynamic_color: 1.6.9
   feature_auth:
@@ -26,6 +29,7 @@ dependencies:
     path: ../feature/settings
   flutter:
     sdk: flutter
+  flutter_riverpod: 2.4.10
   widgetbook: 3.7.1
   widgetbook_annotation: 3.1.0
 
