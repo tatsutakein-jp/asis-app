@@ -1,1 +1,1 @@
-export 'src/ui/quest_page.dart';
+export 'src/ui/quest/index.dart';
