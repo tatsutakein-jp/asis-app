@@ -8,5 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   path: '[Pages]',
 )
 SettingsPage settingsPageUseCase(BuildContext context) {
-  return SettingsPage();
+  return SettingsPage(
+    onTapOpenSourceLicense: (context) {},
+  );
 }

@@ -1,1 +1,1 @@
-export 'src/ui/settings_page.dart';
+export 'src/ui/settings/index.dart';
