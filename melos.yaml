@@ -55,12 +55,25 @@ scripts:
       flutter: true
       dirExists: lib
 
-  gen:code:
-    run: dart pub run build_runner build --delete-conflicting-outputs
+  # gen
+  gen:
+    run: melos run gen:dart --no-select && melos run gen:flutter --no-select
+    description: Run analyze.
+  gen:dart:
+    run: dart run build_runner build --delete-conflicting-outputs
     exec:
       concurrency: 1
     description: Run build_runner.
     packageFilters:
+      flutter: false
+      dependsOn: "build_runner"
+  gen:flutter:
+    run: flutter pub run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+    description: Run build_runner.
+    packageFilters:
+      flutter: true
       dependsOn: "build_runner"
   gen:l10n:
     run: flutter gen-l10n
