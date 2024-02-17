@@ -56,6 +56,20 @@ jobs:
       - name: mise action
         uses: jdx/mise-action@3bc85396a273ed82bba5e53a15174bbf9dba095c # v2.0.2
 
+      # https://github.com/marketplace/actions/cache
+      - name: Cache pub-cache
+        id: cache-pub-cache
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        env:
+          cache-name: pub-cache
+        with:
+          # pub-cache files are stored in `~/.pub-cache` on Linux/macOS
+          path: ~/.pub-cache
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-
+            ${{ runner.os }}-
+
       - name: Path pub-cache
         run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
 
