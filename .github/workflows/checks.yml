@@ -81,6 +81,9 @@ jobs:
       - name: Run analyze
         run: melos run analyze
 
+      - name: Setup very_good_cli
+        run: dart pub global activate very_good_cli
+
       - name: Run test
         run: melos run test --no-select
 
