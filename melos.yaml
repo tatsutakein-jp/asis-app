@@ -129,7 +129,7 @@ scripts:
   ci:test:
     run: very_good test --recursive --coverage
     exec:
-      concurrency: 2
+      concurrency: 3
       failFast: true
     description: Run test.
     packageFilters:
