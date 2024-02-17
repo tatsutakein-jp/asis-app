@@ -7,14 +7,6 @@
     ":timezone(Asia/Tokyo)",
   ],
   "dependencyDashboard": false,
-  "enabledManagers": [
-    "asdf",
-    "pub",
-    "gradle",
-    "cocoapods",
-    "github-actions",
-    "gradle-wrapper",
-  ],
   "labels": [
     "dependencies"
   ],
@@ -22,11 +14,18 @@
   "rangeStrategy": "pin",
   "packageRules": [
     {
-      "groupName": "flutter-lint",
+      "matchManagers": [
+        "github-actions",
+      ],
+      "labels": [
+        "ignore for release",
+      ]
+    },
+    {
+      "groupName": "flutter",
       "matchPackageNames": [
         "dart",
         "flutter",
-        "yumemi_lints",
       ],
     },
     {
