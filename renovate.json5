@@ -22,6 +22,14 @@
   "rangeStrategy": "pin",
   "packageRules": [
     {
+      "matchManagers": [
+        "github-actions",
+      ],
+      "labels": [
+        "ignore for release",
+      ]
+    },
+    {
       "groupName": "flutter",
       "matchPackageNames": [
         "dart",
