@@ -22,11 +22,10 @@
   "rangeStrategy": "pin",
   "packageRules": [
     {
-      "groupName": "flutter-lint",
+      "groupName": "flutter",
       "matchPackageNames": [
         "dart",
         "flutter",
-        "yumemi_lints",
       ],
     },
     {
