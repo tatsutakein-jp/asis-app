@@ -103,3 +103,34 @@ scripts:
     description: Run test.
     packageFilters:
       dirExists: test
+
+  # ci
+  ci:analyze:
+    run: melos run ci:analyze:dart --no-select && melos run ci:analyze:flutter --no-select
+    description: Run analyze.
+  ci:analyze:dart:
+    run: dart analyze
+    exec:
+      concurrency: 10
+      failFast: true
+    description: Run analyze.
+    packageFilters:
+      flutter: false
+      dirExists: lib
+  ci:analyze:flutter:
+    run: flutter analyze
+    exec:
+      concurrency: 10
+      failFast: true
+    description: Run analyze.
+    packageFilters:
+      flutter: true
+      dirExists: lib
+  ci:test:
+    run: very_good test --recursive --coverage
+    exec:
+      concurrency: 2
+      failFast: true
+    description: Run test.
+    packageFilters:
+      dirExists: test
