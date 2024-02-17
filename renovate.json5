@@ -7,14 +7,6 @@
     ":timezone(Asia/Tokyo)",
   ],
   "dependencyDashboard": false,
-  "enabledManagers": [
-    "asdf",
-    "pub",
-    "gradle",
-    "cocoapods",
-    "github-actions",
-    "gradle-wrapper",
-  ],
   "labels": [
     "dependencies"
   ],
