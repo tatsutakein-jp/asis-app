@@ -161,7 +161,7 @@ packages:
     source: path
     version: "1.0.0"
   core_data:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/data"
       relative: true
@@ -175,7 +175,7 @@ packages:
     source: path
     version: "1.0.0"
   core_datastore:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/datastore"
       relative: true
@@ -189,7 +189,7 @@ packages:
     source: path
     version: "1.0.0"
   core_domain:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/domain"
       relative: true
@@ -203,14 +203,14 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_ui:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/ui"
       relative: true
@@ -961,10 +961,10 @@ packages:
     dependency: "direct dev"
     description:
       name: yumemi_lints
-      sha256: "9c22654c3868b5b1ca4a336f53d54c99700778c56cc4ecf55c7d2c66809b290e"
+      sha256: "51aefbdf37ec2096f0440f91627735c10a1eaacc7cd3e34f372e1e91a8e146f4"
       url: "https://pub.dev"
     source: hosted
-    version: "1.6.0"
+    version: "1.7.0"
 sdks:
   dart: "3.3.0"
-  flutter: ">=3.16.0"
+  flutter: ">=3.19.0"
