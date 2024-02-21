@@ -69,6 +69,10 @@ Thanks to our wonderful contributors!
   <img src="https://contrib.rocks/image?repo=tatsutakein-jp/asis-app"  alt="contributors"/>
 </a>
 
+## Repo Activity
+
+![Repobeats](https://repobeats.axiom.co/api/embed/78f120a5545839ba681a91e0c4ebfa8f8d093c83.svg "Repobeats analytics image")
+
 ## License
 
 asis app is distributed under the terms of the MIT License. See the [license](LICENSE) for more
