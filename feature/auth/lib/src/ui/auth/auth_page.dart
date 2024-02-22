@@ -1,8 +1,15 @@
 import 'package:core_designsystem/component.dart';
 import 'package:flutter/material.dart';
 
+typedef OnTappedButtonCallback = void Function(BuildContext context);
+
 final class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+  const AuthPage({
+    required OnTappedButtonCallback onTappedButton,
+    super.key,
+  }) : _onTappedButton = onTappedButton;
+
+  final OnTappedButtonCallback _onTappedButton;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +20,10 @@ final class AuthPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('Auth Page'),
+            TextButton(
+              onPressed: () => _onTappedButton(context),
+              child: const Text('Auth Page'),
+            ),
           ],
         ),
       ),
