@@ -1,10 +1,15 @@
 import 'package:core_designsystem/component.dart';
-import 'package:feature_auth/src/ui/auth/auth_route_args.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+typedef OnTappedButtonCallback = void Function(BuildContext context);
 
 final class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+  const AuthPage({
+    required OnTappedButtonCallback onTappedButton,
+    super.key,
+  }) : _onTappedButton = onTappedButton;
+
+  final OnTappedButtonCallback _onTappedButton;
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +20,9 @@ final class AuthPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Consumer(
-              builder: (context, ref, child) {
-                return TextButton(
-                  onPressed: ref.read(onTappedButtonProvider),
-                  child: const Text('Auth Page'),
-                );
-              },
+            TextButton(
+              onPressed: () => _onTappedButton(context),
+              child: const Text('Auth Page'),
             ),
           ],
         ),
