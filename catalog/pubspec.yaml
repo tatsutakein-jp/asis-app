@@ -14,7 +14,7 @@ dependencies:
     # noinspection DartPathPackageReference
     path: ../core/model
   cupertino_icons: 1.0.6
-  dynamic_color: 1.6.9
+  dynamic_color: 1.7.0
   feature_auth:
     # noinspection DartPathPackageReference
     path: ../feature/auth
