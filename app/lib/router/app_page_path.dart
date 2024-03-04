@@ -5,4 +5,5 @@ final class AppPagePath {
   static const quest = '/quest';
   static const root = '/';
   static const settings = '/settings';
+  static const license = 'license';
 }
