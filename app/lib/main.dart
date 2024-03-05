@@ -18,6 +18,9 @@ void main() async {
   runApp(
     ProviderScope(
       overrides: [
+
+
+
         buildConfigProvider.overrideWithValue(buildConfig),
       ],
       child: DevicePreview(
