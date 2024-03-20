@@ -162,28 +162,28 @@ packages:
     source: hosted
     version: "3.1.1"
   core_common:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/common"
       relative: true
     source: path
     version: "1.0.0"
   core_data:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/database"
       relative: true
     source: path
     version: "1.0.0"
   core_datastore:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/datastore"
       relative: true
@@ -197,7 +197,7 @@ packages:
     source: path
     version: "1.0.0"
   core_domain:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/domain"
       relative: true
@@ -211,14 +211,14 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_ui:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/ui"
       relative: true
@@ -391,10 +391,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: "170c46e237d6eb0e6e9f0e8b3f56101e14fb64f787016e42edd74c39cf8b176a"
+      sha256: "7ecb2f391edbca5473db591b48555a8912dde60edd0fb3013bd6743033b2d3f8"
       url: "https://pub.dev"
     source: hosted
-    version: "13.2.0"
+    version: "13.2.1"
   graphs:
     dependency: transitive
     description:
@@ -794,4 +794,4 @@ packages:
     version: "1.7.0"
 sdks:
   dart: "3.3.1"
-  flutter: ">=3.19.3"
+  flutter: ">=3.16.0"
