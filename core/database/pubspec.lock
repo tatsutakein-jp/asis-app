@@ -679,4 +679,4 @@ packages:
     source: hosted
     version: "1.7.0"
 sdks:
-  dart: "3.3.2"
+  dart: "3.3.3"
