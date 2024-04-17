@@ -2,7 +2,7 @@
 name: asis
 
 environment:
-  sdk: 3.3.3
+  sdk: 3.3.4
 dev_dependencies:
   melos: 5.3.0
   yumemi_lints: 1.7.0
