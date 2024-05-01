@@ -7,21 +7,21 @@ part 'quest_dao.g.dart';
 QuestDao questDao(QuestDaoRef ref) => throw UnimplementedError('questDao');
 
 abstract interface class QuestDao {
-  Future<Quest?> getById(QuestId id);
+  Future<Quest?> getById({required QuestId id});
 
   Future<List<Quest>> getAll();
 
-  void insert(Quest quest);
+  void insert({required Quest quest});
 
-  void inserts(List<Quest> quests);
+  void inserts({required List<Quest> quests});
 
-  bool update(Quest quest);
+  bool update({required Quest quest});
 
-  int updates(List<QuestId> ids);
+  int updates({required List<QuestId> ids});
 
-  bool delete(QuestId id);
+  bool delete({required QuestId id});
 
-  int deletes(List<QuestId> ids);
+  int deletes({required List<QuestId> ids});
 
   int deleteAll();
 }
