@@ -18,7 +18,7 @@ final class IsarQuestDao implements QuestDao {
   final IsarCollection<String, db.Quest> _db;
 
   @override
-  Future<Quest?> getById(QuestId id) async =>
+  Future<Quest?> getById({required QuestId id}) async =>
       (await _db.getAsync(id))?.asModel();
 
   @override
@@ -30,14 +30,14 @@ final class IsarQuestDao implements QuestDao {
   }
 
   @override
-  void insert(Quest quest) => _db.put(quest.asDbModel());
+  void insert({required Quest quest}) => _db.put(quest.asDbModel());
 
   @override
-  void inserts(List<Quest> quests) =>
+  void inserts({required List<Quest> quests}) =>
       _db.putAll(quests.map((e) => e.asDbModel()).toList());
 
   @override
-  bool update(Quest quest) => _db.update(
+  bool update({required Quest quest}) => _db.update(
         id: quest.id,
         name: quest.name,
         description: quest.description,
@@ -45,13 +45,13 @@ final class IsarQuestDao implements QuestDao {
       );
 
   @override
-  int updates(List<QuestId> ids) => _db.updateAll(id: ids);
+  int updates({required List<QuestId> ids}) => _db.updateAll(id: ids);
 
   @override
-  bool delete(QuestId id) => _db.delete(id);
+  bool delete({required QuestId id}) => _db.delete(id);
 
   @override
-  int deletes(List<QuestId> ids) => _db.deleteAll(ids);
+  int deletes({required List<QuestId> ids}) => _db.deleteAll(ids);
 
   @override
   int deleteAll() => _db.deleteAll(List.empty());
