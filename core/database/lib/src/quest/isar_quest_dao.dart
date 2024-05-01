@@ -29,6 +29,12 @@ final class IsarQuestDao implements QuestDao {
           .toList();
 
   @override
+  Stream<List<Quest>> allStream() => _isar.quests
+      .where()
+      .watch(fireImmediately: true)
+      .map((event) => event.map((e) => e.asModel()).toList());
+
+  @override
   Future<void> insert({required Quest quest}) async {
     return _isar.writeAsync(
       (isar) async => isar.quests.put(quest.asDbModel()),
