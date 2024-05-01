@@ -1,5 +1,6 @@
 import 'package:asis_app/app_initializer.dart';
 import 'package:asis_app/router/app_router.dart';
+import 'package:core_database/isar.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_model/build_config.dart';
 import 'package:device_preview/device_preview.dart';
@@ -19,6 +20,7 @@ void main() async {
     ProviderScope(
       overrides: [
         buildConfigProvider.overrideWithValue(buildConfig),
+        ...isarDatabaseProviders,
       ],
       child: DevicePreview(
         enabled: devicePreviewEnabled,
