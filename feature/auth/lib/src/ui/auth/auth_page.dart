@@ -14,7 +14,7 @@ final class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AsisScaffold(
-      appBar: AppBar(
+      appBar: AsisAppBar(
         title: const Text('Auth'),
       ),
       body: Center(
