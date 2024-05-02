@@ -19,7 +19,9 @@ class QuestRepository {
 
   Future<Quest?> getById({required QuestId id}) async => _dao.getById(id: id);
 
-  Future<List<Quest>> getAll() async => _dao.getAll();
+  Future<List<Quest>> getAll() => _dao.getAll();
+
+  Stream<List<Quest>> allStream() => _dao.allStream();
 
   Future<void> insert({required Quest quest}) async =>
       _dao.insert(quest: quest);

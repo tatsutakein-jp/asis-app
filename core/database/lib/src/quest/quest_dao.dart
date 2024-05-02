@@ -11,6 +11,8 @@ abstract interface class QuestDao {
 
   Future<List<Quest>> getAll();
 
+  Stream<List<Quest>> allStream();
+
   Future<void> insert({required Quest quest});
 
   Future<void> inserts({required List<Quest> quests});
