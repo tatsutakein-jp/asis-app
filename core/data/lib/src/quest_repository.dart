@@ -21,17 +21,22 @@ class QuestRepository {
 
   Future<List<Quest>> getAll() async => _dao.getAll();
 
-  void insert({required Quest quest}) => _dao.insert(quest: quest);
+  Future<void> insert({required Quest quest}) async =>
+      _dao.insert(quest: quest);
 
-  void inserts({required List<Quest> quests}) => _dao.inserts(quests: quests);
+  Future<void> inserts({required List<Quest> quests}) async =>
+      _dao.inserts(quests: quests);
 
-  bool update({required Quest quest}) => _dao.update(quest: quest);
+  Future<bool> update({required Quest quest}) async =>
+      _dao.update(quest: quest);
 
-  int updates({required List<QuestId> ids}) => _dao.updates(ids: ids);
+  Future<int> updates({required List<QuestId> ids}) async =>
+      _dao.updates(ids: ids);
 
-  bool delete({required QuestId id}) => _dao.delete(id: id);
+  Future<bool> delete({required QuestId id}) async => _dao.delete(id: id);
 
-  int deletes({required List<QuestId> ids}) => _dao.deletes(ids: ids);
+  Future<int> deletes({required List<QuestId> ids}) async =>
+      _dao.deletes(ids: ids);
 
-  int deleteAll() => _dao.deleteAll();
+  Future<int> deleteAll() async => _dao.deleteAll();
 }

@@ -6,53 +6,69 @@ import 'package:isar/isar.dart';
 
 final isarQuestDaoProvider = questDaoProvider.overrideWith(
   (ref) => IsarQuestDao(
-    db: ref.watch(isarProvider).quests,
+    isar: ref.watch(isarProvider),
   ),
 );
 
 final class IsarQuestDao implements QuestDao {
   IsarQuestDao({
-    required IsarCollection<String, db.Quest> db,
-  }) : _db = db;
+    required Isar isar,
+  }) : _isar = isar;
 
-  final IsarCollection<String, db.Quest> _db;
+  final Isar _isar;
 
   @override
   Future<Quest?> getById({required QuestId id}) async =>
-      (await _db.getAsync(id))?.asModel();
+      (await _isar.quests.getAsync(id))?.asModel();
 
   @override
-  Future<List<Quest>> getAll() async {
-    return (await _db.getAllAsync(List.empty()))
-        .map((e) => e?.asModel())
-        .nonNulls
-        .toList();
+  Future<List<Quest>> getAll() async =>
+      (await _isar.quests.getAllAsync(List.empty()))
+          .nonNulls
+          .map((e) => e.asModel())
+          .toList();
+
+  @override
+  Future<void> insert({required Quest quest}) async {
+    return _isar.writeAsync(
+      (isar) async => isar.quests.put(quest.asDbModel()),
+    );
   }
 
   @override
-  void insert({required Quest quest}) => _db.put(quest.asDbModel());
-
-  @override
-  void inserts({required List<Quest> quests}) =>
-      _db.putAll(quests.map((e) => e.asDbModel()).toList());
-
-  @override
-  bool update({required Quest quest}) => _db.update(
-        id: quest.id,
-        name: quest.name,
-        description: quest.description,
-        body: quest.body,
+  Future<void> inserts({required List<Quest> quests}) async => _isar.writeAsync(
+        (isar) async => isar.quests.putAll(
+          quests.map((e) => e.asDbModel()).toList(),
+        ),
       );
 
   @override
-  int updates({required List<QuestId> ids}) => _db.updateAll(id: ids);
+  Future<bool> update({required Quest quest}) async => _isar.writeAsync(
+        (isar) => isar.quests.update(
+          id: quest.id,
+          name: quest.name,
+          description: quest.description,
+          body: quest.body,
+        ),
+      );
 
   @override
-  bool delete({required QuestId id}) => _db.delete(id);
+  Future<int> updates({required List<QuestId> ids}) async => _isar.writeAsync(
+        (isar) => isar.quests.updateAll(id: ids),
+      );
 
   @override
-  int deletes({required List<QuestId> ids}) => _db.deleteAll(ids);
+  Future<bool> delete({required QuestId id}) async => _isar.writeAsync(
+        (isar) => isar.quests.delete(id),
+      );
 
   @override
-  int deleteAll() => _db.deleteAll(List.empty());
+  Future<int> deletes({required List<QuestId> ids}) async => _isar.writeAsync(
+        (isar) => isar.quests.deleteAll(ids),
+      );
+
+  @override
+  Future<int> deleteAll() async => _isar.writeAsync(
+        (isar) => isar.quests.deleteAll(List.empty()),
+      );
 }
