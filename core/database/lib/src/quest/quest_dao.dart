@@ -11,17 +11,17 @@ abstract interface class QuestDao {
 
   Future<List<Quest>> getAll();
 
-  void insert({required Quest quest});
+  Future<void> insert({required Quest quest});
 
-  void inserts({required List<Quest> quests});
+  Future<void> inserts({required List<Quest> quests});
 
-  bool update({required Quest quest});
+  Future<bool> update({required Quest quest});
 
-  int updates({required List<QuestId> ids});
+  Future<int> updates({required List<QuestId> ids});
 
-  bool delete({required QuestId id});
+  Future<bool> delete({required QuestId id});
 
-  int deletes({required List<QuestId> ids});
+  Future<int> deletes({required List<QuestId> ids});
 
-  int deleteAll();
+  Future<int> deleteAll();
 }

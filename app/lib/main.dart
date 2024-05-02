@@ -14,12 +14,16 @@ void main() async {
   // is called before runApp()
   WidgetsFlutterBinding.ensureInitialized();
 
-  final buildConfig = await AppInitializer.initialize();
+  final (
+    :buildConfig,
+    :isar,
+  ) = await AppInitializer.initialize();
 
   runApp(
     ProviderScope(
       overrides: [
         buildConfigProvider.overrideWithValue(buildConfig),
+        isarProvider.overrideWithValue(isar),
         ...isarDatabaseProviders,
       ],
       child: DevicePreview(
