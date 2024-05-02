@@ -21,7 +21,7 @@ final class SettingsPage extends ConsumerWidget {
     final buildConfig = ref.watch(buildConfigProvider);
 
     return AsisScaffold(
-      appBar: AppBar(
+      appBar: AsisAppBar(
         title: const Text('Settings'),
       ),
       body: ListView(

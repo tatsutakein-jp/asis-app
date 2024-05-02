@@ -40,7 +40,7 @@ final class StatelessQuestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AsisScaffold(
-      appBar: AppBar(
+      appBar: AsisAppBar(
         title: const Text('Quest'),
       ),
       body: StreamBuilder(
