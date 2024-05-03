@@ -28,7 +28,6 @@ if (flutterVersionName == null) {
 android {
     namespace "quest.asis.app"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
