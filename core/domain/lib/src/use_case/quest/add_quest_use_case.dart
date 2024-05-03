@@ -15,7 +15,8 @@ typedef AddQuestUseCaseArgs = ({
 });
 
 /// クエストを追加する ユースケース
-final class AddQuestUseCase implements UseCase<AddQuestUseCaseArgs, void> {
+final class AddQuestUseCase
+    implements UseCase<AddQuestUseCaseArgs, Future<void>> {
   AddQuestUseCase({
     required QuestRepository repository,
   }) : _repository = repository;
@@ -23,6 +24,6 @@ final class AddQuestUseCase implements UseCase<AddQuestUseCaseArgs, void> {
   final QuestRepository _repository;
 
   @override
-  void execute(AddQuestUseCaseArgs args) =>
+  Future<void> execute(AddQuestUseCaseArgs args) async =>
       _repository.insert(quest: args.quest);
 }

@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:core_designsystem/component.dart';
-import 'package:core_domain/quest_use_case.dart';
-import 'package:core_domain/use_case.dart';
 import 'package:core_model/quest.dart';
 import 'package:core_ui/quest_list_title.dart';
+import 'package:feature_quest/src/ui/quest/quest_page_action.dart';
+import 'package:feature_quest/src/ui/quest/quest_page_state_machine.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -13,14 +13,13 @@ final class QuestPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final questListStream = ref.watch(questListStreamUseCaseProvider);
+    final state = ref.watch(questPageStateMachineProvider);
+    final notifier = ref.watch(questPageStateMachineProvider.notifier);
 
     return StatelessQuestPage(
-      quests: questListStream(),
+      quests: state.quests,
       onAddQuestButtonTapped: (quest) {
-        ref.read(addQuestUseCaseProvider).execute(
-          (quest: quest,),
-        );
+        notifier.dispatch(AddQuestButtonTapped(quest: quest));
       },
     );
   }
