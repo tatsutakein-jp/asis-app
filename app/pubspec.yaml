@@ -41,7 +41,7 @@ dependencies:
   go_router: 14.0.2
   isar:
     hosted: https://pub.isar-community.dev/
-    version: 4.0.2
+    version: 4.0.3
   isar_flutter_libs:
     hosted: https://pub.isar-community.dev/
     version: 4.0.2
