@@ -44,7 +44,7 @@ dependencies:
     version: 4.0.2
   isar_flutter_libs:
     hosted: https://pub.isar-community.dev/
-    version: 4.0.2
+    version: 4.0.3
   package_info_plus: 8.0.0
   path_provider: 2.1.3
   riverpod_annotation: 2.3.5
