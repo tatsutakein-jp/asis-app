@@ -8,5 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   path: '[Pages]',
 )
 QuestListPage questPageUseCase(BuildContext context) {
-  return QuestListPage();
+  return QuestListPage(
+    onTapQuestListItem: (context, quest) {},
+  );
 }

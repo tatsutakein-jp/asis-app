@@ -16,5 +16,6 @@ Widget asisScaffoldUseCase(BuildContext context) {
       description: 'Quest 1 description',
       body: 'Quest 1 body',
     ),
+    onTap: (quest) {},
   );
 }
