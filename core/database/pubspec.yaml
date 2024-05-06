@@ -13,7 +13,7 @@ dependencies:
     path: ../model
   isar:
     hosted: https://pub.isar-community.dev/
-    version: 4.0.2
+    version: 4.0.3
   riverpod_annotation: 2.3.5
 
 dev_dependencies:
