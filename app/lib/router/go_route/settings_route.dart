@@ -1,3 +1,4 @@
+import 'package:asis_app/router/app_navigation_key.dart';
 import 'package:asis_app/router/app_page_path.dart';
 import 'package:asis_app/router/shell_route/app_shell_route.dart';
 import 'package:feature_settings/feature_settings.dart';
@@ -31,4 +32,6 @@ final class SettingsRoute extends SettingsRouteData {
 /// ライセンスページへのルート
 final class LicenseRoute extends LicenseRouteData {
   const LicenseRoute();
+
+  static final $parentNavigatorKey = rootNavigatorKey;
 }
