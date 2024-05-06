@@ -1,7 +1,6 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/quest.dart';
 import 'package:core_ui/quest_list_title.dart';
-import 'package:feature_quest/src/ui/detail/quest_detail_page_action.dart';
 import 'package:feature_quest/src/ui/detail/quest_detail_page_state_machine.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -20,13 +19,9 @@ final class QuestDetailPage extends HookConsumerWidget {
       questId: _questId,
     );
     final state = ref.watch(stateMachineProvider);
-    final notifier = ref.watch(stateMachineProvider.notifier);
 
     return StatelessQuestDetailPage(
       quest: state.quest,
-      onAddQuestButtonTapped: (quest) {
-        notifier.dispatch(AddQuestButtonTapped(quest: quest));
-      },
     );
   }
 }
@@ -34,13 +29,10 @@ final class QuestDetailPage extends HookConsumerWidget {
 final class StatelessQuestDetailPage extends StatelessWidget {
   const StatelessQuestDetailPage({
     required AsyncValue<Quest> quest,
-    required void Function(Quest) onAddQuestButtonTapped,
     super.key,
-  })  : _quest = quest,
-        _onAddQuestButtonTapped = onAddQuestButtonTapped;
+  }) : _quest = quest;
 
   final AsyncValue<Quest> _quest;
-  final void Function(Quest quest) _onAddQuestButtonTapped;
 
   @override
   Widget build(BuildContext context) {
