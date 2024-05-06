@@ -47,6 +47,7 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
               routes: [
                 GoRouteData.$route(
                   path: 'license',
+                  parentNavigatorKey: LicenseRoute.$parentNavigatorKey,
                   factory: $LicenseRouteExtension._fromState,
                 ),
               ],
