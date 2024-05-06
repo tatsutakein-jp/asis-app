@@ -115,7 +115,7 @@ scripts:
   test:
     run: very_good test --recursive --coverage
     exec:
-      concurrency: 1
+      concurrency: 10
       failFast: true
     description: Run test.
     packageFilters:
@@ -146,7 +146,7 @@ scripts:
   ci:test:
     run: very_good test --recursive --coverage
     exec:
-      concurrency: 3
+      concurrency: 2
       failFast: true
     description: Run test.
     packageFilters:
