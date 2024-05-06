@@ -27,7 +27,7 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
           routes: [
             GoRouteData.$route(
               path: '/quest',
-              factory: $QuestRouteExtension._fromState,
+              factory: $QuestListRouteExtension._fromState,
             ),
           ],
         ),
@@ -71,8 +71,9 @@ extension $HomeRouteExtension on HomeRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $QuestRouteExtension on QuestRoute {
-  static QuestRoute _fromState(GoRouterState state) => const QuestRoute();
+extension $QuestListRouteExtension on QuestListRoute {
+  static QuestListRoute _fromState(GoRouterState state) =>
+      const QuestListRoute();
 
   String get location => GoRouteData.$location(
         '/quest',

@@ -1,19 +1,19 @@
 import 'package:core_domain/quest_use_case.dart';
-import 'package:feature_quest/src/ui/quest/quest_page_action.dart';
-import 'package:feature_quest/src/ui/quest/quest_page_state.dart';
+import 'package:feature_quest/src/ui/list/quest_list_page_action.dart';
+import 'package:feature_quest/src/ui/list/quest_list_page_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'quest_page_state_machine.g.dart';
+part 'quest_list_page_state_machine.g.dart';
 
 @riverpod
-class QuestPageStateMachine extends _$QuestPageStateMachine {
+class QuestListPageStateMachine extends _$QuestListPageStateMachine {
   @override
-  QuestPageState build() {
+  QuestListPageState build() {
     final questListStream = ref.watch(questListStreamUseCaseProvider);
-    return QuestPageState(quests: questListStream);
+    return QuestListPageState(quests: questListStream);
   }
 
-  void dispatch(QuestPageAction action) {
+  void dispatch(QuestListPageAction action) {
     switch (action) {
       case AddQuestButtonTapped(:final quest):
         Future(

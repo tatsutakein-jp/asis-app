@@ -2,7 +2,7 @@ import 'package:asis_app/router/app_navigation_bar.dart';
 import 'package:asis_app/router/app_navigation_key.dart';
 // --- branch内のTypedGoRouteはimportする必要がある(partとpart ofが適切かも)
 import 'package:asis_app/router/go_route/home_route.dart';
-import 'package:asis_app/router/go_route/quest_route.dart';
+import 'package:asis_app/router/go_route/quest_list_route.dart';
 import 'package:asis_app/router/go_route/settings_route.dart';
 // ---
 import 'package:asis_app/router/shell_branch/home_branch.dart';

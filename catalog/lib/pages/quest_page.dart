@@ -4,9 +4,9 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(
   name: 'QuestPage',
-  type: QuestPage,
+  type: QuestListPage,
   path: '[Pages]',
 )
-QuestPage questPageUseCase(BuildContext context) {
-  return QuestPage();
+QuestListPage questPageUseCase(BuildContext context) {
+  return QuestListPage();
 }
