@@ -39,5 +39,12 @@
         "riverpod_lint",
       ],
     },
+    {
+      "groupName": "isar",
+      "matchPackageNames": [
+        "isar",
+        "isar_flutter_libs",
+      ],
+    },
   ]
 }
