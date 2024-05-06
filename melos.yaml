@@ -13,7 +13,7 @@ ide:
     enabled: true
 
 versions:
-  - &isar 4.0.2
+  - &isar 4.0.3
 
 command:
   bootstrap:
