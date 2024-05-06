@@ -9,7 +9,10 @@ abstract class QuestDetailRouteData extends GoRouteData {
   abstract final QuestId questId;
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => QuestDetailPage(
-        questId: questId,
-      );
+  Widget build(BuildContext context, GoRouterState state) {
+    print(questId);
+    return QuestDetailPage(
+      questId: questId,
+    );
+  }
 }

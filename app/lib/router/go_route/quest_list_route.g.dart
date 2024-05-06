@@ -8,7 +8,6 @@ part of 'quest_list_route.dart';
 
 List<RouteBase> get $appRoutes => [
       $questListRoute,
-      $questDetailRoute,
     ];
 
 RouteBase get $questListRoute => GoRouteData.$route(
@@ -22,34 +21,6 @@ extension $QuestListRouteExtension on QuestListRoute {
 
   String get location => GoRouteData.$location(
         '/quest',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $questDetailRoute => GoRouteData.$route(
-      path: '/quest',
-      parentNavigatorKey: QuestDetailRoute.$parentNavigatorKey,
-      factory: $QuestDetailRouteExtension._fromState,
-    );
-
-extension $QuestDetailRouteExtension on QuestDetailRoute {
-  static QuestDetailRoute _fromState(GoRouterState state) => QuestDetailRoute(
-        questId: state.uri.queryParameters['quest-id']!,
-      );
-
-  String get location => GoRouteData.$location(
-        '/quest',
-        queryParams: {
-          'quest-id': questId,
-        },
       );
 
   void go(BuildContext context) => context.go(location);

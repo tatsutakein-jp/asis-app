@@ -7,7 +7,7 @@ part of 'quest_detail_page_state_machine.dart';
 // **************************************************************************
 
 String _$questDetailPageStateMachineHash() =>
-    r'50671d33e7b4df62035c72b6e3a50ba019b23000';
+    r'fd02a857544afbbc0092480a873aff1397b67435';
 
 /// Copied from Dart SDK
 class _SystemHash {

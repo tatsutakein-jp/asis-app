@@ -1,5 +1,6 @@
 import 'package:asis_app/router/app_navigation_key.dart';
 import 'package:asis_app/router/app_page_path.dart';
+import 'package:asis_app/router/shell_route/app_shell_route.dart';
 import 'package:core_model/quest.dart';
 import 'package:feature_quest/feature_quest.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +23,16 @@ const questListRoute = TypedGoRoute<QuestListRoute>(
 @TypedGoRoute<QuestListRoute>(path: AppPagePath.quest)
 final class QuestListRoute extends QuestListRouteData {
   const QuestListRoute();
+
+  @override
+  void Function(BuildContext context, Quest quest) get onTapQuestListItem =>
+      (context, quest) {
+        print(quest);
+        QuestDetailRoute(questId: quest.id).go(context);
+      };
 }
 
 /// クエスト詳細画面
-@TypedGoRoute<QuestDetailRoute>(path: AppPagePath.quest)
 final class QuestDetailRoute extends QuestDetailRouteData {
   const QuestDetailRoute({
     required this.questId,

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/quest.dart';
 import 'package:core_ui/quest_list_title.dart';
@@ -48,12 +46,13 @@ final class StatelessQuestDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AsisScaffold(
       appBar: AsisAppBar(
-        title: const Text('Quest'),
+        title: const Text('Quest detail'),
       ),
       body: _quest.when(
         data: (quest) {
           return QuestListTile(
             quest: quest,
+            onTap: (quest) {},
           );
         },
         error: (error, stackTrace) => Center(child: Text(error.toString())),
@@ -61,25 +60,6 @@ final class StatelessQuestDetailPage extends StatelessWidget {
           child: CircularProgressIndicator(),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () async {
-          final randomNumber = Random().nextInt(2147483647);
-
-          final addQuest = Quest(
-            id: '$randomNumber',
-            name: 'Quest $randomNumber',
-            description: 'Description $randomNumber',
-            body: 'Body $randomNumber',
-          );
-          print(addQuest);
-          _onAddQuestButtonTapped(
-            addQuest,
-          );
-        },
-        label: const Text('クエストを追加する'),
-        icon: const Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
