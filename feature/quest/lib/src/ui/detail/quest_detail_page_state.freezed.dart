@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$QuestDetailPageState {
-  AsyncValue<Quest> get quest => throw _privateConstructorUsedError;
+  AsyncValue<Quest?> get quest => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestDetailPageStateCopyWith<QuestDetailPageState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $QuestDetailPageStateCopyWith<$Res> {
           $Res Function(QuestDetailPageState) then) =
       _$QuestDetailPageStateCopyWithImpl<$Res, QuestDetailPageState>;
   @useResult
-  $Res call({AsyncValue<Quest> quest});
+  $Res call({AsyncValue<Quest?> quest});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$QuestDetailPageStateCopyWithImpl<$Res,
       quest: null == quest
           ? _value.quest
           : quest // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<Quest>,
+              as AsyncValue<Quest?>,
     ) as $Val);
   }
 }
@@ -65,7 +65,7 @@ abstract class _$$QuestDetailPageStateImplCopyWith<$Res>
       __$$QuestDetailPageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AsyncValue<Quest> quest});
+  $Res call({AsyncValue<Quest?> quest});
 }
 
 /// @nodoc
@@ -85,7 +85,7 @@ class __$$QuestDetailPageStateImplCopyWithImpl<$Res>
       quest: null == quest
           ? _value.quest
           : quest // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<Quest>,
+              as AsyncValue<Quest?>,
     ));
   }
 }
@@ -96,7 +96,7 @@ class _$QuestDetailPageStateImpl implements _QuestDetailPageState {
   _$QuestDetailPageStateImpl({required this.quest});
 
   @override
-  final AsyncValue<Quest> quest;
+  final AsyncValue<Quest?> quest;
 
   @override
   String toString() {
@@ -124,11 +124,11 @@ class _$QuestDetailPageStateImpl implements _QuestDetailPageState {
 }
 
 abstract class _QuestDetailPageState implements QuestDetailPageState {
-  factory _QuestDetailPageState({required final AsyncValue<Quest> quest}) =
+  factory _QuestDetailPageState({required final AsyncValue<Quest?> quest}) =
       _$QuestDetailPageStateImpl;
 
   @override
-  AsyncValue<Quest> get quest;
+  AsyncValue<Quest?> get quest;
   @override
   @JsonKey(ignore: true)
   _$$QuestDetailPageStateImplCopyWith<_$QuestDetailPageStateImpl>

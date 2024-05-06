@@ -28,11 +28,11 @@ final class QuestDetailPage extends HookConsumerWidget {
 
 final class StatelessQuestDetailPage extends StatelessWidget {
   const StatelessQuestDetailPage({
-    required AsyncValue<Quest> quest,
+    required AsyncValue<Quest?> quest,
     super.key,
   }) : _quest = quest;
 
-  final AsyncValue<Quest> _quest;
+  final AsyncValue<Quest?> _quest;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,12 @@ final class StatelessQuestDetailPage extends StatelessWidget {
       ),
       body: _quest.when(
         data: (quest) {
-          return QuestListTile(
-            quest: quest,
-            onTap: (quest) {},
-          );
+          return quest != null
+              ? QuestListTile(
+                  quest: quest,
+                  onTap: (quest) {},
+                )
+              : const SizedBox();
         },
         error: (error, stackTrace) => Center(child: Text(error.toString())),
         loading: () => const Center(

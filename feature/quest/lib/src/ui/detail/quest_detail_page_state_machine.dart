@@ -12,17 +12,8 @@ class QuestDetailPageStateMachine extends _$QuestDetailPageStateMachine {
   QuestDetailPageState build({
     required QuestId questId,
   }) {
-    // final questDetailStream = ref.watch(questDetailStreamUseCaseProvider);
-
     return QuestDetailPageState(
-      quest: AsyncValue.data(
-        Quest(
-          id: questId,
-          name: 'Quest $questId',
-          description: 'Description $questId',
-          body: 'Body $questId',
-        ),
-      ),
+      quest: ref.watch(questStreamByIdUseCaseProvider(id: questId)),
     );
   }
 

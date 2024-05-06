@@ -6,11 +6,11 @@ part of 'quest_dao.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$questDaoHash() => r'8af400e710b5e75ac7e4bc1d281d78416854fecf';
+String _$questDaoHash() => r'00a3708eb0aef3edd7ec6008432434b20f3f3bef';
 
 /// See also [questDao].
 @ProviderFor(questDao)
-final questDaoProvider = AutoDisposeProvider<QuestDao>.internal(
+final questDaoProvider = Provider<QuestDao>.internal(
   questDao,
   name: r'questDaoProvider',
   debugGetCreateSourceHash:
@@ -19,6 +19,6 @@ final questDaoProvider = AutoDisposeProvider<QuestDao>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef QuestDaoRef = AutoDisposeProviderRef<QuestDao>;
+typedef QuestDaoRef = ProviderRef<QuestDao>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
