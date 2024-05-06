@@ -28,6 +28,13 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/quest',
               factory: $QuestListRouteExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: ':questId',
+                  parentNavigatorKey: QuestDetailRoute.$parentNavigatorKey,
+                  factory: $QuestDetailRouteExtension._fromState,
+                ),
+              ],
             ),
           ],
         ),
@@ -77,6 +84,25 @@ extension $QuestListRouteExtension on QuestListRoute {
 
   String get location => GoRouteData.$location(
         '/quest',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $QuestDetailRouteExtension on QuestDetailRoute {
+  static QuestDetailRoute _fromState(GoRouterState state) => QuestDetailRoute(
+        questId: state.pathParameters['questId']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/quest/${Uri.encodeComponent(questId)}',
       );
 
   void go(BuildContext context) => context.go(location);
