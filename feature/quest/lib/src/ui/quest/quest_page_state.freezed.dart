@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$QuestPageState {
-  Stream<List<Quest>> get quests => throw _privateConstructorUsedError;
+  AsyncValue<List<Quest>> get quests => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestPageStateCopyWith<QuestPageState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $QuestPageStateCopyWith<$Res> {
           QuestPageState value, $Res Function(QuestPageState) then) =
       _$QuestPageStateCopyWithImpl<$Res, QuestPageState>;
   @useResult
-  $Res call({Stream<List<Quest>> quests});
+  $Res call({AsyncValue<List<Quest>> quests});
 }
 
 /// @nodoc
@@ -51,7 +51,7 @@ class _$QuestPageStateCopyWithImpl<$Res, $Val extends QuestPageState>
       quests: null == quests
           ? _value.quests
           : quests // ignore: cast_nullable_to_non_nullable
-              as Stream<List<Quest>>,
+              as AsyncValue<List<Quest>>,
     ) as $Val);
   }
 }
@@ -64,7 +64,7 @@ abstract class _$$QuestPageStateImplCopyWith<$Res>
       __$$QuestPageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Stream<List<Quest>> quests});
+  $Res call({AsyncValue<List<Quest>> quests});
 }
 
 /// @nodoc
@@ -84,7 +84,7 @@ class __$$QuestPageStateImplCopyWithImpl<$Res>
       quests: null == quests
           ? _value.quests
           : quests // ignore: cast_nullable_to_non_nullable
-              as Stream<List<Quest>>,
+              as AsyncValue<List<Quest>>,
     ));
   }
 }
@@ -95,7 +95,7 @@ class _$QuestPageStateImpl implements _QuestPageState {
   _$QuestPageStateImpl({required this.quests});
 
   @override
-  final Stream<List<Quest>> quests;
+  final AsyncValue<List<Quest>> quests;
 
   @override
   String toString() {
@@ -122,11 +122,11 @@ class _$QuestPageStateImpl implements _QuestPageState {
 }
 
 abstract class _QuestPageState implements QuestPageState {
-  factory _QuestPageState({required final Stream<List<Quest>> quests}) =
+  factory _QuestPageState({required final AsyncValue<List<Quest>> quests}) =
       _$QuestPageStateImpl;
 
   @override
-  Stream<List<Quest>> get quests;
+  AsyncValue<List<Quest>> get quests;
   @override
   @JsonKey(ignore: true)
   _$$QuestPageStateImplCopyWith<_$QuestPageStateImpl> get copyWith =>

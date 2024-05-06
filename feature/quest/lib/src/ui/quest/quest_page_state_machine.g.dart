@@ -7,7 +7,7 @@ part of 'quest_page_state_machine.dart';
 // **************************************************************************
 
 String _$questPageStateMachineHash() =>
-    r'2b1da9f04ef5e7800513a149066718fde80b9de1';
+    r'57936c97e3f30f726a9d0b3953e0102c8cd386e5';
 
 /// See also [QuestPageStateMachine].
 @ProviderFor(QuestPageStateMachine)
