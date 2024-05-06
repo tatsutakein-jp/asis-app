@@ -3,18 +3,18 @@ import 'dart:math';
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/quest.dart';
 import 'package:core_ui/quest_list_title.dart';
-import 'package:feature_quest/src/ui/quest/quest_page_action.dart';
-import 'package:feature_quest/src/ui/quest/quest_page_state_machine.dart';
+import 'package:feature_quest/src/ui/list/quest_list_page_action.dart';
+import 'package:feature_quest/src/ui/list/quest_list_page_state_machine.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final class QuestPage extends HookConsumerWidget {
-  const QuestPage({super.key});
+final class QuestListPage extends HookConsumerWidget {
+  const QuestListPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(questPageStateMachineProvider);
-    final notifier = ref.watch(questPageStateMachineProvider.notifier);
+    final state = ref.watch(questListPageStateMachineProvider);
+    final notifier = ref.watch(questListPageStateMachineProvider.notifier);
 
     return StatelessQuestPage(
       quests: state.quests,

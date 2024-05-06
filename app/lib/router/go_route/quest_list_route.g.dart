@@ -1,22 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'quest_route.dart';
+part of 'quest_list_route.dart';
 
 // **************************************************************************
 // GoRouterGenerator
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $questRoute,
+      $questListRoute,
     ];
 
-RouteBase get $questRoute => GoRouteData.$route(
+RouteBase get $questListRoute => GoRouteData.$route(
       path: '/quest',
-      factory: $QuestRouteExtension._fromState,
+      factory: $QuestListRouteExtension._fromState,
     );
 
-extension $QuestRouteExtension on QuestRoute {
-  static QuestRoute _fromState(GoRouterState state) => const QuestRoute();
+extension $QuestListRouteExtension on QuestListRoute {
+  static QuestListRoute _fromState(GoRouterState state) =>
+      const QuestListRoute();
 
   String get location => GoRouteData.$location(
         '/quest',

@@ -3,14 +3,14 @@ import 'package:feature_quest/feature_quest.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-part 'quest_route.g.dart';
+part 'quest_list_route.g.dart';
 
 /// TypedGoRoute for feature_quest
 ///
 /// クエストタブ内でのpush先はここのroutesにネストしていく
-const questRoute = TypedGoRoute<QuestRoute>(path: AppPagePath.quest);
+const questListRoute = TypedGoRoute<QuestListRoute>(path: AppPagePath.quest);
 
-@TypedGoRoute<QuestRoute>(path: AppPagePath.quest)
-final class QuestRoute extends QuestRouteData {
-  const QuestRoute();
+@TypedGoRoute<QuestListRoute>(path: AppPagePath.quest)
+final class QuestListRoute extends QuestListRouteData {
+  const QuestListRoute();
 }
