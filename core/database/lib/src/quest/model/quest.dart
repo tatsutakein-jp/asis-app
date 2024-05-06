@@ -4,6 +4,7 @@ import 'package:isar/isar.dart';
 part 'quest.g.dart';
 
 @collection
+@Name('Quest')
 final class Quest {
   Quest({
     required this.id,

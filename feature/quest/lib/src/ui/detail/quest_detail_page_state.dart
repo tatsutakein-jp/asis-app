@@ -7,6 +7,6 @@ part 'quest_detail_page_state.freezed.dart';
 @freezed
 class QuestDetailPageState with _$QuestDetailPageState {
   factory QuestDetailPageState({
-    required AsyncValue<Quest> quest,
+    required AsyncValue<Quest?> quest,
   }) = _QuestDetailPageState;
 }

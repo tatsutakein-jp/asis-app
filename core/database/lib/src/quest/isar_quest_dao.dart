@@ -29,6 +29,13 @@ final class IsarQuestDao implements QuestDao {
           .toList();
 
   @override
+  Stream<Quest?> streamById({required QuestId id}) => _isar.quests
+      .where()
+      .idEqualTo(id)
+      .watch(fireImmediately: true)
+      .map((event) => event.firstOrNull?.asModel());
+
+  @override
   Stream<List<Quest>> allStream() => _isar.quests
       .where()
       .watch(fireImmediately: true)
