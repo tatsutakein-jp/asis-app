@@ -7,13 +7,15 @@ part of 'quest_list_stream_use_case.dart';
 // **************************************************************************
 
 String _$questListStreamUseCaseHash() =>
-    r'0f11d4e5a3673efb43c18aa77cbbe0d2e2a954fc';
+    r'3e9d92c2bcb82f83ab2acfc774759825da199a67';
 
-/// See also [questListStreamUseCase].
-@ProviderFor(questListStreamUseCase)
-final questListStreamUseCaseProvider =
-    AutoDisposeProvider<QuestListStreamUseCase>.internal(
-  questListStreamUseCase,
+/// クエスト一覧を取得する ユースケース
+///
+/// Copied from [QuestListStreamUseCase].
+@ProviderFor(QuestListStreamUseCase)
+final questListStreamUseCaseProvider = AutoDisposeStreamNotifierProvider<
+    QuestListStreamUseCase, List<Quest>>.internal(
+  QuestListStreamUseCase.new,
   name: r'questListStreamUseCaseProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
@@ -22,7 +24,6 @@ final questListStreamUseCaseProvider =
   allTransitiveDependencies: null,
 );
 
-typedef QuestListStreamUseCaseRef
-    = AutoDisposeProviderRef<QuestListStreamUseCase>;
+typedef _$QuestListStreamUseCase = AutoDisposeStreamNotifier<List<Quest>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

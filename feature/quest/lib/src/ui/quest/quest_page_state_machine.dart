@@ -1,5 +1,4 @@
 import 'package:core_domain/quest_use_case.dart';
-import 'package:core_domain/use_case.dart';
 import 'package:feature_quest/src/ui/quest/quest_page_action.dart';
 import 'package:feature_quest/src/ui/quest/quest_page_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -11,7 +10,7 @@ class QuestPageStateMachine extends _$QuestPageStateMachine {
   @override
   QuestPageState build() {
     final questListStream = ref.watch(questListStreamUseCaseProvider);
-    return QuestPageState(quests: questListStream());
+    return QuestPageState(quests: questListStream);
   }
 
   void dispatch(QuestPageAction action) {

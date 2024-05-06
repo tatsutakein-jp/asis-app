@@ -27,13 +27,13 @@ final class QuestPage extends HookConsumerWidget {
 
 final class StatelessQuestPage extends StatelessWidget {
   const StatelessQuestPage({
-    required Stream<List<Quest>> quests,
+    required AsyncValue<List<Quest>> quests,
     required void Function(Quest) onAddQuestButtonTapped,
     super.key,
   })  : _quests = quests,
         _onAddQuestButtonTapped = onAddQuestButtonTapped;
 
-  final Stream<List<Quest>> _quests;
+  final AsyncValue<List<Quest>> _quests;
   final void Function(Quest quest) _onAddQuestButtonTapped;
 
   @override
@@ -42,25 +42,21 @@ final class StatelessQuestPage extends StatelessWidget {
       appBar: AsisAppBar(
         title: const Text('Quest'),
       ),
-      body: StreamBuilder(
-        stream: _quests,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            final quests = snapshot.requireData;
-            print(quests.length);
+      body: _quests.when(
+        data: (quests) {
+          print(quests.length);
 
-            return ListView.builder(
-              itemCount: quests.length,
-              itemBuilder: (context, index) => QuestListTile(
-                quest: quests[index],
-              ),
-            );
-          }
-
-          return const Center(
-            child: CircularProgressIndicator(),
+          return ListView.builder(
+            itemCount: quests.length,
+            itemBuilder: (context, index) => QuestListTile(
+              quest: quests[index],
+            ),
           );
         },
+        error: (error, stackTrace) => Center(child: Text(error.toString())),
+        loading: () => const Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
