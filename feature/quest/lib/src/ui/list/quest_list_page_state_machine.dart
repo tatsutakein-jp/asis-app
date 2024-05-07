@@ -9,19 +9,15 @@ part 'quest_list_page_state_machine.g.dart';
 class QuestListPageStateMachine extends _$QuestListPageStateMachine {
   @override
   QuestListPageState build() {
-    final questListStream = ref.watch(questListStreamUseCaseProvider);
-    return QuestListPageState(quests: questListStream);
+    return QuestListPageState(
+      quests: ref.watch(questListStreamUseCaseProvider),
+    );
   }
 
   void dispatch(QuestListPageAction action) {
     switch (action) {
       case AddQuestButtonTapped(:final quest):
-        Future(
-          () async {
-            final addQuest = ref.read(addQuestUseCaseProvider);
-            await addQuest.execute((quest: quest));
-          },
-        );
+        ref.read(addQuestUseCaseProvider(quest: quest));
     }
   }
 }

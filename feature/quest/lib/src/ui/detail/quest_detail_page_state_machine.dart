@@ -20,12 +20,7 @@ class QuestDetailPageStateMachine extends _$QuestDetailPageStateMachine {
   void dispatch(QuestDetailPageAction action) {
     switch (action) {
       case AddQuestButtonTapped(:final quest):
-        Future(
-          () async {
-            final addQuest = ref.read(addQuestUseCaseProvider);
-            await addQuest.execute((quest: quest));
-          },
-        );
+        ref.read(addQuestUseCaseProvider(quest: quest));
     }
   }
 }
