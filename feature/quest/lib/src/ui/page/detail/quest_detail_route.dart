@@ -1,5 +1,5 @@
 import 'package:core_model/quest.dart';
-import 'package:feature_quest/src/ui/detail/quest_detail_page.dart';
+import 'package:feature_quest/src/ui/page/detail/quest_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

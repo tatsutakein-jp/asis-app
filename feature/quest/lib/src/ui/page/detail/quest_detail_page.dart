@@ -1,7 +1,7 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/quest.dart';
 import 'package:core_ui/quest_list_title.dart';
-import 'package:feature_quest/src/ui/detail/quest_detail_page_state_machine.dart';
+import 'package:feature_quest/src/ui/page/detail/quest_detail_page_state_machine.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

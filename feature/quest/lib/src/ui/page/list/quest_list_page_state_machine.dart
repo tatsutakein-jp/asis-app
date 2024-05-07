@@ -1,6 +1,6 @@
 import 'package:core_domain/quest_use_case.dart';
-import 'package:feature_quest/src/ui/list/quest_list_page_action.dart';
-import 'package:feature_quest/src/ui/list/quest_list_page_state.dart';
+import 'package:feature_quest/src/ui/page/list/quest_list_page_action.dart';
+import 'package:feature_quest/src/ui/page/list/quest_list_page_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'quest_list_page_state_machine.g.dart';
