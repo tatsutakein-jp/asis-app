@@ -1,29 +1,13 @@
 import 'package:core_data/quest_repository.dart';
-import 'package:core_domain/src/use_case/use_case.dart';
 import 'package:core_model/quest.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'add_quest_use_case.g.dart';
 
-@riverpod
-AddQuestUseCase addQuestUseCase(AddQuestUseCaseRef ref) => AddQuestUseCase(
-      repository: ref.watch(questRepositoryProvider),
-    );
-
-typedef AddQuestUseCaseArgs = ({
-  Quest quest,
-});
-
 /// クエストを追加する ユースケース
-final class AddQuestUseCase
-    implements UseCase<AddQuestUseCaseArgs, Future<void>> {
-  AddQuestUseCase({
-    required QuestRepository repository,
-  }) : _repository = repository;
-
-  final QuestRepository _repository;
-
-  @override
-  Future<void> execute(AddQuestUseCaseArgs args) async =>
-      _repository.insert(quest: args.quest);
-}
+@riverpod
+Future<void> addQuestUseCase(
+  AddQuestUseCaseRef ref, {
+  required Quest quest,
+}) =>
+    ref.watch(questRepositoryProvider).insert(quest: quest);

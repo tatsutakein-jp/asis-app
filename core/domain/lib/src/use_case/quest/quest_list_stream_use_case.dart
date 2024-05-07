@@ -6,7 +6,5 @@ part 'quest_list_stream_use_case.g.dart';
 
 /// クエスト一覧を取得する ユースケース
 @riverpod
-final class QuestListStreamUseCase extends _$QuestListStreamUseCase {
-  @override
-  Stream<List<Quest>> build() => ref.watch(questRepositoryProvider).allStream();
-}
+Stream<List<Quest>> questListStreamUseCase(QuestListStreamUseCaseRef ref) =>
+    ref.watch(questRepositoryProvider).allStream();

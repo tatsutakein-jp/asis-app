@@ -7,7 +7,7 @@ part of 'quest_stream_by_id_use_case.dart';
 // **************************************************************************
 
 String _$questStreamByIdUseCaseHash() =>
-    r'b803a41d0174f550acb21fc700afc42979cc677d';
+    r'8af82616e8487be9beedab3c82685d7ba605e259';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -30,33 +30,24 @@ class _SystemHash {
   }
 }
 
-abstract class _$QuestStreamByIdUseCase
-    extends BuildlessAutoDisposeStreamNotifier<Quest?> {
-  late final String id;
-
-  Stream<Quest?> build({
-    required String id,
-  });
-}
-
 /// 該当のクエストを取得する ユースケース
 ///
-/// Copied from [QuestStreamByIdUseCase].
-@ProviderFor(QuestStreamByIdUseCase)
+/// Copied from [questStreamByIdUseCase].
+@ProviderFor(questStreamByIdUseCase)
 const questStreamByIdUseCaseProvider = QuestStreamByIdUseCaseFamily();
 
 /// 該当のクエストを取得する ユースケース
 ///
-/// Copied from [QuestStreamByIdUseCase].
+/// Copied from [questStreamByIdUseCase].
 class QuestStreamByIdUseCaseFamily extends Family<AsyncValue<Quest?>> {
   /// 該当のクエストを取得する ユースケース
   ///
-  /// Copied from [QuestStreamByIdUseCase].
+  /// Copied from [questStreamByIdUseCase].
   const QuestStreamByIdUseCaseFamily();
 
   /// 該当のクエストを取得する ユースケース
   ///
-  /// Copied from [QuestStreamByIdUseCase].
+  /// Copied from [questStreamByIdUseCase].
   QuestStreamByIdUseCaseProvider call({
     required String id,
   }) {
@@ -91,17 +82,18 @@ class QuestStreamByIdUseCaseFamily extends Family<AsyncValue<Quest?>> {
 
 /// 該当のクエストを取得する ユースケース
 ///
-/// Copied from [QuestStreamByIdUseCase].
-class QuestStreamByIdUseCaseProvider
-    extends AutoDisposeStreamNotifierProviderImpl<QuestStreamByIdUseCase,
-        Quest?> {
+/// Copied from [questStreamByIdUseCase].
+class QuestStreamByIdUseCaseProvider extends AutoDisposeStreamProvider<Quest?> {
   /// 該当のクエストを取得する ユースケース
   ///
-  /// Copied from [QuestStreamByIdUseCase].
+  /// Copied from [questStreamByIdUseCase].
   QuestStreamByIdUseCaseProvider({
     required String id,
   }) : this._internal(
-          () => QuestStreamByIdUseCase()..id = id,
+          (ref) => questStreamByIdUseCase(
+            ref as QuestStreamByIdUseCaseRef,
+            id: id,
+          ),
           from: questStreamByIdUseCaseProvider,
           name: r'questStreamByIdUseCaseProvider',
           debugGetCreateSourceHash:
@@ -127,20 +119,13 @@ class QuestStreamByIdUseCaseProvider
   final String id;
 
   @override
-  Stream<Quest?> runNotifierBuild(
-    covariant QuestStreamByIdUseCase notifier,
+  Override overrideWith(
+    Stream<Quest?> Function(QuestStreamByIdUseCaseRef provider) create,
   ) {
-    return notifier.build(
-      id: id,
-    );
-  }
-
-  @override
-  Override overrideWith(QuestStreamByIdUseCase Function() create) {
     return ProviderOverride(
       origin: this,
       override: QuestStreamByIdUseCaseProvider._internal(
-        () => create()..id = id,
+        (ref) => create(ref as QuestStreamByIdUseCaseRef),
         from: from,
         name: null,
         dependencies: null,
@@ -152,8 +137,7 @@ class QuestStreamByIdUseCaseProvider
   }
 
   @override
-  AutoDisposeStreamNotifierProviderElement<QuestStreamByIdUseCase, Quest?>
-      createElement() {
+  AutoDisposeStreamProviderElement<Quest?> createElement() {
     return _QuestStreamByIdUseCaseProviderElement(this);
   }
 
@@ -171,15 +155,14 @@ class QuestStreamByIdUseCaseProvider
   }
 }
 
-mixin QuestStreamByIdUseCaseRef
-    on AutoDisposeStreamNotifierProviderRef<Quest?> {
+mixin QuestStreamByIdUseCaseRef on AutoDisposeStreamProviderRef<Quest?> {
   /// The parameter `id` of this provider.
   String get id;
 }
 
 class _QuestStreamByIdUseCaseProviderElement
-    extends AutoDisposeStreamNotifierProviderElement<QuestStreamByIdUseCase,
-        Quest?> with QuestStreamByIdUseCaseRef {
+    extends AutoDisposeStreamProviderElement<Quest?>
+    with QuestStreamByIdUseCaseRef {
   _QuestStreamByIdUseCaseProviderElement(super.provider);
 
   @override
