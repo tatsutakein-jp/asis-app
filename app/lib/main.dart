@@ -1,6 +1,7 @@
 import 'package:asis_app/app_initializer.dart';
 import 'package:asis_app/router/app_router.dart';
 import 'package:core_database/isar.dart';
+import 'package:core_datastore/datastore.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_model/build_config.dart';
 import 'package:device_preview/device_preview.dart';
@@ -17,6 +18,7 @@ void main() async {
   final (
     :buildConfig,
     :isar,
+    :dataStore,
   ) = await AppInitializer.initialize();
 
   runApp(
@@ -25,6 +27,7 @@ void main() async {
         buildConfigProvider.overrideWithValue(buildConfig),
         isarProvider.overrideWithValue(isar),
         ...isarDatabaseProviders,
+        dataStoreProvider.overrideWithValue(dataStore),
       ],
       child: DevicePreview(
         enabled: devicePreviewEnabled,

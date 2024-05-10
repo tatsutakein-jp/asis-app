@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:asis_app/app_build_config.dart';
+import 'package:asis_app/datastore/preferences_data_store.dart';
 import 'package:asis_app/dev/firebase_options.dart' as dev;
 import 'package:core_common/log.dart';
 import 'package:core_database/initializer.dart';
@@ -11,10 +12,12 @@ import 'package:flutter/services.dart';
 import 'package:isar/isar.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 typedef InitializedValues = ({
   BuildConfig buildConfig,
   Isar isar,
+  PreferencesDataStore dataStore,
 });
 
 final class AppInitializer {
@@ -26,9 +29,11 @@ final class AppInitializer {
     final [
       buildConfig as BuildConfig,
       isar as Isar,
+      dataStore as PreferencesDataStore,
     ] = await Future.wait([
       _initializeBuildConfig(),
       _initializeDatabase(),
+      _initializeDataStore(),
     ]);
 
     await _initializeFirebase(flavor: buildConfig.flavor);
@@ -36,6 +41,7 @@ final class AppInitializer {
     return (
       buildConfig: buildConfig,
       isar: isar,
+      dataStore: dataStore,
     );
   }
 
@@ -64,6 +70,12 @@ final class AppInitializer {
       final dir = await getApplicationDocumentsDirectory();
       return Database.openIsarNonWeb(directory: dir.path);
     }
+  }
+
+  static Future<PreferencesDataStore> _initializeDataStore() async {
+    return PreferencesDataStore(
+      preferences: await SharedPreferences.getInstance(),
+    );
   }
 
   static Future<void> _initializeFirebase({
