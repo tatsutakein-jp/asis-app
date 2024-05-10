@@ -17,7 +17,6 @@ final class QuestAddPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(questAddPageStateMachineProvider);
     final notifier = ref.watch(questAddPageStateMachineProvider.notifier);
 
     return StatelessQuestAddPage(

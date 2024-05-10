@@ -20,7 +20,6 @@ final class QuestListPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(questListPageStateMachineProvider);
-    final notifier = ref.watch(questListPageStateMachineProvider.notifier);
 
     return StatelessQuestPage(
       quests: state.quests,
