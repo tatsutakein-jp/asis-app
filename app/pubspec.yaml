@@ -19,6 +19,9 @@ dependencies:
   core_designsystem:
     # noinspection DartPathPackageReference
     path: ../core/designsystem
+  core_domain:
+    # noinspection DartPathPackageReference
+    path: ../core/domain
   core_model:
     # noinspection DartPathPackageReference
     path: ../core/model
