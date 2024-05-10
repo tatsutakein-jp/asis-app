@@ -1,4 +1,4 @@
-import 'package:core_data/quest_repository.dart';
+import 'package:core_data/repository.dart';
 import 'package:core_model/quest.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

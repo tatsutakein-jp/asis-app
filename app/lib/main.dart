@@ -1,7 +1,10 @@
 import 'package:asis_app/app_initializer.dart';
+import 'package:asis_app/extension/theme.dart';
 import 'package:asis_app/router/app_router.dart';
 import 'package:core_database/isar.dart';
+import 'package:core_datastore/datastore.dart';
 import 'package:core_designsystem/theme.dart';
+import 'package:core_domain/user_settings_use_case.dart';
 import 'package:core_model/build_config.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_color/dynamic_color.dart';
@@ -17,6 +20,7 @@ void main() async {
   final (
     :buildConfig,
     :isar,
+    :dataStore,
   ) = await AppInitializer.initialize();
 
   runApp(
@@ -25,6 +29,7 @@ void main() async {
         buildConfigProvider.overrideWithValue(buildConfig),
         isarProvider.overrideWithValue(isar),
         ...isarDatabaseProviders,
+        dataStoreProvider.overrideWithValue(dataStore),
       ],
       child: DevicePreview(
         enabled: devicePreviewEnabled,
@@ -45,12 +50,19 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
+    final themeStream = ref.watch(themeStreamUseCaseProvider);
+    final themeMode = themeStream.maybeWhen(
+      data: (theme) => theme.mode,
+      orElse: () => ThemeMode.system,
+    );
+
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
         return MaterialApp.router(
           title: 'ASIS App',
           theme: lightTheme(lightDynamic),
           darkTheme: darkTheme(darkDynamic),
+          themeMode: themeMode,
           routerDelegate: router.routerDelegate,
           routeInformationParser: router.routeInformationParser,
           routeInformationProvider: router.routeInformationProvider,
