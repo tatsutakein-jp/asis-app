@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(
-  name: 'QuestPage',
-  type: QuestListPage,
+  name: 'QuestAddPage',
+  type: QuestAddPage,
   path: '[Pages]',
 )
-QuestListPage questPageUseCase(BuildContext context) {
-  return QuestListPage(
-    onTapQuestListItem: (quest) {},
-    onTapQuestAddButton: () {},
+QuestAddPage questAddPageUseCase(BuildContext context) {
+  return QuestAddPage(
+    onAddQuestCompleted: () {},
   );
 }

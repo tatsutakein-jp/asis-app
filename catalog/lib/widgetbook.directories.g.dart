@@ -14,9 +14,10 @@ import 'package:catalog/components/quest_list_tile.dart' as _i3;
 import 'package:catalog/components/scaffold.dart' as _i2;
 import 'package:catalog/pages/auth_page.dart' as _i5;
 import 'package:catalog/pages/home_page.dart' as _i6;
-import 'package:catalog/pages/quest_detail_page.dart' as _i7;
-import 'package:catalog/pages/quest_page.dart' as _i8;
-import 'package:catalog/pages/settings_page.dart' as _i9;
+import 'package:catalog/pages/quest_add_page.dart' as _i7;
+import 'package:catalog/pages/quest_detail_page.dart' as _i8;
+import 'package:catalog/pages/quest_page.dart' as _i9;
+import 'package:catalog/pages/settings_page.dart' as _i10;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -64,24 +65,31 @@ final directories = <_i1.WidgetbookNode>[
         ),
       ),
       _i1.WidgetbookLeafComponent(
+        name: 'QuestAddPage',
+        useCase: _i1.WidgetbookUseCase(
+          name: 'QuestAddPage',
+          builder: _i7.questAddPageUseCase,
+        ),
+      ),
+      _i1.WidgetbookLeafComponent(
         name: 'QuestDetailPage',
         useCase: _i1.WidgetbookUseCase(
           name: 'QuestDetailPage',
-          builder: _i7.questPageUseCase,
+          builder: _i8.questPageUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
         name: 'QuestListPage',
         useCase: _i1.WidgetbookUseCase(
           name: 'QuestPage',
-          builder: _i8.questPageUseCase,
+          builder: _i9.questPageUseCase,
         ),
       ),
       _i1.WidgetbookLeafComponent(
         name: 'SettingsPage',
         useCase: _i1.WidgetbookUseCase(
           name: 'SettingsPage',
-          builder: _i9.settingsPageUseCase,
+          builder: _i10.settingsPageUseCase,
         ),
       ),
     ],

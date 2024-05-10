@@ -14,6 +14,9 @@ part 'quest_list_route.g.dart';
 const questListRoute = TypedGoRoute<QuestListRoute>(
   path: AppPagePath.quest,
   routes: [
+    TypedGoRoute<QuestAddRoute>(
+      path: AppPagePath.questAdd,
+    ),
     TypedGoRoute<QuestDetailRoute>(
       path: AppPagePath.questDetail,
     ),
@@ -21,15 +24,17 @@ const questListRoute = TypedGoRoute<QuestListRoute>(
 );
 
 @TypedGoRoute<QuestListRoute>(path: AppPagePath.quest)
-final class QuestListRoute extends QuestListRouteData {
+final class QuestListRoute extends GoRouteData {
   const QuestListRoute();
 
   @override
-  void Function(BuildContext context, Quest quest) get onTapQuestListItem =>
-      (context, quest) {
-        print(quest);
-        QuestDetailRoute(questId: quest.id).go(context);
-      };
+  Widget build(BuildContext context, GoRouterState state) => QuestListPage(
+        onTapQuestListItem: (quest) {
+          print(quest);
+          QuestDetailRoute(questId: quest.id).go(context);
+        },
+        onTapQuestAddButton: () => QuestAddRoute().go(context),
+      );
 }
 
 /// クエスト詳細画面
@@ -42,4 +47,44 @@ final class QuestDetailRoute extends QuestDetailRouteData {
 
   @override
   final QuestId questId;
+}
+
+/// クエスト追加画面
+final class QuestAddRoute extends GoRouteData {
+  const QuestAddRoute();
+
+  static final $parentNavigatorKey = rootNavigatorKey;
+
+  @override
+  BottomSheetPage<void> buildPage(BuildContext context, GoRouterState state) =>
+      BottomSheetPage<void>(
+        builder: (context) => QuestAddPage(
+          onAddQuestCompleted: () => context.pop(),
+        ),
+      );
+}
+
+final class BottomSheetPage<T> extends Page<T> {
+  const BottomSheetPage({
+    required this.builder,
+    this.anchorPoint,
+    this.barrierLabel,
+    this.themes,
+  });
+
+  final WidgetBuilder builder;
+  final Offset? anchorPoint;
+  final String? barrierLabel;
+  final CapturedThemes? themes;
+
+  @override
+  Route<T> createRoute(BuildContext context) {
+    return ModalBottomSheetRoute(
+      settings: this,
+      builder: builder,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+    );
+  }
 }
