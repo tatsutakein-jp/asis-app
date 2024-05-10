@@ -6,17 +6,14 @@ part of 'data_store.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$dataStoreHash() => r'7f31983560d391a9279bb6bb2f8afdb59e3ef101';
+String _$dataStoreHash() => r'bd2f19d4a012a6ba4d3e1e8a4855f6e1e248493c';
 
 /// DataStore instance
 ///
 /// Copied from [dataStore].
 @ProviderFor(dataStore)
 final dataStoreProvider = Provider<DataStore>.internal(
-  (_) => throw UnsupportedError(
-    'The provider "dataStoreProvider" is expected to get overridden/scoped, '
-    'but was accessed without an override.',
-  ),
+  dataStore,
   name: r'dataStoreProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : _$dataStoreHash,

@@ -4,7 +4,9 @@ part 'data_store.g.dart';
 
 /// DataStore instance
 @Riverpod(keepAlive: true)
-external DataStore dataStore(DataStoreRef ref);
+DataStore dataStore(DataStoreRef ref) {
+  throw UnimplementedError('dataStore');
+}
 
 abstract interface class DataStore {
   String? getString(String key);
