@@ -1,4 +1,4 @@
-import 'package:feature_settings/src/ui/settings/settings_page.dart';
+import 'package:feature_settings/src/ui/page/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
