@@ -39,6 +39,7 @@ dependencies:
   feature_settings:
     # noinspection DartPathPackageReference
     path: ../feature/settings
+  firebase_auth: 4.19.5
   firebase_core: 2.31.0
   flutter:
     sdk: flutter
