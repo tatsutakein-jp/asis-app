@@ -9,6 +9,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 )
 SettingsPage settingsPageUseCase(BuildContext context) {
   return SettingsPage(
-    onTapOpenSourceLicense: (context) {},
+    onTapThemeSetting: () {},
+    onTapOpenSourceLicense: () {},
   );
 }

@@ -8,4 +8,5 @@ final class AppPagePath {
   static const root = '/';
   static const settings = '/settings';
   static const license = 'license';
+  static const theme = 'theme';
 }

@@ -1,18 +1,20 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/build_config.dart';
 import 'package:feature_settings/src/ui/page/settings/component/index.dart';
+import 'package:feature_settings/src/ui/page/settings/component/theme_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-typedef OnTapOpenSourceLicenseCallback = void Function(BuildContext context);
-
 final class SettingsPage extends ConsumerWidget {
   const SettingsPage({
-    required OnTapOpenSourceLicenseCallback onTapOpenSourceLicense,
+    required VoidCallback onTapThemeSetting,
+    required VoidCallback onTapOpenSourceLicense,
     super.key,
-  }) : _onTapOpenSourceLicense = onTapOpenSourceLicense;
+  })  : _onTapThemeSetting = onTapThemeSetting,
+        _onTapOpenSourceLicense = onTapOpenSourceLicense;
 
-  final OnTapOpenSourceLicenseCallback _onTapOpenSourceLicense;
+  final VoidCallback _onTapThemeSetting;
+  final VoidCallback _onTapOpenSourceLicense;
 
   static const buildConfigKey = Key('buildConfig');
 
@@ -27,12 +29,15 @@ final class SettingsPage extends ConsumerWidget {
       body: ListView(
         primary: true,
         children: [
+          ThemeListTile(
+            onTap: _onTapThemeSetting,
+          ),
           ListTile(
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16,
             ),
             title: const Text('オープンソースライセンス'),
-            onTap: () => _onTapOpenSourceLicense(context),
+            onTap: _onTapOpenSourceLicense,
           ),
           ListTile(
             contentPadding: EdgeInsets.symmetric(
