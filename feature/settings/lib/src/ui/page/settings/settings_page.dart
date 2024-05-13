@@ -1,6 +1,6 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/build_config.dart';
-import 'package:feature_settings/src/ui/settings/component/index.dart';
+import 'package:feature_settings/src/ui/page/settings/component/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
