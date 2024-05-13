@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_adaptive_scaffold: 0.1.10+1
+  gap: 3.0.1
 
 dev_dependencies:
   core_testing:
