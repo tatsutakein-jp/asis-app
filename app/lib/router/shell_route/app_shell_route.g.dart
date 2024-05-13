@@ -51,6 +51,12 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
               factory: $SettingsRouteExtension._fromState,
               routes: [
                 GoRouteData.$route(
+                  path: 'theme',
+                  parentNavigatorKey:
+                      ThemeSettingDialogRoute.$parentNavigatorKey,
+                  factory: $ThemeSettingDialogRouteExtension._fromState,
+                ),
+                GoRouteData.$route(
                   path: 'license',
                   parentNavigatorKey: LicenseRoute.$parentNavigatorKey,
                   factory: $LicenseRouteExtension._fromState,
@@ -143,6 +149,24 @@ extension $SettingsRouteExtension on SettingsRoute {
 
   String get location => GoRouteData.$location(
         '/settings',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $ThemeSettingDialogRouteExtension on ThemeSettingDialogRoute {
+  static ThemeSettingDialogRoute _fromState(GoRouterState state) =>
+      const ThemeSettingDialogRoute();
+
+  String get location => GoRouteData.$location(
+        '/settings/theme',
       );
 
   void go(BuildContext context) => context.go(location);
