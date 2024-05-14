@@ -7,9 +7,6 @@
   "targets": {
     "asis-quest-dev": {
       "hosting": {
-        "app": [
-          "asis-quest-app-dev"
-        ],
         "catalog": [
           "asis-quest-catalog-dev"
         ]
@@ -17,9 +14,6 @@
     },
     "asis-quest-stg": {
       "hosting": {
-        "app": [
-          "asis-quest-app-stg"
-        ],
         "catalog": [
           "asis-quest-catalog-stg"
         ]
@@ -27,9 +21,6 @@
     },
     "asis-quest": {
       "hosting": {
-        "app": [
-          "asis-quest-app"
-        ],
         "catalog": [
           "asis-quest-catalog"
         ]

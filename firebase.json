@@ -1,17 +1,6 @@
 {
   "hosting": [
     {
-      "target": "app",
-      "source": "./app",
-      "ignore": [
-        "firebase.json",
-        "**/.*"
-      ],
-      "frameworksBackend": {
-        "region": "asia-east1"
-      }
-    },
-    {
       "target": "catalog",
       "source": "./catalog",
       "ignore": [
