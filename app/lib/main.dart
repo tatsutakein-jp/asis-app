@@ -6,9 +6,7 @@ import 'package:core_datastore/datastore.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_domain/user_settings_use_case.dart';
 import 'package:core_model/build_config.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:dynamic_color/dynamic_color.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -31,18 +29,10 @@ void main() async {
         ...isarDatabaseProviders,
         dataStoreProvider.overrideWithValue(dataStore),
       ],
-      child: DevicePreview(
-        enabled: devicePreviewEnabled,
-        builder: (context) => const MyApp(),
-      ),
+      child: const MyApp(),
     ),
   );
 }
-
-final devicePreviewEnabled = !{
-  TargetPlatform.iOS,
-  TargetPlatform.android,
-}.contains(defaultTargetPlatform);
 
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
