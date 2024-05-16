@@ -185,7 +185,7 @@ packages:
     source: path
     version: "1.0.0"
   core_data:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/data"
       relative: true
@@ -227,14 +227,14 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_ui:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../core/ui"
       relative: true
@@ -1034,4 +1034,4 @@ packages:
     version: "1.7.0"
 sdks:
   dart: "3.4.0"
-  flutter: ">=3.22.0"
+  flutter: ">=3.19.0"
