@@ -1,4 +1,5 @@
 import 'package:core_authenticator/authenticator.dart';
+import 'package:core_model/auth.dart' as model;
 import 'package:firebase_auth/firebase_auth.dart';
 
 final class FirebaseAuthenticator implements Authenticator {
@@ -29,4 +30,24 @@ final class FirebaseAuthenticator implements Authenticator {
 
   @override
   Future<void> signOut() async => _firebaseAuth.signOut();
+
+  @override
+  model.AuthState get authState => _firebaseAuth.authState;
+}
+
+extension FirebaseAuthX on FirebaseAuth {
+  model.AuthState get authState {
+    return currentUser != null
+        ? model.AuthState.authenticated(user: currentUser!.asModel())
+        : model.AuthState.unauthenticated();
+  }
+}
+
+extension UserX on User {
+  model.User asModel() {
+    return model.User(
+      id: uid,
+      email: email!,
+    );
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:core_model/auth.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'authenticator.g.dart';
@@ -9,6 +10,8 @@ Authenticator authenticator(AuthenticatorRef ref) {
 }
 
 abstract interface class Authenticator {
+  AuthState get authState;
+
   Future<void> signInWithEmailAndPassword({
     required String email,
     required String password,
