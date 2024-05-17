@@ -1,17 +1,32 @@
+import 'package:core_authenticator/authenticator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-final class FirebaseAuthenticator {
-  FirebaseAuthenticator(this._firebaseAuth);
+final class FirebaseAuthenticator implements Authenticator {
+  const FirebaseAuthenticator({
+    required FirebaseAuth firebaseAuth,
+  }) : _firebaseAuth = firebaseAuth;
 
   final FirebaseAuth _firebaseAuth;
 
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
 
-  Future<void> signInAnonymously() async {
-    await _firebaseAuth.signInAnonymously();
-  }
+  Stream<User?> get idTokenChanges => _firebaseAuth.idTokenChanges();
 
-  Future<void> signOut() async {
-    await _firebaseAuth.signOut();
-  }
+  Stream<User?> get userChanges => _firebaseAuth.userChanges();
+
+  Future<UserCredential> signInAnonymously() async =>
+      _firebaseAuth.signInAnonymously();
+
+  @override
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async =>
+      _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+  @override
+  Future<void> signOut() async => _firebaseAuth.signOut();
 }

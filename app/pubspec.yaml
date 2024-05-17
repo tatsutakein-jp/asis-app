@@ -7,6 +7,9 @@ environment:
   sdk: 3.4.0
 
 dependencies:
+  core_authenticator:
+    # noinspection DartPathPackageReference
+    path: ../core/authenticator
   core_common:
     # noinspection DartPathPackageReference
     path: ../core/common

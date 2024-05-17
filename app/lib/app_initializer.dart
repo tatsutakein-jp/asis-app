@@ -1,11 +1,13 @@
 import 'dart:async';
 
 import 'package:asis_app/app_build_config.dart';
+import 'package:asis_app/auth/firebase_authenticator.dart';
 import 'package:asis_app/datastore/preferences_data_store.dart';
 import 'package:asis_app/dev/firebase_options.dart' as dev;
 import 'package:core_common/log.dart';
 import 'package:core_database/initializer.dart';
 import 'package:core_model/build_config.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +20,7 @@ typedef InitializedValues = ({
   BuildConfig buildConfig,
   Isar isar,
   PreferencesDataStore dataStore,
+  FirebaseAuthenticator firebaseAuthenticator,
 });
 
 final class AppInitializer {
@@ -26,22 +29,23 @@ final class AppInitializer {
   static Future<InitializedValues> initialize() async {
     _initializeLogger();
 
+    final buildConfig = await _initializeBuildConfig();
+
     final [
-      buildConfig as BuildConfig,
       isar as Isar,
       dataStore as PreferencesDataStore,
+      firebaseAuthenticator as FirebaseAuthenticator,
     ] = await Future.wait([
-      _initializeBuildConfig(),
       _initializeDatabase(),
       _initializeDataStore(),
+      _initializeFirebase(flavor: buildConfig.flavor),
     ]);
-
-    await _initializeFirebase(flavor: buildConfig.flavor);
 
     return (
       buildConfig: buildConfig,
       isar: isar,
       dataStore: dataStore,
+      firebaseAuthenticator: firebaseAuthenticator,
     );
   }
 
@@ -78,7 +82,7 @@ final class AppInitializer {
     );
   }
 
-  static Future<void> _initializeFirebase({
+  static Future<FirebaseAuthenticator> _initializeFirebase({
     required Flavor flavor,
   }) async {
     await Firebase.initializeApp(
@@ -89,5 +93,7 @@ final class AppInitializer {
         Flavor.prod => dev.AppFirebaseOptions.currentPlatform,
       },
     );
+
+    return FirebaseAuthenticator(firebaseAuth: FirebaseAuth.instance);
   }
 }
