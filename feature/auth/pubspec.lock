@@ -82,7 +82,7 @@ packages:
     source: hosted
     version: "3.1.1"
   core_authenticator:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../../core/authenticator"
       relative: true
@@ -212,7 +212,7 @@ packages:
     source: hosted
     version: "0.1.10+1"
   flutter_hooks:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_hooks
       sha256: cde36b12f7188c85286fba9b38cc5a902e7279f36dd676967106c041dc9dde70

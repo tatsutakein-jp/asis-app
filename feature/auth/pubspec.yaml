@@ -8,6 +8,8 @@ environment:
   flutter: 3.22.0
 
 dependencies:
+  core_authenticator:
+    path: ../../core/authenticator
   core_common:
     path: ../../core/common
   core_designsystem:
@@ -20,6 +22,7 @@ dependencies:
     path: ../../core/ui
   flutter:
     sdk: flutter
+  flutter_hooks: 0.20.5
   go_router: 14.1.1
   hooks_riverpod: 2.5.1
 
