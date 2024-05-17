@@ -10,3 +10,12 @@ final class AppPagePath {
   static const license = 'license';
   static const theme = 'theme';
 }
+
+/// 認証済みであることが前提のパス
+const authorizedPaths = [
+  AppPagePath.home,
+  AppPagePath.quest,
+  AppPagePath.questDetail,
+  AppPagePath.questAdd,
+  AppPagePath.settings,
+];
