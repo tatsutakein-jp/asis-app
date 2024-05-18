@@ -6,6 +6,8 @@ environment:
   sdk: 3.4.0
 
 dependencies:
+  core_authenticator:
+    path: ../authenticator
   core_common:
     path: ../common
   core_data:
