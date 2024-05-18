@@ -65,7 +65,7 @@ dependency_overrides:
   web: 0.4.2
 
 dev_dependencies:
-  build_runner: 2.4.9
+  build_runner: 2.4.10
   flutter_test:
     sdk: flutter
   go_router_builder: 2.6.2

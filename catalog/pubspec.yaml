@@ -36,7 +36,7 @@ dependencies:
   widgetbook_annotation: 3.1.0
 
 dev_dependencies:
-  build_runner: 2.4.9
+  build_runner: 2.4.10
   widgetbook_generator: 3.7.0
   yumemi_lints: 1.7.0
 
