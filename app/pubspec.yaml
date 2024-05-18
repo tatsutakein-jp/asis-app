@@ -61,6 +61,9 @@ dependencies:
 
 dependency_overrides:
   # workaround
+  # So, because feature_quest depends on both flutter_test from sdk and riverpod_generator 2.4.2, version solving failed.
+  meta: 1.15.0
+  # workaround
   # https://stackoverflow.com/questions/77947590/error-the-type-jsobject-cant-be-used-as-supertype-while-deploying-flutter
   web: 0.4.2
 
@@ -69,7 +72,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   go_router_builder: 2.7.0
-  riverpod_generator: 2.4.0
+  riverpod_generator: 2.4.2
   yumemi_lints: 1.7.0
 
 flutter:
