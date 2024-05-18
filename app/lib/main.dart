@@ -1,6 +1,7 @@
 import 'package:asis_app/app_initializer.dart';
 import 'package:asis_app/extension/theme.dart';
 import 'package:asis_app/router/app_router.dart';
+import 'package:core_authenticator/authenticator.dart';
 import 'package:core_database/isar.dart';
 import 'package:core_datastore/datastore.dart';
 import 'package:core_designsystem/theme.dart';
@@ -19,6 +20,7 @@ void main() async {
     :buildConfig,
     :isar,
     :dataStore,
+    :firebaseAuthenticator,
   ) = await AppInitializer.initialize();
 
   runApp(
@@ -28,6 +30,7 @@ void main() async {
         isarProvider.overrideWithValue(isar),
         ...isarDatabaseProviders,
         dataStoreProvider.overrideWithValue(dataStore),
+        authenticatorProvider.overrideWithValue(firebaseAuthenticator),
       ],
       child: const MyApp(),
     ),

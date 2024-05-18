@@ -145,6 +145,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
+  core_authenticator:
+    dependency: "direct main"
+    description:
+      path: "../authenticator"
+      relative: true
+    source: path
+    version: "1.0.0"
   core_common:
     dependency: "direct main"
     description:

@@ -69,10 +69,10 @@ packages:
     dependency: transitive
     description:
       name: build_daemon
-      sha256: "0343061a33da9c5810b2d6cee51945127d8f4c060b7fbdd9d54917f0a3feaaa1"
+      sha256: "79b2aef6ac2ed00046867ed354c88778c9c0f029df8a20fe10b5436826721ef9"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.1"
+    version: "4.0.2"
   build_resolvers:
     dependency: transitive
     description:
@@ -145,13 +145,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
-  core_authenticator:
-    dependency: "direct overridden"
-    description:
-      path: "../authenticator"
-      relative: true
-    source: path
-    version: "1.0.0"
   core_common:
     dependency: "direct main"
     description:
@@ -159,31 +152,10 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
-  core_database:
-    dependency: "direct main"
-    description:
-      path: "../database"
-      relative: true
-    source: path
-    version: "1.0.0"
-  core_datastore:
-    dependency: "direct main"
-    description:
-      path: "../datastore"
-      relative: true
-    source: path
-    version: "1.0.0"
   core_model:
     dependency: "direct main"
     description:
       path: "../model"
-      relative: true
-    source: path
-    version: "1.0.0"
-  core_network:
-    dependency: "direct main"
-    description:
-      path: "../network"
       relative: true
     source: path
     version: "1.0.0"
@@ -226,14 +198,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  ffi:
-    dependency: transitive
-    description:
-      name: ffi
-      sha256: "7bf0adc28a23d395f19f3f1eb21dd7cfd1dd9f8e1c50051c069122e6853bc878"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   file:
     dependency: transitive
     description:
@@ -306,14 +270,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  isar:
-    dependency: transitive
-    description:
-      name: isar
-      sha256: "6bb67f9844a643d1a925b0b8018e27bec1f79c6ae23e0671a8ec87fa2d48cf78"
-      url: "https://pub.isar-community.dev"
-    source: hosted
-    version: "4.0.3"
   js:
     dependency: transitive
     description:
@@ -326,10 +282,10 @@ packages:
     dependency: transitive
     description:
       name: json_annotation
-      sha256: b10a7b2ff83d83c777edba3c6a0f97045ddadd56c944e1a23a3fdf43a1bf4467
+      sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
       url: "https://pub.dev"
     source: hosted
-    version: "4.8.1"
+    version: "4.9.0"
   logging:
     dependency: transitive
     description:

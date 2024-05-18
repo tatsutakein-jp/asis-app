@@ -1,17 +1,14 @@
-name: core_domain
-description: This package provides use cases and domain models.
+name: core_authenticator
+description: This package provides functions for authentication.
+version: 1.0.0
 publish_to: "none"
 
 environment:
   sdk: 3.4.0
 
 dependencies:
-  core_authenticator:
-    path: ../authenticator
   core_common:
     path: ../common
-  core_data:
-    path: ../data
   core_model:
     path: ../model
   riverpod_annotation: 2.3.5

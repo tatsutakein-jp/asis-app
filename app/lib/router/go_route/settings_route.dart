@@ -1,5 +1,6 @@
 import 'package:asis_app/router/app_navigation_key.dart';
 import 'package:asis_app/router/app_page_path.dart';
+import 'package:asis_app/router/go_route/auth_route.dart';
 import 'package:asis_app/router/shell_route/app_shell_route.dart';
 import 'package:feature_settings/feature_settings.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ final class SettingsRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => SettingsPage(
         onTapThemeSetting: () => const ThemeSettingDialogRoute().go(context),
         onTapOpenSourceLicense: () => const LicenseRoute().go(context),
+        onSignOutSuccess: () => const AuthRoute().go(context),
       );
 }
 
