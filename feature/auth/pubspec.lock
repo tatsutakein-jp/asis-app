@@ -82,7 +82,7 @@ packages:
     source: hosted
     version: "3.1.1"
   core_authenticator:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: "../../core/authenticator"
       relative: true

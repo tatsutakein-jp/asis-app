@@ -1,5 +1,5 @@
-import 'package:core_authenticator/authenticator.dart';
 import 'package:core_designsystem/component.dart';
+import 'package:core_domain/auth_use_case.dart';
 import 'package:feature_auth/src/ui/page/auth/components/sign_in_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -17,8 +17,6 @@ final class AuthPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authenticator = ref.watch(authenticatorProvider);
-
     final emailController = useTextEditingController();
     final emailValue = useValueListenable(emailController);
 
@@ -34,11 +32,12 @@ final class AuthPage extends HookConsumerWidget {
         passwordController: passwordController,
         onTappedButton: () async {
           // TODO: エラーハンドリング
-          await authenticator.signInWithEmailAndPassword(
-            email: emailValue.text,
-            password: passwordValue.text,
+          await ref.read(
+            signInUseCaseProvider(
+              email: emailValue.text,
+              password: passwordValue.text,
+            ).future,
           );
-
           _onTappedButton(context);
         },
       ),

@@ -8,8 +8,6 @@ environment:
   flutter: 3.22.0
 
 dependencies:
-  core_authenticator:
-    path: ../../core/authenticator
   core_common:
     path: ../../core/common
   core_designsystem:

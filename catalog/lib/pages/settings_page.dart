@@ -11,5 +11,6 @@ SettingsPage settingsPageUseCase(BuildContext context) {
   return SettingsPage(
     onTapThemeSetting: () {},
     onTapOpenSourceLicense: () {},
+    onSignOutSuccess: () {},
   );
 }
