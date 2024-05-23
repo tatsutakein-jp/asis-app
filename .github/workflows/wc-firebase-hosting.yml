@@ -65,7 +65,7 @@ jobs:
           private-key: ${{ secrets.gh-app-private-key }}
 
       # https://github.com/marketplace/actions/deploy-to-firebase-hosting
-      - uses: FirebaseExtended/action-hosting-deploy@120e124148ab7016bec2374e5050f15051255ba2 # v0.7.1
+      - uses: FirebaseExtended/action-hosting-deploy@d482eb942f549f059116ec36b191860128553142 # v0.7.2
         with:
           repoToken: '${{ steps.app-token.outputs.token }}'
           firebaseServiceAccount: '${{ secrets.firebase-service-account }}'
