@@ -20,7 +20,7 @@ dependencies:
     path: ../../core/ui
   flutter:
     sdk: flutter
-  go_router: 14.1.2
+  go_router: 14.1.3
   hooks_riverpod: 2.5.1
 
 dev_dependencies:
