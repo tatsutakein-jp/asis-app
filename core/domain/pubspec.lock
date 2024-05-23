@@ -322,7 +322,7 @@ packages:
     dependency: transitive
     description:
       name: isar
-      sha256: "6bb67f9844a643d1a925b0b8018e27bec1f79c6ae23e0671a8ec87fa2d48cf78"
+      sha256: "52bc5314fcabcab89c847510fa39eae65e8c98d8b4f863d2cfae6193bbf7101d"
       url: "https://pub.isar-community.dev"
     source: hosted
     version: "4.0.3"
@@ -679,4 +679,4 @@ packages:
     source: hosted
     version: "1.7.0"
 sdks:
-  dart: "3.4.0"
+  dart: "3.4.1"
