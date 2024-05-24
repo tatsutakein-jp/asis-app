@@ -37,15 +37,21 @@ final class QuestListRoute extends GoRouteData {
 }
 
 /// クエスト詳細画面
-final class QuestDetailRoute extends QuestDetailRouteData {
+final class QuestDetailRoute extends GoRouteData {
   const QuestDetailRoute({
     required this.questId,
   });
 
+  final QuestId questId;
+
   static final $parentNavigatorKey = rootNavigatorKey;
 
   @override
-  final QuestId questId;
+  Widget build(BuildContext context, GoRouterState state) {
+    return QuestDetailPage(
+      questId: questId,
+    );
+  }
 }
 
 /// クエスト追加画面
