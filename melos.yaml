@@ -121,6 +121,26 @@ scripts:
     packageFilters:
       dirExists: test
 
+  # upgrade
+  upgrade:
+    description: dart pub upgrade & flutter pub upgrade.
+    concurrency: 1
+    steps:
+      - melos upgrade:dart
+      - melos upgrade:flutter
+  upgrade:dart:
+    exec: dart pub upgrade
+    concurrency: 1
+    description: dart pub upgrade.
+    packageFilters:
+      flutter: false
+  upgrade:flutter:
+    exec: flutter pub upgrade
+    concurrency: 1
+    description: flutter pub upgrade.
+    packageFilters:
+      flutter: true
+
   # ci
   ci:analyze:
     run: melos run ci:analyze:dart --no-select && melos run ci:analyze:flutter --no-select
