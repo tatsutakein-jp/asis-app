@@ -111,6 +111,10 @@ scripts:
     packageFilters:
       flutter: true
       dirExists: lib
+  upgrade:
+    exec: dart pub upgrade
+    concurrency: 1
+    description: dart pub upgrade.
 
   test:
     run: very_good test --recursive --coverage
