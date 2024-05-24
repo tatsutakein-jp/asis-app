@@ -12,4 +12,4 @@ dependencies:
 
 dev_dependencies:
   test: 1.25.5
-  yumemi_lints: 1.7.0
+  yumemi_lints: 2.1.0

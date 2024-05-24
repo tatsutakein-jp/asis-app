@@ -24,6 +24,6 @@ dev_dependencies:
     path: ../../core/testing
   flutter_test:
     sdk: flutter
-  yumemi_lints: 1.7.0
+  yumemi_lints: 2.1.0
 
 flutter:
