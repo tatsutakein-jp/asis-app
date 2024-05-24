@@ -111,10 +111,6 @@ scripts:
     packageFilters:
       flutter: true
       dirExists: lib
-  upgrade:
-    exec: dart pub upgrade
-    concurrency: 1
-    description: dart pub upgrade.
 
   test:
     run: very_good test --recursive --coverage
@@ -124,6 +120,26 @@ scripts:
     description: Run test.
     packageFilters:
       dirExists: test
+
+  # upgrade
+  upgrade:
+    description: dart pub upgrade & flutter pub upgrade.
+    concurrency: 1
+    steps:
+      - melos upgrade:dart
+      - melos upgrade:flutter
+  upgrade:dart:
+    exec: dart pub upgrade
+    concurrency: 1
+    description: dart pub upgrade.
+    packageFilters:
+      flutter: false
+  upgrade:flutter:
+    exec: flutter pub upgrade
+    concurrency: 1
+    description: flutter pub upgrade.
+    packageFilters:
+      flutter: true
 
   # ci
   ci:analyze:
