@@ -24,8 +24,8 @@ final class AuthPage extends HookConsumerWidget {
     final passwordValue = useValueListenable(passwordController);
 
     return AsisScaffold(
-      appBar: AsisAppBar(
-        title: const Text('サインイン'),
+      appBar: const AsisAppBar(
+        title: Text('サインイン'),
       ),
       body: SignInForm(
         emailController: emailController,

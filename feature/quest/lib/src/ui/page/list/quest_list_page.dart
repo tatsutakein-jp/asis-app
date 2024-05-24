@@ -46,13 +46,11 @@ final class StatelessQuestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AsisScaffold(
-      appBar: AsisAppBar(
-        title: const Text('Quest'),
+      appBar: const AsisAppBar(
+        title: Text('Quest'),
       ),
       body: _quests.when(
         data: (quests) {
-          print(quests.length);
-
           return ListView.builder(
             itemCount: quests.length,
             itemBuilder: (context, index) => QuestListTile(

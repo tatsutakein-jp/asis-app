@@ -15,17 +15,17 @@ void main() {
     },
   );
 
+  /// Returns the given [text] if it is not `null`.
+  String? makeNullableText(String? text) => text;
   group(
     'Let',
     () => {
       test('non-null', () {
-        final String? nullableText = 'text';
-        final text = nullableText?.let((it) => 'non-null $it');
+        final text = makeNullableText('text')?.let((it) => 'non-null $it');
         expect(text, 'non-null text');
       }),
       test('nullsy', () {
-        final String? nullableText = null;
-        final text = nullableText?.let((it) => 'non-null $it');
+        final text = makeNullableText(null)?.let((it) => 'non-null $it');
         expect(text, null);
       }),
     },

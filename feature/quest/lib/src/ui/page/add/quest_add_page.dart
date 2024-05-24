@@ -39,8 +39,8 @@ final class StatelessQuestAddPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AsisScaffold(
-      appBar: AsisAppBar(
-        title: const Text('Quest add'),
+      appBar: const AsisAppBar(
+        title: Text('Quest add'),
       ),
       body: const Text('Quest add'),
       floatingActionButton: FloatingActionButton.extended(
@@ -53,7 +53,6 @@ final class StatelessQuestAddPage extends StatelessWidget {
             description: 'Description $randomNumber',
             body: 'Body $randomNumber',
           );
-          print(addQuest);
           _onTapAddQuestButton(
             addQuest,
           );

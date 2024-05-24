@@ -6,5 +6,5 @@ abstract class HomeRouteData extends GoRouteData {
   const HomeRouteData();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => HomePage();
+  Widget build(BuildContext context, GoRouterState state) => const HomePage();
 }

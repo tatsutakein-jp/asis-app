@@ -1,4 +1,4 @@
 /// network package
-library core_network;
+library;
 
 // Ex: export 'src/[something]/index.dart';

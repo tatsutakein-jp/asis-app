@@ -8,5 +8,5 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   path: '[Pages]',
 )
 QuestDetailPage questPageUseCase(BuildContext context) {
-  return QuestDetailPage(questId: '1');
+  return const QuestDetailPage(questId: '1');
 }

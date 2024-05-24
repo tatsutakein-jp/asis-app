@@ -1,4 +1,4 @@
 /// ui package
-library core_ui;
+library;
 
 // Ex: export 'src/[something]/index.dart';

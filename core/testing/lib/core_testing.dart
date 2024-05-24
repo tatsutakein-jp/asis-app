@@ -1,4 +1,4 @@
 /// testing package
-library core_testing;
+library;
 
 // Ex: export 'src/[something]/index.dart';

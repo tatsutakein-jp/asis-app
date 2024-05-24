@@ -6,9 +6,9 @@ final class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AsisScaffold(
+    return const AsisScaffold(
       appBar: AsisAppBar(
-        title: const Text('Home'),
+        title: Text('Home'),
       ),
       body: Center(
         child: Column(

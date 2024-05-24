@@ -15,5 +15,5 @@ final class AuthRoute extends AuthRouteData {
 
   @override
   OnTappedButtonCallback get onTappedButton =>
-      (context) => HomeRoute().go(context);
+      (context) => const HomeRoute().go(context);
 }

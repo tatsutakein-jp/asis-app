@@ -37,8 +37,8 @@ final class StatelessQuestDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AsisScaffold(
-      appBar: AsisAppBar(
-        title: const Text('Quest detail'),
+      appBar: const AsisAppBar(
+        title: Text('Quest detail'),
       ),
       body: _quest.when(
         data: (quest) {

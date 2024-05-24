@@ -10,7 +10,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 )
 Widget asisScaffoldUseCase(BuildContext context) {
   return QuestListTile(
-    quest: Quest(
+    quest: const Quest(
       id: '1',
       name: 'Quest 1',
       description: 'Quest 1 description',

@@ -14,7 +14,7 @@ final class BuildConfigTileContent extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         children: [
           // アプリバージョン
-          Text('アプリバージョン'),
+          const Text('アプリバージョン'),
           if (kIsWeb)
             Text(_buildConfig.version)
           else
