@@ -39,7 +39,7 @@ command:
       test: 1.25.5
       riverpod_generator: 2.4.2
       riverpod_lint: 2.3.8
-      yumemi_lints: 1.7.0
+      yumemi_lints: 2.1.0
 
 scripts:
   # analyze

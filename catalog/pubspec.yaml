@@ -38,7 +38,7 @@ dependencies:
 dev_dependencies:
   build_runner: 2.4.10
   widgetbook_generator: 3.7.0
-  yumemi_lints: 1.7.0
+  yumemi_lints: 2.1.0
 
 flutter:
   uses-material-design: true

@@ -6,5 +6,6 @@ abstract class LicenseRouteData extends GoRouteData {
   const LicenseRouteData();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => LicensePage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LicensePage();
 }

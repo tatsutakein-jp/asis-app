@@ -8,5 +8,5 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   path: '[Pages]',
 )
 HomePage homePageUseCase(BuildContext context) {
-  return HomePage();
+  return const HomePage();
 }

@@ -16,7 +16,7 @@ final class ThemeListTile extends ConsumerWidget {
     final theme = ref.watch(themeStreamUseCaseProvider);
 
     return ListTile(
-      title: Text('テーマ設定'),
+      title: const Text('テーマ設定'),
       subtitle: Text(
         '設定中のテーマ: ${switch (theme.valueOrNull ?? Theme.system) {
           Theme.system => 'システム',

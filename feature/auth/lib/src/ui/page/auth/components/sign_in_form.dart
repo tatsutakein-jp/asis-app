@@ -30,22 +30,22 @@ final class SignInForm extends StatelessWidget {
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'welcome@asis.quest',
                       labelText: 'Email',
                     ),
-                    autofillHints: [AutofillHints.email],
+                    autofillHints: const [AutofillHints.email],
                   ),
                   TextFormField(
                     controller: _passwordController,
                     obscureText: true,
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Password',
                       labelText: 'Password',
                     ),
-                    autofillHints: [AutofillHints.password],
+                    autofillHints: const [AutofillHints.password],
                   ),
 
                   // サインイン

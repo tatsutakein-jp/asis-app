@@ -30,10 +30,9 @@ final class QuestListRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) => QuestListPage(
         onTapQuestListItem: (quest) {
-          print(quest);
           QuestDetailRoute(questId: quest.id).go(context);
         },
-        onTapQuestAddButton: () => QuestAddRoute().go(context),
+        onTapQuestAddButton: () => const QuestAddRoute().go(context),
       );
 }
 

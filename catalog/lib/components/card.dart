@@ -12,7 +12,7 @@ Widget asisScaffoldUseCase(BuildContext context) {
     onTap: () {
       // Navigator.pushNamed(context, AppPagePath.questDetail);
     },
-    child: ListTile(
+    child: const ListTile(
       title: Text('TappableCard'),
       subtitle: Text('TappableCard 1 description'),
       trailing: Icon(Icons.arrow_forward_ios),

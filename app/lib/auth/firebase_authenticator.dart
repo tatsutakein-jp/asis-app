@@ -39,7 +39,7 @@ extension FirebaseAuthX on FirebaseAuth {
   model.AuthState get authState {
     return currentUser != null
         ? model.AuthState.authenticated(user: currentUser!.asModel())
-        : model.AuthState.unauthenticated();
+        : const model.AuthState.unauthenticated();
   }
 }
 

@@ -27,8 +27,8 @@ final class SettingsPage extends ConsumerWidget {
     final buildConfig = ref.watch(buildConfigProvider);
 
     return AsisScaffold(
-      appBar: AsisAppBar(
-        title: const Text('Settings'),
+      appBar: const AsisAppBar(
+        title: Text('Settings'),
       ),
       body: ListView(
         primary: true,
@@ -37,14 +37,14 @@ final class SettingsPage extends ConsumerWidget {
             onTap: _onTapThemeSetting,
           ),
           ListTile(
-            contentPadding: EdgeInsets.symmetric(
+            contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
             title: const Text('オープンソースライセンス'),
             onTap: _onTapOpenSourceLicense,
           ),
           ListTile(
-            contentPadding: EdgeInsets.symmetric(
+            contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
             title: const Text('サインアウト'),
@@ -54,7 +54,7 @@ final class SettingsPage extends ConsumerWidget {
             },
           ),
           ListTile(
-            contentPadding: EdgeInsets.symmetric(
+            contentPadding: const EdgeInsets.symmetric(
               vertical: 24,
               horizontal: 16,
             ),
