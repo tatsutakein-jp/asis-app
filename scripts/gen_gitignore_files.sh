@@ -18,10 +18,6 @@ echo "🚀 Firebase Options: Start"
 # source file (dev)
 FIREBASE_OPTIONS_SOURCE_FILE="app/lib/flavor/dev/firebase_options.dart"
 
-# target files
-FIREBASE_OPTIONS_STG_FILE="app/lib/flavor/stg/firebase_options.dart"
-FIREBASE_OPTIONS_PROD_FILE="app/lib/flavor/prod/firebase_options.dart"
-
 # copy to stg
 FIREBASE_OPTIONS_TARGET_STG="app/lib/flavor/stg/firebase_options.dart"
 cp -i "$FIREBASE_OPTIONS_SOURCE_FILE" "$FIREBASE_OPTIONS_TARGET_STG"
