@@ -1,45 +1,33 @@
 import 'package:core_designsystem/component.dart';
-import 'package:core_domain/auth_use_case.dart';
 import 'package:feature_auth/src/ui/page/auth/components/sign_in_form.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-typedef OnTappedButtonCallback = void Function(BuildContext context);
-
-final class AuthPage extends HookConsumerWidget {
+/// 認証ページ
+final class AuthPage extends StatelessWidget {
   const AuthPage({
-    required OnTappedButtonCallback onTappedButton,
+    required VoidCallback onLoginSuccess,
     super.key,
-  }) : _onTappedButton = onTappedButton;
+  }) : _onLoginSuccess = onLoginSuccess;
 
-  final OnTappedButtonCallback _onTappedButton;
+  final VoidCallback _onLoginSuccess;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final emailController = useTextEditingController();
-    final emailValue = useValueListenable(emailController);
+  Widget build(BuildContext context) {
+    final focus = FocusScope.of(context);
 
-    final passwordController = useTextEditingController();
-    final passwordValue = useValueListenable(passwordController);
-
-    return AsisScaffold(
-      appBar: const AsisAppBar(
-        title: Text('サインイン'),
-      ),
-      body: SignInForm(
-        emailController: emailController,
-        passwordController: passwordController,
-        onTappedButton: () async {
-          // TODO: エラーハンドリング
-          await ref.read(
-            signInUseCaseProvider(
-              email: emailValue.text,
-              password: passwordValue.text,
-            ).future,
-          );
-          _onTappedButton(context);
-        },
+    return GestureDetector(
+      onTap: () {
+        if (!focus.hasPrimaryFocus) {
+          focus.unfocus();
+        }
+      },
+      child: AsisScaffold(
+        appBar: const AsisAppBar(
+          title: Text('サインイン'),
+        ),
+        body: SignInForm(
+          onLoginSuccess: _onLoginSuccess,
+        ),
       ),
     );
   }

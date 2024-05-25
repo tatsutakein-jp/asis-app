@@ -10,10 +10,11 @@ part 'auth_route.g.dart';
 const authRoute = TypedGoRoute<AuthRoute>(path: AppPagePath.auth);
 
 @TypedGoRoute<AuthRoute>(path: AppPagePath.auth)
-final class AuthRoute extends AuthRouteData {
+final class AuthRoute extends GoRouteData {
   const AuthRoute();
 
   @override
-  OnTappedButtonCallback get onTappedButton =>
-      (context) => const HomeRoute().go(context);
+  Widget build(BuildContext context, GoRouterState state) => AuthPage(
+        onLoginSuccess: () => const HomeRoute().go(context),
+      );
 }

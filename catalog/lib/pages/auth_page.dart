@@ -8,5 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   path: '[Pages]',
 )
 AuthPage authPageUseCase(BuildContext context) {
-  return AuthPage(onTappedButton: (context) {});
+  return AuthPage(
+    onLoginSuccess: () {},
+  );
 }

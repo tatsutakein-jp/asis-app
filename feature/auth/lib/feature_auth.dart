@@ -1,1 +1,1 @@
-export 'src/ui/page/auth/index.dart';
+export 'src/ui/page/auth/auth_page.dart';
