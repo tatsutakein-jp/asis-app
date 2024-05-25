@@ -48,6 +48,9 @@ jobs:
             ${{ runner.os }}-${{ env.cache-name }}-
             ${{ runner.os }}-
 
+      - name: Generate gitignore target files
+        run: make gen-gitignore-files
+
       - name: Path pub-cache
         run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
 
