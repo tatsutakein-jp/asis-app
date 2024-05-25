@@ -1,0 +1,56 @@
+name: firebase_options
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.53 <0.1.0"
+
+vars:
+  flavor:
+    type: enum
+    description: flavor
+    prompt: What is flavor?
+    values:
+      - stg
+      - prod
+
+  apiKey:
+    type: string
+    description: apiKey
+    prompt: What is api key?
+
+  webAppId:
+    type: string
+    description: webAppId
+    prompt: What is web app id?
+
+  androidAppId:
+    type: string
+    description: androidAppId
+    prompt: What is android app id?
+
+  iosAppId:
+    type: string
+    description: iosAppId
+    prompt: What is ios app id?
+
+  messagingSenderId:
+    type: string
+    description: messagingSenderId
+    prompt: What is messaging sender id?
+
+  projectId:
+    type: string
+    description: projectId
+    prompt: What is project id?
+
+  measurementId:
+    type: string
+    description: measurementId
+    prompt: What is measurement id?
+
+  iosBundleId:
+    type: string
+    description: iosBundleId
+    prompt: What is ios bundle id?
