@@ -1,3 +1,5 @@
 bricks:
   feature:
     path: tools/bricks/feature
+  firebase_options:
+    path: tools/bricks/firebase_options

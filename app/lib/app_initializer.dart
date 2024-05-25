@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:asis_app/app_build_config.dart';
 import 'package:asis_app/auth/firebase_authenticator.dart';
 import 'package:asis_app/datastore/preferences_data_store.dart';
-import 'package:asis_app/dev/firebase_options.dart' as dev;
+import 'package:asis_app/flavor/flavor.dart';
 import 'package:core_common/log.dart';
 import 'package:core_database/initializer.dart';
 import 'package:core_model/build_config.dart';
@@ -86,12 +86,7 @@ final class AppInitializer {
     required Flavor flavor,
   }) async {
     await Firebase.initializeApp(
-      /// MEMO(@chippy-ao): 後々、環境によってFirebaseOptionsを切り替える
-      options: switch (flavor) {
-        Flavor.dev => dev.AppFirebaseOptions.currentPlatform,
-        Flavor.stg => dev.AppFirebaseOptions.currentPlatform,
-        Flavor.prod => dev.AppFirebaseOptions.currentPlatform,
-      },
+      options: flavor.firebaseOptions,
     );
 
     return FirebaseAuthenticator(firebaseAuth: FirebaseAuth.instance);
