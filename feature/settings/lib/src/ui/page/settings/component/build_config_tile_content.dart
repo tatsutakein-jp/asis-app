@@ -1,36 +1,37 @@
 import 'package:core_model/build_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final class BuildConfigTileContent extends StatelessWidget {
-  const BuildConfigTileContent({
-    required BuildConfig buildConfig,
-    super.key,
-  }) : _buildConfig = buildConfig;
-
-  final BuildConfig _buildConfig;
+/// ビルド設定タイルのコンテンツ
+final class BuildConfigTileContent extends ConsumerWidget {
+  const BuildConfigTileContent({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
-        children: [
-          // アプリバージョン
-          const Text('アプリバージョン'),
-          if (kIsWeb)
-            Text(_buildConfig.version)
-          else
-            Text('${_buildConfig.version} (${_buildConfig.buildNumber})'),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final buildConfig = ref.watch(buildConfigProvider);
 
-          // パッケージ名
-          if (kDebugMode)
-            Text(_buildConfig.packageName)
-          else
-            const SizedBox.shrink(),
+    return Column(
+      children: [
+        // アプリバージョン
+        const Text('アプリバージョン'),
+        if (kIsWeb)
+          Text(buildConfig.version)
+        else
+          Text('${buildConfig.version} (${buildConfig.buildNumber})'),
 
-          // インストールストア
-          if (_buildConfig.installerStore != null)
-            Text('It was installed with ${_buildConfig.installerStore}.')
-          else
-            const SizedBox.shrink(),
-        ],
-      );
+        // パッケージ名
+        if (kDebugMode)
+          Text(buildConfig.packageName)
+        else
+          const SizedBox.shrink(),
+
+        // インストールストア
+        if (buildConfig.installerStore != null)
+          Text('It was installed with ${buildConfig.installerStore}.')
+        else
+          const SizedBox.shrink(),
+      ],
+    );
+  }
 }
