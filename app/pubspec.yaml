@@ -33,6 +33,9 @@ dependencies:
   feature_auth:
     # noinspection DartPathPackageReference
     path: ../feature/auth
+  feature_feed:
+    # noinspection DartPathPackageReference
+    path: ../feature/feed
   feature_home:
     # noinspection DartPathPackageReference
     path: ../feature/home

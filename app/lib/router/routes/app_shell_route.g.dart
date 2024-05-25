@@ -20,6 +20,16 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
               path: '/home',
               factory: $HomeRouteExtension._fromState,
             ),
+            GoRouteData.$route(
+              path: '/feeds',
+              factory: $FeedListRouteExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: ':feedId',
+                  factory: $FeedDetailRouteExtension._fromState,
+                ),
+              ],
+            ),
           ],
         ),
         StatefulShellBranchData.$branch(
@@ -78,6 +88,42 @@ extension $HomeRouteExtension on HomeRoute {
 
   String get location => GoRouteData.$location(
         '/home',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $FeedListRouteExtension on FeedListRoute {
+  static FeedListRoute _fromState(GoRouterState state) => const FeedListRoute();
+
+  String get location => GoRouteData.$location(
+        '/feeds',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $FeedDetailRouteExtension on FeedDetailRoute {
+  static FeedDetailRoute _fromState(GoRouterState state) => FeedDetailRoute(
+        feedId: state.pathParameters['feedId']!,
+      );
+
+  String get location => GoRouteData.$location(
+        '/feeds/${Uri.encodeComponent(feedId)}',
       );
 
   void go(BuildContext context) => context.go(location);
