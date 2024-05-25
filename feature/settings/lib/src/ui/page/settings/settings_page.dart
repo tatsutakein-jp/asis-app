@@ -1,11 +1,11 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_domain/auth_use_case.dart';
-import 'package:core_model/build_config.dart';
 import 'package:feature_settings/src/ui/page/settings/component/index.dart';
 import 'package:feature_settings/src/ui/page/settings/component/theme_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+/// 設定ページ
 final class SettingsPage extends ConsumerWidget {
   const SettingsPage({
     required VoidCallback onTapThemeSetting,
@@ -24,8 +24,6 @@ final class SettingsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final buildConfig = ref.watch(buildConfigProvider);
-
     return AsisScaffold(
       appBar: const AsisAppBar(
         title: Text('Settings'),
@@ -53,13 +51,12 @@ final class SettingsPage extends ConsumerWidget {
               _onSignOutSuccess();
             },
           ),
-          ListTile(
-            contentPadding: const EdgeInsets.symmetric(
+          const ListTile(
+            contentPadding: EdgeInsets.symmetric(
               vertical: 24,
               horizontal: 16,
             ),
             title: BuildConfigTileContent(
-              buildConfig: buildConfig,
               key: buildConfigKey,
             ),
           ),

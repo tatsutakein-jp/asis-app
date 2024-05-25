@@ -44,7 +44,7 @@ final class ThemeSettingDialogRoute extends GoRouteData {
   @override
   DialogPage<void> buildPage(BuildContext context, GoRouterState state) =>
       DialogPage<void>(
-        builder: (context) => ThemeSettingDialog(
+        builder: (context) => ThemeSettingDialogPage(
           onTapPositive: () => context.pop(),
           onTapNegative: () => context.pop(),
         ),
@@ -52,10 +52,14 @@ final class ThemeSettingDialogRoute extends GoRouteData {
 }
 
 /// ライセンスページへのルート
-final class LicenseRoute extends LicenseRouteData {
+final class LicenseRoute extends GoRouteData {
   const LicenseRoute();
 
   static final $parentNavigatorKey = rootNavigatorKey;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LicensePage();
 }
 
 class DialogPage<T> extends Page<T> {

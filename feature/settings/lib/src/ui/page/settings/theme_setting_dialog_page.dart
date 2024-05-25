@@ -4,8 +4,9 @@ import 'package:flutter/material.dart' hide Theme;
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final class ThemeSettingDialog extends HookConsumerWidget {
-  const ThemeSettingDialog({
+/// テーマ設定ダイアログのページ
+final class ThemeSettingDialogPage extends HookConsumerWidget {
+  const ThemeSettingDialogPage({
     required void Function() onTapPositive,
     required void Function() onTapNegative,
     super.key,
