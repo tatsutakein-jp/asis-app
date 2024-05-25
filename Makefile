@@ -11,6 +11,11 @@ bootstrap: # Bootstrap to start development.
 bs: # Short hand for the bootstrap command.
 	@$(MAKE) bootstrap
 
+# Generate
+.PHONY: gen-gitignore-files
+gen-gitignore-files: # Generate gitignore target files.
+	@./scripts/gen_gitignore_files.sh
+
 # Mason
 .PHONY: mason-get mason-make-feature
 mason-get: # Execute the `mason get` command.
