@@ -1,24 +1,29 @@
 import 'package:core_designsystem/component.dart';
+import 'package:core_domain/auth_use_case.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final class SignInForm extends StatelessWidget {
+final class SignInForm extends HookConsumerWidget {
   const SignInForm({
-    required TextEditingController emailController,
-    required TextEditingController passwordController,
-    required VoidCallback onTappedButton,
+    required VoidCallback onLoginSuccess,
     super.key,
-  })  : _onTappedButton = onTappedButton,
-        _emailController = emailController,
-        _passwordController = passwordController;
+  }) : _onLoginSuccess = onLoginSuccess;
 
-  final VoidCallback _onTappedButton;
-  final TextEditingController _emailController;
-  final TextEditingController _passwordController;
+  final VoidCallback _onLoginSuccess;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final emailController = useTextEditingController();
+    final emailValue = useValueListenable(emailController);
+
+    final passwordController = useTextEditingController();
+    final passwordValue = useValueListenable(passwordController);
+
+    final formKey = useMemoized(GlobalKey<FormState>.new);
+
     return Form(
-      key: GlobalKey<FormState>(),
+      key: formKey,
       child: Scrollbar(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
@@ -27,7 +32,7 @@ final class SignInForm extends StatelessWidget {
               children: [
                 ...[
                   TextFormField(
-                    controller: _emailController,
+                    controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: const InputDecoration(
@@ -35,9 +40,19 @@ final class SignInForm extends StatelessWidget {
                       labelText: 'Email',
                     ),
                     autofillHints: const [AutofillHints.email],
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Emailを入力してください';
+                      }
+                      if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                          .hasMatch(value)) {
+                        return '有効なメールアドレスを入力してください';
+                      }
+                      return null;
+                    },
                   ),
                   TextFormField(
-                    controller: _passwordController,
+                    controller: passwordController,
                     obscureText: true,
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.visiblePassword,
@@ -46,13 +61,35 @@ final class SignInForm extends StatelessWidget {
                       labelText: 'Password',
                     ),
                     autofillHints: const [AutofillHints.password],
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'パスワードを入力してください';
+                      }
+                      if (value.length < 6) {
+                        return 'パスワードは少なくとも6文字以上である必要があります';
+                      }
+                      return null;
+                    },
                   ),
 
                   // サインイン
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: _onTappedButton,
+                      onPressed: () async {
+                        if (!formKey.currentState!.validate()) {
+                          return;
+                        }
+
+                        // TODO: エラーハンドリング
+                        await ref.read(
+                          signInUseCaseProvider(
+                            email: emailValue.text,
+                            password: passwordValue.text,
+                          ).future,
+                        );
+                        _onLoginSuccess();
+                      },
                       child: const Text('サインイン'),
                     ),
                   ),
