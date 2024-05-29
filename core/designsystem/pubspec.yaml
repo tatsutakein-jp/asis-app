@@ -12,7 +12,7 @@ dependencies:
     path: ../common
   flutter:
     sdk: flutter
-  flutter_adaptive_scaffold: 0.1.10+2
+  flutter_adaptive_scaffold: 0.1.11
   gap: 3.0.1
 
 dev_dependencies:
