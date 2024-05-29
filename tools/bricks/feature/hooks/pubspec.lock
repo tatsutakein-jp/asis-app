@@ -101,10 +101,10 @@ packages:
     dependency: "direct main"
     description:
       name: mason
-      sha256: cec3dba68efbc6d0dbae0fded712d8837e4e521479f879839a8e7416291168ea
+      sha256: "212557f2273892aea96f377d45eb8f39930e8bd205c59fa24f5ddabe3b0c1dc5"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0-dev.53"
+    version: "0.1.0-dev.56"
   mason_logger:
     dependency: transitive
     description:
