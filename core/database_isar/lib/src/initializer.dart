@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:core_database_isar/src/quest/model/quest.dart';
 import 'package:isar/isar.dart';
 
-final class Database {
-  Database._();
+final class IsarDatabase {
+  IsarDatabase._();
 
   static final _schemas = [
     QuestSchema,

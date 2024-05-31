@@ -2,9 +2,9 @@ part of 'package:app/initializer/app_initializer.dart';
 
 Future<Isar> _initializeDatabase() async {
   if (kIsWeb) {
-    return Database.openIsarWeb();
+    return IsarDatabase.openIsarWeb();
   } else {
     final dir = await getApplicationDocumentsDirectory();
-    return Database.openIsarNonWeb(directory: dir.path);
+    return IsarDatabase.openIsarNonWeb(directory: dir.path);
   }
 }
