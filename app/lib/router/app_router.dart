@@ -10,6 +10,7 @@ import 'package:feature_feed/feature_feed.dart';
 import 'package:feature_home/feature_home.dart';
 import 'package:feature_quest/feature_quest.dart';
 import 'package:feature_settings/feature_settings.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -50,6 +51,7 @@ GoRouter router(RouterRef ref) {
       // ナビゲーター
       $appShellRouteData,
     ],
+    debugLogDiagnostics: kDebugMode,
     redirect: (context, state) async {
       // 認証が必要なページではない
       if (!authorizedPaths.any(
