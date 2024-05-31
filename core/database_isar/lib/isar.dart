@@ -1,1 +1,1 @@
-export 'src/di/isar.dart';
+export 'src/isar.dart' show isarDatabaseProviders;

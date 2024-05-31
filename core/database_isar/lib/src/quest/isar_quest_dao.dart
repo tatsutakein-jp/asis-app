@@ -1,5 +1,5 @@
 import 'package:core_database/quest_dao.dart';
-import 'package:core_database_isar/isar.dart';
+import 'package:core_database_isar/src/isar.dart';
 import 'package:core_database_isar/src/quest/model/quest.dart' as db;
 import 'package:core_model/quest.dart';
 import 'package:isar/isar.dart';

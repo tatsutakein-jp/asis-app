@@ -21,8 +21,7 @@ void main() async {
     ProviderScope(
       overrides: [
         buildConfigProvider.overrideWithValue(buildConfig),
-        isarProvider.overrideWithValue(isar),
-        ...isarDatabaseProviders,
+        ...isarDatabaseProviders(isar: isar),
         dataStoreProvider.overrideWithValue(dataStore),
         authenticatorProvider.overrideWithValue(firebaseAuthenticator),
       ],
