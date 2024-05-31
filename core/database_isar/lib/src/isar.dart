@@ -1,4 +1,4 @@
-import 'package:core_database/src/quest/isar_quest_dao.dart';
+import 'package:core_database_isar/src/quest/isar_quest_dao.dart';
 import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -11,6 +11,10 @@ Isar isar(IsarRef ref) {
 }
 
 /// Isar Database
-final isarDatabaseProviders = <Override>[
-  isarQuestDaoProvider,
-];
+List<Override> isarDatabaseProviders({
+  required Isar isar,
+}) =>
+    <Override>[
+      isarProvider.overrideWithValue(isar),
+      isarQuestDaoProvider,
+    ];

@@ -1,14 +1,12 @@
 import 'dart:async';
 
-import 'package:core_database/src/count/count.dart';
-import 'package:core_database/src/quest/model/quest.dart';
+import 'package:core_database_isar/src/quest/model/quest.dart';
 import 'package:isar/isar.dart';
 
-final class Database {
-  Database._();
+final class IsarDatabase {
+  IsarDatabase._();
 
   static final _schemas = [
-    CountSchema,
     QuestSchema,
   ];
 
