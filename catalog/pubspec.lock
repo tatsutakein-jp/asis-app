@@ -340,10 +340,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_adaptive_scaffold
-      sha256: "9a1d5e9f728815e27b7b612883db19107ba8a35a46a97c757ea00896cb027451"
+      sha256: "794791e6fc0cc23e375d07ea987e76cf7f0eb7cd753532e45dc35b7e90575e2d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.10+2"
+    version: "0.1.11"
   flutter_hooks:
     dependency: transitive
     description:
@@ -406,10 +406,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: "6ad5662b014c06c20fa46ab78715c96b2222a7fe4f87bf77e0289592c2539e86"
+      sha256: abec47eb8c8c36ebf41d0a4c64dbbe7f956e39a012b3aafc530e951bdc12fe3f
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.3"
+    version: "14.1.4"
   graphs:
     dependency: transitive
     description:
@@ -825,4 +825,4 @@ packages:
     version: "2.1.0"
 sdks:
   dart: "3.4.1"
-  flutter: ">=3.18.0-18.0.pre.54"
+  flutter: ">=3.19.0"
