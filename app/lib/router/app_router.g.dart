@@ -10,7 +10,6 @@ List<RouteBase> get $appRoutes => [
       $appShellRouteData,
       $authRoute,
       $homeRoute,
-      $questListRoute,
       $settingsRoute,
     ];
 
@@ -277,11 +276,6 @@ RouteBase get $homeRoute => GoRouteData.$route(
       factory: $HomeRouteExtension._fromState,
     );
 
-RouteBase get $questListRoute => GoRouteData.$route(
-      path: '/quest',
-      factory: $QuestListRouteExtension._fromState,
-    );
-
 RouteBase get $settingsRoute => GoRouteData.$route(
       path: '/settings',
       factory: $SettingsRouteExtension._fromState,
@@ -291,7 +285,7 @@ RouteBase get $settingsRoute => GoRouteData.$route(
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'ef1718f3b36a4da879a95a9819126344fc679b96';
+String _$routerHash() => r'edcf5b9bed1d5eccdbf25a478be2017dd8b0375e';
 
 /// See also [router].
 @ProviderFor(router)

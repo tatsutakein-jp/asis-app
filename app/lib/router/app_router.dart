@@ -25,7 +25,7 @@ part 'package:app/router/routes/feed_route.dart';
 
 part 'package:app/router/routes/home_route.dart';
 
-part 'package:app/router/routes/quest_list_route.dart';
+part 'package:app/router/routes/quest_route.dart';
 
 part 'package:app/router/routes/settings_route.dart';
 

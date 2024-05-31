@@ -3,7 +3,18 @@ part of 'package:app/router/app_router.dart';
 /// TypedStatefulShellBranch for feature_quest
 const questBranch = TypedStatefulShellBranch<QuestBranch>(
   routes: [
-    questListRoute,
+    // クエストタブ内でのpush先はここのroutesにネストしていく
+    TypedGoRoute<QuestListRoute>(
+      path: AppPagePath.quest,
+      routes: [
+        TypedGoRoute<QuestAddRoute>(
+          path: AppPagePath.questAdd,
+        ),
+        TypedGoRoute<QuestDetailRoute>(
+          path: AppPagePath.questDetail,
+        ),
+      ],
+    ),
   ],
 );
 
