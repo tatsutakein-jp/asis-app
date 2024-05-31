@@ -1,4 +1,2 @@
-/// testing package
-library;
-
-// Ex: export 'src/[something]/index.dart';
+export 'package:mocktail/mocktail.dart';
+export 'package:riverpod/riverpod.dart';
