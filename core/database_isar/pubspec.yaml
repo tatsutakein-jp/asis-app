@@ -1,5 +1,5 @@
-name: core_database
-description: This package provides local database operations.
+name: core_database_isar
+description: This package provides local database operations using Isar.
 version: 1.0.0
 publish_to: "none"
 
@@ -9,8 +9,13 @@ environment:
 dependencies:
   core_common:
     path: ../common
+  core_database:
+    path: ../database
   core_model:
     path: ../model
+  isar:
+    hosted: https://pub.isar-community.dev/
+    version: 4.0.3
   riverpod_annotation: 2.3.5
 
 dev_dependencies:

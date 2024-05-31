@@ -4,7 +4,7 @@ import 'package:app/auth/firebase_authenticator.dart';
 import 'package:app/datastore/preferences_data_store.dart';
 import 'package:app/flavor/flavor.dart';
 import 'package:core_common/log.dart';
-import 'package:core_database/initializer.dart';
+import 'package:core_database_isar/initializer.dart';
 import 'package:core_model/build_config.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

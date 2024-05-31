@@ -1,4 +1,4 @@
-import 'package:core_database/src/quest/isar_quest_dao.dart';
+import 'package:core_database_isar/src/quest/isar_quest_dao.dart';
 import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

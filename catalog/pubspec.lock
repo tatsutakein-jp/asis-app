@@ -307,14 +307,6 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
-  ffi:
-    dependency: transitive
-    description:
-      name: ffi
-      sha256: "493f37e7df1804778ff3a53bd691d8692ddf69702cf4c1c1096a2e41b4779e21"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.2"
   file:
     dependency: transitive
     description:
@@ -458,14 +450,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  isar:
-    dependency: transitive
-    description:
-      name: isar
-      sha256: "52bc5314fcabcab89c847510fa39eae65e8c98d8b4f863d2cfae6193bbf7101d"
-      url: "https://pub.isar-community.dev"
-    source: hosted
-    version: "4.0.3"
   js:
     dependency: transitive
     description:
