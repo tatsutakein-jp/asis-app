@@ -26,9 +26,7 @@ final class AsisApp extends ConsumerWidget {
           theme: lightTheme(lightDynamic),
           darkTheme: darkTheme(darkDynamic),
           themeMode: themeMode,
-          routerDelegate: router.routerDelegate,
-          routeInformationParser: router.routeInformationParser,
-          routeInformationProvider: router.routeInformationProvider,
+          routerConfig: router,
         );
       },
     );
