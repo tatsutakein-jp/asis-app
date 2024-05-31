@@ -2,7 +2,7 @@
 final class AppPagePath {
   static const auth = '/auth';
   static const home = '/home';
-  static const quest = '/quest';
+  static const quests = '/quests';
   static const questDetail = ':questId';
   static const questAdd = 'add';
   static const root = '/';
@@ -15,7 +15,7 @@ final class AppPagePath {
 /// 認証済みであることが前提のパス
 const authorizedPaths = [
   AppPagePath.home,
-  AppPagePath.quest,
+  AppPagePath.quests,
   AppPagePath.questDetail,
   AppPagePath.questAdd,
   AppPagePath.settings,

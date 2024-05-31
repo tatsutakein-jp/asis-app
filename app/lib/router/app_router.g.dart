@@ -41,7 +41,7 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
           navigatorKey: QuestBranch.$navigatorKey,
           routes: [
             GoRouteData.$route(
-              path: '/quest',
+              path: '/quests',
               factory: $QuestListRouteExtension._fromState,
               routes: [
                 GoRouteData.$route(
@@ -146,7 +146,7 @@ extension $QuestListRouteExtension on QuestListRoute {
       const QuestListRoute();
 
   String get location => GoRouteData.$location(
-        '/quest',
+        '/quests',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -163,7 +163,7 @@ extension $QuestAddRouteExtension on QuestAddRoute {
   static QuestAddRoute _fromState(GoRouterState state) => const QuestAddRoute();
 
   String get location => GoRouteData.$location(
-        '/quest/add',
+        '/quests/add',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -182,7 +182,7 @@ extension $QuestDetailRouteExtension on QuestDetailRoute {
       );
 
   String get location => GoRouteData.$location(
-        '/quest/${Uri.encodeComponent(questId)}',
+        '/quests/${Uri.encodeComponent(questId)}',
       );
 
   void go(BuildContext context) => context.go(location);

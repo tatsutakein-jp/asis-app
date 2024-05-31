@@ -5,7 +5,7 @@ const questBranch = TypedStatefulShellBranch<QuestBranch>(
   routes: [
     // クエストタブ内でのpush先はここのroutesにネストしていく
     TypedGoRoute<QuestListRoute>(
-      path: AppPagePath.quest,
+      path: AppPagePath.quests,
       routes: [
         TypedGoRoute<QuestAddRoute>(
           path: AppPagePath.questAdd,
