@@ -1,5 +1,5 @@
-import 'package:asis_app/app.dart';
-import 'package:asis_app/app_initializer.dart';
+import 'package:app/app.dart';
+import 'package:app/app_initializer.dart';
 import 'package:core_authenticator/authenticator.dart';
 import 'package:core_database/isar.dart';
 import 'package:core_datastore/datastore.dart';

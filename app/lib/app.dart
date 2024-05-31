@@ -1,5 +1,5 @@
-import 'package:asis_app/extension/theme.dart';
-import 'package:asis_app/router/app_router.dart';
+import 'package:app/extension/theme.dart';
+import 'package:app/router/app_router.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_domain/user_settings_use_case.dart';
 import 'package:dynamic_color/dynamic_color.dart';

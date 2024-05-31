@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:asis_app/app_build_config.dart';
-import 'package:asis_app/auth/firebase_authenticator.dart';
-import 'package:asis_app/datastore/preferences_data_store.dart';
-import 'package:asis_app/flavor/flavor.dart';
+import 'package:app/app_build_config.dart';
+import 'package:app/auth/firebase_authenticator.dart';
+import 'package:app/datastore/preferences_data_store.dart';
+import 'package:app/flavor/flavor.dart';
 import 'package:core_common/log.dart';
 import 'package:core_database/initializer.dart';
 import 'package:core_model/build_config.dart';

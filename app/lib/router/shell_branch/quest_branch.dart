@@ -1,4 +1,4 @@
-part of 'package:asis_app/router/app_router.dart';
+part of 'package:app/router/app_router.dart';
 
 /// TypedStatefulShellBranch for feature_quest
 const questBranch = TypedStatefulShellBranch<QuestBranch>(
