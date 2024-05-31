@@ -1,5 +1,5 @@
 import 'package:app/app.dart';
-import 'package:app/app_initializer.dart';
+import 'package:app/initializer/app_initializer.dart';
 import 'package:core_authenticator/authenticator.dart';
 import 'package:core_database/isar.dart';
 import 'package:core_datastore/datastore.dart';
@@ -15,7 +15,7 @@ void main() async {
     :isar,
     :dataStore,
     :firebaseAuthenticator,
-  ) = await AppInitializer.initialize();
+  ) = await initializeApp();
 
   runApp(
     ProviderScope(
