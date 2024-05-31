@@ -45,12 +45,7 @@ GoRouter router(RouterRef ref) {
   return GoRouter(
     initialLocation: AppPagePath.home,
     navigatorKey: rootNavigatorKey,
-    routes: [
-      // 認証はナビゲーター内ではないので並列で設定する
-      $authRoute,
-      // ナビゲーター
-      $appShellRouteData,
-    ],
+    routes: $appRoutes,
     debugLogDiagnostics: kDebugMode,
     redirect: (context, state) async {
       // 認証が必要なページではない

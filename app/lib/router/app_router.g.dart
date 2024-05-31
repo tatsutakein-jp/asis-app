@@ -273,7 +273,7 @@ extension $AuthRouteExtension on AuthRoute {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'edcf5b9bed1d5eccdbf25a478be2017dd8b0375e';
+String _$routerHash() => r'7142c25a7c161aab4ee408b7bd970c663f0f6550';
 
 /// See also [router].
 @ProviderFor(router)
