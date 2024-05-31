@@ -1,21 +1,6 @@
-part of 'package:asis_app/router/app_router.dart';
+part of 'package:app/router/app_router.dart';
 
-/// TypedGoRoute for feature_quest
-///
-/// クエストタブ内でのpush先はここのroutesにネストしていく
-const questListRoute = TypedGoRoute<QuestListRoute>(
-  path: AppPagePath.quest,
-  routes: [
-    TypedGoRoute<QuestAddRoute>(
-      path: AppPagePath.questAdd,
-    ),
-    TypedGoRoute<QuestDetailRoute>(
-      path: AppPagePath.questDetail,
-    ),
-  ],
-);
-
-@TypedGoRoute<QuestListRoute>(path: AppPagePath.quest)
+/// クエスト一覧画面
 final class QuestListRoute extends GoRouteData {
   const QuestListRoute();
 

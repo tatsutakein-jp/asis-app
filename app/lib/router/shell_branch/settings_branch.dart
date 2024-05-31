@@ -1,9 +1,20 @@
-part of 'package:asis_app/router/app_router.dart';
+part of 'package:app/router/app_router.dart';
 
 /// TypedStatefulShellBranch for feature_settings
 const settingsBranch = TypedStatefulShellBranch<SettingsBranch>(
   routes: [
-    settingsRoute,
+    // セッティングタブ内でのpush先はここのroutesにネストしていく
+    TypedGoRoute<SettingsRoute>(
+      path: AppPagePath.settings,
+      routes: [
+        TypedGoRoute<ThemeSettingDialogRoute>(
+          path: AppPagePath.theme,
+        ),
+        TypedGoRoute<LicenseRoute>(
+          path: AppPagePath.license,
+        ),
+      ],
+    ),
   ],
 );
 

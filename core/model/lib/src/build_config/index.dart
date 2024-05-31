@@ -1,3 +1,3 @@
 export 'build_config.dart'
-    show BuildConfig, FakeBuildConfig, buildConfigProvider;
+    show BuildConfig, buildConfigProvider, fakeBuildConfig;
 export 'flavor.dart';

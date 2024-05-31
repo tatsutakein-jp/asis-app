@@ -7,7 +7,7 @@ void main() {
   runApp(
     ProviderScope(
       overrides: [
-        buildConfigProvider.overrideWithValue(FakeBuildConfig()),
+        buildConfigProvider.overrideWithValue(fakeBuildConfig),
       ],
       child: const WidgetbookApp(),
     ),

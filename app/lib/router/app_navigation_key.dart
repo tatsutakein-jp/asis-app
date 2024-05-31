@@ -1,4 +1,4 @@
-import 'package:asis_app/router/app_navigation_label.dart';
+import 'package:app/router/app_navigation_label.dart';
 import 'package:flutter/material.dart';
 
 /// ホーム画面のナビゲーターのキー

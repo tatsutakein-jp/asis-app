@@ -1,21 +1,6 @@
-part of 'package:asis_app/router/app_router.dart';
+part of 'package:app/router/app_router.dart';
 
-/// TypedGoRoute for feature_settings
-///
-/// セッティングタブ内でのpush先はここのroutesにネストしていく
-const settingsRoute = TypedGoRoute<SettingsRoute>(
-  path: AppPagePath.settings,
-  routes: [
-    TypedGoRoute<ThemeSettingDialogRoute>(
-      path: AppPagePath.theme,
-    ),
-    TypedGoRoute<LicenseRoute>(
-      path: AppPagePath.license,
-    ),
-  ],
-);
-
-@TypedGoRoute<SettingsRoute>(path: AppPagePath.settings)
+/// 設定ページへのルート
 final class SettingsRoute extends GoRouteData {
   const SettingsRoute();
 

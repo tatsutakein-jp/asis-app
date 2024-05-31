@@ -9,9 +9,6 @@ part of 'app_router.dart';
 List<RouteBase> get $appRoutes => [
       $appShellRouteData,
       $authRoute,
-      $homeRoute,
-      $questListRoute,
-      $settingsRoute,
     ];
 
 RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
@@ -44,7 +41,7 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
           navigatorKey: QuestBranch.$navigatorKey,
           routes: [
             GoRouteData.$route(
-              path: '/quest',
+              path: '/quests',
               factory: $QuestListRouteExtension._fromState,
               routes: [
                 GoRouteData.$route(
@@ -149,7 +146,7 @@ extension $QuestListRouteExtension on QuestListRoute {
       const QuestListRoute();
 
   String get location => GoRouteData.$location(
-        '/quest',
+        '/quests',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -166,7 +163,7 @@ extension $QuestAddRouteExtension on QuestAddRoute {
   static QuestAddRoute _fromState(GoRouterState state) => const QuestAddRoute();
 
   String get location => GoRouteData.$location(
-        '/quest/add',
+        '/quests/add',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -185,7 +182,7 @@ extension $QuestDetailRouteExtension on QuestDetailRoute {
       );
 
   String get location => GoRouteData.$location(
-        '/quest/${Uri.encodeComponent(questId)}',
+        '/quests/${Uri.encodeComponent(questId)}',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -272,26 +269,11 @@ extension $AuthRouteExtension on AuthRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/home',
-      factory: $HomeRouteExtension._fromState,
-    );
-
-RouteBase get $questListRoute => GoRouteData.$route(
-      path: '/quest',
-      factory: $QuestListRouteExtension._fromState,
-    );
-
-RouteBase get $settingsRoute => GoRouteData.$route(
-      path: '/settings',
-      factory: $SettingsRouteExtension._fromState,
-    );
-
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'ef1718f3b36a4da879a95a9819126344fc679b96';
+String _$routerHash() => r'7142c25a7c161aab4ee408b7bd970c663f0f6550';
 
 /// See also [router].
 @ProviderFor(router)

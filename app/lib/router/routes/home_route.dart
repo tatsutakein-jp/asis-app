@@ -1,23 +1,6 @@
-part of 'package:asis_app/router/app_router.dart';
+part of 'package:app/router/app_router.dart';
 
-/// TypedGoRoute for feature_home
-///
-/// ホームタブ内でのpush先はここのroutesにネストしていく
-const homeRoute = TypedGoRoute<HomeRoute>(
-  path: AppPagePath.home,
-  routes: [
-    TypedGoRoute<FeedListRoute>(
-      path: 'feeds',
-      routes: [
-        TypedGoRoute<FeedDetailRoute>(
-          path: ':feedId',
-        ),
-      ],
-    ),
-  ],
-);
-
-@TypedGoRoute<HomeRoute>(path: AppPagePath.home)
+/// ホームページへのルート
 final class HomeRoute extends GoRouteData {
   const HomeRoute();
 
