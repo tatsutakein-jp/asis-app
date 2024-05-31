@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:app/app_build_config.dart';
 import 'package:app/auth/firebase_authenticator.dart';
 import 'package:app/datastore/preferences_data_store.dart';
 import 'package:app/flavor/flavor.dart';
@@ -56,8 +55,11 @@ final class AppInitializer {
   static Future<BuildConfig> _initializeBuildConfig() async {
     final packageInfo = await PackageInfo.fromPlatform();
 
-    return AppBuildConfig(
-      appFlavor: appFlavor,
+    return BuildConfig(
+      flavor: Flavor.values.firstWhere(
+        (flavor) => flavor.name == appFlavor,
+        orElse: () => Flavor.dev,
+      ),
       appName: packageInfo.appName,
       packageName: packageInfo.packageName,
       version: packageInfo.version,
