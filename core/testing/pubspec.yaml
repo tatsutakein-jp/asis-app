@@ -9,7 +9,8 @@ environment:
 dependencies:
   core_common:
     path: ../common
+  mocktail: 1.0.3
+  riverpod: 2.5.1
 
 dev_dependencies:
-  test: 1.25.5
   yumemi_lints: 2.1.0
