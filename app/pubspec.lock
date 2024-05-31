@@ -196,7 +196,7 @@ packages:
     source: path
     version: "1.0.0"
   core_database:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: "../core/database"
       relative: true

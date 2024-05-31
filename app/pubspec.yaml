@@ -14,9 +14,6 @@ dependencies:
   core_common:
     # noinspection DartPathPackageReference
     path: ../core/common
-  core_database:
-    # noinspection DartPathPackageReference
-    path: ../core/database
   core_database_isar:
     # noinspection DartPathPackageReference
     path: ../core/database_isar
