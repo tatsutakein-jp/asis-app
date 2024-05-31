@@ -9,7 +9,6 @@ part of 'app_router.dart';
 List<RouteBase> get $appRoutes => [
       $appShellRouteData,
       $authRoute,
-      $homeRoute,
     ];
 
 RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
@@ -269,11 +268,6 @@ extension $AuthRouteExtension on AuthRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
-
-RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/home',
-      factory: $HomeRouteExtension._fromState,
-    );
 
 // **************************************************************************
 // RiverpodGenerator
