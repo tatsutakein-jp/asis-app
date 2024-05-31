@@ -10,7 +10,6 @@ List<RouteBase> get $appRoutes => [
       $appShellRouteData,
       $authRoute,
       $homeRoute,
-      $settingsRoute,
     ];
 
 RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
@@ -274,11 +273,6 @@ extension $AuthRouteExtension on AuthRoute {
 RouteBase get $homeRoute => GoRouteData.$route(
       path: '/home',
       factory: $HomeRouteExtension._fromState,
-    );
-
-RouteBase get $settingsRoute => GoRouteData.$route(
-      path: '/settings',
-      factory: $SettingsRouteExtension._fromState,
     );
 
 // **************************************************************************
