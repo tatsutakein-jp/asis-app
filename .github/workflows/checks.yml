@@ -18,6 +18,7 @@ jobs:
     outputs:
       action: ${{ steps.changes.outputs.action }}
       all: ${{ steps.changes.outputs.all }}
+      any: ${{ steps.changes.outputs.changes != '[]' }}
     steps:
       # https://github.com/marketplace/actions/checkout
       - name: Checkout
