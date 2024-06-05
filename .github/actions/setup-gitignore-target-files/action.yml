@@ -1,0 +1,9 @@
+name: 'Setup .gitignore target files'
+description: 'Setup the .gitignore target files for the workflow'
+
+runs:
+  using: composite
+  steps:
+    - name: Generate gitignore target files
+      shell: bash
+      run: make gen-gitignore-files
