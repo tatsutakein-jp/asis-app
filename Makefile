@@ -23,3 +23,12 @@ mason-get: # Execute the `mason get` command.
 
 mason-make-feature: # Create a feature package using the Mason.
 	@mason make feature
+
+# Docker
+.PHONY: docker-create-network compose-up compose-down
+docker-create-network: # docker network create
+	@docker network create asis-network
+compose-up: # docker compose up
+	@docker compose up -d --wait
+compose-down: # docker compose down
+	@docker compose down --rmi all -v --remove-orphans
