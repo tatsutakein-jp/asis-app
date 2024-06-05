@@ -20,6 +20,9 @@ void main() async {
   runApp(
     ProviderScope(
       overrides: [
+
+
+
         buildConfigProvider.overrideWithValue(buildConfig),
         ...isarDatabaseProviders(isar: isar),
         dataStoreProvider.overrideWithValue(dataStore),
