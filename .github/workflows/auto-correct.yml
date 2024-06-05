@@ -33,12 +33,7 @@ jobs:
         uses: ./.github/actions/setup-pub
 
       - name: Run Melos Format
-        run: melos run format --no-select
-
-      - name: Setup git config
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        run: melos format
 
       - name: Check for file changes
         id: diff
@@ -48,26 +43,6 @@ jobs:
           else
             echo "changes=true" >> "$GITHUB_OUTPUT"
           fi
-
-#      - name: Check for file changes
-#        id: diff
-#        run: |
-#          git add -A "*.dart"
-#          git diff --cached --exit-code || echo "changes=true" >> "$GITHUB_OUTPUT"
-
-#      - name: Check for file changes
-#        id: diff
-#        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
-#        with:
-#          script: |
-#            const { execSync } = require('child_process');
-#            try {
-#              execSync('git add -A "*.dart"');
-#              execSync('git diff --cached --exit-code');
-#              return { changes: false };
-#            } catch {
-#              return { changes: true };
-#            }
 
       # https://github.com/marketplace/actions/create-github-app-token
       - name: Create GitHub App Token
@@ -88,22 +63,14 @@ jobs:
           github-token: ${{ steps.app-token.outputs.token }}
           script: |
             const { readFileSync } = require('fs');
-            const { resolve, basename } = require('path');
+            const { resolve } = require('path');
             const { execSync } = require('child_process');
+            
             const changedFiles = execSync('git diff --name-only')
               .toString()
               .split('\n')
               .filter(Boolean);
             
-            const baseBranch = execSync('git branch')
-              .toString()
-              .split('\n')
-              .map(branch => {
-                const match = /^\* (.*)$/.exec(branch);
-                return match && match[1];
-              })
-              .find(Boolean);
-
             const parentSha = execSync('git rev-parse HEAD')
               .toString()
               .trim();
@@ -120,7 +87,7 @@ jobs:
 
             const commit = await github.rest.git.createCommit({
               ...context.repo,
-              message: "chore(gen): auto correct some files",
+              message: "refactor: auto format",
               tree: tree.data.sha,
               parents: [parentSha]
             });
@@ -130,4 +97,3 @@ jobs:
               ref: `heads/${{ env.ref }}`,
               sha: commit.data.sha
             });
-
