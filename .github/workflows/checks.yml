@@ -54,6 +54,8 @@ jobs:
 
       - name: setup pub
         uses: ./.github/actions/setup-pub
+        with:
+          skip-linking: true
 
   analyze:
     runs-on: ubuntu-22.04
