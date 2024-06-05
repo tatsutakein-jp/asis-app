@@ -10,42 +10,34 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  changed:
+  changes:
+    uses: ./.github/workflows/wc-changes.yml
+
+  action:
     runs-on: ubuntu-22.04
+    needs: changes
+    if: needs.changes.outputs.action == 'true'
     permissions:
-      contents: read
-      pull-requests: read
-    outputs:
-      action: ${{ steps.changes.outputs.action }}
-      all: ${{ steps.changes.outputs.all }}
-      any: ${{ steps.changes.outputs.changes != '[]' }}
+      checks: "write"
+      contents: "read"
+      pull-requests: "write"
     steps:
       # https://github.com/marketplace/actions/checkout
       - name: Checkout
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
-      # https://github.com/marketplace/actions/paths-changes-filter
-      - name: Paths Changes Filter
-        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
-        id: changes
+      # https://github.com/marketplace/actions/actionlint-with-reviewdog
+      - uses: reviewdog/action-actionlint@4797143fa54b2306fe78646b48cfa10395506635 # v1.47.0
         with:
-          filters: |
-            action:
-              - '.github/workflows/*.yml'
-            all:
-              - '.github/workflows/checks.yml'
-              - '.tool-versions'
-              - 'melos.yaml'
-              - 'app/**/*'
-              - 'core/**/lib/**/*'
-              - 'feature/**/lib/**/*'
-              - '**/pubspec.lock'
-              - '**/pubspec.yaml'
+          fail_on_error: true
+          filter_mode: nofilter
+          level: error
+          reporter: github-pr-review
 
   cache-deps:
     runs-on: ubuntu-22.04
-    needs: changed
-    if: needs.changed.outputs.all == 'true'
+    needs: changes
+    if: needs.changes.outputs.dependencies == 'true'
     timeout-minutes: 10
 
     steps:
@@ -85,9 +77,9 @@ jobs:
   analyze:
     runs-on: ubuntu-22.04
     needs:
-      - changed
+      - changes
       - cache-deps
-    if: needs.changed.outputs.all == 'true'
+    if: needs.changes.outputs.analyze == 'true'
     timeout-minutes: 10
 
     steps:
@@ -130,9 +122,9 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     needs:
-      - changed
+      - changes
       - cache-deps
-    if: needs.changed.outputs.all == 'true'
+    if: needs.changes.outputs.test == 'true'
     timeout-minutes: 10
 
     steps:
@@ -175,33 +167,12 @@ jobs:
       - name: Run test
         run: melos run ci:test --no-select
 
-  check-action:
-    runs-on: ubuntu-22.04
-    needs: changed
-    if: needs.changed.outputs.action == 'true'
-    permissions:
-      checks: "write"
-      contents: "read"
-      pull-requests: "write"
-    steps:
-      # https://github.com/marketplace/actions/checkout
-      - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
-
-      # https://github.com/marketplace/actions/actionlint-with-reviewdog
-      - uses: reviewdog/action-actionlint@4797143fa54b2306fe78646b48cfa10395506635 # v1.47.0
-        with:
-          fail_on_error: true
-          filter_mode: nofilter
-          level: error
-          reporter: github-pr-review
-
   status-check:
     runs-on: ubuntu-22.04
     needs:
       - analyze
       - test
-      - check-action
+      - action
     permissions: { }
     if: failure()
     steps:
