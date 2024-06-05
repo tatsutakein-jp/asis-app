@@ -49,30 +49,11 @@ jobs:
       - name: mise action
         uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd # v2.0.6
 
-      # https://github.com/marketplace/actions/cache
-      - name: Cache pub-cache
-        id: cache-pub-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
-        env:
-          cache-name: pub-cache
-        with:
-          # pub-cache files are stored in `~/.pub-cache` on Linux/macOS
-          path: ~/.pub-cache
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-
-            ${{ runner.os }}-
+      - name: setup gitignore target files
+        uses: ./.github/actions/setup-gitignore-target-files
 
-      - name: Generate gitignore target files
-        run: make gen-gitignore-files
-
-      - name: Path pub-cache
-        run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
-
-      - name: Setup Melos
-        run: |
-          dart pub global activate melos
-          melos bootstrap
+      - name: setup pub
+        uses: ./.github/actions/setup-pub
 
   analyze:
     runs-on: ubuntu-22.04
@@ -91,30 +72,11 @@ jobs:
       - name: mise action
         uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd # v2.0.6
 
-      # https://github.com/marketplace/actions/cache
-      - name: Cache pub-cache
-        id: cache-pub-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
-        env:
-          cache-name: pub-cache
-        with:
-          # pub-cache files are stored in `~/.pub-cache` on Linux/macOS
-          path: ~/.pub-cache
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-
-            ${{ runner.os }}-
+      - name: setup gitignore target files
+        uses: ./.github/actions/setup-gitignore-target-files
 
-      - name: Generate gitignore target files
-        run: make gen-gitignore-files
-
-      - name: Path pub-cache
-        run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
-
-      - name: Setup Melos
-        run: |
-          dart pub global activate melos
-          melos bootstrap
+      - name: setup pub
+        uses: ./.github/actions/setup-pub
 
       - name: Run analyze
         run: melos run ci:analyze
@@ -136,30 +98,11 @@ jobs:
       - name: mise action
         uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd # v2.0.6
 
-      # https://github.com/marketplace/actions/cache
-      - name: Cache pub-cache
-        id: cache-pub-cache
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
-        env:
-          cache-name: pub-cache
-        with:
-          # pub-cache files are stored in `~/.pub-cache` on Linux/macOS
-          path: ~/.pub-cache
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-
-            ${{ runner.os }}-
+      - name: setup gitignore target files
+        uses: ./.github/actions/setup-gitignore-target-files
 
-      - name: Generate gitignore target files
-        run: make gen-gitignore-files
-
-      - name: Path pub-cache
-        run: echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
-
-      - name: Setup Melos
-        run: |
-          dart pub global activate melos
-          melos bootstrap
+      - name: setup pub
+        uses: ./.github/actions/setup-pub
 
       - name: Setup very_good_cli
         run: dart pub global activate very_good_cli
