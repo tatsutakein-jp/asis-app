@@ -47,7 +47,7 @@ final class SettingsPage extends ConsumerWidget {
             ),
             title: const Text('サインアウト'),
             onTap: () async {
-              await ref.read(signOutUseCaseProvider.future);
+              await ref.read(signOutUseCaseProvider);
               _onSignOutSuccess();
             },
           ),
