@@ -7,7 +7,7 @@ part of 'update_theme_use_case.dart';
 // **************************************************************************
 
 String _$updateThemeUseCaseHash() =>
-    r'875cd819f0ac58c5440808e0fcd9e9b6fc642479';
+    r'15743c202dada7bd25f2e4289d498291ffad0db0';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -39,7 +39,7 @@ const updateThemeUseCaseProvider = UpdateThemeUseCaseFamily();
 /// テーマ設定を更新する ユースケース
 ///
 /// Copied from [updateThemeUseCase].
-class UpdateThemeUseCaseFamily extends Family<AsyncValue<bool>> {
+class UpdateThemeUseCaseFamily extends Family<Raw<Future<void>>> {
   /// テーマ設定を更新する ユースケース
   ///
   /// Copied from [updateThemeUseCase].
@@ -83,7 +83,8 @@ class UpdateThemeUseCaseFamily extends Family<AsyncValue<bool>> {
 /// テーマ設定を更新する ユースケース
 ///
 /// Copied from [updateThemeUseCase].
-class UpdateThemeUseCaseProvider extends AutoDisposeFutureProvider<bool> {
+class UpdateThemeUseCaseProvider
+    extends AutoDisposeProvider<Raw<Future<void>>> {
   /// テーマ設定を更新する ユースケース
   ///
   /// Copied from [updateThemeUseCase].
@@ -120,7 +121,7 @@ class UpdateThemeUseCaseProvider extends AutoDisposeFutureProvider<bool> {
 
   @override
   Override overrideWith(
-    FutureOr<bool> Function(UpdateThemeUseCaseRef provider) create,
+    Raw<Future<void>> Function(UpdateThemeUseCaseRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -137,7 +138,7 @@ class UpdateThemeUseCaseProvider extends AutoDisposeFutureProvider<bool> {
   }
 
   @override
-  AutoDisposeFutureProviderElement<bool> createElement() {
+  AutoDisposeProviderElement<Raw<Future<void>>> createElement() {
     return _UpdateThemeUseCaseProviderElement(this);
   }
 
@@ -155,13 +156,14 @@ class UpdateThemeUseCaseProvider extends AutoDisposeFutureProvider<bool> {
   }
 }
 
-mixin UpdateThemeUseCaseRef on AutoDisposeFutureProviderRef<bool> {
+mixin UpdateThemeUseCaseRef on AutoDisposeProviderRef<Raw<Future<void>>> {
   /// The parameter `theme` of this provider.
   Theme get theme;
 }
 
 class _UpdateThemeUseCaseProviderElement
-    extends AutoDisposeFutureProviderElement<bool> with UpdateThemeUseCaseRef {
+    extends AutoDisposeProviderElement<Raw<Future<void>>>
+    with UpdateThemeUseCaseRef {
   _UpdateThemeUseCaseProviderElement(super.provider);
 
   @override
