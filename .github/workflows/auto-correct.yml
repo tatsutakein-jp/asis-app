@@ -65,19 +65,20 @@ jobs:
             const { readFileSync } = require('fs');
             const { resolve } = require('path');
             const { execSync } = require('child_process');
-            
+
             const changedFiles = execSync('git diff --name-only')
               .toString()
               .split('\n')
               .filter(Boolean);
-            
-            const parentSha = execSync('git rev-parse HEAD')
-              .toString()
-              .trim();
+
+            const { data: parent } = await github.rest.git.getRef({
+              ...context.repo,
+              ref: `heads/${{ env.ref }}`,
+            });
 
             const tree = await github.rest.git.createTree({
               ...context.repo,
-              base_tree: parentSha,
+              base_tree: parent.object.sha,
               tree: changedFiles.map(path => ({
                 path,
                 mode: '100644',
@@ -89,7 +90,7 @@ jobs:
               ...context.repo,
               message: "refactor: auto format",
               tree: tree.data.sha,
-              parents: [parentSha]
+              parents: [parent.object.sha]
             });
 
             await github.rest.git.updateRef({
