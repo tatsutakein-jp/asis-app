@@ -28,4 +28,4 @@ jobs:
       project-id: 'asis-quest-stg'
     secrets:
       gh-app-private-key: ${{ secrets.BOT_PRIVATE_KEY }}
-      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STG }}
+      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ASIS_QUEST_STG }}
