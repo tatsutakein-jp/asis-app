@@ -50,7 +50,7 @@ final class ThemeSettingDialogPage extends HookConsumerWidget {
         ),
         TextButton(
           onPressed: () async {
-            ref.read(
+            await ref.read(
               updateThemeUseCaseProvider(theme: selectedTheme.value),
             );
             _onTapPositive();

@@ -5,5 +5,5 @@ part 'sign_out_use_case.g.dart';
 
 /// サインアウトする ユースケース
 @riverpod
-Future<void> signOutUseCase(SignOutUseCaseRef ref) async =>
+Raw<Future<void>> signOutUseCase(SignOutUseCaseRef ref) async =>
     ref.watch(authenticatorProvider).signOut();

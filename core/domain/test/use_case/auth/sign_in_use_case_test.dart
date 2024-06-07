@@ -27,7 +27,7 @@ void main() {
         signInUseCaseProvider(
           email: 'test@example.com',
           password: 'password123',
-        ).future,
+        ),
       );
 
       verify(

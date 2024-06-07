@@ -6,7 +6,7 @@ part 'update_theme_use_case.g.dart';
 
 /// テーマ設定を更新する ユースケース
 @riverpod
-Future<bool> updateThemeUseCase(
+Raw<Future<void>> updateThemeUseCase(
   UpdateThemeUseCaseRef ref, {
   required Theme theme,
 }) =>

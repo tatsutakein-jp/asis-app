@@ -6,7 +6,7 @@ part of 'add_quest_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$addQuestUseCaseHash() => r'7b608aa709a533daff5982adeec33807c58d9cb4';
+String _$addQuestUseCaseHash() => r'390015092f007e1c39cdc849024a96037976a932';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -38,7 +38,7 @@ const addQuestUseCaseProvider = AddQuestUseCaseFamily();
 /// クエストを追加する ユースケース
 ///
 /// Copied from [addQuestUseCase].
-class AddQuestUseCaseFamily extends Family<AsyncValue<void>> {
+class AddQuestUseCaseFamily extends Family<Raw<Future<void>>> {
   /// クエストを追加する ユースケース
   ///
   /// Copied from [addQuestUseCase].
@@ -82,7 +82,7 @@ class AddQuestUseCaseFamily extends Family<AsyncValue<void>> {
 /// クエストを追加する ユースケース
 ///
 /// Copied from [addQuestUseCase].
-class AddQuestUseCaseProvider extends AutoDisposeFutureProvider<void> {
+class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
   /// クエストを追加する ユースケース
   ///
   /// Copied from [addQuestUseCase].
@@ -119,7 +119,7 @@ class AddQuestUseCaseProvider extends AutoDisposeFutureProvider<void> {
 
   @override
   Override overrideWith(
-    FutureOr<void> Function(AddQuestUseCaseRef provider) create,
+    Raw<Future<void>> Function(AddQuestUseCaseRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -136,7 +136,7 @@ class AddQuestUseCaseProvider extends AutoDisposeFutureProvider<void> {
   }
 
   @override
-  AutoDisposeFutureProviderElement<void> createElement() {
+  AutoDisposeProviderElement<Raw<Future<void>>> createElement() {
     return _AddQuestUseCaseProviderElement(this);
   }
 
@@ -154,13 +154,14 @@ class AddQuestUseCaseProvider extends AutoDisposeFutureProvider<void> {
   }
 }
 
-mixin AddQuestUseCaseRef on AutoDisposeFutureProviderRef<void> {
+mixin AddQuestUseCaseRef on AutoDisposeProviderRef<Raw<Future<void>>> {
   /// The parameter `quest` of this provider.
   Quest get quest;
 }
 
 class _AddQuestUseCaseProviderElement
-    extends AutoDisposeFutureProviderElement<void> with AddQuestUseCaseRef {
+    extends AutoDisposeProviderElement<Raw<Future<void>>>
+    with AddQuestUseCaseRef {
   _AddQuestUseCaseProviderElement(super.provider);
 
   @override

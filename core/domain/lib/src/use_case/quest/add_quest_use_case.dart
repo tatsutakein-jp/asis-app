@@ -6,7 +6,7 @@ part 'add_quest_use_case.g.dart';
 
 /// クエストを追加する ユースケース
 @riverpod
-Future<void> addQuestUseCase(
+Raw<Future<void>> addQuestUseCase(
   AddQuestUseCaseRef ref, {
   required Quest quest,
 }) =>
