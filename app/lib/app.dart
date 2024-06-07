@@ -21,6 +21,12 @@ final class AsisApp extends ConsumerWidget {
 
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
+
+
+
+
+
+
         return MaterialApp.router(
           title: 'ASIS App',
           theme: lightTheme(lightDynamic),
