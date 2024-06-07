@@ -86,7 +86,7 @@ final class SignInForm extends HookConsumerWidget {
                           signInUseCaseProvider(
                             email: emailValue.text,
                             password: passwordValue.text,
-                          ).future,
+                          ),
                         );
                         _onLoginSuccess();
                       },

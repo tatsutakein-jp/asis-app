@@ -6,7 +6,7 @@ part of 'sign_in_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$signInUseCaseHash() => r'be6ccbe76d6f291511ddce735b66b8ee0b3dce1b';
+String _$signInUseCaseHash() => r'1441b2e214d6c3d296ef67fc07b6bff559856891';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -38,7 +38,7 @@ const signInUseCaseProvider = SignInUseCaseFamily();
 /// サインインする ユースケース
 ///
 /// Copied from [signInUseCase].
-class SignInUseCaseFamily extends Family<AsyncValue<void>> {
+class SignInUseCaseFamily extends Family<Raw<Future<void>>> {
   /// サインインする ユースケース
   ///
   /// Copied from [signInUseCase].
@@ -85,7 +85,7 @@ class SignInUseCaseFamily extends Family<AsyncValue<void>> {
 /// サインインする ユースケース
 ///
 /// Copied from [signInUseCase].
-class SignInUseCaseProvider extends AutoDisposeFutureProvider<void> {
+class SignInUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
   /// サインインする ユースケース
   ///
   /// Copied from [signInUseCase].
@@ -127,7 +127,7 @@ class SignInUseCaseProvider extends AutoDisposeFutureProvider<void> {
 
   @override
   Override overrideWith(
-    FutureOr<void> Function(SignInUseCaseRef provider) create,
+    Raw<Future<void>> Function(SignInUseCaseRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -145,7 +145,7 @@ class SignInUseCaseProvider extends AutoDisposeFutureProvider<void> {
   }
 
   @override
-  AutoDisposeFutureProviderElement<void> createElement() {
+  AutoDisposeProviderElement<Raw<Future<void>>> createElement() {
     return _SignInUseCaseProviderElement(this);
   }
 
@@ -166,7 +166,7 @@ class SignInUseCaseProvider extends AutoDisposeFutureProvider<void> {
   }
 }
 
-mixin SignInUseCaseRef on AutoDisposeFutureProviderRef<void> {
+mixin SignInUseCaseRef on AutoDisposeProviderRef<Raw<Future<void>>> {
   /// The parameter `email` of this provider.
   String get email;
 
@@ -175,7 +175,8 @@ mixin SignInUseCaseRef on AutoDisposeFutureProviderRef<void> {
 }
 
 class _SignInUseCaseProviderElement
-    extends AutoDisposeFutureProviderElement<void> with SignInUseCaseRef {
+    extends AutoDisposeProviderElement<Raw<Future<void>>>
+    with SignInUseCaseRef {
   _SignInUseCaseProviderElement(super.provider);
 
   @override
