@@ -4,9 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/firebase-hosting-merge.yml'
+      - '.tool-versions'
+      - 'melos.yaml'
+      - '**/*.dart'
+      - '**/pubspec.*'
 
 concurrency:
-  group: preview-${{ github.ref }}
+  group: staging-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -17,9 +23,9 @@ jobs:
       deployments: write
     with:
       channel-id: 'live'
-      environment: 'development' # TODO: change to staging
+      environment: 'staging'
       gh-app-id: ${{ vars.BOT_APP_ID }}
-      project-id: 'asis-quest-dev' # TODO: change to staging
+      project-id: 'asis-quest-stg'
     secrets:
       gh-app-private-key: ${{ secrets.BOT_PRIVATE_KEY }}
-      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }} # TODO: change to staging
+      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_STG }}
