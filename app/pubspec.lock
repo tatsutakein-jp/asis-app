@@ -174,6 +174,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
+  core_analytics:
+    dependency: "direct overridden"
+    description:
+      path: "../core/analytics"
+      relative: true
+    source: path
+    version: "1.0.0"
+  core_analytics_firebase:
+    dependency: "direct main"
+    description:
+      path: "../core/analytics_firebase"
+      relative: true
+    source: path
+    version: "1.0.0"
   core_authenticator:
     dependency: "direct main"
     description:
@@ -350,6 +364,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
+  firebase_analytics:
+    dependency: "direct main"
+    description:
+      name: firebase_analytics
+      sha256: "62d9e83c5eb41520751ea5b5900a6ff1c2b054475ed7c8456cdf2e0e509b0a9c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.0.0"
+  firebase_analytics_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_analytics_platform_interface
+      sha256: "91c48fc85c83b0e4e657964c96b1e02fccb7adc06bca16ba0da91085fcc2f906"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0"
+  firebase_analytics_web:
+    dependency: transitive
+    description:
+      name: firebase_analytics_web
+      sha256: "6133eaf62301713e98a166e92e222d0257609ec41b8e2b10f1864d2af602bdd8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.7+8"
   firebase_auth:
     dependency: "direct main"
     description:

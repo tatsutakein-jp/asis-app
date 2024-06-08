@@ -1,5 +1,6 @@
 import 'package:app/app.dart';
 import 'package:app/initializer/app_initializer.dart';
+import 'package:core_analytics_firebase/analytics_firebase.dart';
 import 'package:core_authenticator/authenticator.dart';
 import 'package:core_database_isar/isar.dart';
 import 'package:core_datastore/datastore.dart';
@@ -14,6 +15,7 @@ void main() async {
     :buildConfig,
     :isar,
     :dataStore,
+    :firebaseAnalytics,
     :firebaseAuthenticator,
   ) = await initializeApp();
 
@@ -22,6 +24,7 @@ void main() async {
       overrides: [
         buildConfigProvider.overrideWithValue(buildConfig),
         ...isarDatabaseProviders(isar: isar),
+        ...firebaseAnalyticsProviders(firebaseAnalytics: firebaseAnalytics),
         dataStoreProvider.overrideWithValue(dataStore),
         authenticatorProvider.overrideWithValue(firebaseAuthenticator),
       ],
