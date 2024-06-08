@@ -1,5 +1,6 @@
-part of 'package:app/initializer/app_initializer.dart';
+import 'package:core_common/log.dart';
+import 'package:flutter/foundation.dart';
 
-void _initializeLogger() {
+void initializeLogger() {
   Logger.initialize(includeCallerInfo: kDebugMode);
 }

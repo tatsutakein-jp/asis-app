@@ -6,13 +6,10 @@ import 'package:app/initializer/build_config_initializer.dart';
 import 'package:app/initializer/database_initializer.dart';
 import 'package:app/initializer/datastore_initializer.dart';
 import 'package:app/initializer/firebase_initializer.dart';
-import 'package:core_common/log.dart';
+import 'package:app/initializer/logger_initializer.dart';
 import 'package:core_model/build_config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
-
-part 'package:app/initializer/logger_initializer.dart';
 
 typedef InitializedValues = ({
   BuildConfig buildConfig,
@@ -23,7 +20,7 @@ typedef InitializedValues = ({
 });
 
 Future<InitializedValues> initializeApp() async {
-  _initializeLogger();
+  initializeLogger();
 
   final buildConfig = await initializeBuildConfig();
 
