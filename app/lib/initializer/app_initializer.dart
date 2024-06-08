@@ -4,15 +4,13 @@ import 'package:app/auth/firebase_authenticator.dart';
 import 'package:app/datastore/preferences_data_store.dart';
 import 'package:app/initializer/build_config_initializer.dart';
 import 'package:app/initializer/database_initializer.dart';
+import 'package:app/initializer/datastore_initializer.dart';
 import 'package:app/initializer/firebase_initializer.dart';
 import 'package:core_common/log.dart';
 import 'package:core_model/build_config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-part 'package:app/initializer/datastore_initializer.dart';
 
 part 'package:app/initializer/logger_initializer.dart';
 
@@ -38,7 +36,7 @@ Future<InitializedValues> initializeApp() async {
     }),
   ] = await Future.wait([
     initializeDatabase(),
-    _initializeDataStore(),
+    initializeDataStore(),
     initializeFirebase(flavor: buildConfig.flavor),
   ]);
 
