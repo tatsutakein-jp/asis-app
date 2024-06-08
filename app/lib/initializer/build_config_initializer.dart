@@ -1,6 +1,8 @@
-part of 'package:app/initializer/app_initializer.dart';
+import 'package:core_model/build_config.dart';
+import 'package:flutter/services.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
-Future<BuildConfig> _initializeBuildConfig() async {
+Future<BuildConfig> initializeBuildConfig() async {
   final packageInfo = await PackageInfo.fromPlatform();
 
   return BuildConfig(
