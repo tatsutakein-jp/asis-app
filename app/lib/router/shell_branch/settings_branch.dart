@@ -18,6 +18,7 @@ const settingsBranch = TypedStatefulShellBranch<SettingsBranch>(
   ],
 );
 
+// ignore: avoid_classes_with_only_static_members
 final class SettingsBranch extends StatefulShellBranchData {
   const SettingsBranch();
 

@@ -1,4 +1,4 @@
-FROM dart:3.4.3 AS build
+FROM dart:3.5.0-180.3.beta AS build
 
 WORKDIR /app
 
