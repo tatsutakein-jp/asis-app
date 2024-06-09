@@ -48,7 +48,6 @@ scripts:
     exec: dart fix --apply lib
     description: Run dart fix.
     packageFilters:
-      flutter: true
       dirExists: lib
   fix:check:
     exec: dart fix --dry-run lib
@@ -119,6 +118,14 @@ scripts:
     description: Run analyze.
     packageFilters:
       flutter: true
+      dirExists: lib
+  ci:fix:
+    run: dart fix --apply lib
+    exec:
+      concurrency: 10
+      failFast: true
+    description: Run dart fix.
+    packageFilters:
       dirExists: lib
   ci:gen:
     description: generate codes.

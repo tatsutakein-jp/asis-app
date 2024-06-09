@@ -57,8 +57,6 @@ jobs:
       - name: Commit and push changes
         if: steps.diff.outputs.changes == 'true'
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
-        env:
-          ref: ${{ github.event.pull_request.head.ref }}
         with:
           github-token: ${{ steps.app-token.outputs.token }}
           script: |
@@ -73,7 +71,7 @@ jobs:
 
             const { data: parent } = await github.rest.git.getRef({
               ...context.repo,
-              ref: `heads/${{ env.ref }}`,
+              ref: `heads/${context.ref}`,
             });
 
             const tree = await github.rest.git.createTree({
@@ -95,6 +93,90 @@ jobs:
 
             await github.rest.git.updateRef({
               ...context.repo,
-              ref: `heads/${{ env.ref }}`,
+              ref: `heads/${context.ref}`,
+              sha: commit.data.sha
+            });
+
+  fix:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+
+    steps:
+      # https://github.com/marketplace/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+
+      # https://github.com/marketplace/actions/mise-action
+      - name: mise action
+        uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd # v2.0.6
+
+      - name: setup gitignore target files
+        uses: ./.github/actions/setup-gitignore-target-files
+
+      - name: setup pub
+        uses: ./.github/actions/setup-pub
+
+      - name: Run Melos Fix
+        run: melos ci:fix
+
+      - name: Check for file changes
+        id: diff
+        run: |
+          if git diff --quiet -- '*.dart'; then
+            echo "changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # https://github.com/marketplace/actions/create-github-app-token
+      - name: Create GitHub App Token
+        if: steps.diff.outputs.changes == 'true'
+        uses: actions/create-github-app-token@c8f55efbd427e7465d6da1106e7979bc8aaee856 # v1.10.1
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      # https://github.com/marketplace/actions/github-script
+      - name: Commit and push changes
+        if: steps.diff.outputs.changes == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            const { readFileSync } = require('fs');
+            const { resolve } = require('path');
+            const { execSync } = require('child_process');
+
+            const changedFiles = execSync('git diff --name-only')
+              .toString()
+              .split('\n')
+              .filter(Boolean);
+
+            const { data: parent } = await github.rest.git.getRef({
+              ...context.repo,
+              ref: `heads/${context.ref}`,
+            });
+
+            const tree = await github.rest.git.createTree({
+              ...context.repo,
+              base_tree: parent.object.sha,
+              tree: changedFiles.map(path => ({
+                path,
+                mode: '100644',
+                content: readFileSync(resolve(process.cwd(), path), 'utf8')
+              }))
+            });
+
+            const commit = await github.rest.git.createCommit({
+              ...context.repo,
+              message: "chore(gen): auto correct some files",
+              tree: tree.data.sha,
+              parents: [parent.object.sha]
+            });
+
+            await github.rest.git.updateRef({
+              ...context.repo,
+              ref: `heads/${context.ref}`,
               sha: commit.data.sha
             });
