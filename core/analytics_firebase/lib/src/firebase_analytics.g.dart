@@ -8,7 +8,7 @@ part of 'firebase_analytics.dart';
 
 String _$firebaseAnalyticsHash() => r'07b3a4c16f1891d1ebea5b32f1883eb45e945b2b';
 
-/// Isar instance
+/// FirebaseAnalytics instance
 ///
 /// Copied from [firebaseAnalytics].
 @ProviderFor(firebaseAnalytics)
