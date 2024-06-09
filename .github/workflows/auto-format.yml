@@ -78,7 +78,7 @@ jobs:
             
             const tree = await github.rest.git.createTree({
               ...context.repo,
-              base_tree: branch.object.sha,
+              base_tree: context.sha,
               tree: changedFiles.map(path => ({
                 path,
                 mode: '100644',
@@ -90,7 +90,7 @@ jobs:
               ...context.repo,
               message: "refactor: auto format",
               tree: tree.data.sha,
-              parents: [branch.object.sha]
+              parents: [context.sha]
             });
 
             await github.rest.git.updateRef({
