@@ -69,10 +69,10 @@ jobs:
               .split('\n')
               .filter(Boolean);
 
-            const branchRef = `heads/auto-format-${context.sha.slice(0, 7)}`;
+            const branchRef = `auto-format-${context.sha.slice(0, 7)}`;
             const branch = await github.rest.git.createRef({
               ...context.repo,
-              ref: `refs/${branchRef}`,
+              ref: `refs/heads/${branchRef}`,
               sha: context.sha
             });
             
@@ -95,7 +95,7 @@ jobs:
 
             await github.rest.git.updateRef({
               ...context.repo,
-              ref: branchRef,
+              ref: `heads/${branchRef}`,
               sha: commit.data.sha
             });
             
