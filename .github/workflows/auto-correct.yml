@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  format:
+  gen:
     runs-on: ubuntu-22.04
     timeout-minutes: 15
 
@@ -32,8 +32,8 @@ jobs:
       - name: setup pub
         uses: ./.github/actions/setup-pub
 
-      - name: Run Melos Format
-        run: melos format
+      - name: Run Melos Gen
+        run: melos ci:gen
 
       - name: Check for file changes
         id: diff
@@ -88,7 +88,7 @@ jobs:
 
             const commit = await github.rest.git.createCommit({
               ...context.repo,
-              message: "refactor: auto format",
+              message: "chore(gen): auto correct some files",
               tree: tree.data.sha,
               parents: [parent.object.sha]
             });

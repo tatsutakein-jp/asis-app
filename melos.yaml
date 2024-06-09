@@ -120,6 +120,12 @@ scripts:
     packageFilters:
       flutter: true
       dirExists: lib
+  ci:gen:
+    description: generate codes.
+    concurrency: 1
+    steps:
+      - melos gen
+      - melos gen:l10n
   ci:test:
     run: very_good test --recursive --coverage
     exec:
