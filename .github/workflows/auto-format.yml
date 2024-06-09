@@ -72,7 +72,7 @@ jobs:
             const branchRef = `heads/auto-format-${context.sha.slice(0, 7)}`;
             const branch = await github.rest.git.createRef({
               ...context.repo,
-              ref: `refs/$branchRef`,
+              ref: `refs/${branchRef}`,
               sha: context.sha
             });
             
