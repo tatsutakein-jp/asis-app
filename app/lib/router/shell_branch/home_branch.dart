@@ -20,6 +20,7 @@ const homeBranch = TypedStatefulShellBranch<HomeBranch>(
   ],
 );
 
+// ignore: avoid_classes_with_only_static_members
 final class HomeBranch extends StatefulShellBranchData {
   const HomeBranch();
 
