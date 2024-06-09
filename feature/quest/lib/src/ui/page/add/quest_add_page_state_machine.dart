@@ -17,7 +17,7 @@ class QuestAddPageStateMachine extends _$QuestAddPageStateMachine {
   Future<void> dispatch(QuestAddPageAction action) async {
     switch (action) {
       case AddQuestButtonTapped(:final quest):
-        await ref.read(addQuestUseCaseProvider(quest: quest));
+        ref.read(addQuestUseCaseProvider(quest: quest));
     }
   }
 }
