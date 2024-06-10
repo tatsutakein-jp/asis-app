@@ -9,6 +9,8 @@ environment:
 dependencies:
   core_common:
     path: ../common
+  core_model:
+    path: ../model
   mocktail: 1.0.3
   riverpod: 2.5.1
 
