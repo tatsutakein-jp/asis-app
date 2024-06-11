@@ -52,35 +52,35 @@
   from_name: "documentation"
 
 - name: "@type/style"
-  color: "f4930e"
-  description: "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+  color: "ededed"
+  description: "Changes that do not affect the meaning of the code"
 
 - name: "@type/refactor"
-  color: "bfcbed"
+  color: "ededed"
   description: "A code change that neither fixes a bug nor adds a feature"
 
 - name: "@type/perf"
-  color: "2aaf69"
+  color: "ededed"
   description: "A code change that improves performance"
 
 - name: "@type/test"
-  color: "6df5d2"
+  color: "ededed"
   description: "Adding missing tests or correcting existing tests"
 
 - name: "@type/build"
   color: "ededed"
-  description: "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+  description: "Changes that affect the build system or external dependencies"
 
 - name: "@type/ci"
   color: "ededed"
-  description: "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+  description: "Changes to our CI configuration files and scripts"
 
 - name: "@type/chore"
-  color: "f968e0"
+  color: "ededed"
   description: "Other changes that don't modify src or test files"
 
 - name: "@type/revert"
-  color: "4f790d"
+  color: "ededed"
   description: "Reverts a previous commit"
 
 # App Package labels
