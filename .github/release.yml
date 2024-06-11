@@ -1,0 +1,58 @@
+# https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
+changelog:
+  exclude:
+    labels:
+      - 'ignore for release'
+
+  categories:
+    - title: 💥 Breaking Changes
+      labels:
+        - 'breaking change'
+
+    - title: ✨ Features
+      labels:
+        - '@type/feature'
+
+    - title: 🐛 Bug Fixes
+      labels:
+        - '@type/fix'
+
+    - title: 📚 Documentation
+      labels:
+        - '@type/docs'
+
+    - title: 💎 Styles
+      labels:
+        - '@type/style'
+
+    - title: 📦 Code Refactoring
+      labels:
+        - '@type/refactor'
+
+    - title: 🚀 Performance Improvements
+      labels:
+        - '@type/perf'
+
+    - title: 🚨 Tests
+      labels:
+        - '@type/test'
+
+    - title: 🛠 Builds
+      labels:
+        - '@type/build'
+
+    - title: ⚙️ Continuous Integrations
+      labels:
+        - '@type/ci'
+
+    - title: 🗑 Revert
+      labels:
+        - '@type/revert'
+
+    - title: 🔍 Other Changes
+      labels:
+        - '*'
+
+    - title: 👒 Dependency Updates
+      labels:
+        - 'dependencies'
