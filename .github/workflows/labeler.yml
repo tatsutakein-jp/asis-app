@@ -12,6 +12,30 @@ jobs:
     steps:
       # https://github.com/marketplace/actions/label-manager-for-prs-and-issues-based-on-configurable-conditions
       - name: Label manager for PRs and Issues based on configurable conditions
-        uses: srvaroa/labeler@v1.10.1
+        uses: srvaroa/labeler@1eec6d9e7c5fa5864840279978680302f955fc37 # v1.10.1
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  tatsutakeinjp-bot:
+    if: github.actor == 'tatsutakeinjp-bot[bot]'
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      # https://github.com/marketplace/actions/create-github-app-token
+      - name: Create GitHub App Token
+        uses: actions/create-github-app-token@c8f55efbd427e7465d6da1106e7979bc8aaee856 # v1.10.1
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - name: Add labels to PR
+        run: |
+          gh pr edit "$NUMBER" --add-label "$LABELS"
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          LABELS: 'ignore for release'
