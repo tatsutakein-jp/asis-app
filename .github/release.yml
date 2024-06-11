@@ -11,43 +11,43 @@ changelog:
 
     - title: ✨ Features
       labels:
-        - '@type/feature'
+        - 'type/feature'
 
     - title: 🐛 Bug Fixes
       labels:
-        - '@type/fix'
+        - 'type/fix'
 
     - title: 📚 Documentation
       labels:
-        - '@type/docs'
+        - 'type/docs'
 
     - title: 💎 Styles
       labels:
-        - '@type/style'
+        - 'type/style'
 
     - title: 📦 Code Refactoring
       labels:
-        - '@type/refactor'
+        - 'type/refactor'
 
     - title: 🚀 Performance Improvements
       labels:
-        - '@type/perf'
+        - 'type/perf'
 
     - title: 🚨 Tests
       labels:
-        - '@type/test'
+        - 'type/test'
 
     - title: 🛠 Builds
       labels:
-        - '@type/build'
+        - 'type/build'
 
     - title: ⚙️ Continuous Integrations
       labels:
-        - '@type/ci'
+        - 'type/ci'
 
     - title: 🗑 Revert
       labels:
-        - '@type/revert'
+        - 'type/revert'
 
     - title: 🔍 Other Changes
       labels:

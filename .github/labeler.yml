@@ -3,47 +3,47 @@ version: 1
 
 labels:
   # Type labels
-  - label: "@type/feature"
+  - label: "type/feature"
     title: '^\[.*?\]\s*feat(?:\(.+?\))?\!?:'
 
-  - label: "@type/fix"
+  - label: "type/fix"
     title: '^\[.*?\]\s*fix(?:\(.+?\))?\!?:'
 
-  - label: "@type/docs"
+  - label: "type/docs"
     title: '^\[.*?\]\s*docs(?:\(.+?\))?\!?:'
     files:
       - "docs/.+"
       - "**/README.md$"
 
-  - label: "@type/style"
+  - label: "type/style"
     title: '^\[.*?\]\s*style(?:\(.+?\))?\!?:'
 
-  - label: "@type/refactor"
+  - label: "type/refactor"
     title: '^\[.*?\]\s*refactor(?:\(.+?\))?\!?:'
 
-  - label: "@type/perf"
+  - label: "type/perf"
     title: '^\[.*?\]\s*perf(?:\(.+?\))?\!?:'
 
-  - label: "@type/test"
+  - label: "type/test"
     title: '^\[.*?\]\s*test(?:\(.+?\))?\!?:'
 
-  - label: "@type/build"
+  - label: "type/build"
     title: '^\[.*?\]\s*build(?:\(.+?\))?\!?:'
     files:
       - "**/pubspec.yaml$"
       - "**/melos.yaml$"
 
-  - label: "@type/ci"
+  - label: "type/ci"
     title: '^\[.*?\]\s*ci(?:\(.+?\))?\!?:'
     files:
       - '\.github/.+'
       - "scripts/.+"
       - "tools/.+"
 
-  - label: "@type/chore"
+  - label: "type/chore"
     title: '^\[.*?\]\s*chore(?:\(.+?\))?\!?:'
 
-  - label: "@type/revert"
+  - label: "type/revert"
     title: '^\[.*?\]\s*revert(?:\(.+?\))?\!?:'
 
   # App Package labels

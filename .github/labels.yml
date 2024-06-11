@@ -38,50 +38,60 @@
   color: "e5d19e"
 
 # Type labels
-- name: "@type/feature"
+- name: "type/feature"
   color: "ededed"
   description: "A new feature"
+  from_name: "@type/feature"
 
-- name: "@type/fix"
+- name: "type/fix"
   color: "ededed"
   description: "A bug fix"
+  from_name: "@type/fix"
 
-- name: "@type/docs"
+- name: "type/docs"
   color: "ededed"
   description: "Documentation only changes"
-  from_name: "documentation"
+  from_name: "@type/docs"
 
-- name: "@type/style"
+- name: "type/style"
   color: "ededed"
   description: "Changes that do not affect the meaning of the code"
+  from_name: "@type/style"
 
-- name: "@type/refactor"
+- name: "type/refactor"
   color: "ededed"
   description: "A code change that neither fixes a bug nor adds a feature"
+  from_name: "@type/refactor"
 
-- name: "@type/perf"
+- name: "type/perf"
   color: "ededed"
   description: "A code change that improves performance"
+  from_name: "@type/perf"
 
-- name: "@type/test"
+- name: "type/test"
   color: "ededed"
   description: "Adding missing tests or correcting existing tests"
+  from_name: "@type/test"
 
-- name: "@type/build"
+- name: "type/build"
   color: "ededed"
   description: "Changes that affect the build system or external dependencies"
+  from_name: "@type/build"
 
-- name: "@type/ci"
+- name: "type/ci"
   color: "ededed"
   description: "Changes to our CI configuration files and scripts"
+  from_name: "@type/ci"
 
-- name: "@type/chore"
+- name: "type/chore"
   color: "ededed"
   description: "Other changes that don't modify src or test files"
+  from_name: "@type/chore"
 
-- name: "@type/revert"
+- name: "type/revert"
   color: "ededed"
   description: "Reverts a previous commit"
+  from_name: "@type/revert"
 
 # App Package labels
 - name: "@application"
