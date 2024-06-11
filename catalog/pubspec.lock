@@ -787,10 +787,10 @@ packages:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: d81512780bb4d137d59f0694328f446433fe5228cf8191e918046cc4f09c128b
+      sha256: "7a5baf68bb76cbd8aeb093050172f99bb83b44360bf2a72c2b19b3785e3d29d0"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.0"
+    version: "3.8.0"
   yaml:
     dependency: transitive
     description:
