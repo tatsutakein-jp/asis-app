@@ -5,6 +5,8 @@ on:
     paths:
       - '.github/workflows/auto-correct.yml'
       - '**.dart'
+      - '**/pubspec.lock'
+      - '**/pubspec.yaml'
       - '!**.g.dart'
       - '!**.freezed.dart'
 
