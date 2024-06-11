@@ -10,10 +10,6 @@
 - name: "DO NOT MERGE"
   color: "b60205"
 
-- name: "documentation"
-  color: "0075ca"
-  description: "Improvements or additions to documentation"
-
 - name: "duplicate"
   color: "cfd8d7"
   description: "This issue or pull request already exists"
@@ -42,24 +38,50 @@
   color: "e5d19e"
 
 # Type labels
-- name: "@type/build"
-  color: "ededed"
-
-- name: "@type/ci"
-  color: "ededed"
-
-- name: "@type/docs"
-  color: "ededed"
-  from_name: "documentation"
-
 - name: "@type/feature"
   color: "ededed"
+  description: "A new feature"
 
 - name: "@type/fix"
   color: "ededed"
+  description: "A bug fix"
 
-- name: "@type/improve"
+- name: "@type/docs"
   color: "ededed"
+  description: "Documentation only changes"
+  from_name: "documentation"
+
+- name: "@type/style"
+  color: "f4930e"
+  description: "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+
+- name: "@type/refactor"
+  color: "bfcbed"
+  description: "A code change that neither fixes a bug nor adds a feature"
+
+- name: "@type/perf"
+  color: "2aaf69"
+  description: "A code change that improves performance"
+
+- name: "@type/test"
+  color: "6df5d2"
+  description: "Adding missing tests or correcting existing tests"
+
+- name: "@type/build"
+  color: "ededed"
+  description: "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+
+- name: "@type/ci"
+  color: "ededed"
+  description: "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)"
+
+- name: "@type/chore"
+  color: "f968e0"
+  description: "Other changes that don't modify src or test files"
+
+- name: "@type/revert"
+  color: "4f790d"
+  description: "Reverts a previous commit"
 
 # App Package labels
 - name: "@application"

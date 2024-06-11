@@ -3,6 +3,30 @@ version: 1
 
 labels:
   # Type labels
+  - label: "@type/feature"
+    title: '^feature(?:\(.+\))?\!?:'
+
+  - label: "@type/fix"
+    title: '^fix(?:\(.+\))?\!?:'
+
+  - label: "@type/docs"
+    title: '^docs(?:\(.+\))?\!?:'
+    files:
+      - "docs/.+"
+      - "**/README.md$"
+
+  - label: "@type/style"
+    title: '^style(?:\(.+\))?\!?:'
+
+  - label: "@type/refactor"
+    title: '^refactor(?:\(.+\))?\!?:'
+
+  - label: "@type/perf"
+    title: '^perf(?:\(.+\))?\!?:'
+
+  - label: "@type/test"
+    title: '^test(?:\(.+\))?\!?:'
+
   - label: "@type/build"
     title: '^build(?:\(.+\))?\!?:'
     files:
@@ -16,20 +40,11 @@ labels:
       - "scripts/.+"
       - "tools/.+"
 
-  - label: "@type/docs"
-    title: '^docs:(?:\(.+\))?\!?:'
-    files:
-      - "docs/.+"
-      - "**/README.md$"
+  - label: "@type/chore"
+    title: '^chore(?:\(.+\))?\!?:'
 
-  - label: "@type/feature"
-    title: '^feat:(?:\(.+\))?\!?:'
-
-  - label: "@type/fix"
-    title: '^fix:(?:\(.+\))?\!?:'
-
-  - label: "@type/improve"
-    title: '^(style|refactor|perf)(?:\(.+\))?\!?:'
+  - label: "@type/revert"
+    title: '^revert(?:\(.+\))?\!?:'
 
   # App Package labels
   - label: "@application"
