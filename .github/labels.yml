@@ -94,62 +94,90 @@
   from_name: "@type/revert"
 
 # <!-- This is an auto-generated label -->
-# App Package labels
-- name: "@application"
-  color: "e261d6"
-  description: "Application development"
+- name: "@app"
+  color: 0c2b70
+  description: app package
 
 - name: "@backend"
-  color: "4372d0"
-  description: "Backend development"
+  color: 4372d0
+  description: Backend development
 
 - name: "@catalog"
-  color: "d4f227"
-  description: "Catalog development"
+  color: d4f227
+  description: Catalog development
 
-# Core Package labels
 - name: "@core/analytics"
-  color: "0b2ebd"
+  color: 0b2ebd
+  description: core analytics package
+
+- name: "@core/analytics_firebase"
+  color: 91a36d
+  description: core analytics_firebase package
+
+- name: "@core/authenticator"
+  color: b07b63
+  description: core authenticator package
 
 - name: "@core/common"
-  color: "e99695"
+  color: e99695
+  description: core common package
 
 - name: "@core/data"
-  color: "50D413"
+  color: 50D413
+  description: core data package
 
 - name: "@core/database"
-  color: "90bf94"
+  color: 90bf94
+  description: core database package
+
+- name: "@core/database_isar"
+  color: 1b6108
+  description: core database_isar package
 
 - name: "@core/datastore"
-  color: "1997D2"
+  color: 1997D2
+  description: core datastore package
 
 - name: "@core/designsystem"
   color: "936116"
+  description: core designsystem package
 
 - name: "@core/domain"
-  color: "DC79FD"
+  color: DC79FD
+  description: core domain package
 
 - name: "@core/model"
-  color: "D1A70E"
+  color: D1A70E
+  description: core model package
 
 - name: "@core/network"
-  color: "630D81"
+  color: 630D81
+  description: core network package
 
 - name: "@core/testing"
   color: "667168"
+  description: core testing package
 
 - name: "@core/ui"
-  color: "b1ade8"
+  color: b1ade8
+  description: core ui package
 
-# Feature Package labels
 - name: "@feature/auth"
-  color: "48360E"
+  color: 48360E
+  description: feature auth package
+
+- name: "@feature/feed"
+  color: 30c181
+  description: feature feed package
 
 - name: "@feature/home"
-  color: "3bc0ec"
+  color: 3bc0ec
+  description: feature home package
 
 - name: "@feature/quest"
-  color: "6fe0ba"
+  color: 6fe0ba
+  description: feature quest package
 
 - name: "@feature/settings"
-  color: "1e266d"
+  color: 1e266d
+  description: feature settings package
