@@ -46,6 +46,7 @@ labels:
   - label: "type/revert"
     title: '^\[.*?\]\s*revert(?:\(.+?\))?\!?:'
 
+  # <!-- This is an auto-generated label -->
   # App Package labels
   - label: "@application"
     files:

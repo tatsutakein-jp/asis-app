@@ -93,6 +93,7 @@
   description: "Reverts a previous commit"
   from_name: "@type/revert"
 
+# <!-- This is an auto-generated label -->
 # App Package labels
 - name: "@application"
   color: "e261d6"
