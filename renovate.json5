@@ -55,8 +55,9 @@
     },
     {
       "groupName": "widgetbook",
-      "matchPackagePrefixes": [
+      "matchPackageNames": [
         "widgetbook",
+        "widgetbook_generator",
       ]
     }
   ]
