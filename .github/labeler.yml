@@ -3,33 +3,48 @@ version: 1
 
 labels:
   # Type labels
+  - label: "@type/feature"
+    title: '^\[.*?\]\s*feat(?:\(.+?\))?\!?:'
+
+  - label: "@type/fix"
+    title: '^\[.*?\]\s*fix(?:\(.+?\))?\!?:'
+
+  - label: "@type/docs"
+    title: '^\[.*?\]\s*docs(?:\(.+?\))?\!?:'
+    files:
+      - "docs/.+"
+      - "**/README.md$"
+
+  - label: "@type/style"
+    title: '^\[.*?\]\s*style(?:\(.+?\))?\!?:'
+
+  - label: "@type/refactor"
+    title: '^\[.*?\]\s*refactor(?:\(.+?\))?\!?:'
+
+  - label: "@type/perf"
+    title: '^\[.*?\]\s*perf(?:\(.+?\))?\!?:'
+
+  - label: "@type/test"
+    title: '^\[.*?\]\s*test(?:\(.+?\))?\!?:'
+
   - label: "@type/build"
-    title: '^build(?:\(.+\))?\!?:'
+    title: '^\[.*?\]\s*build(?:\(.+?\))?\!?:'
     files:
       - "**/pubspec.yaml$"
       - "**/melos.yaml$"
 
   - label: "@type/ci"
-    title: '^ci(?:\(.+\))?\!?:'
+    title: '^\[.*?\]\s*ci(?:\(.+?\))?\!?:'
     files:
       - '\.github/.+'
       - "scripts/.+"
       - "tools/.+"
 
-  - label: "@type/docs"
-    title: '^docs:(?:\(.+\))?\!?:'
-    files:
-      - "docs/.+"
-      - "**/README.md$"
+  - label: "@type/chore"
+    title: '^\[.*?\]\s*chore(?:\(.+?\))?\!?:'
 
-  - label: "@type/feature"
-    title: '^feat:(?:\(.+\))?\!?:'
-
-  - label: "@type/fix"
-    title: '^fix:(?:\(.+\))?\!?:'
-
-  - label: "@type/improve"
-    title: '^(style|refactor|perf)(?:\(.+\))?\!?:'
+  - label: "@type/revert"
+    title: '^\[.*?\]\s*revert(?:\(.+?\))?\!?:'
 
   # App Package labels
   - label: "@application"
