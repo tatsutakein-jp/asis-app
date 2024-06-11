@@ -162,35 +162,35 @@ packages:
     source: hosted
     version: "3.1.1"
   core_authenticator:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/authenticator"
       relative: true
     source: path
     version: "1.0.0"
   core_common:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/common"
       relative: true
     source: path
     version: "1.0.0"
   core_data:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/database"
       relative: true
     source: path
     version: "1.0.0"
   core_datastore:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/datastore"
       relative: true
@@ -204,7 +204,7 @@ packages:
     source: path
     version: "1.0.0"
   core_domain:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/domain"
       relative: true
@@ -218,7 +218,7 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../core/network"
       relative: true
@@ -787,10 +787,10 @@ packages:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: d81512780bb4d137d59f0694328f446433fe5228cf8191e918046cc4f09c128b
+      sha256: "7a5baf68bb76cbd8aeb093050172f99bb83b44360bf2a72c2b19b3785e3d29d0"
       url: "https://pub.dev"
     source: hosted
-    version: "3.7.0"
+    version: "3.8.0"
   yaml:
     dependency: transitive
     description:
