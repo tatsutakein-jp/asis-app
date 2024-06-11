@@ -49,10 +49,10 @@ changelog:
       labels:
         - 'type/revert'
 
-    - title: 🔍 Other Changes
-      labels:
-        - '*'
-
     - title: 👒 Dependency Updates
       labels:
         - 'dependencies'
+
+    - title: 🔍 Other Changes
+      labels:
+        - '*'
