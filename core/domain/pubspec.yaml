@@ -3,7 +3,7 @@ description: This package provides use cases and domain models.
 publish_to: "none"
 
 environment:
-  sdk: 3.5.0-180.3.beta
+  sdk: 3.5.0-219.0.dev
 
 dependencies:
   core_authenticator:
