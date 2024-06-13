@@ -10,5 +10,6 @@ dependency_overrides:
   file: 7.0.0
 
 dev_dependencies:
+  grinder: 0.9.5
   melos: 6.0.0
   yumemi_lints: 2.1.0
