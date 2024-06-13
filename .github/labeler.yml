@@ -37,7 +37,6 @@ labels:
     title: '^\[.*?\]\s*ci(?:\(.+?\))?\!?:'
     files:
       - '\.github/.+'
-      - "scripts/.+"
       - "tool/.+"
 
   - label: "type/chore"
