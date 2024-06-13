@@ -96,6 +96,20 @@ fi
 
 ##############################################################################
 ##
+##  grinder
+##
+##############################################################################
+echo ""
+echo "🚀 grinder check: Start"
+if type grinder >/dev/null 2>&1; then
+    echo "✅ grinder check: Success"
+else
+  echo "⚠️ grinder check: Skip grinder because it could not be found."
+  echo "⚠️ grinder check: See https://pub.dev/packages/grinder/install for installation."
+fi
+
+##############################################################################
+##
 ##  Finish
 ##
 ##############################################################################
