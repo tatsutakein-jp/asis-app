@@ -1,5 +1,5 @@
 bricks:
   feature:
-    path: tool/bricks/feature
+    path: bricks/feature
   firebase_options:
-    path: tool/bricks/firebase_options
+    path: bricks/firebase_options
