@@ -7,4 +7,4 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "**/firebase_options.dart"
-    - "tools/bricks/**"
+    - "tool/bricks/**"

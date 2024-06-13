@@ -7,5 +7,5 @@ Using mason.
 ## New Brick
 
 ```shell
-mason new xxxx --output-dir ./tools/bricks
+mason new xxxx --output-dir ./tool/bricks
 ```
