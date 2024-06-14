@@ -23,7 +23,11 @@ class QuestRepository {
 
   Stream<Quest?> streamById({required QuestId id}) => _dao.streamById(id: id);
 
-  Stream<List<Quest>> allStream() => _dao.allStream();
+  Stream<List<Quest>> stream({
+    int? offset,
+    int? limit,
+  }) =>
+      _dao.stream();
 
   Future<void> insert({required Quest quest}) async =>
       _dao.insert(quest: quest);

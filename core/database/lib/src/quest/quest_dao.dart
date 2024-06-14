@@ -13,7 +13,10 @@ abstract interface class QuestDao {
 
   Stream<Quest?> streamById({required QuestId id});
 
-  Stream<List<Quest>> allStream();
+  Stream<List<Quest>> stream({
+    int? offset,
+    int? limit,
+  });
 
   Future<void> insert({required Quest quest});
 
