@@ -9,7 +9,7 @@
 ///   "type": 1
 /// }
 /// ```
-class MelosPackage {
+final class MelosPackage {
   MelosPackage({
     required this.name,
     required this.version,
@@ -40,5 +40,10 @@ class MelosPackage {
       'location': location,
       'type': type,
     };
+  }
+
+  @override
+  String toString() {
+    return 'MelosPackage(name: $name, version: $version, private: $private, location: $location, type: $type)';
   }
 }

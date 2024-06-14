@@ -1,5 +1,0 @@
-# When flutter version is updated, you should update this version.
-include: package:yumemi_lints/dart/3.4/recommended.yaml
-linter:
-  rules:
-    public_member_api_docs: false

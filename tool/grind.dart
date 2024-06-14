@@ -2,6 +2,9 @@
 
 import 'package:grinder/grinder.dart';
 
+import 'gen_labeler.dart';
+import 'gen_labels.dart';
+
 Future<void> main(List<String> args) async => grind(args);
 
 @Task()
@@ -12,6 +15,12 @@ Future<dynamic> test() async => TestRunner().testAsync();
 Future<void> build() async {
   Pub.build();
 }
+
+@Task('Generate package labeler.')
+void generatePackageLabeler() => runGeneratePackageLabeler();
+
+@Task('Generate package labels.')
+void generatePackageLabels() => runGeneratePackageLabels();
 
 @Task()
 void clean() => defaultClean();
