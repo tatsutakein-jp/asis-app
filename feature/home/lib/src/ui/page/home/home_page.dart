@@ -1,4 +1,5 @@
 import 'package:core_designsystem/component.dart';
+import 'package:feature_home/src/ui/page/home/component/quest_overview_section.dart';
 import 'package:flutter/material.dart';
 
 /// ホームページ
@@ -22,11 +23,17 @@ final class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: Column(
-          children: [
-            Text('Home Page'),
-          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              QuestOverviewSection(
+                onQuickAddButtonPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
