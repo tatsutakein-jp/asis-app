@@ -23,6 +23,7 @@ dependencies:
   flutter_hooks: 0.20.5
   go_router: 14.2.0
   hooks_riverpod: 2.5.1
+  video_player: 2.8.7
 
 dev_dependencies:
   core_testing:
@@ -32,3 +33,5 @@ dev_dependencies:
   yumemi_lints: 2.1.0
 
 flutter:
+  assets:
+    - assets/videos/
