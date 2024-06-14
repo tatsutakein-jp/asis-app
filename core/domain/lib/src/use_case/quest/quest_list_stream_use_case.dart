@@ -6,5 +6,7 @@ part 'quest_list_stream_use_case.g.dart';
 
 /// クエスト一覧を取得する ユースケース
 @riverpod
-Stream<List<Quest>> questListStreamUseCase(QuestListStreamUseCaseRef ref) =>
-    ref.watch(questRepositoryProvider).allStream();
+Stream<List<Quest>> questListStreamUseCase(
+  QuestListStreamUseCaseRef ref,
+) =>
+    ref.watch(questRepositoryProvider).stream();

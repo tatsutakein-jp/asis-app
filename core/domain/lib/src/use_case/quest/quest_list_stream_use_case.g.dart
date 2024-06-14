@@ -7,7 +7,7 @@ part of 'quest_list_stream_use_case.dart';
 // **************************************************************************
 
 String _$questListStreamUseCaseHash() =>
-    r'3f28b87b625c4b35029b38a228cdeab4e01bedd8';
+    r'db2da4ec480defbb3312c472e9be338332b801ee';
 
 /// クエスト一覧を取得する ユースケース
 ///
