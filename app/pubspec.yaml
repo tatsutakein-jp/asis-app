@@ -49,9 +49,9 @@ dependencies:
   feature_settings:
     # noinspection DartPathPackageReference
     path: ../feature/settings
-  firebase_analytics: 11.0.0
-  firebase_auth: 5.0.0
-  firebase_core: 3.0.0
+  firebase_analytics: 11.0.1
+  firebase_auth: 5.1.0
+  firebase_core: 3.1.0
   flutter:
     sdk: flutter
   flutter_riverpod: 2.5.1
