@@ -1,5 +1,7 @@
-import 'package:core_designsystem/component.dart';
+import 'dart:ui';
+
 import 'package:feature_auth/src/ui/page/auth/components/sign_in_form.dart';
+import 'package:feature_auth/src/ui/page/auth/components/video_background_view.dart';
 import 'package:flutter/material.dart';
 
 /// 認証ページ
@@ -21,12 +23,28 @@ final class AuthPage extends StatelessWidget {
           focus.unfocus();
         }
       },
-      child: AsisScaffold(
-        appBar: const AsisAppBar(
-          title: Text('サインイン'),
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          title: const Text('サインイン'),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
         ),
-        body: SignInForm(
-          onLoginSuccess: _onLoginSuccess,
+        body: Stack(
+          children: [
+            ImageFiltered(
+              imageFilter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: const HeroBackground(),
+            ),
+            Positioned.fill(
+              child: SafeArea(
+                child: SignInForm(
+                  onLoginSuccess: _onLoginSuccess,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
