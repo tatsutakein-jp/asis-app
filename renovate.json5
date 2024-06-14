@@ -16,8 +16,7 @@
     {
       "groupName": "github-actions non-major dependencies",
       "groupSlug": "github-actions-minor-patch",
-      "labels": [
-        "dependencies",
+      "addLabels": [
         "ignore for release",
       ],
       "matchManagers": [
