@@ -11,7 +11,7 @@ dependencies:
     path: ../common
   core_model:
     path: ../model
-  mocktail: 1.0.3
+  mocktail: 1.0.4
   riverpod: 2.5.1
 
 dev_dependencies:
