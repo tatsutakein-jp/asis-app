@@ -1,11 +1,11 @@
 {
-    "name": "catalog",
-    "short_name": "catalog",
+    "name": "Asis Catalog",
+    "short_name": "Asis Catalog",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
+    "background_color": "#2F252E",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Asis Catalog.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
