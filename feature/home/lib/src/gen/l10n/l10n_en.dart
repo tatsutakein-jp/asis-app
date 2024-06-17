@@ -1,0 +1,32 @@
+// ignore_for_file: type=lint
+
+import 'l10n.dart';
+
+/// The translations for English (`en`).
+class L10nEn extends L10n {
+  L10nEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get homeAppBarTitle => 'Home';
+
+  @override
+  String get homeQuestOverviewSectionTitle => 'Quest Overview';
+
+  @override
+  String get homeQuestOverviewSectionTotalQuests => 'Total Quests';
+
+  @override
+  String get homeQuestOverviewSectionQuestsCompleted => 'Quests Completed';
+
+  @override
+  String get homeQuestOverviewSectionPendingQuests => 'Pending Quests';
+
+  @override
+  String get homeQuestOverviewSectionQuickAddQuest => 'Quick Add Quest';
+
+  @override
+  String get homeRecentQuestListSectionYourQuestList => 'Your Quest List';
+
+  @override
+  String get homeRecentQuestListSectionMore => 'More';
+}

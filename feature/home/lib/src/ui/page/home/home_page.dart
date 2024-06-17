@@ -1,4 +1,5 @@
 import 'package:core_designsystem/component.dart';
+import 'package:feature_home/src/gen/l10n/l10n.dart';
 import 'package:feature_home/src/ui/page/home/component/quest_overview_section.dart';
 import 'package:feature_home/src/ui/page/home/component/recent_quest_list_section.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +15,11 @@ final class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return AsisScaffold(
       appBar: AsisAppBar(
-        title: const Text('Home'),
+        title: Text(l10n.homeAppBarTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_outlined),

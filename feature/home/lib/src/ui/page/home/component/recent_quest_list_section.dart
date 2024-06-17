@@ -1,6 +1,7 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_domain/quest_use_case.dart';
 import 'package:core_model/quest.dart';
+import 'package:feature_home/src/gen/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -18,17 +19,18 @@ final class RecentQuestListSection extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = L10n.of(context);
     final questList = ref.watch(recentQuestListStreamUseCaseProvider);
 
     return Container(
       width: double.infinity,
       child: Column(
         children: [
-          const SizedBox(
+          SizedBox(
             width: double.infinity,
             child: Text(
-              'Your Quest List',
-              style: TextStyle(
+              l10n.homeRecentQuestListSectionYourQuestList,
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -101,7 +103,7 @@ final class RecentQuestListSection extends HookConsumerWidget {
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: TextButton(
                 onPressed: _onMoreButtonPressed,
-                child: const Text('More'),
+                child: Text(l10n.homeRecentQuestListSectionMore),
               ),
             ),
           ),
