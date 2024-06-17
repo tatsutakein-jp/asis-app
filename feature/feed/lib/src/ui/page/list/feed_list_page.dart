@@ -1,5 +1,6 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/feed.dart';
+import 'package:feature_feed/src/gen/l10n/l10n.dart';
 import 'package:feature_feed/src/ui/page/list/component/feed_list.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,11 @@ final class FeedListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return AsisScaffold(
-      appBar: const AsisAppBar(
-        title: Text('Feed'),
+      appBar: AsisAppBar(
+        title: Text(l10n.feedListAppBarTitle),
       ),
       body: FeedList(
         onTapFeedListItem: _onTapFeedListItem,
