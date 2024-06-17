@@ -32,6 +32,9 @@ dependencies:
   core_model:
     # noinspection DartPathPackageReference
     path: ../core/model
+  core_ui:
+    # noinspection DartPathPackageReference
+    path: ../core/ui
   cupertino_icons: 1.0.8
   dynamic_color: 1.7.0
   feature_auth:
