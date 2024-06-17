@@ -5,7 +5,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(
   name: 'TappableCard',
   type: TappableCard,
-  path: '[Components]',
+  path: '[DesignSystem]/components',
 )
 Widget asisScaffoldUseCase(BuildContext context) {
   return TappableCard(

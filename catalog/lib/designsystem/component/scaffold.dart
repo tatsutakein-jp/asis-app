@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(
   name: 'AsisScaffold',
   type: AsisScaffold,
-  path: '[Components]',
+  path: '[DesignSystem]/components',
 )
 Widget asisScaffoldUseCase(BuildContext context) {
   return AsisScaffold(

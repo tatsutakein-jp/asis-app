@@ -5,7 +5,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(
   name: 'HomePage',
   type: HomePage,
-  path: '[Pages]',
+  path: '[Feature]/home',
 )
 HomePage homePageUseCase(BuildContext context) {
   return HomePage(
