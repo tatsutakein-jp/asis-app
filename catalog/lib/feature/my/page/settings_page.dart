@@ -5,7 +5,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(
   name: 'SettingsPage',
   type: SettingsPage,
-  path: '[Pages]',
+  path: '[Feature]/my',
 )
 SettingsPage settingsPageUseCase(BuildContext context) {
   return SettingsPage(

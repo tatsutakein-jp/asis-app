@@ -6,7 +6,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(
   name: 'QuestListTile',
   type: QuestListTile,
-  path: '[Components]',
+  path: '[UI]/components',
 )
 Widget asisScaffoldUseCase(BuildContext context) {
   return QuestListTile(

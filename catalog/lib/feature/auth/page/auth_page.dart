@@ -5,7 +5,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 @widgetbook.UseCase(
   name: 'AuthPage',
   type: AuthPage,
-  path: '[Pages]',
+  path: '[Feature]/auth',
 )
 AuthPage authPageUseCase(BuildContext context) {
   return AuthPage(
