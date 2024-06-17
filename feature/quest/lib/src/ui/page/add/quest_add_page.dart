@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/quest.dart';
+import 'package:feature_quest/src/gen/l10n/l10n.dart';
 import 'package:feature_quest/src/ui/page/add/quest_add_page_action.dart';
 import 'package:feature_quest/src/ui/page/add/quest_add_page_state_machine.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +39,11 @@ final class StatelessQuestAddPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return AsisScaffold(
-      appBar: const AsisAppBar(
-        title: Text('Quest add'),
+      appBar: AsisAppBar(
+        title: Text(l10n.questAddAppBarTitle),
       ),
       body: const Text('Quest add'),
       floatingActionButton: FloatingActionButton.extended(
@@ -57,7 +60,7 @@ final class StatelessQuestAddPage extends StatelessWidget {
             addQuest,
           );
         },
-        label: const Text('クエストを追加する'),
+        label: Text(l10n.questAddFormSubmit),
         icon: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

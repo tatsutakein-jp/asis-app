@@ -1,4 +1,5 @@
 import 'package:core_designsystem/component.dart';
+import 'package:feature_quest/src/gen/l10n/l10n.dart';
 import 'package:feature_quest/src/ui/page/detail/component/quest_content.dart';
 import 'package:flutter/material.dart';
 
@@ -13,9 +14,11 @@ final class QuestDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return AsisScaffold(
-      appBar: const AsisAppBar(
-        title: Text('Quest detail'),
+      appBar: AsisAppBar(
+        title: Text(l10n.questDetailAppBarTitle),
       ),
       body: QuestContent(
         questId: _questId,
