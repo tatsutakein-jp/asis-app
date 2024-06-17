@@ -1,0 +1,10 @@
+{
+  "homeAppBarTitle": "ホーム",
+  "homeQuestOverviewSectionTitle": "クエスト概要",
+  "homeQuestOverviewSectionTotalQuests": "総クエスト数",
+  "homeQuestOverviewSectionQuestsCompleted": "完了したクエスト",
+  "homeQuestOverviewSectionPendingQuests": "未完了のクエスト",
+  "homeQuestOverviewSectionQuickAddQuest": "クイック追加",
+  "homeRecentQuestListSectionYourQuestList": "クエスト一覧",
+  "homeRecentQuestListSectionMore": "さらに表示"
+}

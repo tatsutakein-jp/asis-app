@@ -1,0 +1,10 @@
+{
+  "authSignInAppBarTitle": "Sign In",
+  "authSignInFormEmailLabel": "Email Address",
+  "authSignInFormEmailEmptyErrorMessage": "Please enter your email address",
+  "authSignInFormEmailInvalidErrorMessage": "Please enter a valid email address",
+  "authSignInFormPasswordLabel": "Password",
+  "authSignInFormPasswordEmptyErrorMessage": "Please enter your password",
+  "authSignInFormPasswordInvalidErrorMessage": "Password must be at least 6 characters long",
+  "authSignInFormSubmit": "Sign In"
+}

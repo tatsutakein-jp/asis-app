@@ -1,0 +1,10 @@
+{
+  "authSignInAppBarTitle": "サインイン",
+  "authSignInFormEmailLabel": "メールアドレス",
+  "authSignInFormEmailEmptyErrorMessage": "メールアドレスを入力してください",
+  "authSignInFormEmailInvalidErrorMessage": "有効なメールアドレスを入力してください",
+  "authSignInFormPasswordLabel": "パスワード",
+  "authSignInFormPasswordEmptyErrorMessage": "パスワードを入力してください",
+  "authSignInFormPasswordInvalidErrorMessage": "パスワードは少なくとも6文字以上である必要があります",
+  "authSignInFormSubmit": "サインインする"
+}

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:feature_auth/src/gen/l10n/l10n.dart';
 import 'package:feature_auth/src/ui/page/auth/components/sign_in_form.dart';
 import 'package:feature_auth/src/ui/page/auth/components/video_background_view.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ final class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
     final focus = FocusScope.of(context);
 
     return GestureDetector(
@@ -26,7 +28,7 @@ final class AuthPage extends StatelessWidget {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: const Text('サインイン'),
+          title: Text(l10n.authSignInAppBarTitle),
           centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,

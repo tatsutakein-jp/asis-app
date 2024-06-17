@@ -1,4 +1,5 @@
 import 'package:core_model/build_config.dart';
+import 'package:feature_settings/src/gen/l10n/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -9,12 +10,13 @@ final class BuildConfigTileContent extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = L10n.of(context);
     final buildConfig = ref.watch(buildConfigProvider);
 
     return Column(
       children: [
         // アプリバージョン
-        const Text('アプリバージョン'),
+        Text(l10n.settingsBuildConfigAppVersion),
         if (kIsWeb)
           Text(buildConfig.version)
         else

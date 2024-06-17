@@ -1,0 +1,14 @@
+{
+  "settingsAppBarTitle": "設定",
+  "settingsThemeSettingTileTitle": "テーマ設定",
+  "settingsThemeSettingTileSubtitle": "設定中のテーマ: ",
+  "settingsThemeSettingTitle": "テーマ設定",
+  "settingsThemeSettingSystem": "システム",
+  "settingsThemeSettingLightMode": "ライトモード",
+  "settingsThemeSettingDarkMode": "ダークモード",
+  "settingsThemeSettingPositive": "OK",
+  "settingsThemeSettingNegative": "キャンセル",
+  "settingsOpenSourceLicenses": "オープンソースライセンス",
+  "settingsSignOut": "サインアウト",
+  "settingsBuildConfigAppVersion": "アプリバージョン"
+}

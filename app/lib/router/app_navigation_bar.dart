@@ -1,4 +1,4 @@
-import 'package:app/router/app_navigation_label.dart';
+import 'package:app/gen/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -15,22 +15,24 @@ class AppNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationShell.currentIndex,
-        destinations: const [
+        destinations: [
           NavigationDestination(
-            icon: Icon(Icons.home),
-            label: AppNavigationLabel.home,
+            icon: const Icon(Icons.home),
+            label: l10n.bottomNavigationBarHome,
           ),
           NavigationDestination(
-            icon: Icon(Icons.map),
-            label: AppNavigationLabel.quest,
+            icon: const Icon(Icons.explore_outlined),
+            label: l10n.bottomNavigationBarQuest,
           ),
           NavigationDestination(
-            icon: Icon(Icons.settings),
-            label: AppNavigationLabel.settings,
+            icon: const Icon(Icons.account_circle_outlined),
+            label: l10n.bottomNavigationBarAccount,
           ),
         ],
         onDestinationSelected: (index) {

@@ -1,4 +1,5 @@
 import 'package:core_designsystem/component.dart';
+import 'package:feature_home/src/gen/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -13,37 +14,48 @@ final class QuestOverviewSection extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = L10n.of(context);
+
     return Container(
       width: double.infinity,
       child: Column(
         children: [
-          const SizedBox(
+          SizedBox(
             width: double.infinity,
             child: Text(
-              'Quest Overview',
-              style: TextStyle(
+              l10n.homeQuestOverviewSectionTitle,
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           const Gap(16),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: _StatCard(title: 'Total Quests', count: '50'),
+                child: _StatCard(
+                  title: l10n.homeQuestOverviewSectionTotalQuests,
+                  count: '50',
+                ),
               ),
-              Gap(16),
+              const Gap(16),
               Expanded(
-                child: _StatCard(title: 'Quests Completed', count: '20'),
+                child: _StatCard(
+                  title: l10n.homeQuestOverviewSectionQuestsCompleted,
+                  count: '20',
+                ),
               ),
             ],
           ),
           const Gap(16),
-          const SizedBox(
+          SizedBox(
             width: double.infinity,
-            child: _StatCard(title: 'Pending Quests', count: '30'),
+            child: _StatCard(
+              title: l10n.homeQuestOverviewSectionPendingQuests,
+              count: '30',
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
@@ -51,7 +63,7 @@ final class QuestOverviewSection extends HookConsumerWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: _onQuickAddButtonPressed,
-                child: const Text('Quick Add Quest'),
+                child: Text(l10n.homeQuestOverviewSectionQuickAddQuest),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(

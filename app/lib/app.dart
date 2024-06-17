@@ -1,4 +1,5 @@
 import 'package:app/extension/theme.dart';
+import 'package:app/l10n/l10n.dart';
 import 'package:app/router/app_router.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_domain/user_settings_use_case.dart';
@@ -22,7 +23,9 @@ final class AsisApp extends ConsumerWidget {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
         return MaterialApp.router(
-          title: 'ASIS App',
+          title: 'ASIS',
+          localizationsDelegates: appLocalizationsDelegates,
+          supportedLocales: appSupportedLocales,
           theme: lightTheme(lightDynamic),
           darkTheme: darkTheme(darkDynamic),
           themeMode: themeMode,

@@ -1,5 +1,6 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_model/quest.dart';
+import 'package:feature_quest/src/gen/l10n/l10n.dart';
 import 'package:feature_quest/src/ui/page/list/component/quest_list.dart';
 import 'package:flutter/material.dart';
 
@@ -17,16 +18,18 @@ final class QuestListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return AsisScaffold(
-      appBar: const AsisAppBar(
-        title: Text('Quest'),
+      appBar: AsisAppBar(
+        title: Text(l10n.questListAppBarTitle),
       ),
       body: QuestList(
         onTapQuestListItem: _onTapQuestListItem,
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _onTapQuestAddButton,
-        label: const Text('クエストを追加する'),
+        label: Text(l10n.questListAddQuest),
         icon: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

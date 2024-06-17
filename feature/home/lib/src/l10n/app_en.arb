@@ -1,0 +1,10 @@
+{
+  "homeAppBarTitle": "Home",
+  "homeQuestOverviewSectionTitle": "Quest Overview",
+  "homeQuestOverviewSectionTotalQuests": "Total Quests",
+  "homeQuestOverviewSectionQuestsCompleted": "Quests Completed",
+  "homeQuestOverviewSectionPendingQuests": "Pending Quests",
+  "homeQuestOverviewSectionQuickAddQuest": "Quick Add Quest",
+  "homeRecentQuestListSectionYourQuestList": "Your Quest List",
+  "homeRecentQuestListSectionMore": "More"
+}

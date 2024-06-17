@@ -1,0 +1,14 @@
+{
+  "settingsAppBarTitle": "Settings",
+  "settingsThemeSettingTileTitle": "Theme Settings",
+  "settingsThemeSettingTileSubtitle": "Current Theme: ",
+  "settingsThemeSettingTitle": "Theme Settings",
+  "settingsThemeSettingSystem": "System",
+  "settingsThemeSettingLightMode": "Light Mode",
+  "settingsThemeSettingDarkMode": "Dark Mode",
+  "settingsThemeSettingPositive": "OK",
+  "settingsThemeSettingNegative": "Cancel",
+  "settingsOpenSourceLicenses": "Open Source Licenses",
+  "settingsSignOut": "Sign Out",
+  "settingsBuildConfigAppVersion": "App Version"
+}
