@@ -1,5 +1,6 @@
 import 'package:core_designsystem/component.dart';
 import 'package:core_domain/auth_use_case.dart';
+import 'package:feature_settings/src/gen/l10n/l10n.dart';
 import 'package:feature_settings/src/ui/page/settings/component/index.dart';
 import 'package:feature_settings/src/ui/page/settings/component/theme_list_tile.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,11 @@ final class SettingsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = L10n.of(context);
+
     return AsisScaffold(
-      appBar: const AsisAppBar(
-        title: Text('Settings'),
+      appBar: AsisAppBar(
+        title: Text(l10n.settingsAppBarTitle),
       ),
       body: ListView(
         primary: true,
@@ -38,14 +41,14 @@ final class SettingsPage extends ConsumerWidget {
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
-            title: const Text('オープンソースライセンス'),
+            title: Text(l10n.settingsOpenSourceLicenses),
             onTap: _onTapOpenSourceLicense,
           ),
           ListTile(
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 16,
             ),
-            title: const Text('サインアウト'),
+            title: Text(l10n.settingsSignOut),
             onTap: () async {
               await ref.read(signOutUseCaseProvider);
               _onSignOutSuccess();
