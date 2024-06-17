@@ -16,7 +16,7 @@ final class BuildConfigTileContent extends ConsumerWidget {
     return Column(
       children: [
         // アプリバージョン
-        const Text('アプリバージョン'),
+        Text(l10n.settingsBuildConfigAppVersion),
         if (kIsWeb)
           Text(buildConfig.version)
         else
