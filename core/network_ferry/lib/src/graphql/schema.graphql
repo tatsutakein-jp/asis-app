@@ -1,0 +1,1085 @@
+schema {
+  query: query_root
+  subscription: subscription_root
+}
+
+"""whether this query should be cached (Hasura Cloud only)"""
+directive @cached(
+  """measured in seconds"""
+  ttl: Int! = 60
+
+  """refresh the cache entry"""
+  refresh: Boolean! = false
+) on QUERY
+
+"""ordering argument of a cursor"""
+enum CursorOrdering {
+  """ascending ordering of the cursor"""
+  ASC
+
+  """descending ordering of the cursor"""
+  DESC
+}
+
+"""ニュース"""
+type News {
+  """内容"""
+  content: String!
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """抜粋"""
+  excerpt: String!
+
+  """ニュース ID"""
+  id: uuid!
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """An object relationship"""
+  seo: Seos
+
+  """SEO"""
+  seoId: uuid
+
+  """ラベル文字列"""
+  slug: String!
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "news". All fields are combined with a logical 'AND'.
+"""
+input NewsBoolExp {
+  _and: [NewsBoolExp!]
+  _not: NewsBoolExp
+  _or: [NewsBoolExp!]
+  content: StringComparisonExp
+  coverImageUrl: StringComparisonExp
+  createdAt: TimestamptzComparisonExp
+  excerpt: StringComparisonExp
+  id: UuidComparisonExp
+  publishedAt: TimestamptzComparisonExp
+  seo: SeosBoolExp
+  seoId: UuidComparisonExp
+  slug: StringComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "news"."""
+input NewsOrderBy {
+  content: OrderBy
+  coverImageUrl: OrderBy
+  createdAt: OrderBy
+  excerpt: OrderBy
+  id: OrderBy
+  publishedAt: OrderBy
+  seo: SeosOrderBy
+  seoId: OrderBy
+  slug: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "news"
+"""
+enum NewsSelectColumn {
+  """column name"""
+  content
+
+  """column name"""
+  coverImageUrl
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  excerpt
+
+  """column name"""
+  id
+
+  """column name"""
+  publishedAt
+
+  """column name"""
+  seoId
+
+  """column name"""
+  slug
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "news"
+"""
+input NewsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: NewsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input NewsStreamCursorValueInput {
+  """内容"""
+  content: String
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """抜粋"""
+  excerpt: String
+
+  """ニュース ID"""
+  id: uuid
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """SEO"""
+  seoId: uuid
+
+  """ラベル文字列"""
+  slug: String
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""通知"""
+type Notifications {
+  """内容"""
+  content: String!
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """抜粋"""
+  excerpt: String!
+
+  """初回開封日時"""
+  firstOpenedAt: timestamptz
+
+  """通知ID"""
+  id: uuid!
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+
+  """対象ユーザーID"""
+  userId: String
+}
+
+"""
+Boolean expression to filter rows from the table "notifications". All fields are combined with a logical 'AND'.
+"""
+input NotificationsBoolExp {
+  _and: [NotificationsBoolExp!]
+  _not: NotificationsBoolExp
+  _or: [NotificationsBoolExp!]
+  content: StringComparisonExp
+  coverImageUrl: StringComparisonExp
+  createdAt: TimestamptzComparisonExp
+  excerpt: StringComparisonExp
+  firstOpenedAt: TimestamptzComparisonExp
+  id: UuidComparisonExp
+  publishedAt: TimestamptzComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+  userId: StringComparisonExp
+}
+
+"""Ordering options when selecting data from "notifications"."""
+input NotificationsOrderBy {
+  content: OrderBy
+  coverImageUrl: OrderBy
+  createdAt: OrderBy
+  excerpt: OrderBy
+  firstOpenedAt: OrderBy
+  id: OrderBy
+  publishedAt: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+  userId: OrderBy
+}
+
+"""
+select columns of table "notifications"
+"""
+enum NotificationsSelectColumn {
+  """column name"""
+  content
+
+  """column name"""
+  coverImageUrl
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  excerpt
+
+  """column name"""
+  firstOpenedAt
+
+  """column name"""
+  id
+
+  """column name"""
+  publishedAt
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  userId
+}
+
+"""
+Streaming cursor of the table "notifications"
+"""
+input NotificationsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: NotificationsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input NotificationsStreamCursorValueInput {
+  """内容"""
+  content: String
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """抜粋"""
+  excerpt: String
+
+  """初回開封日時"""
+  firstOpenedAt: timestamptz
+
+  """通知ID"""
+  id: uuid
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """対象ユーザーID"""
+  userId: String
+}
+
+"""column ordering options"""
+enum OrderBy {
+  """in ascending order, nulls last"""
+  ASC
+
+  """in ascending order, nulls first"""
+  ASC_NULLS_FIRST
+
+  """in ascending order, nulls last"""
+  ASC_NULLS_LAST
+
+  """in descending order, nulls first"""
+  DESC
+
+  """in descending order, nulls first"""
+  DESC_NULLS_FIRST
+
+  """in descending order, nulls last"""
+  DESC_NULLS_LAST
+}
+
+"""SEO"""
+type Seos {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """説明文"""
+  description: String!
+
+  """SEO ID"""
+  id: uuid!
+
+  """カスタム OG 画像 URL ( 1280✕720 )"""
+  ogImageUrl: String
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "seos". All fields are combined with a logical 'AND'.
+"""
+input SeosBoolExp {
+  _and: [SeosBoolExp!]
+  _not: SeosBoolExp
+  _or: [SeosBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  id: UuidComparisonExp
+  ogImageUrl: StringComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "seos"."""
+input SeosOrderBy {
+  createdAt: OrderBy
+  description: OrderBy
+  id: OrderBy
+  ogImageUrl: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "seos"
+"""
+enum SeosSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  ogImageUrl
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "seos"
+"""
+input SeosStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: SeosStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input SeosStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """SEO ID"""
+  id: uuid
+
+  """カスタム OG 画像 URL ( 1280✕720 )"""
+  ogImageUrl: String
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""
+Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.
+"""
+input StringComparisonExp {
+  _eq: String
+  _gt: String
+  _gte: String
+
+  """does the column match the given case-insensitive pattern"""
+  _ilike: String
+  _in: [String!]
+
+  """
+  does the column match the given POSIX regular expression, case insensitive
+  """
+  _iregex: String
+  _isNull: Boolean
+
+  """does the column match the given pattern"""
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+
+  """does the column NOT match the given case-insensitive pattern"""
+  _nilike: String
+  _nin: [String!]
+
+  """
+  does the column NOT match the given POSIX regular expression, case insensitive
+  """
+  _niregex: String
+
+  """does the column NOT match the given pattern"""
+  _nlike: String
+
+  """
+  does the column NOT match the given POSIX regular expression, case sensitive
+  """
+  _nregex: String
+
+  """does the column NOT match the given SQL regular expression"""
+  _nsimilar: String
+
+  """
+  does the column match the given POSIX regular expression, case sensitive
+  """
+  _regex: String
+
+  """does the column match the given SQL regular expression"""
+  _similar: String
+}
+
+"""タグ"""
+type Tags {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """説明文"""
+  description: String!
+
+  """タグID"""
+  id: uuid!
+
+  """タグ"""
+  tag: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "tags". All fields are combined with a logical 'AND'.
+"""
+input TagsBoolExp {
+  _and: [TagsBoolExp!]
+  _not: TagsBoolExp
+  _or: [TagsBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  id: UuidComparisonExp
+  tag: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "tags"."""
+input TagsOrderBy {
+  createdAt: OrderBy
+  description: OrderBy
+  id: OrderBy
+  tag: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "tags"
+"""
+enum TagsSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  tag
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "tags"
+"""
+input TagsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: TagsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input TagsStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """タグID"""
+  id: uuid
+
+  """タグ"""
+  tag: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""
+Boolean expression to compare columns of type "timestamptz". All fields are combined with logical 'AND'.
+"""
+input TimestamptzComparisonExp {
+  _eq: timestamptz
+  _gt: timestamptz
+  _gte: timestamptz
+  _in: [timestamptz!]
+  _isNull: Boolean
+  _lt: timestamptz
+  _lte: timestamptz
+  _neq: timestamptz
+  _nin: [timestamptz!]
+}
+
+"""ユーザープロフィール"""
+type Users {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """メールアドレス"""
+  email: String
+
+  """ユーザーID"""
+  id: String!
+
+  """最終アクセス日時"""
+  lastSeen: timestamptz!
+
+  """ニックネーム"""
+  nickname: String
+
+  """アイコン画像URL"""
+  picture: String
+
+  """更新日時"""
+  updatedAt: timestamptz!
+
+  """ユーザー名"""
+  username: String!
+
+  """ウェブサイトURL"""
+  website: String
+}
+
+"""
+Boolean expression to filter rows from the table "users". All fields are combined with a logical 'AND'.
+"""
+input UsersBoolExp {
+  _and: [UsersBoolExp!]
+  _not: UsersBoolExp
+  _or: [UsersBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  email: StringComparisonExp
+  id: StringComparisonExp
+  lastSeen: TimestamptzComparisonExp
+  nickname: StringComparisonExp
+  picture: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+  username: StringComparisonExp
+  website: StringComparisonExp
+}
+
+"""Ordering options when selecting data from "users"."""
+input UsersOrderBy {
+  createdAt: OrderBy
+  email: OrderBy
+  id: OrderBy
+  lastSeen: OrderBy
+  nickname: OrderBy
+  picture: OrderBy
+  updatedAt: OrderBy
+  username: OrderBy
+  website: OrderBy
+}
+
+"""
+select columns of table "users"
+"""
+enum UsersSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  email
+
+  """column name"""
+  id
+
+  """column name"""
+  lastSeen
+
+  """column name"""
+  nickname
+
+  """column name"""
+  picture
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  username
+
+  """column name"""
+  website
+}
+
+"""
+Streaming cursor of the table "users"
+"""
+input UsersStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: UsersStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input UsersStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """メールアドレス"""
+  email: String
+
+  """ユーザーID"""
+  id: String
+
+  """最終アクセス日時"""
+  lastSeen: timestamptz
+
+  """ニックネーム"""
+  nickname: String
+
+  """アイコン画像URL"""
+  picture: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """ユーザー名"""
+  username: String
+
+  """ウェブサイトURL"""
+  website: String
+}
+
+"""
+Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'.
+"""
+input UuidComparisonExp {
+  _eq: uuid
+  _gt: uuid
+  _gte: uuid
+  _in: [uuid!]
+  _isNull: Boolean
+  _lt: uuid
+  _lte: uuid
+  _neq: uuid
+  _nin: [uuid!]
+}
+
+type query_root {
+  """
+  fetch data from the table: "news"
+  """
+  news(
+    """distinct select on columns"""
+    distinctOn: [NewsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NewsOrderBy!]
+
+    """filter the rows returned"""
+    where: NewsBoolExp
+  ): [News!]!
+
+  """fetch data from the table: "news" using primary key columns"""
+  newsByPk(
+    """ニュース ID"""
+    id: uuid!
+  ): News
+
+  """
+  fetch data from the table: "notifications"
+  """
+  notifications(
+    """distinct select on columns"""
+    distinctOn: [NotificationsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NotificationsOrderBy!]
+
+    """filter the rows returned"""
+    where: NotificationsBoolExp
+  ): [Notifications!]!
+
+  """fetch data from the table: "notifications" using primary key columns"""
+  notificationsByPk(
+    """通知ID"""
+    id: uuid!
+  ): Notifications
+
+  """
+  fetch data from the table: "seos"
+  """
+  seos(
+    """distinct select on columns"""
+    distinctOn: [SeosSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [SeosOrderBy!]
+
+    """filter the rows returned"""
+    where: SeosBoolExp
+  ): [Seos!]!
+
+  """fetch data from the table: "seos" using primary key columns"""
+  seosByPk(
+    """SEO ID"""
+    id: uuid!
+  ): Seos
+
+  """
+  fetch data from the table: "tags"
+  """
+  tags(
+    """distinct select on columns"""
+    distinctOn: [TagsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [TagsOrderBy!]
+
+    """filter the rows returned"""
+    where: TagsBoolExp
+  ): [Tags!]!
+
+  """fetch data from the table: "tags" using primary key columns"""
+  tagsByPk(
+    """タグID"""
+    id: uuid!
+  ): Tags
+
+  """
+  fetch data from the table: "users"
+  """
+  users(
+    """distinct select on columns"""
+    distinctOn: [UsersSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [UsersOrderBy!]
+
+    """filter the rows returned"""
+    where: UsersBoolExp
+  ): [Users!]!
+
+  """fetch data from the table: "users" using primary key columns"""
+  usersByPk(
+    """ユーザーID"""
+    id: String!
+  ): Users
+}
+
+type subscription_root {
+  """
+  fetch data from the table: "news"
+  """
+  news(
+    """distinct select on columns"""
+    distinctOn: [NewsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NewsOrderBy!]
+
+    """filter the rows returned"""
+    where: NewsBoolExp
+  ): [News!]!
+
+  """fetch data from the table: "news" using primary key columns"""
+  newsByPk(
+    """ニュース ID"""
+    id: uuid!
+  ): News
+
+  """
+  fetch data from the table in a streaming manner: "news"
+  """
+  newsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [NewsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: NewsBoolExp
+  ): [News!]!
+
+  """
+  fetch data from the table: "notifications"
+  """
+  notifications(
+    """distinct select on columns"""
+    distinctOn: [NotificationsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NotificationsOrderBy!]
+
+    """filter the rows returned"""
+    where: NotificationsBoolExp
+  ): [Notifications!]!
+
+  """fetch data from the table: "notifications" using primary key columns"""
+  notificationsByPk(
+    """通知ID"""
+    id: uuid!
+  ): Notifications
+
+  """
+  fetch data from the table in a streaming manner: "notifications"
+  """
+  notificationsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [NotificationsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: NotificationsBoolExp
+  ): [Notifications!]!
+
+  """
+  fetch data from the table: "seos"
+  """
+  seos(
+    """distinct select on columns"""
+    distinctOn: [SeosSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [SeosOrderBy!]
+
+    """filter the rows returned"""
+    where: SeosBoolExp
+  ): [Seos!]!
+
+  """fetch data from the table: "seos" using primary key columns"""
+  seosByPk(
+    """SEO ID"""
+    id: uuid!
+  ): Seos
+
+  """
+  fetch data from the table in a streaming manner: "seos"
+  """
+  seosStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [SeosStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: SeosBoolExp
+  ): [Seos!]!
+
+  """
+  fetch data from the table: "tags"
+  """
+  tags(
+    """distinct select on columns"""
+    distinctOn: [TagsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [TagsOrderBy!]
+
+    """filter the rows returned"""
+    where: TagsBoolExp
+  ): [Tags!]!
+
+  """fetch data from the table: "tags" using primary key columns"""
+  tagsByPk(
+    """タグID"""
+    id: uuid!
+  ): Tags
+
+  """
+  fetch data from the table in a streaming manner: "tags"
+  """
+  tagsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [TagsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: TagsBoolExp
+  ): [Tags!]!
+
+  """
+  fetch data from the table: "users"
+  """
+  users(
+    """distinct select on columns"""
+    distinctOn: [UsersSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [UsersOrderBy!]
+
+    """filter the rows returned"""
+    where: UsersBoolExp
+  ): [Users!]!
+
+  """fetch data from the table: "users" using primary key columns"""
+  usersByPk(
+    """ユーザーID"""
+    id: String!
+  ): Users
+
+  """
+  fetch data from the table in a streaming manner: "users"
+  """
+  usersStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [UsersStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: UsersBoolExp
+  ): [Users!]!
+}
+
+scalar timestamptz
+
+scalar uuid
+
