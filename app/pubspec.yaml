@@ -32,6 +32,9 @@ dependencies:
   core_model:
     # noinspection DartPathPackageReference
     path: ../core/model
+  core_network_ferry:
+    # noinspection DartPathPackageReference
+    path: ../core/network_ferry
   core_ui:
     # noinspection DartPathPackageReference
     path: ../core/ui
