@@ -47,6 +47,34 @@ fi
 
 ##############################################################################
 ##
+##  Env
+##
+##############################################################################
+echo ""
+echo "🚀 Env: Start"
+
+# source file (sample)
+ENV_SOURCE_FILE="app/.env.sample"
+
+# copy
+ENV_TARGET="app/.env"
+cp -i "$ENV_SOURCE_FILE" "$ENV_TARGET"
+ENV_COPY_TO_TARGET=$?
+if [ $ENV_COPY_TO_TARGET -eq 0 ]; then
+    echo "🎉 Env: Successfully generated $ENV_TARGET"
+else
+    echo "⚠️ Env: Failed to generate $ENV_TARGET"
+fi
+
+# result
+if [ $ENV_COPY_TO_TARGET -eq 0 ]; then
+  echo "✅ Env: Success"
+else
+  echo "🚫 Env: Failed"
+fi
+
+##############################################################################
+##
 ##  Finish
 ##
 ##############################################################################
