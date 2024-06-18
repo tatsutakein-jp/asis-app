@@ -106,6 +106,10 @@ labels:
     files:
       - core/network/.+
 
+  - label: "@core/network_ferry"
+    files:
+      - core/network_ferry/.+
+
   - label: "@core/testing"
     files:
       - core/testing/.+

@@ -154,6 +154,10 @@
   color: 630D81
   description: core network package
 
+- name: "@core/network_ferry"
+  color: "424307"
+  description: core network_ferry package
+
 - name: "@core/testing"
   color: "667168"
   description: core testing package
