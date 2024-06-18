@@ -12,6 +12,11 @@ ide:
   intellij:
     enabled: false
 
+command:
+  bootstrap:
+    hooks:
+      post: melos run gen:app
+
 scripts:
   # analyze
   analyze:
@@ -36,6 +41,11 @@ scripts:
     description: Run build_runner.
     packageFilters:
       dependsOn: "build_runner"
+  gen:app:
+    run: |
+      melos exec --scope="app" \
+        dart run build_runner build --delete-conflicting-outputs
+    description: Run build_runner.
   gen:l10n:
     run: flutter gen-l10n
     exec:
