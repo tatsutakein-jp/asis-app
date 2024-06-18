@@ -82,11 +82,28 @@ class _$GGetNewsData_newsSerializer
       'title',
       serializers.serialize(object.title,
           specifiedType: const FullType(String)),
+      'excerpt',
+      serializers.serialize(object.excerpt,
+          specifiedType: const FullType(String)),
       'content',
       serializers.serialize(object.content,
           specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.publishedAt;
+    if (value != null) {
+      result
+        ..add('publishedAt')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.coverImageUrl;
+    if (value != null) {
+      result
+        ..add('coverImageUrl')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -113,6 +130,18 @@ class _$GGetNewsData_newsSerializer
         case 'title':
           result.title = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'publishedAt':
+          result.publishedAt = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'excerpt':
+          result.excerpt = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'coverImageUrl':
+          result.coverImageUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'content':
           result.content = serializers.deserialize(value,
@@ -247,6 +276,12 @@ class _$GGetNewsData_news extends GGetNewsData_news {
   @override
   final String title;
   @override
+  final DateTime? publishedAt;
+  @override
+  final String excerpt;
+  @override
+  final String? coverImageUrl;
+  @override
   final String content;
 
   factory _$GGetNewsData_news(
@@ -257,12 +292,17 @@ class _$GGetNewsData_news extends GGetNewsData_news {
       {required this.G__typename,
       required this.id,
       required this.title,
+      this.publishedAt,
+      required this.excerpt,
+      this.coverImageUrl,
       required this.content})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GGetNewsData_news', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(id, r'GGetNewsData_news', 'id');
     BuiltValueNullFieldError.checkNotNull(title, r'GGetNewsData_news', 'title');
+    BuiltValueNullFieldError.checkNotNull(
+        excerpt, r'GGetNewsData_news', 'excerpt');
     BuiltValueNullFieldError.checkNotNull(
         content, r'GGetNewsData_news', 'content');
   }
@@ -282,6 +322,9 @@ class _$GGetNewsData_news extends GGetNewsData_news {
         G__typename == other.G__typename &&
         id == other.id &&
         title == other.title &&
+        publishedAt == other.publishedAt &&
+        excerpt == other.excerpt &&
+        coverImageUrl == other.coverImageUrl &&
         content == other.content;
   }
 
@@ -291,6 +334,9 @@ class _$GGetNewsData_news extends GGetNewsData_news {
     _$hash = $jc(_$hash, G__typename.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, publishedAt.hashCode);
+    _$hash = $jc(_$hash, excerpt.hashCode);
+    _$hash = $jc(_$hash, coverImageUrl.hashCode);
     _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -302,6 +348,9 @@ class _$GGetNewsData_news extends GGetNewsData_news {
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('title', title)
+          ..add('publishedAt', publishedAt)
+          ..add('excerpt', excerpt)
+          ..add('coverImageUrl', coverImageUrl)
           ..add('content', content))
         .toString();
   }
@@ -323,6 +372,19 @@ class GGetNewsData_newsBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  DateTime? _publishedAt;
+  DateTime? get publishedAt => _$this._publishedAt;
+  set publishedAt(DateTime? publishedAt) => _$this._publishedAt = publishedAt;
+
+  String? _excerpt;
+  String? get excerpt => _$this._excerpt;
+  set excerpt(String? excerpt) => _$this._excerpt = excerpt;
+
+  String? _coverImageUrl;
+  String? get coverImageUrl => _$this._coverImageUrl;
+  set coverImageUrl(String? coverImageUrl) =>
+      _$this._coverImageUrl = coverImageUrl;
+
   String? _content;
   String? get content => _$this._content;
   set content(String? content) => _$this._content = content;
@@ -337,6 +399,9 @@ class GGetNewsData_newsBuilder
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
       _title = $v.title;
+      _publishedAt = $v.publishedAt;
+      _excerpt = $v.excerpt;
+      _coverImageUrl = $v.coverImageUrl;
       _content = $v.content;
       _$v = null;
     }
@@ -367,6 +432,10 @@ class GGetNewsData_newsBuilder
               id: id.build(),
               title: BuiltValueNullFieldError.checkNotNull(
                   title, r'GGetNewsData_news', 'title'),
+              publishedAt: publishedAt,
+              excerpt: BuiltValueNullFieldError.checkNotNull(
+                  excerpt, r'GGetNewsData_news', 'excerpt'),
+              coverImageUrl: coverImageUrl,
               content: BuiltValueNullFieldError.checkNotNull(
                   content, r'GGetNewsData_news', 'content'));
     } catch (_) {

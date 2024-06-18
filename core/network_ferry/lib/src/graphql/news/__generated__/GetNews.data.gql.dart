@@ -54,6 +54,9 @@ abstract class GGetNewsData_news
   String get G__typename;
   _i2.Guuid get id;
   String get title;
+  DateTime? get publishedAt;
+  String get excerpt;
+  String? get coverImageUrl;
   String get content;
   static Serializer<GGetNewsData_news> get serializer =>
       _$gGetNewsDataNewsSerializer;

@@ -1,4 +1,1 @@
-/// network_ferry package
-library;
-
-// Ex: export 'src/[something]/index.dart';
+export 'src/ferry.dart' show ferryClientProviders;
