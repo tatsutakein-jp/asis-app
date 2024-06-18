@@ -45,3 +45,8 @@ app.*.map.json
 # firebase
 lib/flavor/stg/firebase_options.dart
 lib/flavor/prod/firebase_options.dart
+
+# dotenv environment variables file
+/.env*
+!/.env.sample
+/lib/env.g.dart

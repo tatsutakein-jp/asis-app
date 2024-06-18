@@ -29,9 +29,6 @@
 # Files and directories created by pub
 .dart_tool/
 
-# dotenv environment variables file
-.env*
-
 # melos
 pubspec_overrides.yaml
 
