@@ -1,0 +1,10 @@
+query GetNews {
+    news {
+        id
+        title
+        publishedAt
+        excerpt
+        coverImageUrl
+        content
+    }
+}

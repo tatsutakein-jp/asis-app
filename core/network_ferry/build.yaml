@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      ferry_generator|graphql_builder:
+        enabled: true
+        options:
+          schema: core_network_ferry|lib/src/graphql/schema.graphql
+          type_overrides:
+            timestamptz:
+              name: DateTime
+      ferry_generator|serializer_builder:
+        enabled: true
+        options:
+          schema: core_network_ferry|lib/src/graphql/schema.graphql
+          type_overrides:
+            timestamptz:
+              name: DateTime
