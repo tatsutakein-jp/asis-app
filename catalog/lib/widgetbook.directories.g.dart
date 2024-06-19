@@ -9,15 +9,16 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:catalog/designsystem/component/card.dart' as _i3;
+import 'package:catalog/designsystem/component/brand_icon.dart' as _i3;
+import 'package:catalog/designsystem/component/card.dart' as _i4;
 import 'package:catalog/designsystem/component/scaffold.dart' as _i2;
-import 'package:catalog/feature/auth/page/auth_page.dart' as _i4;
-import 'package:catalog/feature/home/page/home_page.dart' as _i5;
-import 'package:catalog/feature/my/page/settings_page.dart' as _i6;
-import 'package:catalog/feature/quest/page/quest_add_page.dart' as _i7;
-import 'package:catalog/feature/quest/page/quest_detail_page.dart' as _i8;
-import 'package:catalog/feature/quest/page/quest_page.dart' as _i9;
-import 'package:catalog/ui/component/quest_list_tile.dart' as _i10;
+import 'package:catalog/feature/auth/page/auth_page.dart' as _i5;
+import 'package:catalog/feature/home/page/home_page.dart' as _i6;
+import 'package:catalog/feature/my/page/settings_page.dart' as _i7;
+import 'package:catalog/feature/quest/page/quest_add_page.dart' as _i8;
+import 'package:catalog/feature/quest/page/quest_detail_page.dart' as _i9;
+import 'package:catalog/feature/quest/page/quest_page.dart' as _i10;
+import 'package:catalog/ui/component/quest_list_tile.dart' as _i11;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
@@ -35,10 +36,17 @@ final directories = <_i1.WidgetbookNode>[
             ),
           ),
           _i1.WidgetbookLeafComponent(
+            name: 'BrandIcon',
+            useCase: _i1.WidgetbookUseCase(
+              name: 'BrandIcon',
+              builder: _i3.asisScaffoldUseCase,
+            ),
+          ),
+          _i1.WidgetbookLeafComponent(
             name: 'TappableCard',
             useCase: _i1.WidgetbookUseCase(
               name: 'TappableCard',
-              builder: _i3.asisScaffoldUseCase,
+              builder: _i4.asisScaffoldUseCase,
             ),
           ),
         ],
@@ -55,7 +63,7 @@ final directories = <_i1.WidgetbookNode>[
             name: 'AuthPage',
             useCase: _i1.WidgetbookUseCase(
               name: 'AuthPage',
-              builder: _i4.authPageUseCase,
+              builder: _i5.authPageUseCase,
             ),
           )
         ],
@@ -67,7 +75,7 @@ final directories = <_i1.WidgetbookNode>[
             name: 'HomePage',
             useCase: _i1.WidgetbookUseCase(
               name: 'HomePage',
-              builder: _i5.homePageUseCase,
+              builder: _i6.homePageUseCase,
             ),
           )
         ],
@@ -79,7 +87,7 @@ final directories = <_i1.WidgetbookNode>[
             name: 'SettingsPage',
             useCase: _i1.WidgetbookUseCase(
               name: 'SettingsPage',
-              builder: _i6.settingsPageUseCase,
+              builder: _i7.settingsPageUseCase,
             ),
           )
         ],
@@ -91,21 +99,21 @@ final directories = <_i1.WidgetbookNode>[
             name: 'QuestAddPage',
             useCase: _i1.WidgetbookUseCase(
               name: 'QuestAddPage',
-              builder: _i7.questAddPageUseCase,
+              builder: _i8.questAddPageUseCase,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'QuestDetailPage',
             useCase: _i1.WidgetbookUseCase(
               name: 'QuestDetailPage',
-              builder: _i8.questPageUseCase,
+              builder: _i9.questPageUseCase,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'QuestListPage',
             useCase: _i1.WidgetbookUseCase(
               name: 'QuestPage',
-              builder: _i9.questPageUseCase,
+              builder: _i10.questPageUseCase,
             ),
           ),
         ],
@@ -122,7 +130,7 @@ final directories = <_i1.WidgetbookNode>[
             name: 'QuestListTile',
             useCase: _i1.WidgetbookUseCase(
               name: 'QuestListTile',
-              builder: _i10.asisScaffoldUseCase,
+              builder: _i11.asisScaffoldUseCase,
             ),
           )
         ],
