@@ -7,7 +7,7 @@
 *.iws
 .idea/*
 # Keep the project icon.
-!/.idea/icon.png
+!/.idea/icon.svg
 # Keep the run configurations.
 !/.idea/runConfigurations/flutter_run_app_dev.xml
 !/.idea/runConfigurations/flutter_run_app_stg.xml
