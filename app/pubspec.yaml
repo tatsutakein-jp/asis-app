@@ -8,6 +8,7 @@ environment:
   flutter: 3.23.0-0.1.pre
 
 dependencies:
+  cloud_firestore: 5.0.1
   core_analytics_firebase:
     # noinspection DartPathPackageReference
     path: ../core/analytics_firebase
@@ -35,6 +36,9 @@ dependencies:
   core_network_ferry:
     # noinspection DartPathPackageReference
     path: ../core/network_ferry
+  core_network_firestore:
+    # noinspection DartPathPackageReference
+    path: ../core/network_firestore
   core_ui:
     # noinspection DartPathPackageReference
     path: ../core/ui

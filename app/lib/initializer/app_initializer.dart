@@ -7,6 +7,7 @@ import 'package:app/initializer/database_initializer.dart';
 import 'package:app/initializer/datastore_initializer.dart';
 import 'package:app/initializer/firebase_initializer.dart';
 import 'package:app/initializer/logger_initializer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:core_model/build_config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:isar/isar.dart';
@@ -17,6 +18,7 @@ typedef InitializedValues = ({
   PreferencesDataStore dataStore,
   FirebaseAnalytics firebaseAnalytics,
   FirebaseAuthenticator firebaseAuthenticator,
+  FirebaseFirestore firebaseFirestore,
 });
 
 Future<InitializedValues> initializeApp() async {
@@ -30,6 +32,7 @@ Future<InitializedValues> initializeApp() async {
     firebase as ({
       FirebaseAnalytics firebaseAnalytics,
       FirebaseAuthenticator firebaseAuthenticator,
+      FirebaseFirestore firebaseFirestore,
     }),
   ] = await Future.wait([
     initializeDatabase(),
@@ -40,6 +43,7 @@ Future<InitializedValues> initializeApp() async {
   final (
     :firebaseAnalytics,
     :firebaseAuthenticator,
+    :firebaseFirestore,
   ) = firebase;
 
   return (
@@ -48,5 +52,6 @@ Future<InitializedValues> initializeApp() async {
     dataStore: dataStore,
     firebaseAnalytics: firebaseAnalytics,
     firebaseAuthenticator: firebaseAuthenticator,
+    firebaseFirestore: firebaseFirestore,
   );
 }
