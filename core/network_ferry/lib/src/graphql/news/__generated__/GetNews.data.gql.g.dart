@@ -77,8 +77,7 @@ class _$GGetNewsData_newsSerializer
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
       'id',
-      serializers.serialize(object.id,
-          specifiedType: const FullType(_i2.Guuid)),
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'title',
       serializers.serialize(object.title,
           specifiedType: const FullType(String)),
@@ -124,8 +123,8 @@ class _$GGetNewsData_newsSerializer
               specifiedType: const FullType(String))! as String;
           break;
         case 'id':
-          result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
           break;
         case 'title':
           result.title = serializers.deserialize(value,
@@ -272,7 +271,7 @@ class _$GGetNewsData_news extends GGetNewsData_news {
   @override
   final String G__typename;
   @override
-  final _i2.Guuid id;
+  final String id;
   @override
   final String title;
   @override
@@ -364,9 +363,9 @@ class GGetNewsData_newsBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.GuuidBuilder? _id;
-  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
-  set id(_i2.GuuidBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _title;
   String? get title => _$this._title;
@@ -397,7 +396,7 @@ class GGetNewsData_newsBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
-      _id = $v.id.toBuilder();
+      _id = $v.id;
       _title = $v.title;
       _publishedAt = $v.publishedAt;
       _excerpt = $v.excerpt;
@@ -423,32 +422,20 @@ class GGetNewsData_newsBuilder
   GGetNewsData_news build() => _build();
 
   _$GGetNewsData_news _build() {
-    _$GGetNewsData_news _$result;
-    try {
-      _$result = _$v ??
-          new _$GGetNewsData_news._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GGetNewsData_news', 'G__typename'),
-              id: id.build(),
-              title: BuiltValueNullFieldError.checkNotNull(
-                  title, r'GGetNewsData_news', 'title'),
-              publishedAt: publishedAt,
-              excerpt: BuiltValueNullFieldError.checkNotNull(
-                  excerpt, r'GGetNewsData_news', 'excerpt'),
-              coverImageUrl: coverImageUrl,
-              content: BuiltValueNullFieldError.checkNotNull(
-                  content, r'GGetNewsData_news', 'content'));
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        id.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GGetNewsData_news', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GGetNewsData_news._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+                G__typename, r'GGetNewsData_news', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GGetNewsData_news', 'id'),
+            title: BuiltValueNullFieldError.checkNotNull(
+                title, r'GGetNewsData_news', 'title'),
+            publishedAt: publishedAt,
+            excerpt: BuiltValueNullFieldError.checkNotNull(
+                excerpt, r'GGetNewsData_news', 'excerpt'),
+            coverImageUrl: coverImageUrl,
+            content: BuiltValueNullFieldError.checkNotNull(
+                content, r'GGetNewsData_news', 'content'));
     replace(_$result);
     return _$result;
   }

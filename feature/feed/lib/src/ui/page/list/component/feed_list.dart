@@ -18,13 +18,16 @@ final class FeedList extends HookConsumerWidget {
 
     return quests.when(
       data: (data) {
-        return ListView.builder(
-          itemCount: data.length,
-          itemBuilder: (context, index) => ListTile(
-            key: ValueKey(data[index].id),
-            title: Text(data[index].name),
-            onTap: () => _onTapFeedListItem(data[index]),
-          ),
+        return Column(
+          children: [
+            ...data.map(
+              (feed) => ListTile(
+                key: ValueKey(feed.id),
+                title: Text(feed.name),
+                onTap: () => _onTapFeedListItem(feed),
+              ),
+            ),
+          ],
         );
       },
       error: (error, stackTrace) => Center(

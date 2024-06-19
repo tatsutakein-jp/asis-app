@@ -16,5 +16,7 @@ Future<BuildConfig> initializeBuildConfig() async {
     buildNumber: packageInfo.buildNumber,
     buildSignature: packageInfo.buildSignature,
     installerStore: packageInfo.installerStore,
+    // TODO: URL を環境別に設定する
+    backendUrl: 'https://asis-stg.hasura.app/v1/graphql',
   );
 }

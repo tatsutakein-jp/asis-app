@@ -7,8 +7,6 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:core_network_ferry/src/graphql/__generated__/serializers.gql.dart'
     as _i1;
-import 'package:gql_code_builder_serializers/gql_code_builder_serializers.dart'
-    as _i2;
 
 part 'schema.schema.gql.g.dart';
 
@@ -168,9 +166,9 @@ abstract class GNewsStreamCursorValueInput
   String? get coverImageUrl;
   DateTime? get createdAt;
   String? get excerpt;
-  Guuid? get id;
+  String? get id;
   DateTime? get publishedAt;
-  Guuid? get seoId;
+  String? get seoId;
   String? get slug;
   String? get title;
   DateTime? get updatedAt;
@@ -345,7 +343,7 @@ abstract class GNotificationsStreamCursorValueInput
   DateTime? get createdAt;
   String? get excerpt;
   DateTime? get firstOpenedAt;
-  Guuid? get id;
+  String? get id;
   DateTime? get publishedAt;
   String? get title;
   DateTime? get updatedAt;
@@ -508,7 +506,7 @@ abstract class GSeosStreamCursorValueInput
 
   DateTime? get createdAt;
   String? get description;
-  Guuid? get id;
+  String? get id;
   String? get ogImageUrl;
   String? get title;
   DateTime? get updatedAt;
@@ -704,7 +702,7 @@ abstract class GTagsStreamCursorValueInput
 
   DateTime? get createdAt;
   String? get description;
-  Guuid? get id;
+  String? get id;
   String? get tag;
   DateTime? get updatedAt;
   static Serializer<GTagsStreamCursorValueInput> get serializer =>
@@ -928,23 +926,23 @@ abstract class GUuidComparisonExp
       _$GUuidComparisonExp;
 
   @BuiltValueField(wireName: '_eq')
-  Guuid? get G_eq;
+  String? get G_eq;
   @BuiltValueField(wireName: '_gt')
-  Guuid? get G_gt;
+  String? get G_gt;
   @BuiltValueField(wireName: '_gte')
-  Guuid? get G_gte;
+  String? get G_gte;
   @BuiltValueField(wireName: '_in')
-  BuiltList<Guuid>? get G_in;
+  BuiltList<String>? get G_in;
   @BuiltValueField(wireName: '_isNull')
   bool? get G_isNull;
   @BuiltValueField(wireName: '_lt')
-  Guuid? get G_lt;
+  String? get G_lt;
   @BuiltValueField(wireName: '_lte')
-  Guuid? get G_lte;
+  String? get G_lte;
   @BuiltValueField(wireName: '_neq')
-  Guuid? get G_neq;
+  String? get G_neq;
   @BuiltValueField(wireName: '_nin')
-  BuiltList<Guuid>? get G_nin;
+  BuiltList<String>? get G_nin;
   static Serializer<GUuidComparisonExp> get serializer =>
       _$gUuidComparisonExpSerializer;
 
@@ -958,18 +956,6 @@ abstract class GUuidComparisonExp
         GUuidComparisonExp.serializer,
         json,
       );
-}
-
-abstract class Guuid implements Built<Guuid, GuuidBuilder> {
-  Guuid._();
-
-  factory Guuid([String? value]) =>
-      _$Guuid((b) => value != null ? (b..value = value) : b);
-
-  String get value;
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Guuid> get serializer => _i2.DefaultScalarSerializer<Guuid>(
-      (Object serialized) => Guuid((serialized as String?)));
 }
 
 const Map<String, Set<String>> possibleTypesMap = {};

@@ -23,6 +23,7 @@ mixin _$BuildConfig {
   String get buildSignature => throw _privateConstructorUsedError;
   Flavor get flavor => throw _privateConstructorUsedError;
   String? get installerStore => throw _privateConstructorUsedError;
+  String get backendUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $BuildConfigCopyWith<BuildConfig> get copyWith =>
@@ -42,7 +43,8 @@ abstract class $BuildConfigCopyWith<$Res> {
       String buildNumber,
       String buildSignature,
       Flavor flavor,
-      String? installerStore});
+      String? installerStore,
+      String backendUrl});
 }
 
 /// @nodoc
@@ -65,6 +67,7 @@ class _$BuildConfigCopyWithImpl<$Res, $Val extends BuildConfig>
     Object? buildSignature = null,
     Object? flavor = null,
     Object? installerStore = freezed,
+    Object? backendUrl = null,
   }) {
     return _then(_value.copyWith(
       appName: null == appName
@@ -95,6 +98,10 @@ class _$BuildConfigCopyWithImpl<$Res, $Val extends BuildConfig>
           ? _value.installerStore
           : installerStore // ignore: cast_nullable_to_non_nullable
               as String?,
+      backendUrl: null == backendUrl
+          ? _value.backendUrl
+          : backendUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -114,7 +121,8 @@ abstract class _$$BuildConfigImplCopyWith<$Res>
       String buildNumber,
       String buildSignature,
       Flavor flavor,
-      String? installerStore});
+      String? installerStore,
+      String backendUrl});
 }
 
 /// @nodoc
@@ -135,6 +143,7 @@ class __$$BuildConfigImplCopyWithImpl<$Res>
     Object? buildSignature = null,
     Object? flavor = null,
     Object? installerStore = freezed,
+    Object? backendUrl = null,
   }) {
     return _then(_$BuildConfigImpl(
       appName: null == appName
@@ -165,6 +174,10 @@ class __$$BuildConfigImplCopyWithImpl<$Res>
           ? _value.installerStore
           : installerStore // ignore: cast_nullable_to_non_nullable
               as String?,
+      backendUrl: null == backendUrl
+          ? _value.backendUrl
+          : backendUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -179,7 +192,8 @@ class _$BuildConfigImpl implements _BuildConfig {
       required this.buildNumber,
       required this.buildSignature,
       required this.flavor,
-      required this.installerStore});
+      required this.installerStore,
+      required this.backendUrl});
 
   @override
   final String appName;
@@ -195,10 +209,12 @@ class _$BuildConfigImpl implements _BuildConfig {
   final Flavor flavor;
   @override
   final String? installerStore;
+  @override
+  final String backendUrl;
 
   @override
   String toString() {
-    return 'BuildConfig(appName: $appName, packageName: $packageName, version: $version, buildNumber: $buildNumber, buildSignature: $buildSignature, flavor: $flavor, installerStore: $installerStore)';
+    return 'BuildConfig(appName: $appName, packageName: $packageName, version: $version, buildNumber: $buildNumber, buildSignature: $buildSignature, flavor: $flavor, installerStore: $installerStore, backendUrl: $backendUrl)';
   }
 
   @override
@@ -216,12 +232,14 @@ class _$BuildConfigImpl implements _BuildConfig {
                 other.buildSignature == buildSignature) &&
             (identical(other.flavor, flavor) || other.flavor == flavor) &&
             (identical(other.installerStore, installerStore) ||
-                other.installerStore == installerStore));
+                other.installerStore == installerStore) &&
+            (identical(other.backendUrl, backendUrl) ||
+                other.backendUrl == backendUrl));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, appName, packageName, version,
-      buildNumber, buildSignature, flavor, installerStore);
+      buildNumber, buildSignature, flavor, installerStore, backendUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -238,7 +256,8 @@ abstract class _BuildConfig implements BuildConfig {
       required final String buildNumber,
       required final String buildSignature,
       required final Flavor flavor,
-      required final String? installerStore}) = _$BuildConfigImpl;
+      required final String? installerStore,
+      required final String backendUrl}) = _$BuildConfigImpl;
 
   @override
   String get appName;
@@ -254,6 +273,8 @@ abstract class _BuildConfig implements BuildConfig {
   Flavor get flavor;
   @override
   String? get installerStore;
+  @override
+  String get backendUrl;
   @override
   @JsonKey(ignore: true)
   _$$BuildConfigImplCopyWith<_$BuildConfigImpl> get copyWith =>

@@ -2,6 +2,7 @@ import 'package:core_designsystem/component.dart';
 import 'package:core_model/feed.dart';
 import 'package:feature_feed/src/gen/l10n/l10n.dart';
 import 'package:feature_feed/src/ui/page/list/component/feed_list.dart';
+import 'package:feature_feed/src/ui/page/list/component/news_feed_card_section.dart';
 import 'package:flutter/material.dart';
 
 /// お知らせ一覧ページ
@@ -21,8 +22,17 @@ final class FeedListPage extends StatelessWidget {
       appBar: AsisAppBar(
         title: Text(l10n.feedListAppBarTitle),
       ),
-      body: FeedList(
-        onTapFeedListItem: _onTapFeedListItem,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            NewsFeedCardSection(
+              onTap: (_) {},
+            ),
+            FeedList(
+              onTapFeedListItem: _onTapFeedListItem,
+            ),
+          ],
+        ),
       ),
     );
   }

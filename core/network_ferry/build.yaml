@@ -6,6 +6,8 @@ targets:
         options:
           schema: core_network_ferry|lib/src/graphql/schema.graphql
           type_overrides:
+            uuid:
+              name: String
             timestamptz:
               name: DateTime
       ferry_generator|serializer_builder:
@@ -13,5 +15,10 @@ targets:
         options:
           schema: core_network_ferry|lib/src/graphql/schema.graphql
           type_overrides:
+            uuid:
+              name: String
             timestamptz:
               name: DateTime
+          custom_serializers:
+            - import: 'package:core_network_ferry/src/graphql/serializer/timestamptz_serializer.dart'
+              name: TimestamptzSerializer

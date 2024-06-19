@@ -6,7 +6,7 @@ part of 'ferry.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$ferryClientHash() => r'707e40460b703f1c82e56bf751f4d9dc53bbda15';
+String _$ferryClientHash() => r'f605952eb77c3dac769d283c178ed69e3a8ad0b4';
 
 /// Client instance
 ///

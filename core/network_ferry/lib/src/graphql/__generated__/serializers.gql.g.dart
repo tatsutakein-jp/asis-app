@@ -42,7 +42,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GUsersStreamCursorInput.serializer)
       ..add(GUsersStreamCursorValueInput.serializer)
       ..add(GUuidComparisonExp.serializer)
-      ..add(Guuid.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DateTime)]),
           () => new ListBuilder<DateTime>())
@@ -85,11 +84,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(GUsersBoolExp)]),
           () => new ListBuilder<GUsersBoolExp>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Guuid)]),
-          () => new ListBuilder<Guuid>())
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Guuid)]),
-          () => new ListBuilder<Guuid>())
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

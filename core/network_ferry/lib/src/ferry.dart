@@ -1,6 +1,8 @@
+import 'package:core_authenticator/authenticator.dart';
+import 'package:core_model/build_config.dart';
+import 'package:core_network_ferry/src/http_auth_link.dart';
 import 'package:core_network_ferry/src/news/ferry_news_remote_data_source.dart';
 import 'package:ferry/ferry.dart';
-import 'package:gql_http_link/gql_http_link.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ferry.g.dart';
@@ -8,20 +10,24 @@ part 'ferry.g.dart';
 /// Client instance
 @Riverpod(keepAlive: true)
 Client ferryClient(FerryClientRef ref) {
-  throw UnimplementedError('ferryClient');
+  final buildConfig = ref.watch(buildConfigProvider);
+  final authenticator = ref.watch(authenticatorProvider);
+
+  return Client(
+    link: HttpAuthLink(
+      url: buildConfig.backendUrl,
+      authenticator: authenticator,
+    ),
+    cache: Cache(),
+    defaultFetchPolicies: {
+      OperationType.query: FetchPolicy.NetworkOnly,
+    },
+  );
 }
 
 /// Ferry Client
-List<Override> ferryClientProviders({
-  required String uri,
-}) {
-  final client = Client(
-    link: HttpLink(uri),
-    cache: Cache(),
-  );
-
+List<Override> ferryClientProviders() {
   return <Override>[
-    ferryClientProvider.overrideWithValue(client),
     ferryNewsRemoteDataSourceProvider,
   ];
 }
