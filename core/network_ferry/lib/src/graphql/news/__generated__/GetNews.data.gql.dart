@@ -5,8 +5,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:core_network_ferry/src/graphql/__generated__/schema.schema.gql.dart'
-    as _i2;
 import 'package:core_network_ferry/src/graphql/__generated__/serializers.gql.dart'
     as _i1;
 
@@ -52,7 +50,7 @@ abstract class GGetNewsData_news
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.Guuid get id;
+  String get id;
   String get title;
   DateTime? get publishedAt;
   String get excerpt;

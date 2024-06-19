@@ -24,6 +24,7 @@ class BuildConfig with _$BuildConfig {
     required String buildSignature,
     required Flavor flavor,
     required String? installerStore,
+    required String backendUrl,
   }) = _BuildConfig;
 }
 
@@ -36,4 +37,5 @@ const fakeBuildConfig = BuildConfig(
   buildSignature: '1',
   flavor: Flavor.dev,
   installerStore: 'fake_store',
+  backendUrl: '',
 );

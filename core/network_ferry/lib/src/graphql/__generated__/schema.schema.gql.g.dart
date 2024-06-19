@@ -886,8 +886,8 @@ class _$GNewsStreamCursorValueInputSerializer
     if (value != null) {
       result
         ..add('id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.publishedAt;
     if (value != null) {
@@ -900,8 +900,8 @@ class _$GNewsStreamCursorValueInputSerializer
     if (value != null) {
       result
         ..add('seoId')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.slug;
     if (value != null) {
@@ -956,16 +956,16 @@ class _$GNewsStreamCursorValueInputSerializer
               specifiedType: const FullType(String)) as String?;
           break;
         case 'id':
-          result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'publishedAt':
           result.publishedAt = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'seoId':
-          result.seoId.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.seoId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'slug':
           result.slug = serializers.deserialize(value,
@@ -1466,8 +1466,8 @@ class _$GNotificationsStreamCursorValueInputSerializer
     if (value != null) {
       result
         ..add('id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.publishedAt;
     if (value != null) {
@@ -1533,8 +1533,8 @@ class _$GNotificationsStreamCursorValueInputSerializer
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'id':
-          result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'publishedAt':
           result.publishedAt = serializers.deserialize(value,
@@ -1930,8 +1930,8 @@ class _$GSeosStreamCursorValueInputSerializer
     if (value != null) {
       result
         ..add('id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ogImageUrl;
     if (value != null) {
@@ -1978,8 +1978,8 @@ class _$GSeosStreamCursorValueInputSerializer
               specifiedType: const FullType(String)) as String?;
           break;
         case 'id':
-          result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'ogImageUrl':
           result.ogImageUrl = serializers.deserialize(value,
@@ -2584,8 +2584,8 @@ class _$GTagsStreamCursorValueInputSerializer
     if (value != null) {
       result
         ..add('id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.tag;
     if (value != null) {
@@ -2625,8 +2625,8 @@ class _$GTagsStreamCursorValueInputSerializer
               specifiedType: const FullType(String)) as String?;
           break;
         case 'id':
-          result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tag':
           result.tag = serializers.deserialize(value,
@@ -3329,22 +3329,22 @@ class _$GUuidComparisonExpSerializer
     if (value != null) {
       result
         ..add('_eq')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.G_gt;
     if (value != null) {
       result
         ..add('_gt')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.G_gte;
     if (value != null) {
       result
         ..add('_gte')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.G_in;
     if (value != null) {
@@ -3352,7 +3352,7 @@ class _$GUuidComparisonExpSerializer
         ..add('_in')
         ..add(serializers.serialize(value,
             specifiedType:
-                const FullType(BuiltList, const [const FullType(Guuid)])));
+                const FullType(BuiltList, const [const FullType(String)])));
     }
     value = object.G_isNull;
     if (value != null) {
@@ -3365,22 +3365,22 @@ class _$GUuidComparisonExpSerializer
     if (value != null) {
       result
         ..add('_lt')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.G_lte;
     if (value != null) {
       result
         ..add('_lte')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.G_neq;
     if (value != null) {
       result
         ..add('_neq')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.G_nin;
     if (value != null) {
@@ -3388,7 +3388,7 @@ class _$GUuidComparisonExpSerializer
         ..add('_nin')
         ..add(serializers.serialize(value,
             specifiedType:
-                const FullType(BuiltList, const [const FullType(Guuid)])));
+                const FullType(BuiltList, const [const FullType(String)])));
     }
     return result;
   }
@@ -3406,21 +3406,21 @@ class _$GUuidComparisonExpSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '_eq':
-          result.G_eq.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.G_eq = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case '_gt':
-          result.G_gt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.G_gt = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case '_gte':
-          result.G_gte.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.G_gte = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case '_in':
           result.G_in.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Guuid)]))!
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
               as BuiltList<Object?>);
           break;
         case '_isNull':
@@ -3428,21 +3428,21 @@ class _$GUuidComparisonExpSerializer
               specifiedType: const FullType(bool)) as bool?;
           break;
         case '_lt':
-          result.G_lt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.G_lt = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case '_lte':
-          result.G_lte.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.G_lte = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case '_neq':
-          result.G_neq.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
+          result.G_neq = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case '_nin':
           result.G_nin.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Guuid)]))!
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
               as BuiltList<Object?>);
           break;
       }
@@ -4088,11 +4088,11 @@ class _$GNewsStreamCursorValueInput extends GNewsStreamCursorValueInput {
   @override
   final String? excerpt;
   @override
-  final Guuid? id;
+  final String? id;
   @override
   final DateTime? publishedAt;
   @override
-  final Guuid? seoId;
+  final String? seoId;
   @override
   final String? slug;
   @override
@@ -4199,17 +4199,17 @@ class GNewsStreamCursorValueInputBuilder
   String? get excerpt => _$this._excerpt;
   set excerpt(String? excerpt) => _$this._excerpt = excerpt;
 
-  GuuidBuilder? _id;
-  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
-  set id(GuuidBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   DateTime? _publishedAt;
   DateTime? get publishedAt => _$this._publishedAt;
   set publishedAt(DateTime? publishedAt) => _$this._publishedAt = publishedAt;
 
-  GuuidBuilder? _seoId;
-  GuuidBuilder get seoId => _$this._seoId ??= new GuuidBuilder();
-  set seoId(GuuidBuilder? seoId) => _$this._seoId = seoId;
+  String? _seoId;
+  String? get seoId => _$this._seoId;
+  set seoId(String? seoId) => _$this._seoId = seoId;
 
   String? _slug;
   String? get slug => _$this._slug;
@@ -4232,9 +4232,9 @@ class GNewsStreamCursorValueInputBuilder
       _coverImageUrl = $v.coverImageUrl;
       _createdAt = $v.createdAt;
       _excerpt = $v.excerpt;
-      _id = $v.id?.toBuilder();
+      _id = $v.id;
       _publishedAt = $v.publishedAt;
-      _seoId = $v.seoId?.toBuilder();
+      _seoId = $v.seoId;
       _slug = $v.slug;
       _title = $v.title;
       _updatedAt = $v.updatedAt;
@@ -4258,34 +4258,18 @@ class GNewsStreamCursorValueInputBuilder
   GNewsStreamCursorValueInput build() => _build();
 
   _$GNewsStreamCursorValueInput _build() {
-    _$GNewsStreamCursorValueInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GNewsStreamCursorValueInput._(
-              content: content,
-              coverImageUrl: coverImageUrl,
-              createdAt: createdAt,
-              excerpt: excerpt,
-              id: _id?.build(),
-              publishedAt: publishedAt,
-              seoId: _seoId?.build(),
-              slug: slug,
-              title: title,
-              updatedAt: updatedAt);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        _id?.build();
-
-        _$failedField = 'seoId';
-        _seoId?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GNewsStreamCursorValueInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GNewsStreamCursorValueInput._(
+            content: content,
+            coverImageUrl: coverImageUrl,
+            createdAt: createdAt,
+            excerpt: excerpt,
+            id: id,
+            publishedAt: publishedAt,
+            seoId: seoId,
+            slug: slug,
+            title: title,
+            updatedAt: updatedAt);
     replace(_$result);
     return _$result;
   }
@@ -4905,7 +4889,7 @@ class _$GNotificationsStreamCursorValueInput
   @override
   final DateTime? firstOpenedAt;
   @override
-  final Guuid? id;
+  final String? id;
   @override
   final DateTime? publishedAt;
   @override
@@ -5021,9 +5005,9 @@ class GNotificationsStreamCursorValueInputBuilder
   set firstOpenedAt(DateTime? firstOpenedAt) =>
       _$this._firstOpenedAt = firstOpenedAt;
 
-  GuuidBuilder? _id;
-  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
-  set id(GuuidBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   DateTime? _publishedAt;
   DateTime? get publishedAt => _$this._publishedAt;
@@ -5051,7 +5035,7 @@ class GNotificationsStreamCursorValueInputBuilder
       _createdAt = $v.createdAt;
       _excerpt = $v.excerpt;
       _firstOpenedAt = $v.firstOpenedAt;
-      _id = $v.id?.toBuilder();
+      _id = $v.id;
       _publishedAt = $v.publishedAt;
       _title = $v.title;
       _updatedAt = $v.updatedAt;
@@ -5077,33 +5061,18 @@ class GNotificationsStreamCursorValueInputBuilder
   GNotificationsStreamCursorValueInput build() => _build();
 
   _$GNotificationsStreamCursorValueInput _build() {
-    _$GNotificationsStreamCursorValueInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GNotificationsStreamCursorValueInput._(
-              content: content,
-              coverImageUrl: coverImageUrl,
-              createdAt: createdAt,
-              excerpt: excerpt,
-              firstOpenedAt: firstOpenedAt,
-              id: _id?.build(),
-              publishedAt: publishedAt,
-              title: title,
-              updatedAt: updatedAt,
-              userId: userId);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        _id?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GNotificationsStreamCursorValueInput',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GNotificationsStreamCursorValueInput._(
+            content: content,
+            coverImageUrl: coverImageUrl,
+            createdAt: createdAt,
+            excerpt: excerpt,
+            firstOpenedAt: firstOpenedAt,
+            id: id,
+            publishedAt: publishedAt,
+            title: title,
+            updatedAt: updatedAt,
+            userId: userId);
     replace(_$result);
     return _$result;
   }
@@ -5591,7 +5560,7 @@ class _$GSeosStreamCursorValueInput extends GSeosStreamCursorValueInput {
   @override
   final String? description;
   @override
-  final Guuid? id;
+  final String? id;
   @override
   final String? ogImageUrl;
   @override
@@ -5673,9 +5642,9 @@ class GSeosStreamCursorValueInputBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  GuuidBuilder? _id;
-  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
-  set id(GuuidBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _ogImageUrl;
   String? get ogImageUrl => _$this._ogImageUrl;
@@ -5696,7 +5665,7 @@ class GSeosStreamCursorValueInputBuilder
     if ($v != null) {
       _createdAt = $v.createdAt;
       _description = $v.description;
-      _id = $v.id?.toBuilder();
+      _id = $v.id;
       _ogImageUrl = $v.ogImageUrl;
       _title = $v.title;
       _updatedAt = $v.updatedAt;
@@ -5720,27 +5689,14 @@ class GSeosStreamCursorValueInputBuilder
   GSeosStreamCursorValueInput build() => _build();
 
   _$GSeosStreamCursorValueInput _build() {
-    _$GSeosStreamCursorValueInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GSeosStreamCursorValueInput._(
-              createdAt: createdAt,
-              description: description,
-              id: _id?.build(),
-              ogImageUrl: ogImageUrl,
-              title: title,
-              updatedAt: updatedAt);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        _id?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GSeosStreamCursorValueInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GSeosStreamCursorValueInput._(
+            createdAt: createdAt,
+            description: description,
+            id: id,
+            ogImageUrl: ogImageUrl,
+            title: title,
+            updatedAt: updatedAt);
     replace(_$result);
     return _$result;
   }
@@ -6514,7 +6470,7 @@ class _$GTagsStreamCursorValueInput extends GTagsStreamCursorValueInput {
   @override
   final String? description;
   @override
-  final Guuid? id;
+  final String? id;
   @override
   final String? tag;
   @override
@@ -6586,9 +6542,9 @@ class GTagsStreamCursorValueInputBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  GuuidBuilder? _id;
-  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
-  set id(GuuidBuilder? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _tag;
   String? get tag => _$this._tag;
@@ -6605,7 +6561,7 @@ class GTagsStreamCursorValueInputBuilder
     if ($v != null) {
       _createdAt = $v.createdAt;
       _description = $v.description;
-      _id = $v.id?.toBuilder();
+      _id = $v.id;
       _tag = $v.tag;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -6628,26 +6584,13 @@ class GTagsStreamCursorValueInputBuilder
   GTagsStreamCursorValueInput build() => _build();
 
   _$GTagsStreamCursorValueInput _build() {
-    _$GTagsStreamCursorValueInput _$result;
-    try {
-      _$result = _$v ??
-          new _$GTagsStreamCursorValueInput._(
-              createdAt: createdAt,
-              description: description,
-              id: _id?.build(),
-              tag: tag,
-              updatedAt: updatedAt);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'id';
-        _id?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GTagsStreamCursorValueInput', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$GTagsStreamCursorValueInput._(
+            createdAt: createdAt,
+            description: description,
+            id: id,
+            tag: tag,
+            updatedAt: updatedAt);
     replace(_$result);
     return _$result;
   }
@@ -7602,23 +7545,23 @@ class GUsersStreamCursorValueInputBuilder
 
 class _$GUuidComparisonExp extends GUuidComparisonExp {
   @override
-  final Guuid? G_eq;
+  final String? G_eq;
   @override
-  final Guuid? G_gt;
+  final String? G_gt;
   @override
-  final Guuid? G_gte;
+  final String? G_gte;
   @override
-  final BuiltList<Guuid>? G_in;
+  final BuiltList<String>? G_in;
   @override
   final bool? G_isNull;
   @override
-  final Guuid? G_lt;
+  final String? G_lt;
   @override
-  final Guuid? G_lte;
+  final String? G_lte;
   @override
-  final Guuid? G_neq;
+  final String? G_neq;
   @override
-  final BuiltList<Guuid>? G_nin;
+  final BuiltList<String>? G_nin;
 
   factory _$GUuidComparisonExp(
           [void Function(GUuidComparisonExpBuilder)? updates]) =>
@@ -7696,55 +7639,55 @@ class GUuidComparisonExpBuilder
     implements Builder<GUuidComparisonExp, GUuidComparisonExpBuilder> {
   _$GUuidComparisonExp? _$v;
 
-  GuuidBuilder? _G_eq;
-  GuuidBuilder get G_eq => _$this._G_eq ??= new GuuidBuilder();
-  set G_eq(GuuidBuilder? G_eq) => _$this._G_eq = G_eq;
+  String? _G_eq;
+  String? get G_eq => _$this._G_eq;
+  set G_eq(String? G_eq) => _$this._G_eq = G_eq;
 
-  GuuidBuilder? _G_gt;
-  GuuidBuilder get G_gt => _$this._G_gt ??= new GuuidBuilder();
-  set G_gt(GuuidBuilder? G_gt) => _$this._G_gt = G_gt;
+  String? _G_gt;
+  String? get G_gt => _$this._G_gt;
+  set G_gt(String? G_gt) => _$this._G_gt = G_gt;
 
-  GuuidBuilder? _G_gte;
-  GuuidBuilder get G_gte => _$this._G_gte ??= new GuuidBuilder();
-  set G_gte(GuuidBuilder? G_gte) => _$this._G_gte = G_gte;
+  String? _G_gte;
+  String? get G_gte => _$this._G_gte;
+  set G_gte(String? G_gte) => _$this._G_gte = G_gte;
 
-  ListBuilder<Guuid>? _G_in;
-  ListBuilder<Guuid> get G_in => _$this._G_in ??= new ListBuilder<Guuid>();
-  set G_in(ListBuilder<Guuid>? G_in) => _$this._G_in = G_in;
+  ListBuilder<String>? _G_in;
+  ListBuilder<String> get G_in => _$this._G_in ??= new ListBuilder<String>();
+  set G_in(ListBuilder<String>? G_in) => _$this._G_in = G_in;
 
   bool? _G_isNull;
   bool? get G_isNull => _$this._G_isNull;
   set G_isNull(bool? G_isNull) => _$this._G_isNull = G_isNull;
 
-  GuuidBuilder? _G_lt;
-  GuuidBuilder get G_lt => _$this._G_lt ??= new GuuidBuilder();
-  set G_lt(GuuidBuilder? G_lt) => _$this._G_lt = G_lt;
+  String? _G_lt;
+  String? get G_lt => _$this._G_lt;
+  set G_lt(String? G_lt) => _$this._G_lt = G_lt;
 
-  GuuidBuilder? _G_lte;
-  GuuidBuilder get G_lte => _$this._G_lte ??= new GuuidBuilder();
-  set G_lte(GuuidBuilder? G_lte) => _$this._G_lte = G_lte;
+  String? _G_lte;
+  String? get G_lte => _$this._G_lte;
+  set G_lte(String? G_lte) => _$this._G_lte = G_lte;
 
-  GuuidBuilder? _G_neq;
-  GuuidBuilder get G_neq => _$this._G_neq ??= new GuuidBuilder();
-  set G_neq(GuuidBuilder? G_neq) => _$this._G_neq = G_neq;
+  String? _G_neq;
+  String? get G_neq => _$this._G_neq;
+  set G_neq(String? G_neq) => _$this._G_neq = G_neq;
 
-  ListBuilder<Guuid>? _G_nin;
-  ListBuilder<Guuid> get G_nin => _$this._G_nin ??= new ListBuilder<Guuid>();
-  set G_nin(ListBuilder<Guuid>? G_nin) => _$this._G_nin = G_nin;
+  ListBuilder<String>? _G_nin;
+  ListBuilder<String> get G_nin => _$this._G_nin ??= new ListBuilder<String>();
+  set G_nin(ListBuilder<String>? G_nin) => _$this._G_nin = G_nin;
 
   GUuidComparisonExpBuilder();
 
   GUuidComparisonExpBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _G_eq = $v.G_eq?.toBuilder();
-      _G_gt = $v.G_gt?.toBuilder();
-      _G_gte = $v.G_gte?.toBuilder();
+      _G_eq = $v.G_eq;
+      _G_gt = $v.G_gt;
+      _G_gte = $v.G_gte;
       _G_in = $v.G_in?.toBuilder();
       _G_isNull = $v.G_isNull;
-      _G_lt = $v.G_lt?.toBuilder();
-      _G_lte = $v.G_lte?.toBuilder();
-      _G_neq = $v.G_neq?.toBuilder();
+      _G_lt = $v.G_lt;
+      _G_lte = $v.G_lte;
+      _G_neq = $v.G_neq;
       _G_nin = $v.G_nin?.toBuilder();
       _$v = null;
     }
@@ -7770,33 +7713,21 @@ class GUuidComparisonExpBuilder
     try {
       _$result = _$v ??
           new _$GUuidComparisonExp._(
-              G_eq: _G_eq?.build(),
-              G_gt: _G_gt?.build(),
-              G_gte: _G_gte?.build(),
+              G_eq: G_eq,
+              G_gt: G_gt,
+              G_gte: G_gte,
               G_in: _G_in?.build(),
               G_isNull: G_isNull,
-              G_lt: _G_lt?.build(),
-              G_lte: _G_lte?.build(),
-              G_neq: _G_neq?.build(),
+              G_lt: G_lt,
+              G_lte: G_lte,
+              G_neq: G_neq,
               G_nin: _G_nin?.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'G_eq';
-        _G_eq?.build();
-        _$failedField = 'G_gt';
-        _G_gt?.build();
-        _$failedField = 'G_gte';
-        _G_gte?.build();
         _$failedField = 'G_in';
         _G_in?.build();
 
-        _$failedField = 'G_lt';
-        _G_lt?.build();
-        _$failedField = 'G_lte';
-        _G_lte?.build();
-        _$failedField = 'G_neq';
-        _G_neq?.build();
         _$failedField = 'G_nin';
         _G_nin?.build();
       } catch (e) {
@@ -7805,87 +7736,6 @@ class GUuidComparisonExpBuilder
       }
       rethrow;
     }
-    replace(_$result);
-    return _$result;
-  }
-}
-
-class _$Guuid extends Guuid {
-  @override
-  final String value;
-
-  factory _$Guuid([void Function(GuuidBuilder)? updates]) =>
-      (new GuuidBuilder()..update(updates))._build();
-
-  _$Guuid._({required this.value}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(value, r'Guuid', 'value');
-  }
-
-  @override
-  Guuid rebuild(void Function(GuuidBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GuuidBuilder toBuilder() => new GuuidBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Guuid && value == other.value;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, value.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Guuid')..add('value', value))
-        .toString();
-  }
-}
-
-class GuuidBuilder implements Builder<Guuid, GuuidBuilder> {
-  _$Guuid? _$v;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
-  GuuidBuilder();
-
-  GuuidBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _value = $v.value;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Guuid other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Guuid;
-  }
-
-  @override
-  void update(void Function(GuuidBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Guuid build() => _build();
-
-  _$Guuid _build() {
-    final _$result = _$v ??
-        new _$Guuid._(
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, r'Guuid', 'value'));
     replace(_$result);
     return _$result;
   }

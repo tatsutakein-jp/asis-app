@@ -9,5 +9,7 @@ NewsRemoteDataSource newsRemoteDataSource(NewsRemoteDataSourceRef ref) {
 }
 
 abstract interface class NewsRemoteDataSource {
+  Stream<List<NetworkNews>> newsListStream();
+
   Future<List<NetworkNews>> getNewsList();
 }

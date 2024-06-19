@@ -24,8 +24,7 @@ void main() async {
     ProviderScope(
       overrides: [
         buildConfigProvider.overrideWithValue(buildConfig),
-        // TODO: URL を環境別に設定する
-        ...ferryClientProviders(uri: 'https://asis-stg.hasura.app/v1/graphql'),
+        ...ferryClientProviders(),
         ...isarDatabaseProviders(isar: isar),
         ...firebaseAnalyticsProviders(firebaseAnalytics: firebaseAnalytics),
         dataStoreProvider.overrideWithValue(dataStore),

@@ -35,14 +35,15 @@ import 'package:core_network_ferry/src/graphql/__generated__/schema.schema.gql.d
         GUsersSelectColumn,
         GUsersStreamCursorInput,
         GUsersStreamCursorValueInput,
-        GUuidComparisonExp,
-        Guuid;
+        GUuidComparisonExp;
 import 'package:core_network_ferry/src/graphql/news/__generated__/GetNews.data.gql.dart'
     show GGetNewsData, GGetNewsData_news;
 import 'package:core_network_ferry/src/graphql/news/__generated__/GetNews.req.gql.dart'
     show GGetNewsReq;
 import 'package:core_network_ferry/src/graphql/news/__generated__/GetNews.var.gql.dart'
     show GGetNewsVars;
+import 'package:core_network_ferry/src/graphql/serializer/timestamptz_serializer.dart'
+    show TimestamptzSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
 import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
     show OperationSerializer;
@@ -51,6 +52,7 @@ part 'serializers.gql.g.dart';
 
 final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(OperationSerializer())
+  ..add(TimestamptzSerializer())
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
   GCursorOrdering,
@@ -87,6 +89,5 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GUsersStreamCursorInput,
   GUsersStreamCursorValueInput,
   GUuidComparisonExp,
-  Guuid,
 ])
 final Serializers serializers = _serializersBuilder.build();

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:core_authenticator/authenticator.dart';
 import 'package:core_model/auth.dart' as model;
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,11 +11,11 @@ final class FirebaseAuthenticator implements Authenticator {
 
   final FirebaseAuth _firebaseAuth;
 
-  Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
+  @override
+  model.AuthState get authState => _firebaseAuth.authState;
 
-  Stream<User?> get idTokenChanges => _firebaseAuth.idTokenChanges();
-
-  Stream<User?> get userChanges => _firebaseAuth.userChanges();
+  @override
+  Future<String?> get idToken async => _firebaseAuth.currentUser?.getIdToken();
 
   Future<UserCredential> signInAnonymously() async =>
       _firebaseAuth.signInAnonymously();
@@ -30,9 +32,6 @@ final class FirebaseAuthenticator implements Authenticator {
 
   @override
   Future<void> signOut() async => _firebaseAuth.signOut();
-
-  @override
-  model.AuthState get authState => _firebaseAuth.authState;
 }
 
 extension FirebaseAuthX on FirebaseAuth {
