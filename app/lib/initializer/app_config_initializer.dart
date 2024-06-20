@@ -3,20 +3,29 @@ import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 Future<AppConfig> initializeAppConfig() async {
+  final flavor = Flavor.values.firstWhere(
+    (flavor) => flavor.name == appFlavor,
+    orElse: () => Flavor.dev,
+  );
+
   final packageInfo = await PackageInfo.fromPlatform();
 
   return AppConfig(
-    flavor: Flavor.values.firstWhere(
-      (flavor) => flavor.name == appFlavor,
-      orElse: () => Flavor.dev,
-    ),
+    flavor: flavor,
     appName: packageInfo.appName,
     packageName: packageInfo.packageName,
     version: packageInfo.version,
     buildNumber: packageInfo.buildNumber,
     buildSignature: packageInfo.buildSignature,
     installerStore: packageInfo.installerStore,
-    // TODO: URL を環境別に設定する
-    backendUrl: 'https://asis-stg.hasura.app/v1/graphql',
+    backendUrl: flavor.backendUrl,
   );
+}
+
+extension on Flavor {
+  String get backendUrl => switch (this) {
+        Flavor.dev => 'https://asis-dev.hasura.app/v1/graphql',
+        Flavor.stg => 'https://asis-stg.hasura.app/v1/graphql',
+        Flavor.prod => 'https://asis.hasura.app/v1/graphql',
+      };
 }
