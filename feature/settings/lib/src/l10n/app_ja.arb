@@ -10,5 +10,5 @@
   "settingsThemeSettingNegative": "キャンセル",
   "settingsOpenSourceLicenses": "オープンソースライセンス",
   "settingsSignOut": "サインアウト",
-  "settingsBuildConfigAppVersion": "アプリバージョン"
+  "settingsAppConfigAppVersion": "アプリバージョン"
 }

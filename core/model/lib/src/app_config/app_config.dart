@@ -1,22 +1,22 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/app_config.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'build_config.freezed.dart';
+part 'app_config.freezed.dart';
 
-part 'build_config.g.dart';
+part 'app_config.g.dart';
 
 @Riverpod(keepAlive: true)
-BuildConfig buildConfig(BuildConfigRef ref) {
-  throw UnimplementedError('buildConfig');
+AppConfig appConfig(AppConfigRef ref) {
+  throw UnimplementedError('appConfig');
 }
 
-/// BuildConfig
+/// AppConfig
 ///
 /// {@category Model}
 @freezed
-class BuildConfig with _$BuildConfig {
-  const factory BuildConfig({
+class AppConfig with _$AppConfig {
+  const factory AppConfig({
     required String appName,
     required String packageName,
     required String version,
@@ -25,11 +25,11 @@ class BuildConfig with _$BuildConfig {
     required Flavor flavor,
     required String? installerStore,
     required String backendUrl,
-  }) = _BuildConfig;
+  }) = _AppConfig;
 }
 
-/// FakeBuildConfig
-const fakeBuildConfig = BuildConfig(
+/// FakeAppConfig
+const fakeAppConfig = AppConfig(
   appName: 'Fake App',
   packageName: 'com.example.fake_app',
   version: '1.0.0',

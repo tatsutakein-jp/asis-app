@@ -21,7 +21,7 @@ final class SettingsPage extends ConsumerWidget {
   final VoidCallback _onTapOpenSourceLicense;
   final VoidCallback _onSignOutSuccess;
 
-  static const buildConfigKey = Key('buildConfig');
+  static const appConfigKey = Key('appConfig');
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -59,8 +59,8 @@ final class SettingsPage extends ConsumerWidget {
               vertical: 24,
               horizontal: 16,
             ),
-            title: BuildConfigTileContent(
-              key: buildConfigKey,
+            title: AppConfigTileContent(
+              key: appConfigKey,
             ),
           ),
         ],

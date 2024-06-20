@@ -1,11 +1,11 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/app_config.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-Future<BuildConfig> initializeBuildConfig() async {
+Future<AppConfig> initializeAppConfig() async {
   final packageInfo = await PackageInfo.fromPlatform();
 
-  return BuildConfig(
+  return AppConfig(
     flavor: Flavor.values.firstWhere(
       (flavor) => flavor.name == appFlavor,
       orElse: () => Flavor.dev,

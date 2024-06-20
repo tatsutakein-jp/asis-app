@@ -2,18 +2,18 @@ import 'dart:async';
 
 import 'package:app/auth/firebase_authenticator.dart';
 import 'package:app/datastore/preferences_data_store.dart';
-import 'package:app/initializer/build_config_initializer.dart';
+import 'package:app/initializer/app_config_initializer.dart';
 import 'package:app/initializer/database_initializer.dart';
 import 'package:app/initializer/datastore_initializer.dart';
 import 'package:app/initializer/firebase_initializer.dart';
 import 'package:app/initializer/logger_initializer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:core_model/build_config.dart';
+import 'package:core_model/app_config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:isar/isar.dart';
 
 typedef InitializedValues = ({
-  BuildConfig buildConfig,
+  AppConfig appConfig,
   Isar isar,
   PreferencesDataStore dataStore,
   FirebaseAnalytics firebaseAnalytics,
@@ -24,7 +24,7 @@ typedef InitializedValues = ({
 Future<InitializedValues> initializeApp() async {
   initializeLogger();
 
-  final buildConfig = await initializeBuildConfig();
+  final appConfig = await initializeAppConfig();
 
   final [
     isar as Isar,
@@ -37,7 +37,7 @@ Future<InitializedValues> initializeApp() async {
   ] = await Future.wait([
     initializeDatabase(),
     initializeDataStore(),
-    initializeFirebase(flavor: buildConfig.flavor),
+    initializeFirebase(flavor: appConfig.flavor),
   ]);
 
   final (
@@ -47,7 +47,7 @@ Future<InitializedValues> initializeApp() async {
   ) = firebase;
 
   return (
-    buildConfig: buildConfig,
+    appConfig: appConfig,
     isar: isar,
     dataStore: dataStore,
     firebaseAnalytics: firebaseAnalytics,
