@@ -1,0 +1,20 @@
+{
+  "name": "asis-app",
+  "version": "1.0.0",
+  "description": "The quest to live life as it is",
+  "license": "MIT",
+  "author": {
+    "name": "Ryo Takeuchi",
+    "url": "https://tatsutakein.jp"
+  },
+  "type": "module",
+  "scripts": {
+    "clean": "git clean -xdf node_modules"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "19.2.2",
+    "firebase-tools": "13.11.2",
+    "lefthook": "1.6.16"
+  }
+}
