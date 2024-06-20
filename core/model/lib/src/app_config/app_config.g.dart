@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'build_config.dart';
+part of 'app_config.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$buildConfigHash() => r'79f388e39a8846d01cfc4f494c536cc52caae223';
+String _$appConfigHash() => r'8f837b604bdfed6bc06f40bc345c07dbd94f4e06';
 
-/// See also [buildConfig].
-@ProviderFor(buildConfig)
-final buildConfigProvider = Provider<BuildConfig>.internal(
-  buildConfig,
-  name: r'buildConfigProvider',
+/// See also [appConfig].
+@ProviderFor(appConfig)
+final appConfigProvider = Provider<AppConfig>.internal(
+  appConfig,
+  name: r'appConfigProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$buildConfigHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$appConfigHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef BuildConfigRef = ProviderRef<BuildConfig>;
+typedef AppConfigRef = ProviderRef<AppConfig>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

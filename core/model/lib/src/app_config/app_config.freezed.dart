@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'build_config.dart';
+part of 'app_config.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$BuildConfig {
+mixin _$AppConfig {
   String get appName => throw _privateConstructorUsedError;
   String get packageName => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
@@ -26,15 +26,14 @@ mixin _$BuildConfig {
   String get backendUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BuildConfigCopyWith<BuildConfig> get copyWith =>
+  $AppConfigCopyWith<AppConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BuildConfigCopyWith<$Res> {
-  factory $BuildConfigCopyWith(
-          BuildConfig value, $Res Function(BuildConfig) then) =
-      _$BuildConfigCopyWithImpl<$Res, BuildConfig>;
+abstract class $AppConfigCopyWith<$Res> {
+  factory $AppConfigCopyWith(AppConfig value, $Res Function(AppConfig) then) =
+      _$AppConfigCopyWithImpl<$Res, AppConfig>;
   @useResult
   $Res call(
       {String appName,
@@ -48,9 +47,9 @@ abstract class $BuildConfigCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BuildConfigCopyWithImpl<$Res, $Val extends BuildConfig>
-    implements $BuildConfigCopyWith<$Res> {
-  _$BuildConfigCopyWithImpl(this._value, this._then);
+class _$AppConfigCopyWithImpl<$Res, $Val extends AppConfig>
+    implements $AppConfigCopyWith<$Res> {
+  _$AppConfigCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -107,11 +106,11 @@ class _$BuildConfigCopyWithImpl<$Res, $Val extends BuildConfig>
 }
 
 /// @nodoc
-abstract class _$$BuildConfigImplCopyWith<$Res>
-    implements $BuildConfigCopyWith<$Res> {
-  factory _$$BuildConfigImplCopyWith(
-          _$BuildConfigImpl value, $Res Function(_$BuildConfigImpl) then) =
-      __$$BuildConfigImplCopyWithImpl<$Res>;
+abstract class _$$AppConfigImplCopyWith<$Res>
+    implements $AppConfigCopyWith<$Res> {
+  factory _$$AppConfigImplCopyWith(
+          _$AppConfigImpl value, $Res Function(_$AppConfigImpl) then) =
+      __$$AppConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -126,11 +125,11 @@ abstract class _$$BuildConfigImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BuildConfigImplCopyWithImpl<$Res>
-    extends _$BuildConfigCopyWithImpl<$Res, _$BuildConfigImpl>
-    implements _$$BuildConfigImplCopyWith<$Res> {
-  __$$BuildConfigImplCopyWithImpl(
-      _$BuildConfigImpl _value, $Res Function(_$BuildConfigImpl) _then)
+class __$$AppConfigImplCopyWithImpl<$Res>
+    extends _$AppConfigCopyWithImpl<$Res, _$AppConfigImpl>
+    implements _$$AppConfigImplCopyWith<$Res> {
+  __$$AppConfigImplCopyWithImpl(
+      _$AppConfigImpl _value, $Res Function(_$AppConfigImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -145,7 +144,7 @@ class __$$BuildConfigImplCopyWithImpl<$Res>
     Object? installerStore = freezed,
     Object? backendUrl = null,
   }) {
-    return _then(_$BuildConfigImpl(
+    return _then(_$AppConfigImpl(
       appName: null == appName
           ? _value.appName
           : appName // ignore: cast_nullable_to_non_nullable
@@ -184,8 +183,8 @@ class __$$BuildConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BuildConfigImpl implements _BuildConfig {
-  const _$BuildConfigImpl(
+class _$AppConfigImpl implements _AppConfig {
+  const _$AppConfigImpl(
       {required this.appName,
       required this.packageName,
       required this.version,
@@ -214,14 +213,14 @@ class _$BuildConfigImpl implements _BuildConfig {
 
   @override
   String toString() {
-    return 'BuildConfig(appName: $appName, packageName: $packageName, version: $version, buildNumber: $buildNumber, buildSignature: $buildSignature, flavor: $flavor, installerStore: $installerStore, backendUrl: $backendUrl)';
+    return 'AppConfig(appName: $appName, packageName: $packageName, version: $version, buildNumber: $buildNumber, buildSignature: $buildSignature, flavor: $flavor, installerStore: $installerStore, backendUrl: $backendUrl)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BuildConfigImpl &&
+            other is _$AppConfigImpl &&
             (identical(other.appName, appName) || other.appName == appName) &&
             (identical(other.packageName, packageName) ||
                 other.packageName == packageName) &&
@@ -244,12 +243,12 @@ class _$BuildConfigImpl implements _BuildConfig {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BuildConfigImplCopyWith<_$BuildConfigImpl> get copyWith =>
-      __$$BuildConfigImplCopyWithImpl<_$BuildConfigImpl>(this, _$identity);
+  _$$AppConfigImplCopyWith<_$AppConfigImpl> get copyWith =>
+      __$$AppConfigImplCopyWithImpl<_$AppConfigImpl>(this, _$identity);
 }
 
-abstract class _BuildConfig implements BuildConfig {
-  const factory _BuildConfig(
+abstract class _AppConfig implements AppConfig {
+  const factory _AppConfig(
       {required final String appName,
       required final String packageName,
       required final String version,
@@ -257,7 +256,7 @@ abstract class _BuildConfig implements BuildConfig {
       required final String buildSignature,
       required final Flavor flavor,
       required final String? installerStore,
-      required final String backendUrl}) = _$BuildConfigImpl;
+      required final String backendUrl}) = _$AppConfigImpl;
 
   @override
   String get appName;
@@ -277,6 +276,6 @@ abstract class _BuildConfig implements BuildConfig {
   String get backendUrl;
   @override
   @JsonKey(ignore: true)
-  _$$BuildConfigImplCopyWith<_$BuildConfigImpl> get copyWith =>
+  _$$AppConfigImplCopyWith<_$AppConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

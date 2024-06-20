@@ -1,36 +1,36 @@
-import 'package:core_model/build_config.dart';
+import 'package:core_model/app_config.dart';
 import 'package:feature_settings/src/gen/l10n/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-/// ビルド設定タイルのコンテンツ
-final class BuildConfigTileContent extends ConsumerWidget {
-  const BuildConfigTileContent({super.key});
+/// アプリ設定タイルのコンテンツ
+final class AppConfigTileContent extends ConsumerWidget {
+  const AppConfigTileContent({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = L10n.of(context);
-    final buildConfig = ref.watch(buildConfigProvider);
+    final appConfig = ref.watch(appConfigProvider);
 
     return Column(
       children: [
         // アプリバージョン
-        Text(l10n.settingsBuildConfigAppVersion),
+        Text(l10n.settingsAppConfigAppVersion),
         if (kIsWeb)
-          Text(buildConfig.version)
+          Text(appConfig.version)
         else
-          Text('${buildConfig.version} (${buildConfig.buildNumber})'),
+          Text('${appConfig.version} (${appConfig.buildNumber})'),
 
         // パッケージ名
         if (kDebugMode)
-          Text(buildConfig.packageName)
+          Text(appConfig.packageName)
         else
           const SizedBox.shrink(),
 
         // インストールストア
-        if (buildConfig.installerStore != null)
-          Text('It was installed with ${buildConfig.installerStore}.')
+        if (appConfig.installerStore != null)
+          Text('It was installed with ${appConfig.installerStore}.')
         else
           const SizedBox.shrink(),
       ],

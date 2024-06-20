@@ -40,5 +40,5 @@ class L10nEn extends L10n {
   String get settingsSignOut => 'Sign Out';
 
   @override
-  String get settingsBuildConfigAppVersion => 'App Version';
+  String get settingsAppConfigAppVersion => 'App Version';
 }

@@ -162,11 +162,11 @@ abstract class L10n {
   /// **'サインアウト'**
   String get settingsSignOut;
 
-  /// No description provided for @settingsBuildConfigAppVersion.
+  /// No description provided for @settingsAppConfigAppVersion.
   ///
   /// In ja, this message translates to:
   /// **'アプリバージョン'**
-  String get settingsBuildConfigAppVersion;
+  String get settingsAppConfigAppVersion;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
