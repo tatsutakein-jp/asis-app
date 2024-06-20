@@ -52,6 +52,42 @@ fi
 
 ##############################################################################
 ##
+##  bun
+##
+##############################################################################
+echo ""
+echo "🚀 bun install: Start"
+if type bun >/dev/null 2>&1; then
+  if bun install; then
+    echo "✅ bun install: Success"
+  else
+    echo "🚫 bun install: Failed"
+  fi
+else
+  echo "⚠️ bun install: Skip bun because it could not be found."
+  echo "⚠️ bun install: This may be due to the fact that the mise installation has not been completed."
+fi
+
+##############################################################################
+##
+##  lefthook
+##
+##############################################################################
+echo ""
+echo "🚀 lefthook install: Start"
+if type lefthook >/dev/null 2>&1; then
+  if lefthook install; then
+    echo "✅ lefthook install: Success"
+  else
+    echo "🚫 lefthook install: Failed"
+  fi
+else
+  echo "⚠️ lefthook install: Skip bun because it could not be found."
+  echo "⚠️ lefthook install: This may be due to the fact that the mise installation has not been completed."
+fi
+
+##############################################################################
+##
 ##  Generate gitignore target files
 ##
 ##############################################################################
