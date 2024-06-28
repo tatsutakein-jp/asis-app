@@ -8,7 +8,7 @@ environment:
   flutter: 3.23.0-0.1.pre
 
 dependencies:
-  cloud_firestore: 5.0.1
+  cloud_firestore: 5.0.2
   core_authenticator:
     path: ../authenticator
   core_common:
