@@ -71,6 +71,9 @@
     },
     {
       "groupName": "firebase",
+      "matchPackageNames": [
+        "cloud_firestore",
+      ],
       "matchPackagePrefixes": [
         "firebase_",
       ]
