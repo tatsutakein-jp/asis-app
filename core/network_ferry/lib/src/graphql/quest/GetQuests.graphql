@@ -1,0 +1,13 @@
+query GetQuests {
+    mainQuests {
+        id
+        title
+        description
+        begunAt
+        endedAt
+        categoryId
+        status
+        coverImageUrl
+        note
+    }
+}
