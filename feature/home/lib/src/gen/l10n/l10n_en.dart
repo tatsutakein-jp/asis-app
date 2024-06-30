@@ -25,6 +25,28 @@ class L10nEn extends L10n {
   String get homeQuestOverviewSectionQuickAddQuest => 'Quick Add Quest';
 
   @override
+  String get homeQuickAddQuestDialogAppBarTitle => 'Add Quest';
+
+  @override
+  String get homeQuickAddQuestDialogTitleLabel => 'Title';
+
+  @override
+  String get homeQuickAddQuestDialogTitleEmptyErrorMessage =>
+      'Please enter a title';
+
+  @override
+  String get homeQuickAddQuestDialogDescriptionLabel => 'Description';
+
+  @override
+  String get homeQuickAddQuestDialogNoteLabel => 'Note';
+
+  @override
+  String get homeQuickAddQuestDialogPositive => 'Add Quest';
+
+  @override
+  String get homeQuickAddQuestDialogNegative => 'Cancel';
+
+  @override
   String get homeRecentQuestListSectionYourQuestList => 'Your Quest List';
 
   @override

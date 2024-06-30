@@ -5,6 +5,13 @@
   "homeQuestOverviewSectionQuestsCompleted": "完了したクエスト",
   "homeQuestOverviewSectionPendingQuests": "未完了のクエスト",
   "homeQuestOverviewSectionQuickAddQuest": "クイック追加",
+  "homeQuickAddQuestDialogAppBarTitle": "クエスト追加",
+  "homeQuickAddQuestDialogTitleLabel": "タイトル",
+  "homeQuickAddQuestDialogTitleEmptyErrorMessage": "タイトルを入力してください",
+  "homeQuickAddQuestDialogDescriptionLabel": "説明",
+  "homeQuickAddQuestDialogNoteLabel": "ノート",
+  "homeQuickAddQuestDialogPositive": "クエストを追加する",
+  "homeQuickAddQuestDialogNegative": "キャンセル",
   "homeRecentQuestListSectionYourQuestList": "クエスト一覧",
   "homeRecentQuestListSectionMore": "さらに表示"
 }

@@ -132,6 +132,48 @@ abstract class L10n {
   /// **'クイック追加'**
   String get homeQuestOverviewSectionQuickAddQuest;
 
+  /// No description provided for @homeQuickAddQuestDialogAppBarTitle.
+  ///
+  /// In ja, this message translates to:
+  /// **'クエスト追加'**
+  String get homeQuickAddQuestDialogAppBarTitle;
+
+  /// No description provided for @homeQuickAddQuestDialogTitleLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'タイトル'**
+  String get homeQuickAddQuestDialogTitleLabel;
+
+  /// No description provided for @homeQuickAddQuestDialogTitleEmptyErrorMessage.
+  ///
+  /// In ja, this message translates to:
+  /// **'タイトルを入力してください'**
+  String get homeQuickAddQuestDialogTitleEmptyErrorMessage;
+
+  /// No description provided for @homeQuickAddQuestDialogDescriptionLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'説明'**
+  String get homeQuickAddQuestDialogDescriptionLabel;
+
+  /// No description provided for @homeQuickAddQuestDialogNoteLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'ノート'**
+  String get homeQuickAddQuestDialogNoteLabel;
+
+  /// No description provided for @homeQuickAddQuestDialogPositive.
+  ///
+  /// In ja, this message translates to:
+  /// **'クエストを追加する'**
+  String get homeQuickAddQuestDialogPositive;
+
+  /// No description provided for @homeQuickAddQuestDialogNegative.
+  ///
+  /// In ja, this message translates to:
+  /// **'キャンセル'**
+  String get homeQuickAddQuestDialogNegative;
+
   /// No description provided for @homeRecentQuestListSectionYourQuestList.
   ///
   /// In ja, this message translates to:
