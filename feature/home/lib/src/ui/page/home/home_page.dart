@@ -11,14 +11,17 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 final class HomePage extends ConsumerWidget {
   const HomePage({
     required VoidCallback onTapNotification,
+    required VoidCallback onQuickAddButtonPressed,
     required void Function(Quest quest) onTapQuestListItem,
     required VoidCallback onMoreButtonPressed,
     super.key,
   })  : _onTapNotification = onTapNotification,
+        _onQuickAddButtonPressed = onQuickAddButtonPressed,
         _onTapQuestListItem = onTapQuestListItem,
         _onMoreButtonPressed = onMoreButtonPressed;
 
   final VoidCallback _onTapNotification;
+  final VoidCallback _onQuickAddButtonPressed;
   final void Function(Quest quest) _onTapQuestListItem;
   final VoidCallback _onMoreButtonPressed;
 
@@ -49,7 +52,7 @@ final class HomePage extends ConsumerWidget {
               children: [
                 ...[
                   QuestOverviewSection(
-                    onQuickAddButtonPressed: () {},
+                    onQuickAddButtonPressed: _onQuickAddButtonPressed,
                   ),
                   RecentQuestListSection(
                     onTapQuestListItem: _onTapQuestListItem,
