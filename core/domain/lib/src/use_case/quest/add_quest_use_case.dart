@@ -1,5 +1,4 @@
 import 'package:core_data/repository.dart';
-import 'package:core_model/quest.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'add_quest_use_case.g.dart';
@@ -8,6 +7,12 @@ part 'add_quest_use_case.g.dart';
 @riverpod
 Raw<Future<void>> addQuestUseCase(
   AddQuestUseCaseRef ref, {
-  required Quest quest,
-}) =>
-    ref.watch(questRepositoryProvider).insert(quest: quest);
+  required String title,
+  required String description,
+  required String note,
+}) async =>
+    ref.watch(questRepositoryProvider).insert(
+          title: title,
+          description: description,
+          note: note,
+        );

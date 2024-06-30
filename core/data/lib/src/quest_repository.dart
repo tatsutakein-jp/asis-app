@@ -34,8 +34,26 @@ class QuestRepository {
   }) =>
       _dao.stream();
 
-  Future<void> insert({required Quest quest}) async =>
-      _dao.insert(quest: quest);
+  Future<void> insert({
+    required String title,
+    required String description,
+    required String note,
+  }) async {
+    final id = await _remote.insertMainQuest(
+      title: title,
+      description: description,
+      note: note,
+    );
+    await _dao.merges(
+      [
+        (
+          id: id,
+          title: title,
+          description: description,
+        ),
+      ],
+    );
+  }
 
   Future<void> inserts({required List<Quest> quests}) async =>
       _dao.inserts(quests: quests);
@@ -56,13 +74,15 @@ class QuestRepository {
   Future<void> sync() async {
     final networkQuestList = await _remote.getMainQuestList();
     await _dao.merges(
-      networkQuestList.map((quest) {
-        return (
-          id: quest.id,
-          title: quest.title,
-          description: quest.description,
-        );
-      }).toList(),
+      networkQuestList
+          .map(
+            (quest) => (
+              id: quest.id,
+              title: quest.title,
+              description: quest.description,
+            ),
+          )
+          .toList(),
     );
   }
 }

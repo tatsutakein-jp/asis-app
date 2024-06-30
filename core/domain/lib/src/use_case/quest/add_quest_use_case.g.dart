@@ -6,7 +6,7 @@ part of 'add_quest_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$addQuestUseCaseHash() => r'390015092f007e1c39cdc849024a96037976a932';
+String _$addQuestUseCaseHash() => r'595d66cd091a11ce4639fd1dac753451df98d998';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -48,10 +48,14 @@ class AddQuestUseCaseFamily extends Family<Raw<Future<void>>> {
   ///
   /// Copied from [addQuestUseCase].
   AddQuestUseCaseProvider call({
-    required Quest quest,
+    required String title,
+    required String description,
+    required String note,
   }) {
     return AddQuestUseCaseProvider(
-      quest: quest,
+      title: title,
+      description: description,
+      note: note,
     );
   }
 
@@ -60,7 +64,9 @@ class AddQuestUseCaseFamily extends Family<Raw<Future<void>>> {
     covariant AddQuestUseCaseProvider provider,
   ) {
     return call(
-      quest: provider.quest,
+      title: provider.title,
+      description: provider.description,
+      note: provider.note,
     );
   }
 
@@ -87,11 +93,15 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
   ///
   /// Copied from [addQuestUseCase].
   AddQuestUseCaseProvider({
-    required Quest quest,
+    required String title,
+    required String description,
+    required String note,
   }) : this._internal(
           (ref) => addQuestUseCase(
             ref as AddQuestUseCaseRef,
-            quest: quest,
+            title: title,
+            description: description,
+            note: note,
           ),
           from: addQuestUseCaseProvider,
           name: r'addQuestUseCaseProvider',
@@ -102,7 +112,9 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
           dependencies: AddQuestUseCaseFamily._dependencies,
           allTransitiveDependencies:
               AddQuestUseCaseFamily._allTransitiveDependencies,
-          quest: quest,
+          title: title,
+          description: description,
+          note: note,
         );
 
   AddQuestUseCaseProvider._internal(
@@ -112,10 +124,14 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.quest,
+    required this.title,
+    required this.description,
+    required this.note,
   }) : super.internal();
 
-  final Quest quest;
+  final String title;
+  final String description;
+  final String note;
 
   @override
   Override overrideWith(
@@ -130,7 +146,9 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        quest: quest,
+        title: title,
+        description: description,
+        note: note,
       ),
     );
   }
@@ -142,21 +160,32 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
 
   @override
   bool operator ==(Object other) {
-    return other is AddQuestUseCaseProvider && other.quest == quest;
+    return other is AddQuestUseCaseProvider &&
+        other.title == title &&
+        other.description == description &&
+        other.note == note;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, quest.hashCode);
+    hash = _SystemHash.combine(hash, title.hashCode);
+    hash = _SystemHash.combine(hash, description.hashCode);
+    hash = _SystemHash.combine(hash, note.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
 mixin AddQuestUseCaseRef on AutoDisposeProviderRef<Raw<Future<void>>> {
-  /// The parameter `quest` of this provider.
-  Quest get quest;
+  /// The parameter `title` of this provider.
+  String get title;
+
+  /// The parameter `description` of this provider.
+  String get description;
+
+  /// The parameter `note` of this provider.
+  String get note;
 }
 
 class _AddQuestUseCaseProviderElement
@@ -165,7 +194,11 @@ class _AddQuestUseCaseProviderElement
   _AddQuestUseCaseProviderElement(super.provider);
 
   @override
-  Quest get quest => (origin as AddQuestUseCaseProvider).quest;
+  String get title => (origin as AddQuestUseCaseProvider).title;
+  @override
+  String get description => (origin as AddQuestUseCaseProvider).description;
+  @override
+  String get note => (origin as AddQuestUseCaseProvider).note;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
