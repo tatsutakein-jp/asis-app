@@ -22,6 +22,16 @@ abstract interface class QuestDao {
 
   Future<void> inserts({required List<Quest> quests});
 
+  Future<void> merges(
+    List<
+            ({
+              QuestId id,
+              String title,
+              String description,
+            })>
+        quests,
+  );
+
   Future<bool> update({required Quest quest});
 
   Future<int> updates({required List<QuestId> ids});
