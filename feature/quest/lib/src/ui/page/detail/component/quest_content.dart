@@ -1,6 +1,5 @@
 import 'package:core_domain/quest_use_case.dart';
 import 'package:core_model/quest.dart';
-import 'package:core_ui/quest_list_title.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -15,16 +14,40 @@ final class QuestContent extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final quest = ref.watch(questStreamByIdUseCaseProvider(id: _questId));
+    final provider = questStreamByIdUseCaseProvider(id: _questId);
+    final quest = ref.watch(provider);
 
     return quest.when(
       data: (quest) {
-        return quest != null
-            ? QuestListTile(
-                quest: quest,
-                onTap: (quest) {},
-              )
-            : const SizedBox.shrink();
+        if (quest == null) {
+          return const SizedBox.shrink();
+        }
+
+        return SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ...[
+                Text(
+                  quest.name,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(quest.description),
+                Text(quest.body),
+              ].expand(
+                (element) => [
+                  element,
+                  const SizedBox(height: 16),
+                ],
+              ),
+            ],
+          ),
+        );
       },
       error: (error, stackTrace) => Center(
         child: Text(

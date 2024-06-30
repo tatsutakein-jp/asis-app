@@ -20,8 +20,8 @@ final class QuestDetailPage extends StatelessWidget {
       appBar: AsisAppBar(
         title: Text(l10n.questDetailAppBarTitle),
       ),
-      body: QuestContent(
-        questId: _questId,
+      body: SafeArea(
+        child: QuestContent(questId: _questId),
       ),
     );
   }
