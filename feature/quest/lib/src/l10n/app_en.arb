@@ -3,5 +3,9 @@
   "questListAddQuest": "Add Quest",
   "questDetailAppBarTitle": "Quest",
   "questAddAppBarTitle": "Add Quest",
+  "questAddFormTitleLabel": "Title",
+  "questAddFormTitleEmptyErrorMessage": "Please enter a title",
+  "questAddFormDescriptionLabel": "Description",
+  "questAddFormNoteLabel": "Note",
   "questAddFormSubmit": "Add Quest"
 }

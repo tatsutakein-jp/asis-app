@@ -19,5 +19,17 @@ class L10nJa extends L10n {
   String get questAddAppBarTitle => 'クエストを追加';
 
   @override
+  String get questAddFormTitleLabel => 'タイトル';
+
+  @override
+  String get questAddFormTitleEmptyErrorMessage => 'タイトルを入力してください';
+
+  @override
+  String get questAddFormDescriptionLabel => '説明';
+
+  @override
+  String get questAddFormNoteLabel => 'ノート';
+
+  @override
   String get questAddFormSubmit => 'クエストを追加する';
 }

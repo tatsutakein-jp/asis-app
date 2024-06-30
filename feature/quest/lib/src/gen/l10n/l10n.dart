@@ -120,6 +120,30 @@ abstract class L10n {
   /// **'クエストを追加'**
   String get questAddAppBarTitle;
 
+  /// No description provided for @questAddFormTitleLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'タイトル'**
+  String get questAddFormTitleLabel;
+
+  /// No description provided for @questAddFormTitleEmptyErrorMessage.
+  ///
+  /// In ja, this message translates to:
+  /// **'タイトルを入力してください'**
+  String get questAddFormTitleEmptyErrorMessage;
+
+  /// No description provided for @questAddFormDescriptionLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'説明'**
+  String get questAddFormDescriptionLabel;
+
+  /// No description provided for @questAddFormNoteLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'ノート'**
+  String get questAddFormNoteLabel;
+
   /// No description provided for @questAddFormSubmit.
   ///
   /// In ja, this message translates to:
