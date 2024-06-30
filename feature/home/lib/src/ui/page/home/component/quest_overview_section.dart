@@ -61,15 +61,9 @@ final class QuestOverviewSection extends HookConsumerWidget {
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
+              child: FilledButton(
                 onPressed: _onQuickAddButtonPressed,
                 child: Text(l10n.homeQuestOverviewSectionQuickAddQuest),
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
               ),
             ),
           ),
