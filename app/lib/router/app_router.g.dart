@@ -46,12 +46,10 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
               routes: [
                 GoRouteData.$route(
                   path: 'add',
-                  parentNavigatorKey: QuestAddRoute.$parentNavigatorKey,
                   factory: $QuestAddRouteExtension._fromState,
                 ),
                 GoRouteData.$route(
                   path: ':questId',
-                  parentNavigatorKey: QuestDetailRoute.$parentNavigatorKey,
                   factory: $QuestDetailRouteExtension._fromState,
                 ),
               ],
