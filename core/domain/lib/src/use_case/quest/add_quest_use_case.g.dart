@@ -6,7 +6,7 @@ part of 'add_quest_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$addQuestUseCaseHash() => r'27910375b55ff8492dd20459f48a375f3d956170';
+String _$addQuestUseCaseHash() => r'63f7cb0ddf67ca4f96cd73d86f2f4435ddf436e5';
 
 /// Copied from Dart SDK
 class _SystemHash {
