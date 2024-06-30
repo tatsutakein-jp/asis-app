@@ -95,6 +95,12 @@ import 'package:core_network_ferry/src/graphql/quest/__generated__/GetQuests.req
     show GGetQuestsReq;
 import 'package:core_network_ferry/src/graphql/quest/__generated__/GetQuests.var.gql.dart'
     show GGetQuestsVars;
+import 'package:core_network_ferry/src/graphql/quest/__generated__/InsertMainQuest.data.gql.dart'
+    show GInsertMainQuestData, GInsertMainQuestData_insertMainQuestsOne;
+import 'package:core_network_ferry/src/graphql/quest/__generated__/InsertMainQuest.req.gql.dart'
+    show GInsertMainQuestReq;
+import 'package:core_network_ferry/src/graphql/quest/__generated__/InsertMainQuest.var.gql.dart'
+    show GInsertMainQuestVars;
 import 'package:core_network_ferry/src/graphql/serializer/timestamptz_serializer.dart'
     show TimestamptzSerializer;
 import 'package:ferry_exec/ferry_exec.dart';
@@ -122,6 +128,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GGetQuestsData_mainQuests,
   GGetQuestsReq,
   GGetQuestsVars,
+  GInsertMainQuestData,
+  GInsertMainQuestData_insertMainQuestsOne,
+  GInsertMainQuestReq,
+  GInsertMainQuestVars,
   GIntComparisonExp,
   GMainQuestRelationsBoolExp,
   GMainQuestRelationsConstraint,
