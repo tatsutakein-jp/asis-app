@@ -5,6 +5,13 @@
   "homeQuestOverviewSectionQuestsCompleted": "Quests Completed",
   "homeQuestOverviewSectionPendingQuests": "Pending Quests",
   "homeQuestOverviewSectionQuickAddQuest": "Quick Add Quest",
+  "homeQuickAddQuestDialogAppBarTitle": "Add Quest",
+  "homeQuickAddQuestDialogTitleLabel": "Title",
+  "homeQuickAddQuestDialogTitleEmptyErrorMessage": "Please enter a title",
+  "homeQuickAddQuestDialogDescriptionLabel": "Description",
+  "homeQuickAddQuestDialogNoteLabel": "Note",
+  "homeQuickAddQuestDialogPositive": "Add Quest",
+  "homeQuickAddQuestDialogNegative": "Cancel",
   "homeRecentQuestListSectionYourQuestList": "Your Quest List",
   "homeRecentQuestListSectionMore": "More"
 }

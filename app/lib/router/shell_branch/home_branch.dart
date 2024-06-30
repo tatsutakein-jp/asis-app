@@ -15,6 +15,9 @@ const homeBranch = TypedStatefulShellBranch<HomeBranch>(
             ),
           ],
         ),
+        TypedGoRoute<QuickAddQuestDialogRoute>(
+          path: 'quickAddQuest',
+        ),
       ],
     ),
   ],

@@ -25,6 +25,27 @@ class L10nJa extends L10n {
   String get homeQuestOverviewSectionQuickAddQuest => 'クイック追加';
 
   @override
+  String get homeQuickAddQuestDialogAppBarTitle => 'クエスト追加';
+
+  @override
+  String get homeQuickAddQuestDialogTitleLabel => 'タイトル';
+
+  @override
+  String get homeQuickAddQuestDialogTitleEmptyErrorMessage => 'タイトルを入力してください';
+
+  @override
+  String get homeQuickAddQuestDialogDescriptionLabel => '説明';
+
+  @override
+  String get homeQuickAddQuestDialogNoteLabel => 'ノート';
+
+  @override
+  String get homeQuickAddQuestDialogPositive => 'クエストを追加する';
+
+  @override
+  String get homeQuickAddQuestDialogNegative => 'キャンセル';
+
+  @override
   String get homeRecentQuestListSectionYourQuestList => 'クエスト一覧';
 
   @override
