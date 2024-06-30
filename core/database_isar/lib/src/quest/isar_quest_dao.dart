@@ -92,4 +92,24 @@ final class IsarQuestDao implements QuestDao {
   Future<int> deleteAll() async => _isar.writeAsync(
         (isar) => isar.quests.deleteAll(List.empty()),
       );
+
+  @override
+  Future<void> merges(
+    List<({String id, String title, String description})> quests,
+  ) async {
+    await _isar.writeAsync(
+      (isar) => isar.quests.putAll(
+        quests
+            .map(
+              (e) => db.Quest(
+                id: e.id,
+                name: e.title,
+                description: e.description,
+                body: '',
+              ),
+            )
+            .toList(),
+      ),
+    );
+  }
 }

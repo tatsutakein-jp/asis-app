@@ -12,6 +12,8 @@ Authenticator authenticator(AuthenticatorRef ref) {
 abstract interface class Authenticator {
   AuthState get authState;
 
+  String? get currentUserId;
+
   Future<String?> get idToken;
 
   Future<void> signInWithEmailAndPassword({

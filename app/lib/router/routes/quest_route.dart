@@ -21,8 +21,6 @@ final class QuestDetailRoute extends GoRouteData {
 
   final QuestId questId;
 
-  static final $parentNavigatorKey = rootNavigatorKey;
-
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return QuestDetailPage(
@@ -35,15 +33,12 @@ final class QuestDetailRoute extends GoRouteData {
 final class QuestAddRoute extends GoRouteData {
   const QuestAddRoute();
 
-  static final $parentNavigatorKey = rootNavigatorKey;
-
   @override
-  BottomSheetPage<void> buildPage(BuildContext context, GoRouterState state) =>
-      BottomSheetPage<void>(
-        builder: (context) => QuestAddPage(
-          onAddQuestCompleted: () => context.pop(),
-        ),
-      );
+  Widget build(BuildContext context, GoRouterState state) {
+    return QuestAddPage(
+      onAddQuestCompleted: () => context.pop(),
+    );
+  }
 }
 
 final class BottomSheetPage<T> extends Page<T> {

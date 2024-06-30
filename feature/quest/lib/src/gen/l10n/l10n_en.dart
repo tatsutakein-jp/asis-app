@@ -19,5 +19,17 @@ class L10nEn extends L10n {
   String get questAddAppBarTitle => 'Add Quest';
 
   @override
+  String get questAddFormTitleLabel => 'Title';
+
+  @override
+  String get questAddFormTitleEmptyErrorMessage => 'Please enter a title';
+
+  @override
+  String get questAddFormDescriptionLabel => 'Description';
+
+  @override
+  String get questAddFormNoteLabel => 'Note';
+
+  @override
   String get questAddFormSubmit => 'Add Quest';
 }

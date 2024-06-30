@@ -15,6 +15,9 @@ final class FirebaseAuthenticator implements Authenticator {
   model.AuthState get authState => _firebaseAuth.authState;
 
   @override
+  String? get currentUserId => _firebaseAuth.currentUser?.uid;
+
+  @override
   Future<String?> get idToken async => _firebaseAuth.currentUser?.getIdToken();
 
   Future<UserCredential> signInAnonymously() async =>

@@ -3,5 +3,9 @@
   "questListAddQuest": "クエストを追加する",
   "questDetailAppBarTitle": "クエスト",
   "questAddAppBarTitle": "クエストを追加",
+  "questAddFormTitleLabel": "タイトル",
+  "questAddFormTitleEmptyErrorMessage": "タイトルを入力してください",
+  "questAddFormDescriptionLabel": "説明",
+  "questAddFormNoteLabel": "ノート",
   "questAddFormSubmit": "クエストを追加する"
 }
