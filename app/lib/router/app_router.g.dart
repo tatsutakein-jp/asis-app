@@ -33,6 +33,12 @@ RouteBase get $appShellRouteData => StatefulShellRouteData.$route(
                     ),
                   ],
                 ),
+                GoRouteData.$route(
+                  path: 'quickAddQuest',
+                  parentNavigatorKey:
+                      QuickAddQuestDialogRoute.$parentNavigatorKey,
+                  factory: $QuickAddQuestDialogRouteExtension._fromState,
+                ),
               ],
             ),
           ],
@@ -127,6 +133,24 @@ extension $FeedDetailRouteExtension on FeedDetailRoute {
 
   String get location => GoRouteData.$location(
         '/home/feeds/${Uri.encodeComponent(feedId)}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $QuickAddQuestDialogRouteExtension on QuickAddQuestDialogRoute {
+  static QuickAddQuestDialogRoute _fromState(GoRouterState state) =>
+      const QuickAddQuestDialogRoute();
+
+  String get location => GoRouteData.$location(
+        '/home/quickAddQuest',
       );
 
   void go(BuildContext context) => context.go(location);

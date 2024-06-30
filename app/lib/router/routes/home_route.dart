@@ -17,3 +17,18 @@ final class HomeRoute extends GoRouteData {
         },
       );
 }
+
+/// クエストクイック追加ダイアログへのルート
+final class QuickAddQuestDialogRoute extends GoRouteData {
+  const QuickAddQuestDialogRoute();
+
+  static final $parentNavigatorKey = rootNavigatorKey;
+
+  @override
+  DialogPage<void> buildPage(BuildContext context, GoRouterState state) =>
+      DialogPage<void>(
+        builder: (context) => QuickAddQuestDialog(
+          onClose: () => context.pop(),
+        ),
+      );
+}
