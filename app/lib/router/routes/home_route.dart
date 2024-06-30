@@ -9,5 +9,11 @@ final class HomeRoute extends GoRouteData {
         onTapNotification: () {
           const FeedListRoute().go(context);
         },
+        onTapQuestListItem: (quest) {
+          QuestDetailRoute(questId: quest.id).go(context);
+        },
+        onMoreButtonPressed: () {
+          const QuestListRoute().go(context);
+        },
       );
 }
