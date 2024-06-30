@@ -14,7 +14,7 @@ final class QuestListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListTile(
-        title: Text(_quest.name),
+        title: Text(_quest.title),
         subtitle: Text(_quest.description),
         trailing: const Icon(Icons.arrow_forward_ios),
         onTap: () => _onTap(_quest),

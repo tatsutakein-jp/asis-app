@@ -11,5 +11,11 @@ class NetworkMainQuest with _$NetworkMainQuest {
     required String id,
     required String title,
     required String description,
+    required DateTime? begunAt,
+    required DateTime? endedAt,
+    required String? categoryId,
+    required String status,
+    required String? coverImageUrl,
+    required String note,
   }) = _NetworkMainQuest;
 }

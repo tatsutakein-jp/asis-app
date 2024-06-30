@@ -31,14 +31,14 @@ final class QuestContent extends HookConsumerWidget {
             children: [
               ...[
                 Text(
-                  quest.name,
+                  quest.title,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(quest.description),
-                Text(quest.body),
+                Text(quest.note),
               ].expand(
                 (element) => [
                   element,

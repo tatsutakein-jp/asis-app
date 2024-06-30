@@ -67,9 +67,9 @@ final class IsarQuestDao implements QuestDao {
   Future<bool> update({required Quest quest}) async => _isar.writeAsync(
         (isar) => isar.quests.update(
           id: quest.id,
-          name: quest.name,
+          title: quest.title,
           description: quest.description,
-          body: quest.body,
+          note: quest.note,
         ),
       );
 
@@ -95,7 +95,19 @@ final class IsarQuestDao implements QuestDao {
 
   @override
   Future<void> merges(
-    List<({String id, String title, String description})> quests,
+    List<
+            ({
+              QuestId id,
+              String title,
+              String description,
+              DateTime? begunAt,
+              DateTime? endedAt,
+              String? categoryId,
+              String status,
+              String? coverImageUrl,
+              String note,
+            })>
+        quests,
   ) async {
     await _isar.writeAsync(
       (isar) => isar.quests.putAll(
@@ -103,9 +115,14 @@ final class IsarQuestDao implements QuestDao {
             .map(
               (e) => db.Quest(
                 id: e.id,
-                name: e.title,
+                title: e.title,
                 description: e.description,
-                body: '',
+                begunAt: e.begunAt,
+                endedAt: e.endedAt,
+                categoryId: e.categoryId,
+                status: e.status,
+                coverImageUrl: e.coverImageUrl,
+                note: e.note,
               ),
             )
             .toList(),

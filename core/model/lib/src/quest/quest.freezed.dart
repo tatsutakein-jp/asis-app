@@ -17,9 +17,14 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Quest {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get body => throw _privateConstructorUsedError;
+  DateTime? get begunAt => throw _privateConstructorUsedError;
+  DateTime? get endedAt => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
+  QuestStatus get status => throw _privateConstructorUsedError;
+  String? get coverImageUrl => throw _privateConstructorUsedError;
+  String get note => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $QuestCopyWith<Quest> get copyWith => throw _privateConstructorUsedError;
@@ -30,7 +35,16 @@ abstract class $QuestCopyWith<$Res> {
   factory $QuestCopyWith(Quest value, $Res Function(Quest) then) =
       _$QuestCopyWithImpl<$Res, Quest>;
   @useResult
-  $Res call({String id, String name, String description, String body});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      DateTime? begunAt,
+      DateTime? endedAt,
+      String? categoryId,
+      QuestStatus status,
+      String? coverImageUrl,
+      String note});
 }
 
 /// @nodoc
@@ -47,26 +61,51 @@ class _$QuestCopyWithImpl<$Res, $Val extends Quest>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? title = null,
     Object? description = null,
-    Object? body = null,
+    Object? begunAt = freezed,
+    Object? endedAt = freezed,
+    Object? categoryId = freezed,
+    Object? status = null,
+    Object? coverImageUrl = freezed,
+    Object? note = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
+      begunAt: freezed == begunAt
+          ? _value.begunAt
+          : begunAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endedAt: freezed == endedAt
+          ? _value.endedAt
+          : endedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as QuestStatus,
+      coverImageUrl: freezed == coverImageUrl
+          ? _value.coverImageUrl
+          : coverImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -79,7 +118,16 @@ abstract class _$$QuestImplCopyWith<$Res> implements $QuestCopyWith<$Res> {
       __$$QuestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String description, String body});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      DateTime? begunAt,
+      DateTime? endedAt,
+      String? categoryId,
+      QuestStatus status,
+      String? coverImageUrl,
+      String note});
 }
 
 /// @nodoc
@@ -94,26 +142,51 @@ class __$$QuestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
+    Object? title = null,
     Object? description = null,
-    Object? body = null,
+    Object? begunAt = freezed,
+    Object? endedAt = freezed,
+    Object? categoryId = freezed,
+    Object? status = null,
+    Object? coverImageUrl = freezed,
+    Object? note = null,
   }) {
     return _then(_$QuestImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      body: null == body
-          ? _value.body
-          : body // ignore: cast_nullable_to_non_nullable
+      begunAt: freezed == begunAt
+          ? _value.begunAt
+          : begunAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endedAt: freezed == endedAt
+          ? _value.endedAt
+          : endedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as QuestStatus,
+      coverImageUrl: freezed == coverImageUrl
+          ? _value.coverImageUrl
+          : coverImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -124,22 +197,37 @@ class __$$QuestImplCopyWithImpl<$Res>
 class _$QuestImpl implements _Quest {
   const _$QuestImpl(
       {required this.id,
-      required this.name,
+      required this.title,
       required this.description,
-      required this.body});
+      required this.begunAt,
+      required this.endedAt,
+      required this.categoryId,
+      required this.status,
+      required this.coverImageUrl,
+      required this.note});
 
   @override
   final String id;
   @override
-  final String name;
+  final String title;
   @override
   final String description;
   @override
-  final String body;
+  final DateTime? begunAt;
+  @override
+  final DateTime? endedAt;
+  @override
+  final String? categoryId;
+  @override
+  final QuestStatus status;
+  @override
+  final String? coverImageUrl;
+  @override
+  final String note;
 
   @override
   String toString() {
-    return 'Quest(id: $id, name: $name, description: $description, body: $body)';
+    return 'Quest(id: $id, title: $title, description: $description, begunAt: $begunAt, endedAt: $endedAt, categoryId: $categoryId, status: $status, coverImageUrl: $coverImageUrl, note: $note)';
   }
 
   @override
@@ -148,14 +236,22 @@ class _$QuestImpl implements _Quest {
         (other.runtimeType == runtimeType &&
             other is _$QuestImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.body, body) || other.body == body));
+            (identical(other.begunAt, begunAt) || other.begunAt == begunAt) &&
+            (identical(other.endedAt, endedAt) || other.endedAt == endedAt) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.coverImageUrl, coverImageUrl) ||
+                other.coverImageUrl == coverImageUrl) &&
+            (identical(other.note, note) || other.note == note));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, body);
+  int get hashCode => Object.hash(runtimeType, id, title, description, begunAt,
+      endedAt, categoryId, status, coverImageUrl, note);
 
   @JsonKey(ignore: true)
   @override
@@ -167,18 +263,33 @@ class _$QuestImpl implements _Quest {
 abstract class _Quest implements Quest {
   const factory _Quest(
       {required final String id,
-      required final String name,
+      required final String title,
       required final String description,
-      required final String body}) = _$QuestImpl;
+      required final DateTime? begunAt,
+      required final DateTime? endedAt,
+      required final String? categoryId,
+      required final QuestStatus status,
+      required final String? coverImageUrl,
+      required final String note}) = _$QuestImpl;
 
   @override
   String get id;
   @override
-  String get name;
+  String get title;
   @override
   String get description;
   @override
-  String get body;
+  DateTime? get begunAt;
+  @override
+  DateTime? get endedAt;
+  @override
+  String? get categoryId;
+  @override
+  QuestStatus get status;
+  @override
+  String? get coverImageUrl;
+  @override
+  String get note;
   @override
   @JsonKey(ignore: true)
   _$$QuestImplCopyWith<_$QuestImpl> get copyWith =>
