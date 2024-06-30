@@ -20,5 +20,6 @@ abstract interface class MainQuestRemoteDataSource {
     required String title,
     required String description,
     required String note,
+    required String userId,
   });
 }

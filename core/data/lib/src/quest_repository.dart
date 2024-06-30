@@ -38,11 +38,13 @@ class QuestRepository {
     required String title,
     required String description,
     required String note,
+    required String userId,
   }) async {
     final id = await _remote.insertMainQuest(
       title: title,
       description: description,
       note: note,
+      userId: userId,
     );
     await _dao.merges(
       [

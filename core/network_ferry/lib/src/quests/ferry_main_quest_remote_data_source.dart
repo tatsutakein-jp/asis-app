@@ -60,9 +60,11 @@ final class FerryMainQuestRemoteDataSource
     required String title,
     required String description,
     required String note,
+    required String userId,
   }) async {
     final request = GInsertMainQuestReq(
       (b) => b
+        ..vars.userId = userId
         ..vars.title = title
         ..vars.description = description
         ..vars.note = note,
