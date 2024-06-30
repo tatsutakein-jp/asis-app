@@ -1,1 +1,2 @@
-export 'src/extension/index.dart';
+export 'src/extension/receiver.dart';
+export 'src/extension/string.dart';

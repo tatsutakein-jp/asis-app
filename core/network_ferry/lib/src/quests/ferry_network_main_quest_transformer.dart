@@ -17,6 +17,12 @@ final class FerryNetworkMainQuestTransformer {
       id: from.id,
       title: from.title,
       description: from.description,
+      begunAt: from.begunAt,
+      endedAt: from.endedAt,
+      categoryId: from.categoryId,
+      status: from.status.name,
+      coverImageUrl: from.coverImageUrl,
+      note: from.note,
     );
   }
 }

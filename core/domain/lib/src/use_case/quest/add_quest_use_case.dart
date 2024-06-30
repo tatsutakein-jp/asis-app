@@ -1,5 +1,6 @@
 import 'package:core_authenticator/authenticator.dart';
 import 'package:core_data/repository.dart';
+import 'package:core_model/quest.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'add_quest_use_case.g.dart';
@@ -20,9 +21,14 @@ Raw<Future<void>> addQuestUseCase(
   }
 
   await ref.watch(questRepositoryProvider).insert(
+        userId: currentUserId,
         title: title,
         description: description,
+        begunAt: null,
+        endedAt: null,
+        categoryId: null,
+        status: QuestStatus.backlog,
+        coverImageUrl: null,
         note: note,
-        userId: currentUserId,
       );
 }

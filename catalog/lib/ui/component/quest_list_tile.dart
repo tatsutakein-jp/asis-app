@@ -10,11 +10,17 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 )
 Widget asisScaffoldUseCase(BuildContext context) {
   return QuestListTile(
-    quest: const Quest(
+    quest: Quest(
       id: '1',
-      name: 'Quest 1',
-      description: 'Quest 1 description',
-      body: 'Quest 1 body',
+      title: 'title',
+      description: 'description',
+      begunAt: DateTime.now(),
+      endedAt: DateTime.now(),
+      categoryId: null,
+      status: QuestStatus.backlog,
+      coverImageUrl:
+          'https://raw.githubusercontent.com/tatsutakein-jp/asis-app/main/.idea/icon.svg',
+      note: 'note',
     ),
     onTap: (quest) {},
   );

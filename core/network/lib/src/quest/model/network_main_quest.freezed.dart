@@ -19,6 +19,12 @@ mixin _$NetworkMainQuest {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  DateTime? get begunAt => throw _privateConstructorUsedError;
+  DateTime? get endedAt => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  String? get coverImageUrl => throw _privateConstructorUsedError;
+  String get note => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NetworkMainQuestCopyWith<NetworkMainQuest> get copyWith =>
@@ -31,7 +37,16 @@ abstract class $NetworkMainQuestCopyWith<$Res> {
           NetworkMainQuest value, $Res Function(NetworkMainQuest) then) =
       _$NetworkMainQuestCopyWithImpl<$Res, NetworkMainQuest>;
   @useResult
-  $Res call({String id, String title, String description});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      DateTime? begunAt,
+      DateTime? endedAt,
+      String? categoryId,
+      String status,
+      String? coverImageUrl,
+      String note});
 }
 
 /// @nodoc
@@ -50,6 +65,12 @@ class _$NetworkMainQuestCopyWithImpl<$Res, $Val extends NetworkMainQuest>
     Object? id = null,
     Object? title = null,
     Object? description = null,
+    Object? begunAt = freezed,
+    Object? endedAt = freezed,
+    Object? categoryId = freezed,
+    Object? status = null,
+    Object? coverImageUrl = freezed,
+    Object? note = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -64,6 +85,30 @@ class _$NetworkMainQuestCopyWithImpl<$Res, $Val extends NetworkMainQuest>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      begunAt: freezed == begunAt
+          ? _value.begunAt
+          : begunAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endedAt: freezed == endedAt
+          ? _value.endedAt
+          : endedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      coverImageUrl: freezed == coverImageUrl
+          ? _value.coverImageUrl
+          : coverImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -76,7 +121,16 @@ abstract class _$$NetworkMainQuestImplCopyWith<$Res>
       __$$NetworkMainQuestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String description});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      DateTime? begunAt,
+      DateTime? endedAt,
+      String? categoryId,
+      String status,
+      String? coverImageUrl,
+      String note});
 }
 
 /// @nodoc
@@ -93,6 +147,12 @@ class __$$NetworkMainQuestImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? description = null,
+    Object? begunAt = freezed,
+    Object? endedAt = freezed,
+    Object? categoryId = freezed,
+    Object? status = null,
+    Object? coverImageUrl = freezed,
+    Object? note = null,
   }) {
     return _then(_$NetworkMainQuestImpl(
       id: null == id
@@ -107,6 +167,30 @@ class __$$NetworkMainQuestImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      begunAt: freezed == begunAt
+          ? _value.begunAt
+          : begunAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endedAt: freezed == endedAt
+          ? _value.endedAt
+          : endedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      coverImageUrl: freezed == coverImageUrl
+          ? _value.coverImageUrl
+          : coverImageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -115,7 +199,15 @@ class __$$NetworkMainQuestImplCopyWithImpl<$Res>
 
 class _$NetworkMainQuestImpl implements _NetworkMainQuest {
   const _$NetworkMainQuestImpl(
-      {required this.id, required this.title, required this.description});
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.begunAt,
+      required this.endedAt,
+      required this.categoryId,
+      required this.status,
+      required this.coverImageUrl,
+      required this.note});
 
   @override
   final String id;
@@ -123,10 +215,22 @@ class _$NetworkMainQuestImpl implements _NetworkMainQuest {
   final String title;
   @override
   final String description;
+  @override
+  final DateTime? begunAt;
+  @override
+  final DateTime? endedAt;
+  @override
+  final String? categoryId;
+  @override
+  final String status;
+  @override
+  final String? coverImageUrl;
+  @override
+  final String note;
 
   @override
   String toString() {
-    return 'NetworkMainQuest(id: $id, title: $title, description: $description)';
+    return 'NetworkMainQuest(id: $id, title: $title, description: $description, begunAt: $begunAt, endedAt: $endedAt, categoryId: $categoryId, status: $status, coverImageUrl: $coverImageUrl, note: $note)';
   }
 
   @override
@@ -137,11 +241,20 @@ class _$NetworkMainQuestImpl implements _NetworkMainQuest {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.begunAt, begunAt) || other.begunAt == begunAt) &&
+            (identical(other.endedAt, endedAt) || other.endedAt == endedAt) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.coverImageUrl, coverImageUrl) ||
+                other.coverImageUrl == coverImageUrl) &&
+            (identical(other.note, note) || other.note == note));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, description);
+  int get hashCode => Object.hash(runtimeType, id, title, description, begunAt,
+      endedAt, categoryId, status, coverImageUrl, note);
 
   @JsonKey(ignore: true)
   @override
@@ -155,7 +268,13 @@ abstract class _NetworkMainQuest implements NetworkMainQuest {
   const factory _NetworkMainQuest(
       {required final String id,
       required final String title,
-      required final String description}) = _$NetworkMainQuestImpl;
+      required final String description,
+      required final DateTime? begunAt,
+      required final DateTime? endedAt,
+      required final String? categoryId,
+      required final String status,
+      required final String? coverImageUrl,
+      required final String note}) = _$NetworkMainQuestImpl;
 
   @override
   String get id;
@@ -163,6 +282,18 @@ abstract class _NetworkMainQuest implements NetworkMainQuest {
   String get title;
   @override
   String get description;
+  @override
+  DateTime? get begunAt;
+  @override
+  DateTime? get endedAt;
+  @override
+  String? get categoryId;
+  @override
+  String get status;
+  @override
+  String? get coverImageUrl;
+  @override
+  String get note;
   @override
   @JsonKey(ignore: true)
   _$$NetworkMainQuestImplCopyWith<_$NetworkMainQuestImpl> get copyWith =>

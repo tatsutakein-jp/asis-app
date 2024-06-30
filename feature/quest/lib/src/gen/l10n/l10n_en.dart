@@ -16,6 +16,36 @@ class L10nEn extends L10n {
   String get questDetailAppBarTitle => 'Quest';
 
   @override
+  String get questDetailContentBegunAtLabel => 'Begun At';
+
+  @override
+  String get questDetailContentBegunAtEmptyText => 'Not set';
+
+  @override
+  String get questDetailContentEndedAtLabel => 'Ended At';
+
+  @override
+  String get questDetailContentEndedAtEmptyText => 'Not set';
+
+  @override
+  String get questDetailContentCategoryLabel => 'Category';
+
+  @override
+  String get questDetailContentCategoryEmptyText => 'Not set';
+
+  @override
+  String get questDetailContentStatusLabel => 'Status';
+
+  @override
+  String get questDetailContentStatusEmptyText => 'Not set';
+
+  @override
+  String get questDetailContentNoteLabel => 'Note';
+
+  @override
+  String get questDetailContentNoteEmptyText => 'Not set';
+
+  @override
   String get questAddAppBarTitle => 'Add Quest';
 
   @override

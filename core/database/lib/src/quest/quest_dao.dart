@@ -28,6 +28,12 @@ abstract interface class QuestDao {
               QuestId id,
               String title,
               String description,
+              DateTime? begunAt,
+              DateTime? endedAt,
+              String? categoryId,
+              String status,
+              String? coverImageUrl,
+              String note,
             })>
         quests,
   );

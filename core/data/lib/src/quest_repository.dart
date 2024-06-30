@@ -1,3 +1,4 @@
+import 'package:core_common/extension.dart';
 import 'package:core_database/quest_dao.dart';
 import 'package:core_model/quest.dart';
 import 'package:core_network/core_network.dart';
@@ -35,10 +36,15 @@ class QuestRepository {
       _dao.stream();
 
   Future<void> insert({
+    required String userId,
     required String title,
     required String description,
+    required DateTime? begunAt,
+    required DateTime? endedAt,
+    required String? categoryId,
+    required QuestStatus status,
+    required String? coverImageUrl,
     required String note,
-    required String userId,
   }) async {
     final id = await _remote.insertMainQuest(
       title: title,
@@ -52,6 +58,12 @@ class QuestRepository {
           id: id,
           title: title,
           description: description,
+          begunAt: begunAt,
+          endedAt: endedAt,
+          categoryId: categoryId,
+          status: status.name,
+          coverImageUrl: coverImageUrl,
+          note: note,
         ),
       ],
     );
@@ -78,10 +90,16 @@ class QuestRepository {
     await _dao.merges(
       networkQuestList
           .map(
-            (quest) => (
-              id: quest.id,
-              title: quest.title,
-              description: quest.description,
+            (e) => (
+              id: e.id,
+              title: e.title,
+              description: e.description,
+              begunAt: e.begunAt,
+              endedAt: e.endedAt,
+              categoryId: e.categoryId,
+              status: e.status.toCamelCase(),
+              coverImageUrl: e.coverImageUrl,
+              note: e.note,
             ),
           )
           .toList(),
