@@ -10,5 +10,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 HomePage homePageUseCase(BuildContext context) {
   return HomePage(
     onTapNotification: () {},
+    onTapQuestListItem: (_) {},
+    onMoreButtonPressed: () {},
   );
 }
