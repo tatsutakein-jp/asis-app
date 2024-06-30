@@ -114,6 +114,66 @@ abstract class L10n {
   /// **'クエスト'**
   String get questDetailAppBarTitle;
 
+  /// No description provided for @questDetailContentBegunAtLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'開始日時'**
+  String get questDetailContentBegunAtLabel;
+
+  /// No description provided for @questDetailContentBegunAtEmptyText.
+  ///
+  /// In ja, this message translates to:
+  /// **'設定されていません'**
+  String get questDetailContentBegunAtEmptyText;
+
+  /// No description provided for @questDetailContentEndedAtLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'終了日時'**
+  String get questDetailContentEndedAtLabel;
+
+  /// No description provided for @questDetailContentEndedAtEmptyText.
+  ///
+  /// In ja, this message translates to:
+  /// **'設定されていません'**
+  String get questDetailContentEndedAtEmptyText;
+
+  /// No description provided for @questDetailContentCategoryLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'カテゴリ'**
+  String get questDetailContentCategoryLabel;
+
+  /// No description provided for @questDetailContentCategoryEmptyText.
+  ///
+  /// In ja, this message translates to:
+  /// **'設定されていません'**
+  String get questDetailContentCategoryEmptyText;
+
+  /// No description provided for @questDetailContentStatusLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'ステータス'**
+  String get questDetailContentStatusLabel;
+
+  /// No description provided for @questDetailContentStatusEmptyText.
+  ///
+  /// In ja, this message translates to:
+  /// **'設定されていません'**
+  String get questDetailContentStatusEmptyText;
+
+  /// No description provided for @questDetailContentNoteLabel.
+  ///
+  /// In ja, this message translates to:
+  /// **'ノート'**
+  String get questDetailContentNoteLabel;
+
+  /// No description provided for @questDetailContentNoteEmptyText.
+  ///
+  /// In ja, this message translates to:
+  /// **'設定されていません'**
+  String get questDetailContentNoteEmptyText;
+
   /// No description provided for @questAddAppBarTitle.
   ///
   /// In ja, this message translates to:

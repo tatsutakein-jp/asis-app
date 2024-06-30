@@ -16,6 +16,36 @@ class L10nJa extends L10n {
   String get questDetailAppBarTitle => 'クエスト';
 
   @override
+  String get questDetailContentBegunAtLabel => '開始日時';
+
+  @override
+  String get questDetailContentBegunAtEmptyText => '設定されていません';
+
+  @override
+  String get questDetailContentEndedAtLabel => '終了日時';
+
+  @override
+  String get questDetailContentEndedAtEmptyText => '設定されていません';
+
+  @override
+  String get questDetailContentCategoryLabel => 'カテゴリ';
+
+  @override
+  String get questDetailContentCategoryEmptyText => '設定されていません';
+
+  @override
+  String get questDetailContentStatusLabel => 'ステータス';
+
+  @override
+  String get questDetailContentStatusEmptyText => '設定されていません';
+
+  @override
+  String get questDetailContentNoteLabel => 'ノート';
+
+  @override
+  String get questDetailContentNoteEmptyText => '設定されていません';
+
+  @override
   String get questAddAppBarTitle => 'クエストを追加';
 
   @override
