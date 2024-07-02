@@ -43,6 +43,9 @@
         "minor",
         "patch"
       ],
+      "ignoreDeps": [
+        "collection"
+      ]
     },
     {
       "groupName": "flutter",
