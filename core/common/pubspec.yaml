@@ -7,7 +7,7 @@ environment:
   sdk: 3.5.0-180.3.beta
 
 dependencies:
-  collection: 1.18.0
+  collection: 1.19.0
   simple_logger: 1.9.0+3
 
 dev_dependencies:
