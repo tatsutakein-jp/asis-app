@@ -29,11 +29,10 @@ class NewsRepository {
 
 extension on NetworkNews {
   NewsFeed toNewsFeed() => NewsFeed(
-        id: id,
+        slug: slug,
         title: title,
-        publishedAt: publishedAt.toString(),
+        publishedAt: publishedAt,
         excerpt: excerpt,
-        coverImageUrl: coverImageUrl ?? '',
-        content: content,
+        coverImageUrl: coverImageUrl,
       );
 }

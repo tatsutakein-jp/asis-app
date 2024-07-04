@@ -56,9 +56,9 @@ final class NewsFeedCardSection extends ConsumerWidget {
                                             borderRadius:
                                                 BorderRadius.circular(50),
                                           ),
-                                          child: news.coverImageUrl.isNotEmpty
+                                          child: news.coverImageUrl != null
                                               ? Image.network(
-                                                  news.coverImageUrl,
+                                                  news.coverImageUrl!,
                                                   fit: BoxFit.cover,
                                                 )
                                               : const BrandIcon(

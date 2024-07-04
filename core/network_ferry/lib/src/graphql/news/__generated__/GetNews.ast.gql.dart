@@ -17,14 +17,14 @@ const GetNews = _i1.OperationDefinitionNode(
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'id'),
+          name: _i1.NameNode(value: 'title'),
           alias: null,
           arguments: [],
           directives: [],
           selectionSet: null,
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'title'),
+          name: _i1.NameNode(value: 'slug'),
           alias: null,
           arguments: [],
           directives: [],
@@ -46,13 +46,6 @@ const GetNews = _i1.OperationDefinitionNode(
         ),
         _i1.FieldNode(
           name: _i1.NameNode(value: 'coverImageUrl'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: null,
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'content'),
           alias: null,
           arguments: [],
           directives: [],

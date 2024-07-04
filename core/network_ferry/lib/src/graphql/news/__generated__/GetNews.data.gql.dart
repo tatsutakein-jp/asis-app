@@ -50,12 +50,11 @@ abstract class GGetNewsData_news
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String get id;
   String get title;
+  String get slug;
   DateTime? get publishedAt;
   String get excerpt;
   String? get coverImageUrl;
-  String get content;
   static Serializer<GGetNewsData_news> get serializer =>
       _$gGetNewsDataNewsSerializer;
 

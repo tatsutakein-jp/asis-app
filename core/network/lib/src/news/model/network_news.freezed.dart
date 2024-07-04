@@ -16,12 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NetworkNews {
-  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
   DateTime get publishedAt => throw _privateConstructorUsedError;
   String get excerpt => throw _privateConstructorUsedError;
   String? get coverImageUrl => throw _privateConstructorUsedError;
-  String get content => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NetworkNewsCopyWith<NetworkNews> get copyWith =>
@@ -35,12 +34,11 @@ abstract class $NetworkNewsCopyWith<$Res> {
       _$NetworkNewsCopyWithImpl<$Res, NetworkNews>;
   @useResult
   $Res call(
-      {String id,
-      String title,
+      {String title,
+      String slug,
       DateTime publishedAt,
       String excerpt,
-      String? coverImageUrl,
-      String content});
+      String? coverImageUrl});
 }
 
 /// @nodoc
@@ -56,21 +54,20 @@ class _$NetworkNewsCopyWithImpl<$Res, $Val extends NetworkNews>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
+    Object? slug = null,
     Object? publishedAt = null,
     Object? excerpt = null,
     Object? coverImageUrl = freezed,
-    Object? content = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
               as String,
       publishedAt: null == publishedAt
           ? _value.publishedAt
@@ -84,10 +81,6 @@ class _$NetworkNewsCopyWithImpl<$Res, $Val extends NetworkNews>
           ? _value.coverImageUrl
           : coverImageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -101,12 +94,11 @@ abstract class _$$NetworkNewsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String title,
+      {String title,
+      String slug,
       DateTime publishedAt,
       String excerpt,
-      String? coverImageUrl,
-      String content});
+      String? coverImageUrl});
 }
 
 /// @nodoc
@@ -120,21 +112,20 @@ class __$$NetworkNewsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
+    Object? slug = null,
     Object? publishedAt = null,
     Object? excerpt = null,
     Object? coverImageUrl = freezed,
-    Object? content = null,
   }) {
     return _then(_$NetworkNewsImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
               as String,
       publishedAt: null == publishedAt
           ? _value.publishedAt
@@ -148,10 +139,6 @@ class __$$NetworkNewsImplCopyWithImpl<$Res>
           ? _value.coverImageUrl
           : coverImageUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -160,29 +147,26 @@ class __$$NetworkNewsImplCopyWithImpl<$Res>
 
 class _$NetworkNewsImpl implements _NetworkNews {
   const _$NetworkNewsImpl(
-      {required this.id,
-      required this.title,
+      {required this.title,
+      required this.slug,
       required this.publishedAt,
       required this.excerpt,
-      required this.coverImageUrl,
-      required this.content});
+      required this.coverImageUrl});
 
   @override
-  final String id;
-  @override
   final String title;
+  @override
+  final String slug;
   @override
   final DateTime publishedAt;
   @override
   final String excerpt;
   @override
   final String? coverImageUrl;
-  @override
-  final String content;
 
   @override
   String toString() {
-    return 'NetworkNews(id: $id, title: $title, publishedAt: $publishedAt, excerpt: $excerpt, coverImageUrl: $coverImageUrl, content: $content)';
+    return 'NetworkNews(title: $title, slug: $slug, publishedAt: $publishedAt, excerpt: $excerpt, coverImageUrl: $coverImageUrl)';
   }
 
   @override
@@ -190,19 +174,18 @@ class _$NetworkNewsImpl implements _NetworkNews {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NetworkNewsImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.publishedAt, publishedAt) ||
                 other.publishedAt == publishedAt) &&
             (identical(other.excerpt, excerpt) || other.excerpt == excerpt) &&
             (identical(other.coverImageUrl, coverImageUrl) ||
-                other.coverImageUrl == coverImageUrl) &&
-            (identical(other.content, content) || other.content == content));
+                other.coverImageUrl == coverImageUrl));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, publishedAt, excerpt, coverImageUrl, content);
+      runtimeType, title, slug, publishedAt, excerpt, coverImageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -213,25 +196,22 @@ class _$NetworkNewsImpl implements _NetworkNews {
 
 abstract class _NetworkNews implements NetworkNews {
   const factory _NetworkNews(
-      {required final String id,
-      required final String title,
+      {required final String title,
+      required final String slug,
       required final DateTime publishedAt,
       required final String excerpt,
-      required final String? coverImageUrl,
-      required final String content}) = _$NetworkNewsImpl;
+      required final String? coverImageUrl}) = _$NetworkNewsImpl;
 
   @override
-  String get id;
-  @override
   String get title;
+  @override
+  String get slug;
   @override
   DateTime get publishedAt;
   @override
   String get excerpt;
   @override
   String? get coverImageUrl;
-  @override
-  String get content;
   @override
   @JsonKey(ignore: true)
   _$$NetworkNewsImplCopyWith<_$NetworkNewsImpl> get copyWith =>
