@@ -31,7 +31,7 @@ extension on Flavor {
       };
 
   String get websiteUrl => switch (this) {
-        Flavor.dev => 'ttp://localhost:4321',
+        Flavor.dev => 'http://localhost:4321',
         Flavor.stg => 'https://staging.asis.quest',
         Flavor.prod => 'https://asis.quest',
       };
