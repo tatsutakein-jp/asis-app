@@ -25,6 +25,7 @@ class AppConfig with _$AppConfig {
     required Flavor flavor,
     required String? installerStore,
     required String backendUrl,
+    required String websiteUrl,
   }) = _AppConfig;
 }
 
@@ -38,4 +39,5 @@ const fakeAppConfig = AppConfig(
   flavor: Flavor.dev,
   installerStore: 'fake_store',
   backendUrl: '',
+  websiteUrl: '',
 );

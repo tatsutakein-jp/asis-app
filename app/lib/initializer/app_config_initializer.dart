@@ -19,6 +19,7 @@ Future<AppConfig> initializeAppConfig() async {
     buildSignature: packageInfo.buildSignature,
     installerStore: packageInfo.installerStore,
     backendUrl: flavor.backendUrl,
+    websiteUrl: flavor.websiteUrl,
   );
 }
 
@@ -27,5 +28,11 @@ extension on Flavor {
         Flavor.dev => 'https://asis-dev.hasura.app/v1/graphql',
         Flavor.stg => 'https://asis-stg.hasura.app/v1/graphql',
         Flavor.prod => 'https://asis.hasura.app/v1/graphql',
+      };
+
+  String get websiteUrl => switch (this) {
+        Flavor.dev => 'http://localhost:4321',
+        Flavor.stg => 'https://staging.asis.quest',
+        Flavor.prod => 'https://asis.quest',
       };
 }
