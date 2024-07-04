@@ -8,11 +8,10 @@ part 'network_news.freezed.dart';
 @freezed
 class NetworkNews with _$NetworkNews {
   const factory NetworkNews({
-    required String id,
     required String title,
+    required String slug,
     required DateTime publishedAt,
     required String excerpt,
     required String? coverImageUrl,
-    required String content,
   }) = _NetworkNews;
 }

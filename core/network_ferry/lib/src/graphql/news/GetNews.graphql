@@ -1,10 +1,9 @@
 query GetNews {
     news {
-        id
         title
+        slug
         publishedAt
         excerpt
         coverImageUrl
-        content
     }
 }

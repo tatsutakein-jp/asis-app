@@ -14,13 +14,12 @@ FerryNetworkNewsTransformer ferryNetworkNewsTransformer(
 final class FerryNetworkNewsTransformer {
   NetworkNews transformToNetworkNews(GGetNewsData_news from) {
     return NetworkNews(
-      id: from.id,
       title: from.title,
+      slug: from.slug,
       // NOTE: アプリ側で受信できるニュースは公開日が必ず存在する
       publishedAt: from.publishedAt!,
       excerpt: from.excerpt,
       coverImageUrl: from.coverImageUrl,
-      content: from.content,
     );
   }
 }

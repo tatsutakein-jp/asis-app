@@ -16,12 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NewsFeed {
-  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get publishedAt => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
+  DateTime get publishedAt => throw _privateConstructorUsedError;
   String get excerpt => throw _privateConstructorUsedError;
-  String get coverImageUrl => throw _privateConstructorUsedError;
-  String get content => throw _privateConstructorUsedError;
+  String? get coverImageUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NewsFeedCopyWith<NewsFeed> get copyWith =>
@@ -34,12 +33,11 @@ abstract class $NewsFeedCopyWith<$Res> {
       _$NewsFeedCopyWithImpl<$Res, NewsFeed>;
   @useResult
   $Res call(
-      {String id,
-      String title,
-      String publishedAt,
+      {String title,
+      String slug,
+      DateTime publishedAt,
       String excerpt,
-      String coverImageUrl,
-      String content});
+      String? coverImageUrl});
 }
 
 /// @nodoc
@@ -55,38 +53,33 @@ class _$NewsFeedCopyWithImpl<$Res, $Val extends NewsFeed>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
+    Object? slug = null,
     Object? publishedAt = null,
     Object? excerpt = null,
-    Object? coverImageUrl = null,
-    Object? content = null,
+    Object? coverImageUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
       publishedAt: null == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       excerpt: null == excerpt
           ? _value.excerpt
           : excerpt // ignore: cast_nullable_to_non_nullable
               as String,
-      coverImageUrl: null == coverImageUrl
+      coverImageUrl: freezed == coverImageUrl
           ? _value.coverImageUrl
           : coverImageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -100,12 +93,11 @@ abstract class _$$NewsFeedImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String title,
-      String publishedAt,
+      {String title,
+      String slug,
+      DateTime publishedAt,
       String excerpt,
-      String coverImageUrl,
-      String content});
+      String? coverImageUrl});
 }
 
 /// @nodoc
@@ -119,38 +111,33 @@ class __$$NewsFeedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? title = null,
+    Object? slug = null,
     Object? publishedAt = null,
     Object? excerpt = null,
-    Object? coverImageUrl = null,
-    Object? content = null,
+    Object? coverImageUrl = freezed,
   }) {
     return _then(_$NewsFeedImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
       publishedAt: null == publishedAt
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       excerpt: null == excerpt
           ? _value.excerpt
           : excerpt // ignore: cast_nullable_to_non_nullable
               as String,
-      coverImageUrl: null == coverImageUrl
+      coverImageUrl: freezed == coverImageUrl
           ? _value.coverImageUrl
           : coverImageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -159,29 +146,26 @@ class __$$NewsFeedImplCopyWithImpl<$Res>
 
 class _$NewsFeedImpl implements _NewsFeed {
   const _$NewsFeedImpl(
-      {required this.id,
-      required this.title,
+      {required this.title,
+      required this.slug,
       required this.publishedAt,
       required this.excerpt,
-      required this.coverImageUrl,
-      required this.content});
+      required this.coverImageUrl});
 
-  @override
-  final String id;
   @override
   final String title;
   @override
-  final String publishedAt;
+  final String slug;
+  @override
+  final DateTime publishedAt;
   @override
   final String excerpt;
   @override
-  final String coverImageUrl;
-  @override
-  final String content;
+  final String? coverImageUrl;
 
   @override
   String toString() {
-    return 'NewsFeed(id: $id, title: $title, publishedAt: $publishedAt, excerpt: $excerpt, coverImageUrl: $coverImageUrl, content: $content)';
+    return 'NewsFeed(title: $title, slug: $slug, publishedAt: $publishedAt, excerpt: $excerpt, coverImageUrl: $coverImageUrl)';
   }
 
   @override
@@ -189,19 +173,18 @@ class _$NewsFeedImpl implements _NewsFeed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NewsFeedImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
             (identical(other.publishedAt, publishedAt) ||
                 other.publishedAt == publishedAt) &&
             (identical(other.excerpt, excerpt) || other.excerpt == excerpt) &&
             (identical(other.coverImageUrl, coverImageUrl) ||
-                other.coverImageUrl == coverImageUrl) &&
-            (identical(other.content, content) || other.content == content));
+                other.coverImageUrl == coverImageUrl));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, title, publishedAt, excerpt, coverImageUrl, content);
+      runtimeType, title, slug, publishedAt, excerpt, coverImageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -212,25 +195,22 @@ class _$NewsFeedImpl implements _NewsFeed {
 
 abstract class _NewsFeed implements NewsFeed {
   const factory _NewsFeed(
-      {required final String id,
-      required final String title,
-      required final String publishedAt,
+      {required final String title,
+      required final String slug,
+      required final DateTime publishedAt,
       required final String excerpt,
-      required final String coverImageUrl,
-      required final String content}) = _$NewsFeedImpl;
+      required final String? coverImageUrl}) = _$NewsFeedImpl;
 
-  @override
-  String get id;
   @override
   String get title;
   @override
-  String get publishedAt;
+  String get slug;
+  @override
+  DateTime get publishedAt;
   @override
   String get excerpt;
   @override
-  String get coverImageUrl;
-  @override
-  String get content;
+  String? get coverImageUrl;
   @override
   @JsonKey(ignore: true)
   _$$NewsFeedImplCopyWith<_$NewsFeedImpl> get copyWith =>
