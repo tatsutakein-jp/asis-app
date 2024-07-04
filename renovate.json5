@@ -39,13 +39,13 @@
       "matchPackagePatterns": [
         "*"
       ],
+      "excludePackageNames": [
+        "collection"
+      ],
       "matchUpdateTypes": [
         "minor",
         "patch"
       ],
-      "ignoreDeps": [
-        "collection"
-      ]
     },
     {
       "groupName": "flutter",
