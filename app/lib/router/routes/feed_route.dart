@@ -11,6 +11,8 @@ final class FeedListRoute extends GoRouteData {
         onTapFeedListItem: (feed) {
           FeedDetailRoute(feedId: feed.id).go(context);
         },
+        onTapNewsFeedCardItem: (newsFeed) {},
+        onTapMoreNewsFeed: () {},
       );
 }
 
