@@ -296,10 +296,10 @@ packages:
     dependency: transitive
     description:
       name: rust_core
-      sha256: "6e99e3435ade946f935829bb7dad221fe239bfc39758f0cbaeba0a6054793316"
+      sha256: "5dbd055c0038d5080e62b95faa1ca18db63da7f3d4c81264ff5ae4ca47423cd0"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.1"
   simple_logger:
     dependency: transitive
     description:
