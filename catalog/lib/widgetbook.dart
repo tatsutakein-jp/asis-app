@@ -28,8 +28,8 @@ class WidgetbookApp extends StatelessWidget {
           ],
         ),
         LocalizationAddon(
-          locales: appSupportedLocales,
           localizationsDelegates: appLocalizationsDelegates,
+          locales: appSupportedLocales.toSet().toList(),
           initialLocale: appSupportedLocales.first,
         ),
       ],
