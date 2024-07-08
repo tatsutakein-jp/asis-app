@@ -11,7 +11,18 @@ final class FeedListRoute extends GoRouteData {
         onTapFeedListItem: (feed) {
           FeedDetailRoute(feedId: feed.id).go(context);
         },
-        onTapNewsFeedCardItem: (newsFeed) {},
+        onTapNewsFeedCardItem: (newsFeed) async {
+          final appConfig = await initializeAppConfig();
+
+          final websiteUrl = ProviderContainer(
+            overrides: [
+              appConfigProvider.overrideWithValue(appConfig),
+            ],
+          ).read(appConfigProvider.select((config) => config.websiteUrl));
+
+          final uri = Uri.parse('$websiteUrl/news/${newsFeed.slug}');
+          await launchUrl(uri, mode: LaunchMode.inAppWebView);
+        },
         onTapMoreNewsFeed: () {},
       );
 }
