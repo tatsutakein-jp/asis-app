@@ -307,6 +307,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  feature_feed:
+    dependency: "direct main"
+    description:
+      path: "../feature/feed"
+      relative: true
+    source: path
+    version: "1.0.0"
   feature_home:
     dependency: "direct main"
     description:
