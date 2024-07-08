@@ -9,10 +9,16 @@ import 'package:flutter/material.dart';
 final class FeedListPage extends StatelessWidget {
   const FeedListPage({
     required void Function(Feed) onTapFeedListItem,
+    required void Function(NewsFeed) onTapNewsFeedCardItem,
+    required void Function() onTapMoreNewsFeed,
     super.key,
-  }) : _onTapFeedListItem = onTapFeedListItem;
+  })  : _onTapFeedListItem = onTapFeedListItem,
+        _onTapNewsFeedCardItem = onTapNewsFeedCardItem,
+        _onTapMoreNewsFeed = onTapMoreNewsFeed;
 
   final void Function(Feed feed) _onTapFeedListItem;
+  final void Function(NewsFeed newsFeed) _onTapNewsFeedCardItem;
+  final void Function() _onTapMoreNewsFeed;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,8 @@ final class FeedListPage extends StatelessWidget {
         child: Column(
           children: [
             NewsFeedCardSection(
-              onTap: (_) {},
+              onTapNewsFeedCardItem: _onTapNewsFeedCardItem,
+              onTapMoreNewsFeed: _onTapMoreNewsFeed,
             ),
             FeedList(
               onTapFeedListItem: _onTapFeedListItem,
