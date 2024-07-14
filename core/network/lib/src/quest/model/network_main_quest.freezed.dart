@@ -26,7 +26,9 @@ mixin _$NetworkMainQuest {
   String? get coverImageUrl => throw _privateConstructorUsedError;
   String get note => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NetworkMainQuest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NetworkMainQuestCopyWith<NetworkMainQuest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +61,8 @@ class _$NetworkMainQuestCopyWithImpl<$Res, $Val extends NetworkMainQuest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NetworkMainQuest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,6 +145,8 @@ class __$$NetworkMainQuestImplCopyWithImpl<$Res>
       $Res Function(_$NetworkMainQuestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NetworkMainQuest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -256,7 +262,9 @@ class _$NetworkMainQuestImpl implements _NetworkMainQuest {
   int get hashCode => Object.hash(runtimeType, id, title, description, begunAt,
       endedAt, categoryId, status, coverImageUrl, note);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NetworkMainQuest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NetworkMainQuestImplCopyWith<_$NetworkMainQuestImpl> get copyWith =>
@@ -294,8 +302,11 @@ abstract class _NetworkMainQuest implements NetworkMainQuest {
   String? get coverImageUrl;
   @override
   String get note;
+
+  /// Create a copy of NetworkMainQuest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NetworkMainQuestImplCopyWith<_$NetworkMainQuestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

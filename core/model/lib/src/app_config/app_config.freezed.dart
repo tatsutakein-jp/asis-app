@@ -26,7 +26,9 @@ mixin _$AppConfig {
   String get backendUrl => throw _privateConstructorUsedError;
   String get websiteUrl => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppConfigCopyWith<AppConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +60,8 @@ class _$AppConfigCopyWithImpl<$Res, $Val extends AppConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,6 +144,8 @@ class __$$AppConfigImplCopyWithImpl<$Res>
       _$AppConfigImpl _value, $Res Function(_$AppConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -267,7 +273,9 @@ class _$AppConfigImpl implements _AppConfig {
       backendUrl,
       websiteUrl);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppConfigImplCopyWith<_$AppConfigImpl> get copyWith =>
@@ -304,8 +312,11 @@ abstract class _AppConfig implements AppConfig {
   String get backendUrl;
   @override
   String get websiteUrl;
+
+  /// Create a copy of AppConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppConfigImplCopyWith<_$AppConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
