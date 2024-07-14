@@ -21,7 +21,9 @@ mixin _$Feed {
   String get description => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Feed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FeedCopyWith<Feed> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -43,6 +45,8 @@ class _$FeedCopyWithImpl<$Res, $Val extends Feed>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Feed
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -89,6 +93,8 @@ class __$$FeedImplCopyWithImpl<$Res>
   __$$FeedImplCopyWithImpl(_$FeedImpl _value, $Res Function(_$FeedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Feed
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -156,7 +162,9 @@ class _$FeedImpl implements _Feed {
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description, content);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Feed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FeedImplCopyWith<_$FeedImpl> get copyWith =>
@@ -178,8 +186,11 @@ abstract class _Feed implements Feed {
   String get description;
   @override
   String get content;
+
+  /// Create a copy of Feed
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FeedImplCopyWith<_$FeedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

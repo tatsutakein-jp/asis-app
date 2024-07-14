@@ -22,7 +22,9 @@ mixin _$NewsFeed {
   String get excerpt => throw _privateConstructorUsedError;
   String? get coverImageUrl => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NewsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NewsFeedCopyWith<NewsFeed> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +52,8 @@ class _$NewsFeedCopyWithImpl<$Res, $Val extends NewsFeed>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NewsFeed
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,6 +112,8 @@ class __$$NewsFeedImplCopyWithImpl<$Res>
       _$NewsFeedImpl _value, $Res Function(_$NewsFeedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NewsFeed
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -186,7 +192,9 @@ class _$NewsFeedImpl implements _NewsFeed {
   int get hashCode => Object.hash(
       runtimeType, title, slug, publishedAt, excerpt, coverImageUrl);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NewsFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NewsFeedImplCopyWith<_$NewsFeedImpl> get copyWith =>
@@ -211,8 +219,11 @@ abstract class _NewsFeed implements NewsFeed {
   String get excerpt;
   @override
   String? get coverImageUrl;
+
+  /// Create a copy of NewsFeed
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NewsFeedImplCopyWith<_$NewsFeedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

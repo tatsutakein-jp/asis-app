@@ -26,7 +26,9 @@ mixin _$Quest {
   String? get coverImageUrl => throw _privateConstructorUsedError;
   String get note => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Quest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $QuestCopyWith<Quest> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -57,6 +59,8 @@ class _$QuestCopyWithImpl<$Res, $Val extends Quest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Quest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,6 +142,8 @@ class __$$QuestImplCopyWithImpl<$Res>
       _$QuestImpl _value, $Res Function(_$QuestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Quest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -253,7 +259,9 @@ class _$QuestImpl implements _Quest {
   int get hashCode => Object.hash(runtimeType, id, title, description, begunAt,
       endedAt, categoryId, status, coverImageUrl, note);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Quest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$QuestImplCopyWith<_$QuestImpl> get copyWith =>
@@ -290,8 +298,11 @@ abstract class _Quest implements Quest {
   String? get coverImageUrl;
   @override
   String get note;
+
+  /// Create a copy of Quest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$QuestImplCopyWith<_$QuestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
