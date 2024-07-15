@@ -16,15 +16,22 @@ dependencies:
     path: ../model
   flutter:
     sdk: flutter
+  flutter_hooks: 0.20.5
   flutter_localizations:
     sdk: flutter
+  flutter_riverpod: 2.5.1
+  freezed_annotation: 2.4.3
   intl: 0.19.0
+  riverpod_annotation: 2.3.5
 
 dev_dependencies:
+  build_runner: 2.4.11
   core_testing:
     path: ../testing
   flutter_test:
     sdk: flutter
+  freezed: 2.5.4
+  riverpod_generator: 2.4.2
   yumemi_lints: 2.1.0
 
 flutter:

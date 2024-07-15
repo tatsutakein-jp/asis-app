@@ -1,6 +1,7 @@
 import 'package:app/extension/theme.dart';
 import 'package:app/l10n/l10n.dart';
 import 'package:app/router/app_router.dart';
+import 'package:app/ui/toast.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:core_domain/user_settings_use_case.dart';
 import 'package:dynamic_color/dynamic_color.dart';
@@ -30,6 +31,18 @@ final class AsisApp extends ConsumerWidget {
           darkTheme: darkTheme(darkDynamic),
           themeMode: themeMode,
           routerConfig: router,
+          builder: (context, child) => Stack(
+            children: [
+              child!,
+              Positioned(
+                top: MediaQuery.of(context).padding.top + 10,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: const ToastContainer(),
+              ),
+            ],
+          ),
         );
       },
     );
