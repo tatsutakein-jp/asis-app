@@ -6,7 +6,7 @@ part of 'add_quest_use_case.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$addQuestUseCaseHash() => r'63f7cb0ddf67ca4f96cd73d86f2f4435ddf436e5';
+String _$addQuestUseCaseHash() => r'6453c80b35e451c8ac8428c2d41f747bcbc2f9d4';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -38,7 +38,7 @@ const addQuestUseCaseProvider = AddQuestUseCaseFamily();
 /// クエストを追加する ユースケース
 ///
 /// Copied from [addQuestUseCase].
-class AddQuestUseCaseFamily extends Family<Raw<Future<void>>> {
+class AddQuestUseCaseFamily extends Family<Raw<FutureResult<void>>> {
   /// クエストを追加する ユースケース
   ///
   /// Copied from [addQuestUseCase].
@@ -88,7 +88,8 @@ class AddQuestUseCaseFamily extends Family<Raw<Future<void>>> {
 /// クエストを追加する ユースケース
 ///
 /// Copied from [addQuestUseCase].
-class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
+class AddQuestUseCaseProvider
+    extends AutoDisposeProvider<Raw<FutureResult<void>>> {
   /// クエストを追加する ユースケース
   ///
   /// Copied from [addQuestUseCase].
@@ -135,7 +136,7 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
 
   @override
   Override overrideWith(
-    Raw<Future<void>> Function(AddQuestUseCaseRef provider) create,
+    Raw<FutureResult<void>> Function(AddQuestUseCaseRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -154,7 +155,7 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
   }
 
   @override
-  AutoDisposeProviderElement<Raw<Future<void>>> createElement() {
+  AutoDisposeProviderElement<Raw<FutureResult<void>>> createElement() {
     return _AddQuestUseCaseProviderElement(this);
   }
 
@@ -177,7 +178,7 @@ class AddQuestUseCaseProvider extends AutoDisposeProvider<Raw<Future<void>>> {
   }
 }
 
-mixin AddQuestUseCaseRef on AutoDisposeProviderRef<Raw<Future<void>>> {
+mixin AddQuestUseCaseRef on AutoDisposeProviderRef<Raw<FutureResult<void>>> {
   /// The parameter `title` of this provider.
   String get title;
 
@@ -189,7 +190,7 @@ mixin AddQuestUseCaseRef on AutoDisposeProviderRef<Raw<Future<void>>> {
 }
 
 class _AddQuestUseCaseProviderElement
-    extends AutoDisposeProviderElement<Raw<Future<void>>>
+    extends AutoDisposeProviderElement<Raw<FutureResult<void>>>
     with AddQuestUseCaseRef {
   _AddQuestUseCaseProviderElement(super.provider);
 
