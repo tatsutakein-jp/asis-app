@@ -15,9 +15,14 @@ ide:
 command:
   bootstrap:
     hooks:
-      post: melos run gen:app
+      post: melos run bootstrap:hooks:post
 
 scripts:
+  # hooks
+  bootstrap:hooks:post:
+    steps:
+      - gen:app
+
   # analyze
   analyze:
     run: melos run analyze:dart --no-select && melos run analyze:flutter --no-select
