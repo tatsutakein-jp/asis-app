@@ -5,5 +5,11 @@
 An example application built with dart_frog
 
 ```shell
-$ dart_frog dev
+# Installing
+dart pub global activate dart_frog_cli
+```
+
+```shell
+# Start the Dev Server
+dart_frog dev
 ```

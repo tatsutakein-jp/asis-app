@@ -50,9 +50,9 @@ labels:
     files:
       - app/mobile/.+
 
-  - label: "@backend"
+  - label: "@app/backend"
     files:
-      - backend/.+
+      - app/backend/.+
 
   - label: "@app/catalog"
     files:
