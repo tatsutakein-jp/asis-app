@@ -254,10 +254,10 @@ packages:
     dependency: transitive
     description:
       name: http
-      sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
+      sha256: b9c29a161230ee03d3ccf545097fccd9b87a5264228c5d348202e0f0c28f9010
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.1"
+    version: "1.2.2"
   http_parser:
     dependency: transitive
     description:
@@ -531,10 +531,10 @@ packages:
     dependency: transitive
     description:
       name: video_player_android
-      sha256: "3ff2da7e5a9274bef9b5deb9084f73a77920211c463e0e836361b14146e67339"
+      sha256: fdc0331ce9f808cc2714014cb8126bd6369943affefd54f8fdab0ea0bb617b7f
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.1"
+    version: "2.5.2"
   video_player_avfoundation:
     dependency: transitive
     description:
