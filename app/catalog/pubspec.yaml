@@ -9,30 +9,23 @@ environment:
 
 dependencies:
   core_designsystem:
-    # noinspection DartPathPackageReference
-    path: ../core/designsystem
+    path: ../../core/designsystem
   core_model:
-    # noinspection DartPathPackageReference
-    path: ../core/model
+    path: ../../core/model
   core_ui:
-    path: ../core/ui
+    path: ../../core/ui
   cupertino_icons: 1.0.8
   dynamic_color: 1.7.0
   feature_auth:
-    # noinspection DartPathPackageReference
-    path: ../feature/auth
+    path: ../../feature/auth
   feature_feed:
-    # noinspection DartPathPackageReference
-    path: ../feature/feed
+    path: ../../feature/feed
   feature_home:
-    # noinspection DartPathPackageReference
-    path: ../feature/home
+    path: ../../feature/home
   feature_quest:
-    # noinspection DartPathPackageReference
-    path: ../feature/quest
+    path: ../../feature/quest
   feature_settings:
-    # noinspection DartPathPackageReference
-    path: ../feature/settings
+    path: ../../feature/settings
   flutter:
     sdk: flutter
   flutter_riverpod: 2.5.1

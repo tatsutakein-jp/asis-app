@@ -30,6 +30,13 @@
       "args": [
         "--flavor=prod"
       ]
+    },
+    {
+      "name": "Catalog App",
+      "cwd": "app/catalog",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart"
     }
   ]
 }
