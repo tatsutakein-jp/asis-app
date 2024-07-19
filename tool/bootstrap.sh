@@ -96,6 +96,24 @@ source tool/gen_gitignore_files.sh
 
 ##############################################################################
 ##
+##  Dart
+##
+##############################################################################
+echo ""
+echo "🚀 dart pub get: Start"
+if type dart >/dev/null 2>&1; then
+  if dart pub get; then
+    echo "✅ dart pub get: Success"
+  else
+    echo "🚫 dart pub get: Failed"
+  fi
+else
+  echo "⚠️ bun install: Skip dart because it could not be found."
+  echo "⚠️ bun install: This may be due to the fact that the mise installation has not been completed."
+fi
+
+##############################################################################
+##
 ##  Melos
 ##
 ##############################################################################

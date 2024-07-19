@@ -11,6 +11,13 @@ bootstrap: # Bootstrap to start development.
 bs: # Short hand for the bootstrap command.
 	@$(MAKE) bootstrap
 
+# Clean
+.PHONY: clean
+clean: # Clean
+	@bun run clean
+	@melos clean
+	@flutter clean
+
 # Generate
 .PHONY: gen-gitignore-files
 gen-gitignore-files: # Generate gitignore target files.
