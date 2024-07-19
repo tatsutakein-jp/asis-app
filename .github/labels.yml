@@ -99,9 +99,10 @@
   description: mobile app package
   from_name: "@app"
 
-- name: "@backend"
+- name: "@app/backend"
   color: 4372d0
   description: Backend development
+  from_name: "@backend"
 
 - name: "@app/catalog"
   color: d4f227
