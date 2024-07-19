@@ -13,7 +13,7 @@ ide:
 command:
   bootstrap:
     hooks:
-      post: melos run bootstrap:post_hooks
+      post: melos bootstrap:post_hooks
 
 scripts:
   # hooks
@@ -57,6 +57,12 @@ scripts:
     packageFilters:
       flutter: true
       fileExists: "l10n.yaml"
+  gen:clean:
+    exec: dart pub run build_runner clean
+    description: Run build_runner.
+    packageFilters:
+      dependsOn: "build_runner"
+
   fix:
     exec: dart fix --apply lib
     description: Run dart fix.
