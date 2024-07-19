@@ -96,8 +96,8 @@ scripts:
     description: dart pub upgrade & flutter pub upgrade.
     concurrency: 1
     steps:
-      - melos upgrade:dart
-      - melos upgrade:flutter
+      - upgrade:dart
+      - upgrade:flutter
   upgrade:dart:
     exec: dart pub upgrade
     concurrency: 1
