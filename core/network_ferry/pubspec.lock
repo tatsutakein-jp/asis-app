@@ -194,6 +194,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  core_network_model:
+    dependency: "direct overridden"
+    description:
+      path: "../network_model"
+      relative: true
+    source: path
+    version: "1.0.0"
   coverage:
     dependency: transitive
     description:

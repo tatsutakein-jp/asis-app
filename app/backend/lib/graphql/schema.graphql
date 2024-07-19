@@ -1,0 +1,2457 @@
+schema {
+  query: query_root
+  mutation: mutation_root
+  subscription: subscription_root
+}
+
+"""whether this query should be cached (Hasura Cloud only)"""
+directive @cached(
+  """measured in seconds"""
+  ttl: Int! = 60
+
+  """refresh the cache entry"""
+  refresh: Boolean! = false
+) on QUERY
+
+"""アチーブメント"""
+type Achievements {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """説明文"""
+  description: String!
+
+  """アチーブメントID"""
+  id: uuid!
+
+  """タイトル"""
+  name: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "achievements". All fields are combined with a logical 'AND'.
+"""
+input AchievementsBoolExp {
+  _and: [AchievementsBoolExp!]
+  _not: AchievementsBoolExp
+  _or: [AchievementsBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  id: UuidComparisonExp
+  name: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "achievements"."""
+input AchievementsOrderBy {
+  createdAt: OrderBy
+  description: OrderBy
+  id: OrderBy
+  name: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "achievements"
+"""
+enum AchievementsSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "achievements"
+"""
+input AchievementsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: AchievementsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input AchievementsStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """アチーブメントID"""
+  id: uuid
+
+  """タイトル"""
+  name: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""ordering argument of a cursor"""
+enum CursorOrdering {
+  """ascending ordering of the cursor"""
+  ASC
+
+  """descending ordering of the cursor"""
+  DESC
+}
+
+"""
+Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'.
+"""
+input IntComparisonExp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _isNull: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+"""メインクエスト親子関係"""
+type MainQuestRelations {
+  """子クエストID"""
+  childQuestId: uuid!
+
+  """親クエストID"""
+  parentQuestId: uuid!
+}
+
+"""
+Boolean expression to filter rows from the table "main_quest_relations". All fields are combined with a logical 'AND'.
+"""
+input MainQuestRelationsBoolExp {
+  _and: [MainQuestRelationsBoolExp!]
+  _not: MainQuestRelationsBoolExp
+  _or: [MainQuestRelationsBoolExp!]
+  childQuestId: UuidComparisonExp
+  parentQuestId: UuidComparisonExp
+}
+
+"""
+unique or primary key constraints on table "main_quest_relations"
+"""
+enum MainQuestRelationsConstraint {
+  """
+  unique or primary key constraint on columns "parent_quest_id", "child_quest_id"
+  """
+  main_quest_relations_pkey
+}
+
+"""
+input type for inserting data into table "main_quest_relations"
+"""
+input MainQuestRelationsInsertInput {
+  """子クエストID"""
+  childQuestId: uuid
+
+  """親クエストID"""
+  parentQuestId: uuid
+}
+
+"""
+response of any mutation on the table "main_quest_relations"
+"""
+type MainQuestRelationsMutationResponse {
+  """number of rows affected by the mutation"""
+  affectedRows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [MainQuestRelations!]!
+}
+
+"""
+on_conflict condition type for table "main_quest_relations"
+"""
+input MainQuestRelationsOnConflict {
+  constraint: MainQuestRelationsConstraint!
+  updateColumns: [MainQuestRelationsUpdateColumn!]! = []
+  where: MainQuestRelationsBoolExp
+}
+
+"""Ordering options when selecting data from "main_quest_relations"."""
+input MainQuestRelationsOrderBy {
+  childQuestId: OrderBy
+  parentQuestId: OrderBy
+}
+
+"""primary key columns input for table: main_quest_relations"""
+input MainQuestRelationsPkColumnsInput {
+  """子クエストID"""
+  childQuestId: uuid!
+
+  """親クエストID"""
+  parentQuestId: uuid!
+}
+
+"""
+select columns of table "main_quest_relations"
+"""
+enum MainQuestRelationsSelectColumn {
+  """column name"""
+  childQuestId
+
+  """column name"""
+  parentQuestId
+}
+
+"""
+input type for updating data in table "main_quest_relations"
+"""
+input MainQuestRelationsSetInput {
+  """子クエストID"""
+  childQuestId: uuid
+
+  """親クエストID"""
+  parentQuestId: uuid
+}
+
+"""
+Streaming cursor of the table "main_quest_relations"
+"""
+input MainQuestRelationsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: MainQuestRelationsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input MainQuestRelationsStreamCursorValueInput {
+  """子クエストID"""
+  childQuestId: uuid
+
+  """親クエストID"""
+  parentQuestId: uuid
+}
+
+"""
+update columns of table "main_quest_relations"
+"""
+enum MainQuestRelationsUpdateColumn {
+  """column name"""
+  childQuestId
+
+  """column name"""
+  parentQuestId
+}
+
+input MainQuestRelationsUpdates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: MainQuestRelationsSetInput
+
+  """filter the rows which have to be updated"""
+  where: MainQuestRelationsBoolExp!
+}
+
+"""メインクエスト"""
+type MainQuests {
+  """開始日時"""
+  begunAt: timestamptz
+  categoryId: uuid
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """削除日時"""
+  deletedAt: timestamptz
+
+  """説明文"""
+  description: String!
+
+  """終了日時"""
+  endedAt: timestamptz
+
+  """メインクエストID"""
+  id: uuid!
+
+  """ノート"""
+  note: String!
+
+  """ステータス"""
+  status: QuestStatusEnum!
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+
+  """ユーザーID"""
+  userId: String
+}
+
+"""
+Boolean expression to filter rows from the table "main_quests". All fields are combined with a logical 'AND'.
+"""
+input MainQuestsBoolExp {
+  _and: [MainQuestsBoolExp!]
+  _not: MainQuestsBoolExp
+  _or: [MainQuestsBoolExp!]
+  begunAt: TimestamptzComparisonExp
+  categoryId: UuidComparisonExp
+  coverImageUrl: StringComparisonExp
+  createdAt: TimestamptzComparisonExp
+  deletedAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  endedAt: TimestamptzComparisonExp
+  id: UuidComparisonExp
+  note: StringComparisonExp
+  status: QuestStatusEnumComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+  userId: StringComparisonExp
+}
+
+"""
+unique or primary key constraints on table "main_quests"
+"""
+enum MainQuestsConstraint {
+  """
+  unique or primary key constraint on columns "id"
+  """
+  main_quests_pkey
+}
+
+"""
+input type for inserting data into table "main_quests"
+"""
+input MainQuestsInsertInput {
+  """開始日時"""
+  begunAt: timestamptz
+  categoryId: uuid
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """削除日時"""
+  deletedAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """終了日時"""
+  endedAt: timestamptz
+
+  """メインクエストID"""
+  id: uuid
+
+  """ノート"""
+  note: String
+
+  """ステータス"""
+  status: QuestStatusEnum
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """ユーザーID"""
+  userId: String
+}
+
+"""
+response of any mutation on the table "main_quests"
+"""
+type MainQuestsMutationResponse {
+  """number of rows affected by the mutation"""
+  affectedRows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [MainQuests!]!
+}
+
+"""
+on_conflict condition type for table "main_quests"
+"""
+input MainQuestsOnConflict {
+  constraint: MainQuestsConstraint!
+  updateColumns: [MainQuestsUpdateColumn!]! = []
+  where: MainQuestsBoolExp
+}
+
+"""Ordering options when selecting data from "main_quests"."""
+input MainQuestsOrderBy {
+  begunAt: OrderBy
+  categoryId: OrderBy
+  coverImageUrl: OrderBy
+  createdAt: OrderBy
+  deletedAt: OrderBy
+  description: OrderBy
+  endedAt: OrderBy
+  id: OrderBy
+  note: OrderBy
+  status: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+  userId: OrderBy
+}
+
+"""primary key columns input for table: main_quests"""
+input MainQuestsPkColumnsInput {
+  """メインクエストID"""
+  id: uuid!
+}
+
+"""
+select columns of table "main_quests"
+"""
+enum MainQuestsSelectColumn {
+  """column name"""
+  begunAt
+
+  """column name"""
+  categoryId
+
+  """column name"""
+  coverImageUrl
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  deletedAt
+
+  """column name"""
+  description
+
+  """column name"""
+  endedAt
+
+  """column name"""
+  id
+
+  """column name"""
+  note
+
+  """column name"""
+  status
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  userId
+}
+
+"""
+input type for updating data in table "main_quests"
+"""
+input MainQuestsSetInput {
+  """開始日時"""
+  begunAt: timestamptz
+  categoryId: uuid
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """削除日時"""
+  deletedAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """終了日時"""
+  endedAt: timestamptz
+
+  """メインクエストID"""
+  id: uuid
+
+  """ノート"""
+  note: String
+
+  """ステータス"""
+  status: QuestStatusEnum
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """ユーザーID"""
+  userId: String
+}
+
+"""
+Streaming cursor of the table "main_quests"
+"""
+input MainQuestsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: MainQuestsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input MainQuestsStreamCursorValueInput {
+  """開始日時"""
+  begunAt: timestamptz
+  categoryId: uuid
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """削除日時"""
+  deletedAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """終了日時"""
+  endedAt: timestamptz
+
+  """メインクエストID"""
+  id: uuid
+
+  """ノート"""
+  note: String
+
+  """ステータス"""
+  status: QuestStatusEnum
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """ユーザーID"""
+  userId: String
+}
+
+"""
+update columns of table "main_quests"
+"""
+enum MainQuestsUpdateColumn {
+  """column name"""
+  begunAt
+
+  """column name"""
+  categoryId
+
+  """column name"""
+  coverImageUrl
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  deletedAt
+
+  """column name"""
+  description
+
+  """column name"""
+  endedAt
+
+  """column name"""
+  id
+
+  """column name"""
+  note
+
+  """column name"""
+  status
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  userId
+}
+
+input MainQuestsUpdates {
+  """sets the columns of the filtered rows to the given values"""
+  _set: MainQuestsSetInput
+
+  """filter the rows which have to be updated"""
+  where: MainQuestsBoolExp!
+}
+
+"""ニュース"""
+type News {
+  """内容"""
+  content: String!
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """抜粋"""
+  excerpt: String!
+
+  """ニュース ID"""
+  id: uuid!
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """An object relationship"""
+  seo: Seos
+
+  """SEO"""
+  seoId: uuid
+
+  """ラベル文字列"""
+  slug: String!
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "news". All fields are combined with a logical 'AND'.
+"""
+input NewsBoolExp {
+  _and: [NewsBoolExp!]
+  _not: NewsBoolExp
+  _or: [NewsBoolExp!]
+  content: StringComparisonExp
+  coverImageUrl: StringComparisonExp
+  createdAt: TimestamptzComparisonExp
+  excerpt: StringComparisonExp
+  id: UuidComparisonExp
+  publishedAt: TimestamptzComparisonExp
+  seo: SeosBoolExp
+  seoId: UuidComparisonExp
+  slug: StringComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "news"."""
+input NewsOrderBy {
+  content: OrderBy
+  coverImageUrl: OrderBy
+  createdAt: OrderBy
+  excerpt: OrderBy
+  id: OrderBy
+  publishedAt: OrderBy
+  seo: SeosOrderBy
+  seoId: OrderBy
+  slug: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "news"
+"""
+enum NewsSelectColumn {
+  """column name"""
+  content
+
+  """column name"""
+  coverImageUrl
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  excerpt
+
+  """column name"""
+  id
+
+  """column name"""
+  publishedAt
+
+  """column name"""
+  seoId
+
+  """column name"""
+  slug
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "news"
+"""
+input NewsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: NewsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input NewsStreamCursorValueInput {
+  """内容"""
+  content: String
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """抜粋"""
+  excerpt: String
+
+  """ニュース ID"""
+  id: uuid
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """SEO"""
+  seoId: uuid
+
+  """ラベル文字列"""
+  slug: String
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""通知"""
+type Notifications {
+  """内容"""
+  content: String!
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """抜粋"""
+  excerpt: String!
+
+  """初回開封日時"""
+  firstOpenedAt: timestamptz
+
+  """通知ID"""
+  id: uuid!
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+
+  """対象ユーザーID"""
+  userId: String
+}
+
+"""
+Boolean expression to filter rows from the table "notifications". All fields are combined with a logical 'AND'.
+"""
+input NotificationsBoolExp {
+  _and: [NotificationsBoolExp!]
+  _not: NotificationsBoolExp
+  _or: [NotificationsBoolExp!]
+  content: StringComparisonExp
+  coverImageUrl: StringComparisonExp
+  createdAt: TimestamptzComparisonExp
+  excerpt: StringComparisonExp
+  firstOpenedAt: TimestamptzComparisonExp
+  id: UuidComparisonExp
+  publishedAt: TimestamptzComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+  userId: StringComparisonExp
+}
+
+"""Ordering options when selecting data from "notifications"."""
+input NotificationsOrderBy {
+  content: OrderBy
+  coverImageUrl: OrderBy
+  createdAt: OrderBy
+  excerpt: OrderBy
+  firstOpenedAt: OrderBy
+  id: OrderBy
+  publishedAt: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+  userId: OrderBy
+}
+
+"""
+select columns of table "notifications"
+"""
+enum NotificationsSelectColumn {
+  """column name"""
+  content
+
+  """column name"""
+  coverImageUrl
+
+  """column name"""
+  createdAt
+
+  """column name"""
+  excerpt
+
+  """column name"""
+  firstOpenedAt
+
+  """column name"""
+  id
+
+  """column name"""
+  publishedAt
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  userId
+}
+
+"""
+Streaming cursor of the table "notifications"
+"""
+input NotificationsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: NotificationsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input NotificationsStreamCursorValueInput {
+  """内容"""
+  content: String
+
+  """カバー画像"""
+  coverImageUrl: String
+
+  """作成日時"""
+  createdAt: timestamptz
+
+  """抜粋"""
+  excerpt: String
+
+  """初回開封日時"""
+  firstOpenedAt: timestamptz
+
+  """通知ID"""
+  id: uuid
+
+  """公開日時"""
+  publishedAt: timestamptz
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """対象ユーザーID"""
+  userId: String
+}
+
+"""column ordering options"""
+enum OrderBy {
+  """in ascending order, nulls last"""
+  ASC
+
+  """in ascending order, nulls first"""
+  ASC_NULLS_FIRST
+
+  """in ascending order, nulls last"""
+  ASC_NULLS_LAST
+
+  """in descending order, nulls first"""
+  DESC
+
+  """in descending order, nulls first"""
+  DESC_NULLS_FIRST
+
+  """in descending order, nulls last"""
+  DESC_NULLS_LAST
+}
+
+"""クエストカテゴリ"""
+type QuestCategories {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """クエストカテゴリ説明文"""
+  description: String!
+
+  """クエストカテゴリID"""
+  id: uuid!
+
+  """クエストカテゴリ名"""
+  name: String!
+
+  """並び順"""
+  sortNumber: Int!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "quest_categories". All fields are combined with a logical 'AND'.
+"""
+input QuestCategoriesBoolExp {
+  _and: [QuestCategoriesBoolExp!]
+  _not: QuestCategoriesBoolExp
+  _or: [QuestCategoriesBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  id: UuidComparisonExp
+  name: StringComparisonExp
+  sortNumber: IntComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "quest_categories"."""
+input QuestCategoriesOrderBy {
+  createdAt: OrderBy
+  description: OrderBy
+  id: OrderBy
+  name: OrderBy
+  sortNumber: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "quest_categories"
+"""
+enum QuestCategoriesSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+
+  """column name"""
+  sortNumber
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "quest_categories"
+"""
+input QuestCategoriesStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: QuestCategoriesStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input QuestCategoriesStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """クエストカテゴリ説明文"""
+  description: String
+
+  """クエストカテゴリID"""
+  id: uuid
+
+  """クエストカテゴリ名"""
+  name: String
+
+  """並び順"""
+  sortNumber: Int
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""
+columns and relationships of "quest_status"
+"""
+type QuestStatus {
+  value: String!
+}
+
+"""
+Boolean expression to filter rows from the table "quest_status". All fields are combined with a logical 'AND'.
+"""
+input QuestStatusBoolExp {
+  _and: [QuestStatusBoolExp!]
+  _not: QuestStatusBoolExp
+  _or: [QuestStatusBoolExp!]
+  value: StringComparisonExp
+}
+
+enum QuestStatusEnum {
+  """中止"""
+  ABORT
+
+  """バックログ"""
+  BACKLOG
+
+  """完了"""
+  COMPLETED
+
+  """進行中"""
+  IN_PROGRESS
+
+  """進行可能"""
+  READY
+
+  """中断"""
+  SUSPEND
+}
+
+"""
+Boolean expression to compare columns of type "QuestStatusEnum". All fields are combined with logical 'AND'.
+"""
+input QuestStatusEnumComparisonExp {
+  _eq: QuestStatusEnum
+  _in: [QuestStatusEnum!]
+  _isNull: Boolean
+  _neq: QuestStatusEnum
+  _nin: [QuestStatusEnum!]
+}
+
+"""Ordering options when selecting data from "quest_status"."""
+input QuestStatusOrderBy {
+  value: OrderBy
+}
+
+"""
+select columns of table "quest_status"
+"""
+enum QuestStatusSelectColumn {
+  """column name"""
+  value
+}
+
+"""
+Streaming cursor of the table "quest_status"
+"""
+input QuestStatusStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: QuestStatusStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input QuestStatusStreamCursorValueInput {
+  value: String
+}
+
+"""SEO"""
+type Seos {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """説明文"""
+  description: String!
+
+  """SEO ID"""
+  id: uuid!
+
+  """カスタム OG 画像 URL ( 1280✕720 )"""
+  ogImageUrl: String
+
+  """タイトル"""
+  title: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "seos". All fields are combined with a logical 'AND'.
+"""
+input SeosBoolExp {
+  _and: [SeosBoolExp!]
+  _not: SeosBoolExp
+  _or: [SeosBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  id: UuidComparisonExp
+  ogImageUrl: StringComparisonExp
+  title: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "seos"."""
+input SeosOrderBy {
+  createdAt: OrderBy
+  description: OrderBy
+  id: OrderBy
+  ogImageUrl: OrderBy
+  title: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "seos"
+"""
+enum SeosSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  ogImageUrl
+
+  """column name"""
+  title
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "seos"
+"""
+input SeosStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: SeosStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input SeosStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """SEO ID"""
+  id: uuid
+
+  """カスタム OG 画像 URL ( 1280✕720 )"""
+  ogImageUrl: String
+
+  """タイトル"""
+  title: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""
+Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.
+"""
+input StringComparisonExp {
+  _eq: String
+  _gt: String
+  _gte: String
+
+  """does the column match the given case-insensitive pattern"""
+  _ilike: String
+  _in: [String!]
+
+  """
+  does the column match the given POSIX regular expression, case insensitive
+  """
+  _iregex: String
+  _isNull: Boolean
+
+  """does the column match the given pattern"""
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+
+  """does the column NOT match the given case-insensitive pattern"""
+  _nilike: String
+  _nin: [String!]
+
+  """
+  does the column NOT match the given POSIX regular expression, case insensitive
+  """
+  _niregex: String
+
+  """does the column NOT match the given pattern"""
+  _nlike: String
+
+  """
+  does the column NOT match the given POSIX regular expression, case sensitive
+  """
+  _nregex: String
+
+  """does the column NOT match the given SQL regular expression"""
+  _nsimilar: String
+
+  """
+  does the column match the given POSIX regular expression, case sensitive
+  """
+  _regex: String
+
+  """does the column match the given SQL regular expression"""
+  _similar: String
+}
+
+"""タグ"""
+type Tags {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """説明文"""
+  description: String!
+
+  """タグID"""
+  id: uuid!
+
+  """タグ"""
+  tag: String!
+
+  """更新日時"""
+  updatedAt: timestamptz!
+}
+
+"""
+Boolean expression to filter rows from the table "tags". All fields are combined with a logical 'AND'.
+"""
+input TagsBoolExp {
+  _and: [TagsBoolExp!]
+  _not: TagsBoolExp
+  _or: [TagsBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  description: StringComparisonExp
+  id: UuidComparisonExp
+  tag: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+}
+
+"""Ordering options when selecting data from "tags"."""
+input TagsOrderBy {
+  createdAt: OrderBy
+  description: OrderBy
+  id: OrderBy
+  tag: OrderBy
+  updatedAt: OrderBy
+}
+
+"""
+select columns of table "tags"
+"""
+enum TagsSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  tag
+
+  """column name"""
+  updatedAt
+}
+
+"""
+Streaming cursor of the table "tags"
+"""
+input TagsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: TagsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input TagsStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """説明文"""
+  description: String
+
+  """タグID"""
+  id: uuid
+
+  """タグ"""
+  tag: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+}
+
+"""
+Boolean expression to compare columns of type "timestamptz". All fields are combined with logical 'AND'.
+"""
+input TimestamptzComparisonExp {
+  _eq: timestamptz
+  _gt: timestamptz
+  _gte: timestamptz
+  _in: [timestamptz!]
+  _isNull: Boolean
+  _lt: timestamptz
+  _lte: timestamptz
+  _neq: timestamptz
+  _nin: [timestamptz!]
+}
+
+"""ユーザーアチーブメント"""
+type UserAchievements {
+  achievementId: uuid!
+
+  """アチーブメントID"""
+  userId: String!
+}
+
+"""
+Boolean expression to filter rows from the table "user_achievements". All fields are combined with a logical 'AND'.
+"""
+input UserAchievementsBoolExp {
+  _and: [UserAchievementsBoolExp!]
+  _not: UserAchievementsBoolExp
+  _or: [UserAchievementsBoolExp!]
+  achievementId: UuidComparisonExp
+  userId: StringComparisonExp
+}
+
+"""Ordering options when selecting data from "user_achievements"."""
+input UserAchievementsOrderBy {
+  achievementId: OrderBy
+  userId: OrderBy
+}
+
+"""
+select columns of table "user_achievements"
+"""
+enum UserAchievementsSelectColumn {
+  """column name"""
+  achievementId
+
+  """column name"""
+  userId
+}
+
+"""
+Streaming cursor of the table "user_achievements"
+"""
+input UserAchievementsStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: UserAchievementsStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input UserAchievementsStreamCursorValueInput {
+  achievementId: uuid
+
+  """アチーブメントID"""
+  userId: String
+}
+
+"""ユーザープロフィール"""
+type Users {
+  """作成日時"""
+  createdAt: timestamptz!
+
+  """メールアドレス"""
+  email: String
+
+  """ユーザーID"""
+  id: String!
+
+  """最終アクセス日時"""
+  lastSeen: timestamptz!
+
+  """ニックネーム"""
+  nickname: String
+
+  """アイコン画像URL"""
+  picture: String
+
+  """更新日時"""
+  updatedAt: timestamptz!
+
+  """ユーザー名"""
+  username: String!
+
+  """ウェブサイトURL"""
+  website: String
+}
+
+"""
+Boolean expression to filter rows from the table "users". All fields are combined with a logical 'AND'.
+"""
+input UsersBoolExp {
+  _and: [UsersBoolExp!]
+  _not: UsersBoolExp
+  _or: [UsersBoolExp!]
+  createdAt: TimestamptzComparisonExp
+  email: StringComparisonExp
+  id: StringComparisonExp
+  lastSeen: TimestamptzComparisonExp
+  nickname: StringComparisonExp
+  picture: StringComparisonExp
+  updatedAt: TimestamptzComparisonExp
+  username: StringComparisonExp
+  website: StringComparisonExp
+}
+
+"""Ordering options when selecting data from "users"."""
+input UsersOrderBy {
+  createdAt: OrderBy
+  email: OrderBy
+  id: OrderBy
+  lastSeen: OrderBy
+  nickname: OrderBy
+  picture: OrderBy
+  updatedAt: OrderBy
+  username: OrderBy
+  website: OrderBy
+}
+
+"""
+select columns of table "users"
+"""
+enum UsersSelectColumn {
+  """column name"""
+  createdAt
+
+  """column name"""
+  email
+
+  """column name"""
+  id
+
+  """column name"""
+  lastSeen
+
+  """column name"""
+  nickname
+
+  """column name"""
+  picture
+
+  """column name"""
+  updatedAt
+
+  """column name"""
+  username
+
+  """column name"""
+  website
+}
+
+"""
+Streaming cursor of the table "users"
+"""
+input UsersStreamCursorInput {
+  """Stream column input with initial value"""
+  initialValue: UsersStreamCursorValueInput!
+
+  """cursor ordering"""
+  ordering: CursorOrdering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input UsersStreamCursorValueInput {
+  """作成日時"""
+  createdAt: timestamptz
+
+  """メールアドレス"""
+  email: String
+
+  """ユーザーID"""
+  id: String
+
+  """最終アクセス日時"""
+  lastSeen: timestamptz
+
+  """ニックネーム"""
+  nickname: String
+
+  """アイコン画像URL"""
+  picture: String
+
+  """更新日時"""
+  updatedAt: timestamptz
+
+  """ユーザー名"""
+  username: String
+
+  """ウェブサイトURL"""
+  website: String
+}
+
+"""
+Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'.
+"""
+input UuidComparisonExp {
+  _eq: uuid
+  _gt: uuid
+  _gte: uuid
+  _in: [uuid!]
+  _isNull: Boolean
+  _lt: uuid
+  _lte: uuid
+  _neq: uuid
+  _nin: [uuid!]
+}
+
+"""mutation root"""
+type mutation_root {
+  """
+  delete data from the table: "main_quest_relations"
+  """
+  deleteMainQuestRelations(
+    """filter the rows which have to be deleted"""
+    where: MainQuestRelationsBoolExp!
+  ): MainQuestRelationsMutationResponse
+
+  """
+  delete single row from the table: "main_quest_relations"
+  """
+  deleteMainQuestRelationsByPk(
+    """子クエストID"""
+    childQuestId: uuid!
+
+    """親クエストID"""
+    parentQuestId: uuid!
+  ): MainQuestRelations
+
+  """
+  delete data from the table: "main_quests"
+  """
+  deleteMainQuests(
+    """filter the rows which have to be deleted"""
+    where: MainQuestsBoolExp!
+  ): MainQuestsMutationResponse
+
+  """
+  delete single row from the table: "main_quests"
+  """
+  deleteMainQuestsByPk(
+    """メインクエストID"""
+    id: uuid!
+  ): MainQuests
+
+  """
+  insert data into the table: "main_quest_relations"
+  """
+  insertMainQuestRelations(
+    """the rows to be inserted"""
+    objects: [MainQuestRelationsInsertInput!]!
+
+    """upsert condition"""
+    onConflict: MainQuestRelationsOnConflict
+  ): MainQuestRelationsMutationResponse
+
+  """
+  insert a single row into the table: "main_quest_relations"
+  """
+  insertMainQuestRelationsOne(
+    """the row to be inserted"""
+    object: MainQuestRelationsInsertInput!
+
+    """upsert condition"""
+    onConflict: MainQuestRelationsOnConflict
+  ): MainQuestRelations
+
+  """
+  insert data into the table: "main_quests"
+  """
+  insertMainQuests(
+    """the rows to be inserted"""
+    objects: [MainQuestsInsertInput!]!
+
+    """upsert condition"""
+    onConflict: MainQuestsOnConflict
+  ): MainQuestsMutationResponse
+
+  """
+  insert a single row into the table: "main_quests"
+  """
+  insertMainQuestsOne(
+    """the row to be inserted"""
+    object: MainQuestsInsertInput!
+
+    """upsert condition"""
+    onConflict: MainQuestsOnConflict
+  ): MainQuests
+
+  """
+  update data of the table: "main_quest_relations"
+  """
+  updateMainQuestRelations(
+    """sets the columns of the filtered rows to the given values"""
+    _set: MainQuestRelationsSetInput
+
+    """filter the rows which have to be updated"""
+    where: MainQuestRelationsBoolExp!
+  ): MainQuestRelationsMutationResponse
+
+  """
+  update single row of the table: "main_quest_relations"
+  """
+  updateMainQuestRelationsByPk(
+    """sets the columns of the filtered rows to the given values"""
+    _set: MainQuestRelationsSetInput
+    pkColumns: MainQuestRelationsPkColumnsInput!
+  ): MainQuestRelations
+
+  """
+  update multiples rows of table: "main_quest_relations"
+  """
+  updateMainQuestRelationsMany(
+    """updates to execute, in order"""
+    updates: [MainQuestRelationsUpdates!]!
+  ): [MainQuestRelationsMutationResponse]
+
+  """
+  update data of the table: "main_quests"
+  """
+  updateMainQuests(
+    """sets the columns of the filtered rows to the given values"""
+    _set: MainQuestsSetInput
+
+    """filter the rows which have to be updated"""
+    where: MainQuestsBoolExp!
+  ): MainQuestsMutationResponse
+
+  """
+  update single row of the table: "main_quests"
+  """
+  updateMainQuestsByPk(
+    """sets the columns of the filtered rows to the given values"""
+    _set: MainQuestsSetInput
+    pkColumns: MainQuestsPkColumnsInput!
+  ): MainQuests
+
+  """
+  update multiples rows of table: "main_quests"
+  """
+  updateMainQuestsMany(
+    """updates to execute, in order"""
+    updates: [MainQuestsUpdates!]!
+  ): [MainQuestsMutationResponse]
+}
+
+type query_root {
+  """
+  fetch data from the table: "achievements"
+  """
+  achievements(
+    """distinct select on columns"""
+    distinctOn: [AchievementsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [AchievementsOrderBy!]
+
+    """filter the rows returned"""
+    where: AchievementsBoolExp
+  ): [Achievements!]!
+
+  """fetch data from the table: "achievements" using primary key columns"""
+  achievementsByPk(
+    """アチーブメントID"""
+    id: uuid!
+  ): Achievements
+
+  """
+  fetch data from the table: "main_quest_relations"
+  """
+  mainQuestRelations(
+    """distinct select on columns"""
+    distinctOn: [MainQuestRelationsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [MainQuestRelationsOrderBy!]
+
+    """filter the rows returned"""
+    where: MainQuestRelationsBoolExp
+  ): [MainQuestRelations!]!
+
+  """
+  fetch data from the table: "main_quest_relations" using primary key columns
+  """
+  mainQuestRelationsByPk(
+    """子クエストID"""
+    childQuestId: uuid!
+
+    """親クエストID"""
+    parentQuestId: uuid!
+  ): MainQuestRelations
+
+  """
+  fetch data from the table: "main_quests"
+  """
+  mainQuests(
+    """distinct select on columns"""
+    distinctOn: [MainQuestsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [MainQuestsOrderBy!]
+
+    """filter the rows returned"""
+    where: MainQuestsBoolExp
+  ): [MainQuests!]!
+
+  """fetch data from the table: "main_quests" using primary key columns"""
+  mainQuestsByPk(
+    """メインクエストID"""
+    id: uuid!
+  ): MainQuests
+
+  """
+  fetch data from the table: "news"
+  """
+  news(
+    """distinct select on columns"""
+    distinctOn: [NewsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NewsOrderBy!]
+
+    """filter the rows returned"""
+    where: NewsBoolExp
+  ): [News!]!
+
+  """fetch data from the table: "news" using primary key columns"""
+  newsByPk(
+    """ニュース ID"""
+    id: uuid!
+  ): News
+
+  """
+  fetch data from the table: "notifications"
+  """
+  notifications(
+    """distinct select on columns"""
+    distinctOn: [NotificationsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NotificationsOrderBy!]
+
+    """filter the rows returned"""
+    where: NotificationsBoolExp
+  ): [Notifications!]!
+
+  """fetch data from the table: "notifications" using primary key columns"""
+  notificationsByPk(
+    """通知ID"""
+    id: uuid!
+  ): Notifications
+
+  """
+  fetch data from the table: "quest_categories"
+  """
+  questCategories(
+    """distinct select on columns"""
+    distinctOn: [QuestCategoriesSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [QuestCategoriesOrderBy!]
+
+    """filter the rows returned"""
+    where: QuestCategoriesBoolExp
+  ): [QuestCategories!]!
+
+  """
+  fetch data from the table: "quest_categories" using primary key columns
+  """
+  questCategoriesByPk(
+    """クエストカテゴリID"""
+    id: uuid!
+  ): QuestCategories
+
+  """
+  fetch data from the table: "quest_status"
+  """
+  questStatus(
+    """distinct select on columns"""
+    distinctOn: [QuestStatusSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [QuestStatusOrderBy!]
+
+    """filter the rows returned"""
+    where: QuestStatusBoolExp
+  ): [QuestStatus!]!
+
+  """fetch data from the table: "quest_status" using primary key columns"""
+  questStatusByPk(value: String!): QuestStatus
+
+  """
+  fetch data from the table: "seos"
+  """
+  seos(
+    """distinct select on columns"""
+    distinctOn: [SeosSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [SeosOrderBy!]
+
+    """filter the rows returned"""
+    where: SeosBoolExp
+  ): [Seos!]!
+
+  """fetch data from the table: "seos" using primary key columns"""
+  seosByPk(
+    """SEO ID"""
+    id: uuid!
+  ): Seos
+
+  """
+  fetch data from the table: "tags"
+  """
+  tags(
+    """distinct select on columns"""
+    distinctOn: [TagsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [TagsOrderBy!]
+
+    """filter the rows returned"""
+    where: TagsBoolExp
+  ): [Tags!]!
+
+  """fetch data from the table: "tags" using primary key columns"""
+  tagsByPk(
+    """タグID"""
+    id: uuid!
+  ): Tags
+
+  """
+  fetch data from the table: "user_achievements"
+  """
+  userAchievements(
+    """distinct select on columns"""
+    distinctOn: [UserAchievementsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [UserAchievementsOrderBy!]
+
+    """filter the rows returned"""
+    where: UserAchievementsBoolExp
+  ): [UserAchievements!]!
+
+  """
+  fetch data from the table: "user_achievements" using primary key columns
+  """
+  userAchievementsByPk(
+    achievementId: uuid!
+
+    """アチーブメントID"""
+    userId: String!
+  ): UserAchievements
+
+  """
+  fetch data from the table: "users"
+  """
+  users(
+    """distinct select on columns"""
+    distinctOn: [UsersSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [UsersOrderBy!]
+
+    """filter the rows returned"""
+    where: UsersBoolExp
+  ): [Users!]!
+
+  """fetch data from the table: "users" using primary key columns"""
+  usersByPk(
+    """ユーザーID"""
+    id: String!
+  ): Users
+}
+
+type subscription_root {
+  """
+  fetch data from the table: "achievements"
+  """
+  achievements(
+    """distinct select on columns"""
+    distinctOn: [AchievementsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [AchievementsOrderBy!]
+
+    """filter the rows returned"""
+    where: AchievementsBoolExp
+  ): [Achievements!]!
+
+  """fetch data from the table: "achievements" using primary key columns"""
+  achievementsByPk(
+    """アチーブメントID"""
+    id: uuid!
+  ): Achievements
+
+  """
+  fetch data from the table in a streaming manner: "achievements"
+  """
+  achievementsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [AchievementsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: AchievementsBoolExp
+  ): [Achievements!]!
+
+  """
+  fetch data from the table: "main_quest_relations"
+  """
+  mainQuestRelations(
+    """distinct select on columns"""
+    distinctOn: [MainQuestRelationsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [MainQuestRelationsOrderBy!]
+
+    """filter the rows returned"""
+    where: MainQuestRelationsBoolExp
+  ): [MainQuestRelations!]!
+
+  """
+  fetch data from the table: "main_quest_relations" using primary key columns
+  """
+  mainQuestRelationsByPk(
+    """子クエストID"""
+    childQuestId: uuid!
+
+    """親クエストID"""
+    parentQuestId: uuid!
+  ): MainQuestRelations
+
+  """
+  fetch data from the table in a streaming manner: "main_quest_relations"
+  """
+  mainQuestRelationsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [MainQuestRelationsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: MainQuestRelationsBoolExp
+  ): [MainQuestRelations!]!
+
+  """
+  fetch data from the table: "main_quests"
+  """
+  mainQuests(
+    """distinct select on columns"""
+    distinctOn: [MainQuestsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [MainQuestsOrderBy!]
+
+    """filter the rows returned"""
+    where: MainQuestsBoolExp
+  ): [MainQuests!]!
+
+  """fetch data from the table: "main_quests" using primary key columns"""
+  mainQuestsByPk(
+    """メインクエストID"""
+    id: uuid!
+  ): MainQuests
+
+  """
+  fetch data from the table in a streaming manner: "main_quests"
+  """
+  mainQuestsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [MainQuestsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: MainQuestsBoolExp
+  ): [MainQuests!]!
+
+  """
+  fetch data from the table: "news"
+  """
+  news(
+    """distinct select on columns"""
+    distinctOn: [NewsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NewsOrderBy!]
+
+    """filter the rows returned"""
+    where: NewsBoolExp
+  ): [News!]!
+
+  """fetch data from the table: "news" using primary key columns"""
+  newsByPk(
+    """ニュース ID"""
+    id: uuid!
+  ): News
+
+  """
+  fetch data from the table in a streaming manner: "news"
+  """
+  newsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [NewsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: NewsBoolExp
+  ): [News!]!
+
+  """
+  fetch data from the table: "notifications"
+  """
+  notifications(
+    """distinct select on columns"""
+    distinctOn: [NotificationsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [NotificationsOrderBy!]
+
+    """filter the rows returned"""
+    where: NotificationsBoolExp
+  ): [Notifications!]!
+
+  """fetch data from the table: "notifications" using primary key columns"""
+  notificationsByPk(
+    """通知ID"""
+    id: uuid!
+  ): Notifications
+
+  """
+  fetch data from the table in a streaming manner: "notifications"
+  """
+  notificationsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [NotificationsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: NotificationsBoolExp
+  ): [Notifications!]!
+
+  """
+  fetch data from the table: "quest_categories"
+  """
+  questCategories(
+    """distinct select on columns"""
+    distinctOn: [QuestCategoriesSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [QuestCategoriesOrderBy!]
+
+    """filter the rows returned"""
+    where: QuestCategoriesBoolExp
+  ): [QuestCategories!]!
+
+  """
+  fetch data from the table: "quest_categories" using primary key columns
+  """
+  questCategoriesByPk(
+    """クエストカテゴリID"""
+    id: uuid!
+  ): QuestCategories
+
+  """
+  fetch data from the table in a streaming manner: "quest_categories"
+  """
+  questCategoriesStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [QuestCategoriesStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: QuestCategoriesBoolExp
+  ): [QuestCategories!]!
+
+  """
+  fetch data from the table: "quest_status"
+  """
+  questStatus(
+    """distinct select on columns"""
+    distinctOn: [QuestStatusSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [QuestStatusOrderBy!]
+
+    """filter the rows returned"""
+    where: QuestStatusBoolExp
+  ): [QuestStatus!]!
+
+  """fetch data from the table: "quest_status" using primary key columns"""
+  questStatusByPk(value: String!): QuestStatus
+
+  """
+  fetch data from the table in a streaming manner: "quest_status"
+  """
+  questStatusStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [QuestStatusStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: QuestStatusBoolExp
+  ): [QuestStatus!]!
+
+  """
+  fetch data from the table: "seos"
+  """
+  seos(
+    """distinct select on columns"""
+    distinctOn: [SeosSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [SeosOrderBy!]
+
+    """filter the rows returned"""
+    where: SeosBoolExp
+  ): [Seos!]!
+
+  """fetch data from the table: "seos" using primary key columns"""
+  seosByPk(
+    """SEO ID"""
+    id: uuid!
+  ): Seos
+
+  """
+  fetch data from the table in a streaming manner: "seos"
+  """
+  seosStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [SeosStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: SeosBoolExp
+  ): [Seos!]!
+
+  """
+  fetch data from the table: "tags"
+  """
+  tags(
+    """distinct select on columns"""
+    distinctOn: [TagsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [TagsOrderBy!]
+
+    """filter the rows returned"""
+    where: TagsBoolExp
+  ): [Tags!]!
+
+  """fetch data from the table: "tags" using primary key columns"""
+  tagsByPk(
+    """タグID"""
+    id: uuid!
+  ): Tags
+
+  """
+  fetch data from the table in a streaming manner: "tags"
+  """
+  tagsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [TagsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: TagsBoolExp
+  ): [Tags!]!
+
+  """
+  fetch data from the table: "user_achievements"
+  """
+  userAchievements(
+    """distinct select on columns"""
+    distinctOn: [UserAchievementsSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [UserAchievementsOrderBy!]
+
+    """filter the rows returned"""
+    where: UserAchievementsBoolExp
+  ): [UserAchievements!]!
+
+  """
+  fetch data from the table: "user_achievements" using primary key columns
+  """
+  userAchievementsByPk(
+    achievementId: uuid!
+
+    """アチーブメントID"""
+    userId: String!
+  ): UserAchievements
+
+  """
+  fetch data from the table in a streaming manner: "user_achievements"
+  """
+  userAchievementsStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [UserAchievementsStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: UserAchievementsBoolExp
+  ): [UserAchievements!]!
+
+  """
+  fetch data from the table: "users"
+  """
+  users(
+    """distinct select on columns"""
+    distinctOn: [UsersSelectColumn!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    orderBy: [UsersOrderBy!]
+
+    """filter the rows returned"""
+    where: UsersBoolExp
+  ): [Users!]!
+
+  """fetch data from the table: "users" using primary key columns"""
+  usersByPk(
+    """ユーザーID"""
+    id: String!
+  ): Users
+
+  """
+  fetch data from the table in a streaming manner: "users"
+  """
+  usersStream(
+    """maximum number of rows returned in a single batch"""
+    batchSize: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [UsersStreamCursorInput]!
+
+    """filter the rows returned"""
+    where: UsersBoolExp
+  ): [Users!]!
+}
+
+scalar timestamptz
+
+scalar uuid
+

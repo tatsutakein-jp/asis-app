@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+NetworkNews _$NetworkNewsFromJson(Map<String, dynamic> json) {
+  return _NetworkNews.fromJson(json);
+}
+
 /// @nodoc
 mixin _$NetworkNews {
   String get title => throw _privateConstructorUsedError;
@@ -21,6 +25,9 @@ mixin _$NetworkNews {
   DateTime get publishedAt => throw _privateConstructorUsedError;
   String get excerpt => throw _privateConstructorUsedError;
   String? get coverImageUrl => throw _privateConstructorUsedError;
+
+  /// Serializes this NetworkNews to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of NetworkNews
   /// with the given fields replaced by the non-null parameter values.
@@ -150,7 +157,7 @@ class __$$NetworkNewsImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$NetworkNewsImpl implements _NetworkNews {
   const _$NetworkNewsImpl(
       {required this.title,
@@ -158,6 +165,9 @@ class _$NetworkNewsImpl implements _NetworkNews {
       required this.publishedAt,
       required this.excerpt,
       required this.coverImageUrl});
+
+  factory _$NetworkNewsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NetworkNewsImplFromJson(json);
 
   @override
   final String title;
@@ -189,6 +199,7 @@ class _$NetworkNewsImpl implements _NetworkNews {
                 other.coverImageUrl == coverImageUrl));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, title, slug, publishedAt, excerpt, coverImageUrl);
@@ -200,6 +211,13 @@ class _$NetworkNewsImpl implements _NetworkNews {
   @pragma('vm:prefer-inline')
   _$$NetworkNewsImplCopyWith<_$NetworkNewsImpl> get copyWith =>
       __$$NetworkNewsImplCopyWithImpl<_$NetworkNewsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NetworkNewsImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _NetworkNews implements NetworkNews {
@@ -209,6 +227,9 @@ abstract class _NetworkNews implements NetworkNews {
       required final DateTime publishedAt,
       required final String excerpt,
       required final String? coverImageUrl}) = _$NetworkNewsImpl;
+
+  factory _NetworkNews.fromJson(Map<String, dynamic> json) =
+      _$NetworkNewsImpl.fromJson;
 
   @override
   String get title;

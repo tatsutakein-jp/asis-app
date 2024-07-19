@@ -13,6 +13,8 @@ dependencies:
     path: ../common
   core_model:
     path: ../model
+  core_network_model:
+    path: ../network_model
   freezed_annotation: 2.4.3
   riverpod_annotation: 2.3.5
 
