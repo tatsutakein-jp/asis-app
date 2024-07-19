@@ -1,4 +1,4 @@
-name: core_network
+name: core_network_model
 description: This package provides network operations.
 version: 1.0.0
 publish_to: "none"
@@ -7,19 +7,13 @@ environment:
   sdk: 3.5.0-180.3.beta
 
 dependencies:
-  core_authenticator:
-    path: ../authenticator
   core_common:
     path: ../common
-  core_model:
-    path: ../model
-  core_network_model:
-    path: ../network_model
   freezed_annotation: 2.4.3
-  riverpod_annotation: 2.3.5
+  json_annotation: 4.9.0
 
 dev_dependencies:
   build_runner: 2.4.11
   freezed: 2.5.6
-  riverpod_generator: 2.4.2
+  json_serializable: 6.8.0
   yumemi_lints: 2.1.0

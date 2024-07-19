@@ -120,6 +120,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  core_network_model:
+    dependency: "direct overridden"
+    description:
+      path: "../../core/network_model"
+      relative: true
+    source: path
+    version: "1.0.0"
   core_testing:
     dependency: "direct dev"
     description:
