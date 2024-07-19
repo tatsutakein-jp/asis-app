@@ -1,0 +1,40 @@
+{
+  "debug.openDebug": "openOnDebugBreak",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "[dart]": {
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off",
+    "editor.codeActionsOnSave": [
+      "source.organizeImports",
+      "source.addMissingImports"
+    ]
+  },
+  "dart.flutterGenerateLocalizationsOnSave": "all",
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.showSkippedTests": false,
+  "dart.runPubGetOnPubspecChanges": "never",
+  "dart.renameFilesWithClasses": "always",
+  "explorer.confirmDragAndDrop": false,
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "search.exclude": {
+    "**/.fvm": true,
+    "**/*.freezed.dart": true,
+    "**/*.g.dart": true
+  }
+}

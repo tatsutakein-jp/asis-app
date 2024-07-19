@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Mobile App Dev",
+      "cwd": "app/mobile",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--flavor=dev"
+      ]
+    },
+    {
+      "name": "Mobile App Stg",
+      "cwd": "app/mobile",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--flavor=stg"
+      ]
+    },
+    {
+      "name": "Mobile App Prod",
+      "cwd": "app/mobile",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--flavor=prod"
+      ]
+    }
+  ]
+}

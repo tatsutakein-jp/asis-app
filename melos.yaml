@@ -2,7 +2,7 @@
 name: asis
 
 packages:
-  - app
+  - app/*
   - backend
   - catalog
   - core/*
@@ -15,13 +15,13 @@ ide:
 command:
   bootstrap:
     hooks:
-      post: melos run bootstrap:hooks:post
+      post: melos run bootstrap:post_hooks
 
 scripts:
   # hooks
-  bootstrap:hooks:post:
+  bootstrap:post_hooks:
     steps:
-      - gen:app
+      - gen:mobile_app
 
   # analyze
   analyze:
@@ -46,9 +46,9 @@ scripts:
     description: Run build_runner.
     packageFilters:
       dependsOn: "build_runner"
-  gen:app:
+  gen:mobile_app:
     run: |
-      melos exec --scope="app" \
+      melos exec --scope="mobile_app" \
         dart run build_runner build --delete-conflicting-outputs
     description: Run build_runner.
   gen:l10n:
