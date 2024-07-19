@@ -46,9 +46,9 @@ labels:
     title: '^\[.*?\]\s*revert(?:\(.+?\))?\!?:'
 
   # <!-- This is an auto-generated label -->
-  - label: "@app"
+  - label: "@app/mobile"
     files:
-      - app/.+
+      - app/mobile/.+
 
   - label: "@backend"
     files:

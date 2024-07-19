@@ -94,9 +94,10 @@
   from_name: "@type/revert"
 
 # <!-- This is an auto-generated label -->
-- name: "@app"
+- name: "@app/mobile"
   color: 0c2b70
-  description: app package
+  description: mobile app package
+  from_name: "@app"
 
 - name: "@backend"
   color: 4372d0
