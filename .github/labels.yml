@@ -103,9 +103,10 @@
   color: 4372d0
   description: Backend development
 
-- name: "@catalog"
+- name: "@app/catalog"
   color: d4f227
   description: Catalog development
+  from_name: "@catalog"
 
 - name: "@core/analytics"
   color: 0b2ebd

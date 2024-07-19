@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "catalog",
-      "source": "./catalog",
+      "source": "./app/catalog",
       "ignore": [
         "firebase.json",
         "**/.*"

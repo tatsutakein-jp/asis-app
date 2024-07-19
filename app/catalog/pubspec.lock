@@ -177,70 +177,70 @@ packages:
   core_authenticator:
     dependency: "direct overridden"
     description:
-      path: "../core/authenticator"
+      path: "../../core/authenticator"
       relative: true
     source: path
     version: "1.0.0"
   core_common:
     dependency: "direct overridden"
     description:
-      path: "../core/common"
+      path: "../../core/common"
       relative: true
     source: path
     version: "1.0.0"
   core_data:
     dependency: "direct overridden"
     description:
-      path: "../core/data"
+      path: "../../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
     dependency: "direct overridden"
     description:
-      path: "../core/database"
+      path: "../../core/database"
       relative: true
     source: path
     version: "1.0.0"
   core_datastore:
     dependency: "direct overridden"
     description:
-      path: "../core/datastore"
+      path: "../../core/datastore"
       relative: true
     source: path
     version: "1.0.0"
   core_designsystem:
     dependency: "direct main"
     description:
-      path: "../core/designsystem"
+      path: "../../core/designsystem"
       relative: true
     source: path
     version: "1.0.0"
   core_domain:
     dependency: "direct overridden"
     description:
-      path: "../core/domain"
+      path: "../../core/domain"
       relative: true
     source: path
     version: "0.0.0"
   core_model:
     dependency: "direct main"
     description:
-      path: "../core/model"
+      path: "../../core/model"
       relative: true
     source: path
     version: "1.0.0"
   core_network:
     dependency: "direct overridden"
     description:
-      path: "../core/network"
+      path: "../../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_ui:
     dependency: "direct main"
     description:
-      path: "../core/ui"
+      path: "../../core/ui"
       relative: true
     source: path
     version: "1.0.0"
@@ -303,35 +303,35 @@ packages:
   feature_auth:
     dependency: "direct main"
     description:
-      path: "../feature/auth"
+      path: "../../feature/auth"
       relative: true
     source: path
     version: "1.0.0"
   feature_feed:
     dependency: "direct main"
     description:
-      path: "../feature/feed"
+      path: "../../feature/feed"
       relative: true
     source: path
     version: "1.0.0"
   feature_home:
     dependency: "direct main"
     description:
-      path: "../feature/home"
+      path: "../../feature/home"
       relative: true
     source: path
     version: "1.0.0"
   feature_quest:
     dependency: "direct main"
     description:
-      path: "../feature/quest"
+      path: "../../feature/quest"
       relative: true
     source: path
     version: "1.0.0"
   feature_settings:
     dependency: "direct main"
     description:
-      path: "../feature/settings"
+      path: "../../feature/settings"
       relative: true
     source: path
     version: "1.0.0"
