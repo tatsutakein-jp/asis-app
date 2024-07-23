@@ -3,10 +3,10 @@ name: "asis-app"
 services:
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./app/backend/Dockerfile
     ports:
-      - "2110:8080"
+      - "12129:8080"
     networks:
       - default
       - asis-network
