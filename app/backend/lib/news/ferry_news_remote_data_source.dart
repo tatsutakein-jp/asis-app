@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:backend/graphql/news/__generated__/GetNews.req.gql.dart';
 import 'package:backend/news/ferry_network_news_transformer.dart';
-import 'package:core_network_model/core_network_model.dart';
+import 'package:core_network_model/news.dart';
 import 'package:ferry/ferry.dart';
 
 final class FerryNewsRemoteDataSource {

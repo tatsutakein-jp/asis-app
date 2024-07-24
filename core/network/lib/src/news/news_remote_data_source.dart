@@ -1,4 +1,4 @@
-import 'package:core_network_model/core_network_model.dart';
+import 'package:core_network/news.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'news_remote_data_source.g.dart';

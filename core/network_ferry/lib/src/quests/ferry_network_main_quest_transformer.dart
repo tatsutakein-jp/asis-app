@@ -1,4 +1,4 @@
-import 'package:core_network/core_network.dart';
+import 'package:core_network/quest.dart';
 import 'package:core_network_ferry/src/graphql/quest/__generated__/GetQuests.data.gql.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

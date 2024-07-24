@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:backend/graphql/quest/__generated__/GetQuests.req.gql.dart';
 import 'package:backend/graphql/quest/__generated__/InsertMainQuest.req.gql.dart';
 import 'package:backend/quests/ferry_network_main_quest_transformer.dart';
-import 'package:core_network_model/core_network_model.dart';
+import 'package:core_network_model/quest.dart';
 import 'package:ferry/ferry.dart';
 
 final class FerryMainQuestRemoteDataSource {
