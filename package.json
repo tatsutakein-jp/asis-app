@@ -16,6 +16,6 @@
     "@commitlint/config-conventional": "19.2.2",
     "firebase-tools": "13.14.0",
     "graphqurl": "1.0.3",
-    "lefthook": "1.7.5"
+    "lefthook": "1.7.6"
   }
 }
