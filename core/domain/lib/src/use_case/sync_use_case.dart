@@ -1,3 +1,4 @@
+import 'package:core_authenticator/authenticator.dart';
 import 'package:core_data/repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -8,7 +9,13 @@ part 'sync_use_case.g.dart';
 Future<void> syncUseCase(
   SyncUseCaseRef ref,
 ) async {
+  final authenticator = ref.watch(authenticatorProvider);
+  final currentUserId = authenticator.currentUserId;
+  if (currentUserId == null) {
+    return;
+  }
+
   await Future.wait([
-    ref.watch(questRepositoryProvider).sync(),
+    ref.watch(questRepositoryProvider).sync(userId: currentUserId),
   ]);
 }

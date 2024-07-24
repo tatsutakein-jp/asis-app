@@ -6,6 +6,9 @@ part 'env.g.dart';
 
 @Envied(obfuscate: true, requireEnvFile: true, path: '.env')
 abstract class Env {
-  @EnviedField(varName: 'KEY', obfuscate: true)
-  static final String key = _Env.key;
+  @EnviedField(varName: 'BACKEND_URL')
+  static final String backendUrl = _Env.backendUrl;
+
+  @EnviedField(varName: 'WEBSITE_URL')
+  static final String websiteUrl = _Env.websiteUrl;
 }

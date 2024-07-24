@@ -1,5 +1,6 @@
 import 'package:core_model/app_config.dart';
 import 'package:flutter/services.dart';
+import 'package:mobile_app/env.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 Future<AppConfig> initializeAppConfig() async {
@@ -25,13 +26,13 @@ Future<AppConfig> initializeAppConfig() async {
 
 extension on Flavor {
   String get backendUrl => switch (this) {
-        Flavor.dev => 'https://asis-dev.hasura.app/v1/graphql',
-        Flavor.stg => 'https://asis-stg.hasura.app/v1/graphql',
-        Flavor.prod => 'https://asis.hasura.app/v1/graphql',
+        Flavor.dev => Env.backendUrl,
+        Flavor.stg => 'https://staging.api.app.asis.quest',
+        Flavor.prod => 'https://api.app.asis.quest',
       };
 
   String get websiteUrl => switch (this) {
-        Flavor.dev => 'http://localhost:4321',
+        Flavor.dev => Env.backendUrl,
         Flavor.stg => 'https://staging.asis.quest',
         Flavor.prod => 'https://asis.quest',
       };

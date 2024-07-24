@@ -8,5 +8,7 @@ part 'news_feed_list_stream_use_case.g.dart';
 @riverpod
 Stream<List<NewsFeed>> newsFeedListStreamUseCase(
   NewsFeedListStreamUseCaseRef ref,
-) =>
-    ref.watch(newsRepositoryProvider).stream();
+) async* {
+  final repository = ref.watch(newsRepositoryProvider);
+  yield* repository.getAll().asStream();
+}

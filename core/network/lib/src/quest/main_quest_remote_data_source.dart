@@ -1,25 +1,34 @@
 import 'package:core_model/quest.dart';
 import 'package:core_network/quest.dart';
+import 'package:core_network/src/dio_client.dart';
+import 'package:dio/dio.dart';
+import 'package:retrofit/retrofit.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'main_quest_remote_data_source.g.dart';
 
 @Riverpod(keepAlive: true)
-MainQuestRemoteDataSource mainQuestRemoteDataSource(
-  MainQuestRemoteDataSourceRef ref,
-) {
-  throw UnimplementedError('mainQuestRemoteDataSource');
-}
+QuestRemoteDataSource questRemoteDataSource(
+  QuestRemoteDataSourceRef ref,
+) =>
+    QuestRemoteDataSource(
+      ref.watch(dioClientProvider),
+    );
 
-abstract interface class MainQuestRemoteDataSource {
-  Stream<List<NetworkMainQuest>> mainQuestListStream();
+@RestApi()
+abstract class QuestRemoteDataSource {
+  factory QuestRemoteDataSource(Dio dio) = _QuestRemoteDataSource;
 
-  Future<List<NetworkMainQuest>> getMainQuestList();
+  @GET('/v1/quests')
+  Future<List<NetworkMainQuest>> getMainQuestList({
+    @Query('userId') required String userId,
+  });
 
-  Future<QuestId> insertMainQuest({
-    required String title,
-    required String description,
-    required String note,
-    required String userId,
+  @POST('/v1/quests')
+  Future<QuestId> createMainQuest({
+    @Field('userId') required String userId,
+    @Field('title') required String title,
+    @Field('description') required String description,
+    @Field('note') required String note,
   });
 }
