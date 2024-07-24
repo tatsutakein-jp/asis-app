@@ -1,5 +1,5 @@
 import 'package:core_model/quest.dart';
-import 'package:core_network_model/core_network_model.dart';
+import 'package:core_network/quest.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'main_quest_remote_data_source.g.dart';

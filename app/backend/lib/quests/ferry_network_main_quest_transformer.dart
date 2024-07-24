@@ -1,5 +1,5 @@
 import 'package:backend/graphql/quest/__generated__/GetQuests.data.gql.dart';
-import 'package:core_network_model/core_network_model.dart';
+import 'package:core_network_model/quest.dart';
 
 final class FerryNetworkMainQuestTransformer {
   NetworkMainQuest transformToNetworkMainQuest(GGetQuestsData_mainQuests from) {

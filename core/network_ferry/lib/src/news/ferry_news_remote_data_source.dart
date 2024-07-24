@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:core_network/core_network.dart';
+import 'package:core_network/news.dart';
 import 'package:core_network_ferry/src/ferry.dart';
 import 'package:core_network_ferry/src/graphql/news/__generated__/GetNews.req.gql.dart';
 import 'package:core_network_ferry/src/news/ferry_network_news_transformer.dart';

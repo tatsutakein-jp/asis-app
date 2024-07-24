@@ -1,5 +1,5 @@
 import 'package:backend/graphql/news/__generated__/GetNews.data.gql.dart';
-import 'package:core_network_model/core_network_model.dart';
+import 'package:core_network_model/news.dart';
 
 final class FerryNetworkNewsTransformer {
   NetworkNews transformToNetworkNews(GGetNewsData_news from) {

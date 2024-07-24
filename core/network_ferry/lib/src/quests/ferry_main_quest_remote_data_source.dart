@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:core_model/quest.dart';
-import 'package:core_network/core_network.dart';
+import 'package:core_network/quest.dart';
 import 'package:core_network_ferry/src/ferry.dart';
 import 'package:core_network_ferry/src/graphql/quest/__generated__/GetQuests.req.gql.dart';
 import 'package:core_network_ferry/src/graphql/quest/__generated__/InsertMainQuest.req.gql.dart';
