@@ -44,6 +44,11 @@ scripts:
     description: Run build_runner.
     packageFilters:
       dependsOn: "build_runner"
+  gen:watch:
+    exec: dart run build_runner watch --delete-conflicting-outputs
+    description: Run build_runner.
+    packageFilters:
+      dependsOn: "build_runner"
   gen:mobile_app:
     run: |
       melos exec --scope="mobile_app" \

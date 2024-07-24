@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:core_model/app_config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,7 +8,6 @@ import 'package:mobile_app/flavor/flavor.dart';
 typedef InitializedValues = ({
   FirebaseAnalytics firebaseAnalytics,
   FirebaseAuthenticator firebaseAuthenticator,
-  FirebaseFirestore firebaseFirestore,
 });
 
 Future<InitializedValues> initializeFirebase({
@@ -24,6 +22,5 @@ Future<InitializedValues> initializeFirebase({
     firebaseAuthenticator: FirebaseAuthenticator(
       firebaseAuth: FirebaseAuth.instance,
     ),
-    firebaseFirestore: FirebaseFirestore.instance,
   );
 }
