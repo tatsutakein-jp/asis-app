@@ -1,0 +1,11 @@
+### ニュース一覧取得
+GET {{baseUrl}}/v1/news
+Authorization: Bearer {{authToken}}
+Content-Type: application/json;charset=utf-8
+
+### クエスト一覧取得
+GET {{baseUrl}}/v1/quests?userId={{userId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json;charset=utf-8
+
+###

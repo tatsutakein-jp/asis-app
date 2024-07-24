@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+NetworkMainQuest _$NetworkMainQuestFromJson(Map<String, dynamic> json) {
+  return _NetworkMainQuest.fromJson(json);
+}
+
 /// @nodoc
 mixin _$NetworkMainQuest {
   String get id => throw _privateConstructorUsedError;
@@ -25,6 +29,9 @@ mixin _$NetworkMainQuest {
   String get status => throw _privateConstructorUsedError;
   String? get coverImageUrl => throw _privateConstructorUsedError;
   String get note => throw _privateConstructorUsedError;
+
+  /// Serializes this NetworkMainQuest to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of NetworkMainQuest
   /// with the given fields replaced by the non-null parameter values.
@@ -202,7 +209,7 @@ class __$$NetworkMainQuestImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$NetworkMainQuestImpl implements _NetworkMainQuest {
   const _$NetworkMainQuestImpl(
       {required this.id,
@@ -214,6 +221,9 @@ class _$NetworkMainQuestImpl implements _NetworkMainQuest {
       required this.status,
       required this.coverImageUrl,
       required this.note});
+
+  factory _$NetworkMainQuestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NetworkMainQuestImplFromJson(json);
 
   @override
   final String id;
@@ -258,6 +268,7 @@ class _$NetworkMainQuestImpl implements _NetworkMainQuest {
             (identical(other.note, note) || other.note == note));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, title, description, begunAt,
       endedAt, categoryId, status, coverImageUrl, note);
@@ -270,6 +281,13 @@ class _$NetworkMainQuestImpl implements _NetworkMainQuest {
   _$$NetworkMainQuestImplCopyWith<_$NetworkMainQuestImpl> get copyWith =>
       __$$NetworkMainQuestImplCopyWithImpl<_$NetworkMainQuestImpl>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NetworkMainQuestImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _NetworkMainQuest implements NetworkMainQuest {
@@ -283,6 +301,9 @@ abstract class _NetworkMainQuest implements NetworkMainQuest {
       required final String status,
       required final String? coverImageUrl,
       required final String note}) = _$NetworkMainQuestImpl;
+
+  factory _NetworkMainQuest.fromJson(Map<String, dynamic> json) =
+      _$NetworkMainQuestImpl.fromJson;
 
   @override
   String get id;

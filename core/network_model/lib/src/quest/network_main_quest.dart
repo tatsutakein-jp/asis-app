@@ -2,6 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'network_main_quest.freezed.dart';
 
+part 'network_main_quest.g.dart';
+
 /// メインクエスト
 ///
 /// {@category Model}
@@ -18,4 +20,7 @@ class NetworkMainQuest with _$NetworkMainQuest {
     required String? coverImageUrl,
     required String note,
   }) = _NetworkMainQuest;
+
+  factory NetworkMainQuest.fromJson(Map<String, Object?> json) =>
+      _$NetworkMainQuestFromJson(json);
 }

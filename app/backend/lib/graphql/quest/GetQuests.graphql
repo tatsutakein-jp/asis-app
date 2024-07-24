@@ -1,5 +1,5 @@
-query GetQuests {
-    mainQuests {
+query GetQuests($userId: String!) {
+    mainQuests(where: {userId: {_eq: $userId}}) {
         id
         title
         description

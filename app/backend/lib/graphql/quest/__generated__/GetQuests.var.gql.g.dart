@@ -19,22 +19,48 @@ class _$GGetQuestsVarsSerializer
   @override
   Iterable<Object?> serialize(Serializers serializers, GGetQuestsVars object,
       {FullType specifiedType = FullType.unspecified}) {
-    return <Object?>[];
+    final result = <Object?>[
+      'userId',
+      serializers.serialize(object.userId,
+          specifiedType: const FullType(String)),
+    ];
+
+    return result;
   }
 
   @override
   GGetQuestsVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GGetQuestsVarsBuilder().build();
+    final result = new GGetQuestsVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'userId':
+          result.userId = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
   }
 }
 
 class _$GGetQuestsVars extends GGetQuestsVars {
+  @override
+  final String userId;
+
   factory _$GGetQuestsVars([void Function(GGetQuestsVarsBuilder)? updates]) =>
       (new GGetQuestsVarsBuilder()..update(updates))._build();
 
-  _$GGetQuestsVars._() : super._();
+  _$GGetQuestsVars._({required this.userId}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(userId, r'GGetQuestsVars', 'userId');
+  }
 
   @override
   GGetQuestsVars rebuild(void Function(GGetQuestsVarsBuilder) updates) =>
@@ -47,17 +73,22 @@ class _$GGetQuestsVars extends GGetQuestsVars {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GGetQuestsVars;
+    return other is GGetQuestsVars && userId == other.userId;
   }
 
   @override
   int get hashCode {
-    return 52352633;
+    var _$hash = 0;
+    _$hash = $jc(_$hash, userId.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper(r'GGetQuestsVars').toString();
+    return (newBuiltValueToStringHelper(r'GGetQuestsVars')
+          ..add('userId', userId))
+        .toString();
   }
 }
 
@@ -65,7 +96,20 @@ class GGetQuestsVarsBuilder
     implements Builder<GGetQuestsVars, GGetQuestsVarsBuilder> {
   _$GGetQuestsVars? _$v;
 
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
+
   GGetQuestsVarsBuilder();
+
+  GGetQuestsVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _userId = $v.userId;
+      _$v = null;
+    }
+    return this;
+  }
 
   @override
   void replace(GGetQuestsVars other) {
@@ -82,7 +126,10 @@ class GGetQuestsVarsBuilder
   GGetQuestsVars build() => _build();
 
   _$GGetQuestsVars _build() {
-    final _$result = _$v ?? new _$GGetQuestsVars._();
+    final _$result = _$v ??
+        new _$GGetQuestsVars._(
+            userId: BuiltValueNullFieldError.checkNotNull(
+                userId, r'GGetQuestsVars', 'userId'));
     replace(_$result);
     return _$result;
   }

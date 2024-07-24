@@ -1,23 +1,9 @@
 import 'dart:async';
 
-import 'package:backend/ferry.dart';
 import 'package:backend/graphql/news/__generated__/GetNews.req.gql.dart';
 import 'package:backend/news/ferry_network_news_transformer.dart';
 import 'package:core_network_model/core_network_model.dart';
 import 'package:ferry/ferry.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-part 'ferry_news_remote_data_source.g.dart';
-
-@Riverpod(keepAlive: true)
-FerryNewsRemoteDataSource newsRemoteDataSource(
-  NewsRemoteDataSourceRef ref,
-) {
-  return FerryNewsRemoteDataSource(
-    client: ref.watch(ferryClientProvider),
-    transformer: ref.watch(ferryNetworkNewsTransformerProvider),
-  );
-}
 
 final class FerryNewsRemoteDataSource {
   FerryNewsRemoteDataSource({
