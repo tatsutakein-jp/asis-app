@@ -15,6 +15,7 @@ abstract class GGetQuestsVars
   factory GGetQuestsVars([void Function(GGetQuestsVarsBuilder b) updates]) =
       _$GGetQuestsVars;
 
+  String get userId;
   static Serializer<GGetQuestsVars> get serializer =>
       _$gGetQuestsVarsSerializer;
 
