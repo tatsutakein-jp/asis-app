@@ -25,6 +25,8 @@ dependencies:
     path: ../../core/domain
   core_model:
     path: ../../core/model
+  core_network:
+    path: ../../core/network
   core_network_ferry:
     path: ../../core/network_ferry
   core_network_firestore:
