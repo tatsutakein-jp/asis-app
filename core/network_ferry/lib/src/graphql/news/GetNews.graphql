@@ -1,9 +1,0 @@
-query GetNews {
-    news {
-        title
-        slug
-        publishedAt
-        excerpt
-        coverImageUrl
-    }
-}

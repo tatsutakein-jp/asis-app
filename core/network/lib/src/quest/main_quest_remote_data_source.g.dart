@@ -3,25 +3,138 @@
 part of 'main_quest_remote_data_source.dart';
 
 // **************************************************************************
+// RetrofitGenerator
+// **************************************************************************
+
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+
+class _QuestRemoteDataSource implements QuestRemoteDataSource {
+  _QuestRemoteDataSource(
+    this._dio, {
+    this.baseUrl,
+  });
+
+  final Dio _dio;
+
+  String? baseUrl;
+
+  @override
+  Future<List<NetworkMainQuest>> getMainQuestList(
+      {required String userId}) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'userId': userId};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<NetworkMainQuest>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/v1/quests',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var _value = _result.data!
+        .map(
+            (dynamic i) => NetworkMainQuest.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return _value;
+  }
+
+  @override
+  Future<String> createMainQuest({
+    required String userId,
+    required String title,
+    required String description,
+    required String note,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {
+      'userId': userId,
+      'title': title,
+      'description': description,
+      'note': note,
+    };
+    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          '/v1/quests',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final _value = _result.data!;
+    return _value;
+  }
+
+  RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
+    if (T != dynamic &&
+        !(requestOptions.responseType == ResponseType.bytes ||
+            requestOptions.responseType == ResponseType.stream)) {
+      if (T == String) {
+        requestOptions.responseType = ResponseType.plain;
+      } else {
+        requestOptions.responseType = ResponseType.json;
+      }
+    }
+    return requestOptions;
+  }
+
+  String _combineBaseUrls(
+    String dioBaseUrl,
+    String? baseUrl,
+  ) {
+    if (baseUrl == null || baseUrl.trim().isEmpty) {
+      return dioBaseUrl;
+    }
+
+    final url = Uri.parse(baseUrl);
+
+    if (url.isAbsolute) {
+      return url.toString();
+    }
+
+    return Uri.parse(dioBaseUrl).resolveUri(url).toString();
+  }
+}
+
+// **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$mainQuestRemoteDataSourceHash() =>
-    r'16b6c421a5c6963839047c551766da2fe7a27ea1';
+String _$questRemoteDataSourceHash() =>
+    r'b4e11a4f754f614e919682cad2ec88e7ba137437';
 
-/// See also [mainQuestRemoteDataSource].
-@ProviderFor(mainQuestRemoteDataSource)
-final mainQuestRemoteDataSourceProvider =
-    Provider<MainQuestRemoteDataSource>.internal(
-  mainQuestRemoteDataSource,
-  name: r'mainQuestRemoteDataSourceProvider',
+/// See also [questRemoteDataSource].
+@ProviderFor(questRemoteDataSource)
+final questRemoteDataSourceProvider = Provider<QuestRemoteDataSource>.internal(
+  questRemoteDataSource,
+  name: r'questRemoteDataSourceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$mainQuestRemoteDataSourceHash,
+      : _$questRemoteDataSourceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef MainQuestRemoteDataSourceRef = ProviderRef<MainQuestRemoteDataSource>;
+typedef QuestRemoteDataSourceRef = ProviderRef<QuestRemoteDataSource>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

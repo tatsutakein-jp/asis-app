@@ -1,26 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ferry.dart';
+part of 'dio_client.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$ferryClientHash() => r'bc03746a4fdfdf519d192e82cc4feb3d39c3ba9d';
+String _$dioClientHash() => r'97f8213c26467b1d10e6e269b6b4299aa0202826';
 
-/// Client instance
-///
-/// Copied from [ferryClient].
-@ProviderFor(ferryClient)
-final ferryClientProvider = Provider<Client>.internal(
-  ferryClient,
-  name: r'ferryClientProvider',
+/// See also [dioClient].
+@ProviderFor(dioClient)
+final dioClientProvider = Provider<Dio>.internal(
+  dioClient,
+  name: r'dioClientProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$ferryClientHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$dioClientHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef FerryClientRef = ProviderRef<Client>;
+typedef DioClientRef = ProviderRef<Dio>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

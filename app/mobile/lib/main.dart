@@ -3,7 +3,6 @@ import 'package:core_authenticator/authenticator.dart';
 import 'package:core_database_isar/isar.dart';
 import 'package:core_datastore/datastore.dart';
 import 'package:core_model/app_config.dart';
-import 'package:core_network_ferry/core_network_ferry.dart';
 import 'package:core_network_firestore/core_network_firestore.dart';
 import 'package:core_ui/toast.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,6 @@ void main() async {
     ProviderScope(
       overrides: [
         appConfigProvider.overrideWithValue(appConfig),
-        ...ferryClientProviders(),
         ...isarDatabaseProviders(isar: isar),
         ...firebaseAnalyticsProviders(firebaseAnalytics: firebaseAnalytics),
         ...firestoreNetworkProviders(firestore: firebaseFirestore),

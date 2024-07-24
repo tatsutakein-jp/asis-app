@@ -9,19 +9,19 @@ part 'quest_repository.g.dart';
 @riverpod
 QuestRepository questRepository(QuestRepositoryRef ref) => QuestRepository(
       dao: ref.watch(questDaoProvider),
-      remote: ref.watch(mainQuestRemoteDataSourceProvider),
+      remote: ref.watch(questRemoteDataSourceProvider),
     );
 
 /// クエストのリポジトリ
 class QuestRepository {
   QuestRepository({
     required QuestDao dao,
-    required MainQuestRemoteDataSource remote,
+    required QuestRemoteDataSource remote,
   })  : _dao = dao,
         _remote = remote;
 
   final QuestDao _dao;
-  final MainQuestRemoteDataSource _remote;
+  final QuestRemoteDataSource _remote;
 
   Future<Quest?> getById({required QuestId id}) async => _dao.getById(id: id);
 
@@ -35,7 +35,7 @@ class QuestRepository {
   }) =>
       _dao.stream();
 
-  Future<void> insert({
+  Future<void> createMainQuest({
     required String userId,
     required String title,
     required String description,
@@ -46,7 +46,7 @@ class QuestRepository {
     required String? coverImageUrl,
     required String note,
   }) async {
-    final id = await _remote.insertMainQuest(
+    final id = await _remote.createMainQuest(
       title: title,
       description: description,
       note: note,
@@ -85,8 +85,10 @@ class QuestRepository {
 
   Future<int> deleteAll() async => _dao.deleteAll();
 
-  Future<void> sync() async {
-    final networkQuestList = await _remote.getMainQuestList();
+  Future<void> sync({
+    required String userId,
+  }) async {
+    final networkQuestList = await _remote.getMainQuestList(userId: userId);
     await _dao.merges(
       networkQuestList
           .map(

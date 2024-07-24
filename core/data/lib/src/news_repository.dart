@@ -6,25 +6,19 @@ part 'news_repository.g.dart';
 
 @riverpod
 NewsRepository newsRepository(NewsRepositoryRef ref) => NewsRepository(
-      remoteDataSource: ref.watch(newsRemoteDataSourceProvider),
+      remote: ref.watch(newsRemoteDataSourceProvider),
     );
 
 /// ニュースのリポジトリ
 class NewsRepository {
   NewsRepository({
-    required NewsRemoteDataSource remoteDataSource,
-  }) : _remoteDataSource = remoteDataSource;
+    required NewsRemoteDataSource remote,
+  }) : _remote = remote;
 
-  final NewsRemoteDataSource _remoteDataSource;
-
-  Stream<List<NewsFeed>> stream() => _remoteDataSource
-      .newsListStream()
-      .map((list) => list.map((e) => e.toNewsFeed()).toList());
+  final NewsRemoteDataSource _remote;
 
   Future<List<NewsFeed>> getAll() async =>
-      (await _remoteDataSource.getNewsList())
-          .map((e) => e.toNewsFeed())
-          .toList();
+      (await _remote.getNewsList()).map((e) => e.toNewsFeed()).toList();
 }
 
 extension on NetworkNews {
