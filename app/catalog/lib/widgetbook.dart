@@ -12,6 +12,7 @@ class WidgetbookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Widgetbook.material(
+      initialRoute: '?path=feature/home/homepage/homepage',
       // Use the generated directories variable
       directories: directories,
       addons: <WidgetbookAddon>[
