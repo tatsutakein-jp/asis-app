@@ -1,3 +1,4 @@
+import 'package:backend/config.dart';
 import 'package:backend/http_auth_link.dart';
 import 'package:dart_frog/dart_frog.dart';
 import 'package:ferry/ferry.dart';
@@ -7,6 +8,8 @@ import 'package:gql_transform_link/gql_transform_link.dart';
 
 Handler middleware(Handler handler) {
   return (context) async {
+    final config = context.read<AppConfig>();
+
     return await handler.use(
       provider<Client>(
         (context) {
@@ -30,8 +33,7 @@ Handler middleware(Handler handler) {
                   ),
                 ),
                 HttpAuthLink(
-                  // TODO: env から読み込む
-                  url: 'https://asis-stg.hasura.app/v1/graphql',
+                  url: config.backendUrl,
                 )
               ],
             ),
