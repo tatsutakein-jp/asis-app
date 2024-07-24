@@ -8,7 +8,6 @@ environment:
   flutter: 3.23.0-0.1.pre
 
 dependencies:
-  cloud_firestore: 5.1.0
   core_analytics_firebase:
     path: ../../core/analytics_firebase
   core_authenticator:
@@ -27,8 +26,6 @@ dependencies:
     path: ../../core/model
   core_network:
     path: ../../core/network
-  core_network_firestore:
-    path: ../../core/network_firestore
   core_ui:
     path: ../../core/ui
   cupertino_icons: 1.0.8
