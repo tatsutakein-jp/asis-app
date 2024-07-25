@@ -1,0 +1,54 @@
+name: 'Slash Command'
+
+on:
+  issue_comment:
+    types:
+      - created
+
+concurrency:
+  group: slash-command-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  catalog-command:
+    name: Catalog
+    runs-on: ubuntu-22.04
+    outputs:
+      continue: ${{ steps.catalog.outputs.continue }}
+    steps:
+      # https://github.com/marketplace/actions/create-github-app-token
+      - name: Create GitHub App Token
+        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      # https://github.com/marketplace/actions/command-action
+      - name: Catalog Command
+        id: catalog
+        uses: github/command@5710e1fb3f9ae1e6df172e574f58efadb9341639 # v1.2.0
+        with:
+          github_token: ${{ steps.app-token.outputs.token }}
+          command: /catalog
+          reaction: "eyes"
+          allowed_contexts: "pull_request"
+          skip_ci: "true"
+          skip_reviews: "true"
+
+  catalog:
+    needs: catalog-command
+    if: ${{ needs.catalog-command.outputs.continue == 'true' }}
+    name: Catalog
+    uses: ./.github/workflows/wc-firebase-hosting.yml
+    permissions:
+      contents: read
+      pull-requests: write
+      deployments: write
+    with:
+      gh-app-id: ${{ vars.BOT_APP_ID }}
+      environment: 'development'
+      project-id: 'asis-quest-dev'
+    secrets:
+      gh-app-private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+      firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
