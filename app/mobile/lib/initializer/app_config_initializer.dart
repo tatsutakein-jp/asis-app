@@ -32,8 +32,8 @@ extension on Flavor {
       };
 
   String get websiteUrl => switch (this) {
-        Flavor.dev => Env.backendUrl,
-        Flavor.stg => 'https://staging.asis.quest',
+        Flavor.dev => Env.websiteUrl,
+        Flavor.stg => 'https://staging.asis-quest.pages.dev',
         Flavor.prod => 'https://asis.quest',
       };
 }
