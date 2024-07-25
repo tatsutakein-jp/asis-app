@@ -33,7 +33,10 @@ class QuestRepository {
     int? offset,
     int? limit,
   }) =>
-      _dao.stream();
+      _dao.stream(
+        offset: offset,
+        limit: limit,
+      );
 
   Future<void> createMainQuest({
     required String userId,
