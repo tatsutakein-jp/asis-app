@@ -79,7 +79,7 @@ jobs:
         uses: ./.github/actions/setup-pub
 
       - name: Run analyze
-        run: melos run ci:analyze
+        run: melos analyze
 
   test:
     runs-on: ubuntu-22.04

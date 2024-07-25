@@ -10,7 +10,7 @@ permissions:
 jobs:
   tatsutakeinjp-bot:
     runs-on: ubuntu-22.04
-    if: github.actor == 'tatsutakeinjp-bot[bot]'
+    if: github.event.pull_request.user.login == 'tatsutakeinjp-bot[bot]'
     steps:
       # https://github.com/marketplace/actions/create-github-app-token
       - name: Create GitHub App Token

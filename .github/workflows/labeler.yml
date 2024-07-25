@@ -17,7 +17,7 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
   tatsutakeinjp-bot:
-    if: github.actor == 'tatsutakeinjp-bot[bot]'
+    if: github.event.pull_request.user.login == 'tatsutakeinjp-bot[bot]'
     runs-on: ubuntu-22.04
     permissions:
       contents: read
