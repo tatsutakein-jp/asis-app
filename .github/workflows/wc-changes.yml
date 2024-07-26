@@ -41,6 +41,11 @@ jobs:
             action:
               - '.github/actions/*.yml'
               - '.github/workflows/*.yml'
+            backend:
+              - 'app/backend/**/*'
+              - 'core/network_model/**/*'
+              - '.tool-versions'
+              - '**/pubspec.*'
             analyze:
               - '.github/workflows/checks.yml'
               - '.github/workflows/wc-changed.yml'

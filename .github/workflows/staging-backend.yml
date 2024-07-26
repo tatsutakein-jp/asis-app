@@ -1,0 +1,24 @@
+name: "Staging"
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend
+    uses: ./.github/workflows/wc-deploy-backend.yml
+    permissions:
+      id-token: write
+      contents: read
+    with:
+      gar-location: 'asia-northeast1'
+      project-id: 'asis-quest-stg'
+      repository: 'app-backend'
+      service: 'asis-app-backend'
+    secrets:
+      wif-provider: ${{ secrets.STG_WIF_PROVIDER }}
+      wif-service-account: ${{ secrets.STG_WIF_SERVICE_ACCOUNT }}
