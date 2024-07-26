@@ -5,6 +5,8 @@ on:
     outputs:
       action:
         value: ${{ jobs.changes.outputs.action }}
+      backend:
+        value: ${{ jobs.changes.outputs.backend }}
       analyze:
         value: ${{ jobs.changes.outputs.analyze }}
       any:
@@ -23,6 +25,7 @@ jobs:
     runs-on: ubuntu-22.04
     outputs:
       action: ${{ steps.filter.outputs.action }}
+      backend: ${{ steps.filter.outputs.backend }}
       analyze: ${{ steps.filter.outputs.analyze }}
       any: ${{ steps.filter.outputs.changes != '[]' }}
       test: ${{ steps.filter.outputs.test }}
