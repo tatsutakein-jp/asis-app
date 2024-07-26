@@ -19,9 +19,13 @@ clean: # Clean
 	@flutter clean
 
 # Generate
-.PHONY: gen-gitignore-files
+.PHONY: gen-gitignore-files gen-labeler gen-labels
 gen-gitignore-files: # Generate gitignore target files.
 	@./scripts/gen_gitignore_files.sh
+gen-labeler: # Generates the package part of `.github/labeler.yml`.
+	@bun run scripts/gen-labeler.ts
+gen-labels: # Generates the package part of `.github/labels.yml`.
+	@bun run scripts/gen-labels.ts
 
 # Mason
 .PHONY: mason-get mason-make-feature
