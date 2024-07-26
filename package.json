@@ -20,6 +20,7 @@
     "graphqurl": "1.0.3",
     "js-yaml": "4.1.0",
     "lefthook": "1.7.9",
+    "plop": "4.0.1",
     "typescript": "5.5.4"
   }
 }
