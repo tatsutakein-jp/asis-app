@@ -1,0 +1,37 @@
+name: feature_{{snakeCase feature_name}}
+description: "This package provides {{snakeCase feature_name}} features."
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: 3.5.0-180.3.beta
+  flutter: 3.23.0-0.1.pre
+
+dependencies:
+  core_common:
+    path: ../../core/common
+  core_designsystem:
+    path: ../../core/designsystem
+  core_domain:
+    path: ../../core/domain
+  core_model:
+    path: ../../core/model
+  core_ui:
+    path: ../../core/ui
+  flutter:
+    sdk: flutter
+  flutter_hooks: 0.20.5
+  flutter_localizations:
+    sdk: flutter
+  go_router: 14.2.1
+  hooks_riverpod: 2.5.1
+  intl: 0.19.0
+
+dev_dependencies:
+  core_testing:
+    path: ../../core/testing
+  flutter_test:
+    sdk: flutter
+  yumemi_lints: 2.1.0
+
+flutter:
