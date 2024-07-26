@@ -92,7 +92,7 @@ fi
 ##
 ##############################################################################
 echo ""
-source tool/gen_gitignore_files.sh
+source scripts/gen_gitignore_files.sh
 
 ##############################################################################
 ##
@@ -146,20 +146,6 @@ if type mason >/dev/null 2>&1; then
 else
   echo "⚠️ mason get: Skip mason because it could not be found."
   echo "⚠️ mason get: See https://docs.brickhub.dev/installing for installation."
-fi
-
-##############################################################################
-##
-##  grinder
-##
-##############################################################################
-echo ""
-echo "🚀 grinder check: Start"
-if type grinder >/dev/null 2>&1; then
-    echo "✅ grinder check: Success"
-else
-  echo "⚠️ grinder check: Skip grinder because it could not be found."
-  echo "⚠️ grinder check: See https://pub.dev/packages/grinder/install for installation."
 fi
 
 ##############################################################################

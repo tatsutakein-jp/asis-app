@@ -94,97 +94,97 @@
   from_name: "@type/revert"
 
 # <!-- This is an auto-generated label -->
-- name: "@app/mobile"
-  color: 0c2b70
-  description: mobile app package
-  from_name: "@app"
-
-- name: "@app/backend"
+- name: '@app/backend'
   color: 4372d0
   description: Backend development
-  from_name: "@backend"
+  from_name: '@backend'
 
-- name: "@app/catalog"
+- name: '@app/catalog'
   color: d4f227
   description: Catalog development
-  from_name: "@catalog"
+  from_name: '@catalog'
 
-- name: "@core/analytics"
+- name: '@app/mobile'
+  color: 0c2b70
+  description: mobile app package
+  from_name: '@app'
+
+- name: '@core/analytics'
   color: 0b2ebd
   description: core analytics package
 
-- name: "@core/analytics_firebase"
+- name: '@core/analytics_firebase'
   color: 91a36d
   description: core analytics_firebase package
 
-- name: "@core/authenticator"
+- name: '@core/authenticator'
   color: b07b63
   description: core authenticator package
 
-- name: "@core/common"
+- name: '@core/common'
   color: e99695
   description: core common package
 
-- name: "@core/data"
+- name: '@core/data'
   color: 50D413
   description: core data package
 
-- name: "@core/database"
+- name: '@core/database'
   color: 90bf94
   description: core database package
 
-- name: "@core/database_isar"
+- name: '@core/database_isar'
   color: 1b6108
   description: core database_isar package
 
-- name: "@core/datastore"
+- name: '@core/datastore'
   color: 1997D2
   description: core datastore package
 
-- name: "@core/designsystem"
-  color: "936116"
+- name: '@core/designsystem'
+  color: '936116'
   description: core designsystem package
 
-- name: "@core/domain"
+- name: '@core/domain'
   color: DC79FD
   description: core domain package
 
-- name: "@core/model"
+- name: '@core/model'
   color: D1A70E
   description: core model package
 
-- name: "@core/network"
+- name: '@core/network'
   color: 630D81
   description: core network package
 
-- name: "@core/network_ferry"
-  color: "424307"
-  description: core network_ferry package
+- name: '@core/network_model'
+  color: 9e36f1
+  description: core network_model package
 
-- name: "@core/testing"
-  color: "667168"
+- name: '@core/testing'
+  color: '667168'
   description: core testing package
 
-- name: "@core/ui"
+- name: '@core/ui'
   color: b1ade8
   description: core ui package
 
-- name: "@feature/auth"
+- name: '@feature/auth'
   color: 48360E
   description: feature auth package
 
-- name: "@feature/feed"
+- name: '@feature/feed'
   color: 30c181
   description: feature feed package
 
-- name: "@feature/home"
+- name: '@feature/home'
   color: 3bc0ec
   description: feature home package
 
-- name: "@feature/quest"
+- name: '@feature/quest'
   color: 6fe0ba
   description: feature quest package
 
-- name: "@feature/settings"
+- name: '@feature/settings'
   color: 1e266d
   description: feature settings package
