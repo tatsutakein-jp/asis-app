@@ -27,7 +27,7 @@ jobs:
       # https://github.com/marketplace/actions/command-action
       - name: Catalog Command
         id: catalog
-        uses: github/command@5710e1fb3f9ae1e6df172e574f58efadb9341639 # v1.2.0
+        uses: github/command@a0f8c9c9a16aad0cced91b2b7693de599d4093a3 # v1.2.1
         with:
           github_token: ${{ steps.app-token.outputs.token }}
           command: /catalog
