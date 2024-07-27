@@ -132,24 +132,6 @@ fi
 
 ##############################################################################
 ##
-##  mason
-##
-##############################################################################
-echo ""
-echo "🚀 mason get: Start"
-if type mason >/dev/null 2>&1; then
-  if mason get; then
-    echo "✅ mason get: Success"
-  else
-    echo "🚫 mason get: Failed"
-  fi
-else
-  echo "⚠️ mason get: Skip mason because it could not be found."
-  echo "⚠️ mason get: See https://docs.brickhub.dev/installing for installation."
-fi
-
-##############################################################################
-##
 ##  Finish
 ##
 ##############################################################################

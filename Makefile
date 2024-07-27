@@ -27,13 +27,10 @@ gen-labeler: # Generates the package part of `.github/labeler.yml`.
 gen-labels: # Generates the package part of `.github/labels.yml`.
 	@bun run scripts/gen-labels.ts
 
-# Mason
-.PHONY: mason-get mason-make-feature
-mason-get: # Execute the `mason get` command.
-	@mason get
-
-mason-make-feature: # Create a feature package using the Mason.
-	@mason make feature
+# Template Generation
+.PHONY: plop-gen-feature
+plop-gen-feature: # Create a feature package using the Plop.
+	@bun run plop feature
 
 # Docker
 .PHONY: docker-create-network compose-up compose-down

@@ -16,10 +16,12 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@types/js-yaml": "4.0.9",
+    "change-case": "5.4.4",
     "firebase-tools": "13.14.1",
     "graphqurl": "1.0.3",
     "js-yaml": "4.1.0",
     "lefthook": "1.7.9",
+    "plop": "4.0.1",
     "typescript": "5.5.4"
   }
 }

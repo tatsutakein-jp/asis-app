@@ -1,5 +1,0 @@
-bricks:
-  feature:
-    path: bricks/feature
-  firebase_options:
-    path: bricks/firebase_options
