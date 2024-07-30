@@ -9,7 +9,7 @@ environment:
 dependencies:
   core_common:
     path: ../common
-  freezed_annotation: 2.4.3
+  freezed_annotation: 2.4.4
   riverpod: 2.5.1
   riverpod_annotation: 2.3.5
 
