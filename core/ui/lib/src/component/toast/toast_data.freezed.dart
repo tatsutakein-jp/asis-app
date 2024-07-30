@@ -22,7 +22,9 @@ mixin _$ToastData {
   Duration get duration => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ToastData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ToastDataCopyWith<ToastData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +52,8 @@ class _$ToastDataCopyWithImpl<$Res, $Val extends ToastData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ToastData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,6 +112,8 @@ class __$$ToastDataImplCopyWithImpl<$Res>
       _$ToastDataImpl _value, $Res Function(_$ToastDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ToastData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -186,7 +192,9 @@ class _$ToastDataImpl implements _ToastData {
   int get hashCode =>
       Object.hash(runtimeType, id, message, type, duration, createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ToastData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ToastDataImplCopyWith<_$ToastDataImpl> get copyWith =>
@@ -211,8 +219,11 @@ abstract class _ToastData implements ToastData {
   Duration get duration;
   @override
   DateTime get createdAt;
+
+  /// Create a copy of ToastData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ToastDataImplCopyWith<_$ToastDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
