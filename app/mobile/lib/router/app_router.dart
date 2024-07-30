@@ -1,6 +1,6 @@
 import 'package:core_authenticator/authenticator.dart';
-import 'package:core_model/config.dart';
 import 'package:core_model/auth.dart';
+import 'package:core_model/config.dart';
 import 'package:core_model/feed.dart';
 import 'package:core_model/quest.dart';
 import 'package:feature_auth/feature_auth.dart';
@@ -10,8 +10,8 @@ import 'package:feature_quest/feature_quest.dart';
 import 'package:feature_settings/feature_settings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mobile_app/initializer/app_config_initializer.dart';
 import 'package:mobile_app/router/app_navigation_bar.dart';
 import 'package:mobile_app/router/app_navigation_key.dart';

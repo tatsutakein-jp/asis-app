@@ -2,10 +2,11 @@ import 'package:core_designsystem/theme.dart';
 import 'package:core_domain/user_settings_use_case.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mobile_app/extension/theme.dart';
 import 'package:mobile_app/l10n/l10n.dart';
 import 'package:mobile_app/router/app_router.dart';
+import 'package:mobile_app/ui/app_force_updatable.dart';
 import 'package:mobile_app/ui/toast.dart';
 
 final class AsisApp extends ConsumerWidget {
@@ -34,6 +35,7 @@ final class AsisApp extends ConsumerWidget {
           builder: (context, child) => Stack(
             children: [
               child!,
+              const AppForceUpdatable(),
               Positioned(
                 top: MediaQuery.of(context).padding.top + 10,
                 left: 0,

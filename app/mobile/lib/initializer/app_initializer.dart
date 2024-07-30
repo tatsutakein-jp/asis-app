@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:core_model/config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:isar/isar.dart';
 import 'package:mobile_app/auth/firebase_authenticator.dart';
 import 'package:mobile_app/datastore/preferences_data_store.dart';
@@ -17,6 +18,7 @@ typedef InitializedValues = ({
   PreferencesDataStore dataStore,
   FirebaseAnalytics firebaseAnalytics,
   FirebaseAuthenticator firebaseAuthenticator,
+  FirebaseRemoteConfig firebaseRemoteConfig,
 });
 
 Future<InitializedValues> initializeApp() async {
@@ -30,6 +32,7 @@ Future<InitializedValues> initializeApp() async {
     firebase as ({
       FirebaseAnalytics firebaseAnalytics,
       FirebaseAuthenticator firebaseAuthenticator,
+      FirebaseRemoteConfig firebaseRemoteConfig,
     }),
   ] = await Future.wait([
     initializeDatabase(),
@@ -40,6 +43,7 @@ Future<InitializedValues> initializeApp() async {
   final (
     :firebaseAnalytics,
     :firebaseAuthenticator,
+    :firebaseRemoteConfig,
   ) = firebase;
 
   return (
@@ -48,5 +52,6 @@ Future<InitializedValues> initializeApp() async {
     dataStore: dataStore,
     firebaseAnalytics: firebaseAnalytics,
     firebaseAuthenticator: firebaseAuthenticator,
+    firebaseRemoteConfig: firebaseRemoteConfig,
   );
 }
