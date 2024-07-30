@@ -37,7 +37,7 @@ dev_dependencies:
     path: ../../core/testing
   flutter_test:
     sdk: flutter
-  freezed: 2.5.6
+  freezed: 2.5.7
   riverpod_generator: 2.4.2
   yumemi_lints: 2.1.0
 
