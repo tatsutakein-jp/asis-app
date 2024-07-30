@@ -232,4 +232,4 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
-  dart: "3.5.0-180.3.beta"
+  dart: "3.4.4"
