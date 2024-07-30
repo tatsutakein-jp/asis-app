@@ -1,4 +1,4 @@
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:feature_settings/src/gen/l10n/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

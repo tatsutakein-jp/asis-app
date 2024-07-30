@@ -1,4 +1,4 @@
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_app/env.dart';
 import 'package:package_info_plus/package_info_plus.dart';

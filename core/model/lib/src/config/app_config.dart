@@ -1,4 +1,4 @@
-import 'package:core_model/app_config.dart';
+import 'package:core_model/src/config/flavor.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
