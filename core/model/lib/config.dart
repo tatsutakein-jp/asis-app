@@ -1,1 +1,2 @@
-export 'src/config/index.dart';
+export 'src/config/app_config.dart';
+export 'src/config/flavor.dart';
