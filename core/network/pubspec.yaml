@@ -16,7 +16,7 @@ dependencies:
   core_network_model:
     path: ../network_model
   dio: 5.5.0+1
-  freezed_annotation: 2.4.3
+  freezed_annotation: 2.4.4
   retrofit: 4.1.0
   riverpod_annotation: 2.3.5
 

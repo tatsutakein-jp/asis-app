@@ -28,6 +28,5 @@ dev_dependencies:
   yumemi_lints: 2.1.0
 
 dependency_overrides:
-  freezed_annotation: 2.4.3
   # workaround
   gql_code_builder: 0.12.0
