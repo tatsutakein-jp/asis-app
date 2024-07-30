@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:isar/isar.dart';
 import 'package:mobile_app/auth/firebase_authenticator.dart';

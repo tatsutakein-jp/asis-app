@@ -1,5 +1,5 @@
 import 'package:core_authenticator/authenticator.dart';
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:core_model/auth.dart';
 import 'package:core_model/feed.dart';
 import 'package:core_model/quest.dart';

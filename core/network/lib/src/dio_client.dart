@@ -1,5 +1,5 @@
 import 'package:core_authenticator/authenticator.dart';
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

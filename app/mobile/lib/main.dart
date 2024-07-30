@@ -2,7 +2,7 @@ import 'package:core_analytics_firebase/analytics_firebase.dart';
 import 'package:core_authenticator/authenticator.dart';
 import 'package:core_database_isar/isar.dart';
 import 'package:core_datastore/datastore.dart';
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:core_ui/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

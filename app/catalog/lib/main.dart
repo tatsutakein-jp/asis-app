@@ -1,5 +1,5 @@
 import 'package:catalog/widgetbook.dart';
-import 'package:core_model/app_config.dart';
+import 'package:core_model/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
