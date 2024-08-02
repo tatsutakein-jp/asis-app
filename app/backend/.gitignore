@@ -6,3 +6,6 @@ build/
 
 # Test related files
 coverage/
+
+# Environment configuration
+.env

@@ -1,4 +1,4 @@
-import 'package:backend/config.dart';
+import 'package:backend/config/environment.dart';
 import 'package:backend/http_auth_link.dart';
 import 'package:dart_frog/dart_frog.dart';
 import 'package:ferry/ferry.dart';
@@ -8,7 +8,7 @@ import 'package:gql_transform_link/gql_transform_link.dart';
 
 Handler middleware(Handler handler) {
   return (context) async {
-    final config = context.read<AppConfig>();
+    final env = context.read<Environment>();
 
     return await handler.use(
       provider<Client>(
@@ -33,7 +33,7 @@ Handler middleware(Handler handler) {
                   ),
                 ),
                 HttpAuthLink(
-                  url: config.backendUrl,
+                  url: env.backendUrl,
                 )
               ],
             ),
