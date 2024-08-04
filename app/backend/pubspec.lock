@@ -225,10 +225,10 @@ packages:
     dependency: "direct dev"
     description:
       name: ferry_generator
-      sha256: dd4eed6c60d86275d1013407ce4ac70c094b282d5c9e10ec93276d65370a8ae2
+      sha256: "6637ea751297f56c8971691f63b1191d14bf649dacfdcaa08a594915eba47bda"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.0"
+    version: "0.12.0"
   ferry_store:
     dependency: transitive
     description:
