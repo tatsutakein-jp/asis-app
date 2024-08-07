@@ -289,10 +289,10 @@ packages:
     dependency: "direct main"
     description:
       name: gql_code_builder
-      sha256: "59ba9b5abfe975e6b163eeaf3ccd61fa5916bb5152217ec8fadb38129f462292"
+      sha256: e1002177a33fc4460ffde86187d01f3fc714627e9418dff7c4a8cf6f26119d63
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.0"
+    version: "0.13.0"
   gql_code_builder_serializers:
     dependency: transitive
     description:

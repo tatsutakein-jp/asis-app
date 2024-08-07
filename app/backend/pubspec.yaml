@@ -27,7 +27,3 @@ dev_dependencies:
   mocktail: 1.0.4
   test: 1.25.8
   yumemi_lints: 2.1.0
-
-dependency_overrides:
-  # workaround
-  gql_code_builder: 0.12.0
