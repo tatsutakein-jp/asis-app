@@ -93,10 +93,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: "644dc98a0f179b872f612d3eb627924b578897c629788e858157fa5e704ca0c7"
+      sha256: dd09dd4e2b078992f42aac7f1a622f01882a8492fef08486b27ddde929c19f04
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.11"
+    version: "2.4.12"
   build_runner_core:
     dependency: transitive
     description:
@@ -457,10 +457,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: d380de0355788c5c784fe9f81b43fc833b903991c25ecc4e2a416a67faefa722
+      sha256: ddc16d34b0d74cb313986918c0f0885a7ba2fc24d8fb8419de75f0015144ccfe
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.2"
+    version: "14.2.3"
   graphs:
     dependency: transitive
     description:
@@ -721,10 +721,10 @@ packages:
     dependency: transitive
     description:
       name: rust_core
-      sha256: a210344b0130bacae5a7bb0d585cd9ccb81b25220a5e23f95a2f50b06e3379c0
+      sha256: "475787b9a255e6e2096812e7c595fd785d3fd43951e6b9dcc078ef54ec454e67"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.2"
+    version: "1.3.1"
   shelf:
     dependency: transitive
     description:
