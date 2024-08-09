@@ -182,10 +182,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_adaptive_scaffold
-      sha256: "794791e6fc0cc23e375d07ea987e76cf7f0eb7cd753532e45dc35b7e90575e2d"
+      sha256: a464b74540401cade07af0ae84d19f210534cac67651a150fb413507040b74f6
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.11"
+    version: "0.1.12"
   flutter_hooks:
     dependency: "direct main"
     description:
