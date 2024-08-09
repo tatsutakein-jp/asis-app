@@ -1,4 +1,5 @@
 import 'package:core_designsystem/component.dart';
+import 'package:core_domain/quest_use_case.dart';
 import 'package:feature_home/src/gen/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -15,46 +16,63 @@ final class QuestOverviewSection extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = L10n.of(context);
+    final countStream = ref.watch(questCountStreamUseCaseProvider);
 
     return Container(
       width: double.infinity,
       child: Column(
         children: [
-          SizedBox(
-            width: double.infinity,
-            child: Text(
-              l10n.homeQuestOverviewSectionTitle,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+          countStream.when(
+            data: (data) {
+              return Column(
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      l10n.homeQuestOverviewSectionTitle,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const Gap(16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: _StatCard(
+                          title: l10n.homeQuestOverviewSectionTotalQuests,
+                          count: '${data.total}',
+                        ),
+                      ),
+                      const Gap(16),
+                      Expanded(
+                        child: _StatCard(
+                          title: l10n.homeQuestOverviewSectionQuestsCompleted,
+                          count: '${data.completed}',
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Gap(16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: _StatCard(
+                      title: l10n.homeQuestOverviewSectionPendingQuests,
+                      count: '${data.pending}',
+                    ),
+                  ),
+                ],
+              );
+            },
+            error: (error, stackTrace) => Center(
+              child: Text(
+                error.toString(),
               ),
             ),
-          ),
-          const Gap(16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: _StatCard(
-                  title: l10n.homeQuestOverviewSectionTotalQuests,
-                  count: '50',
-                ),
-              ),
-              const Gap(16),
-              Expanded(
-                child: _StatCard(
-                  title: l10n.homeQuestOverviewSectionQuestsCompleted,
-                  count: '20',
-                ),
-              ),
-            ],
-          ),
-          const Gap(16),
-          SizedBox(
-            width: double.infinity,
-            child: _StatCard(
-              title: l10n.homeQuestOverviewSectionPendingQuests,
-              count: '30',
+            loading: () => const Center(
+              child: CircularProgressIndicator(),
             ),
           ),
           Padding(
