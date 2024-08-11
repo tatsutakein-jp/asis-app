@@ -27,13 +27,13 @@ Future<AppConfig> initializeAppConfig() async {
 extension on Flavor {
   String get backendUrl => switch (this) {
         Flavor.dev => Env.backendUrl,
-        Flavor.stg => 'https://staging.api.app.asis.quest',
+        Flavor.stg => 'https://asis-app-backend-ysop674t6q-an.a.run.app',
         Flavor.prod => 'https://api.app.asis.quest',
       };
 
   String get websiteUrl => switch (this) {
         Flavor.dev => Env.websiteUrl,
-        Flavor.stg => 'https://staging.asis-quest.pages.dev',
+        Flavor.stg => 'https://staging.asis.quest',
         Flavor.prod => 'https://asis.quest',
       };
 }
