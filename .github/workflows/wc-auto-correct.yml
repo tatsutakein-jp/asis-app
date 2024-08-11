@@ -1,22 +1,17 @@
 name: 'Correct codes by auto generation'
 
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/auto-correct.yml'
-      - '**.dart'
-      - '**/pubspec.lock'
-      - '**/pubspec.yaml'
-      - '!**.g.dart'
-      - '!**.freezed.dart'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  workflow_call:
+    inputs:
+      gh-app-id:
+        required: true
+        type: string
+    secrets:
+      gh-app-private-key:
+        required: true
 
 jobs:
   gen:
-    if: github.actor != 'tatsutakeinjp-bot[bot]'
     runs-on: ubuntu-22.04
     timeout-minutes: 15
 
@@ -53,8 +48,8 @@ jobs:
         uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
         id: app-token
         with:
-          app-id: ${{ vars.BOT_APP_ID }}
-          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          app-id: ${{ inputs.gh-app-id }}
+          private-key: ${{ secrets.gh-app-private-key }}
 
       # https://github.com/marketplace/actions/github-script
       - name: Commit and push changes
