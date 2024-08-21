@@ -175,7 +175,7 @@ packages:
     source: hosted
     version: "3.1.1"
   core_authenticator:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/authenticator"
       relative: true
@@ -189,21 +189,21 @@ packages:
     source: path
     version: "1.0.0"
   core_data:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/database"
       relative: true
     source: path
     version: "1.0.0"
   core_datastore:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/datastore"
       relative: true
@@ -231,14 +231,14 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_network_model:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/network_model"
       relative: true
@@ -286,10 +286,10 @@ packages:
     dependency: transitive
     description:
       name: dio
-      sha256: e17f6b3097b8c51b72c74c9f071a605c47bcc8893839bd66732457a5ebe73714
+      sha256: "0dfb6b6a1979dac1c1245e17cef824d7b452ea29bd33d3467269f9bef3715fb0"
       url: "https://pub.dev"
     source: hosted
-    version: "5.5.0+1"
+    version: "5.6.0"
   dio_web_adapter:
     dependency: transitive
     description:
@@ -331,10 +331,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_adaptive_scaffold
-      sha256: a464b74540401cade07af0ae84d19f210534cac67651a150fb413507040b74f6
+      sha256: "8f6715c3f71609f5aa1ce5c80250c74aca6fe80c90abd8bf6e1811bd671a2973"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.12"
+    version: "0.2.0"
   flutter_hooks:
     dependency: "direct main"
     description:
@@ -634,10 +634,10 @@ packages:
     dependency: transitive
     description:
       name: retrofit
-      sha256: "13a2865c0d97da580ea4e3c64d412d81f365fd5b26be2a18fca9582e021da37a"
+      sha256: "1fceca35cc68d5f14ff70ae830acbf157263b42e1cdfd5b38045ca517535b734"
       url: "https://pub.dev"
     source: hosted
-    version: "4.1.0"
+    version: "4.2.0"
   riverpod:
     dependency: transitive
     description:
@@ -831,10 +831,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: f652077d0bdf60abe4c1f6377448e8655008eef28f128bc023f7b5e8dfeb48fc
+      sha256: "5c5f338a667b4c644744b661f309fb8080bb94b18a7e91ef1dbd343bed00ed6d"
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.4"
+    version: "14.2.5"
   watcher:
     dependency: transitive
     description:
@@ -892,5 +892,5 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
-  dart: "3.5.0"
-  flutter: ">=3.24.0"
+  dart: "3.5.1"
+  flutter: ">=3.24.1"
