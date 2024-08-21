@@ -2,7 +2,7 @@
 name: asis
 
 environment:
-  sdk: 3.5.0
+  sdk: 3.5.1
 
 dependency_overrides:
   # workaround

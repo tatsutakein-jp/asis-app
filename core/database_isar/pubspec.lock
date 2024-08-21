@@ -302,7 +302,7 @@ packages:
     dependency: "direct main"
     description:
       name: isar
-      sha256: "52bc5314fcabcab89c847510fa39eae65e8c98d8b4f863d2cfae6193bbf7101d"
+      sha256: e987032e5d007a03ba4415cbf4d47add17b57ac664db8705db90fbfeb6a16737
       url: "https://pub.isar-community.dev"
     source: hosted
     version: "4.0.3"
@@ -683,4 +683,4 @@ packages:
     source: hosted
     version: "2.1.0"
 sdks:
-  dart: "3.5.0"
+  dart: "3.5.1"
