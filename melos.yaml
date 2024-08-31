@@ -19,7 +19,7 @@ scripts:
   # hooks
   bootstrap:post_hooks:
     steps:
-      - gen:mobile_app
+      - gen:app_mobile
 
   # analyze
   analyze:
@@ -49,9 +49,9 @@ scripts:
     description: Run build_runner.
     packageFilters:
       dependsOn: "build_runner"
-  gen:mobile_app:
+  gen:app_mobile:
     run: |
-      melos exec --scope="mobile_app" \
+      melos exec --scope="app_mobile" \
         dart run build_runner build --delete-conflicting-outputs
     description: Run build_runner.
   gen:l10n:
