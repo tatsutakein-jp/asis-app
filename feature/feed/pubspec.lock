@@ -119,7 +119,7 @@ packages:
     source: hosted
     version: "3.1.1"
   core_authenticator:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/authenticator"
       relative: true
@@ -133,21 +133,21 @@ packages:
     source: path
     version: "1.0.0"
   core_data:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/database"
       relative: true
     source: path
     version: "1.0.0"
   core_datastore:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/datastore"
       relative: true
@@ -175,14 +175,14 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_network_model:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/network_model"
       relative: true
@@ -214,10 +214,10 @@ packages:
     dependency: transitive
     description:
       name: custom_lint_core
-      sha256: a85e8f78f4c52f6c63cdaf8c872eb573db0231dcdf3c3a5906d493c1f8bc20e6
+      sha256: "4ddbbdaa774265de44c97054dcec058a83d9081d071785ece601e348c18c267d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.3"
+    version: "0.6.5"
   dart_style:
     dependency: transitive
     description:
@@ -341,10 +341,10 @@ packages:
     dependency: "direct main"
     description:
       name: hooks_riverpod
-      sha256: "45b2030a18bcd6dbd680c2c91bc3b33e3fe7c323e3acb5ecec93a613e2fbaa8a"
+      sha256: "97266a91c994951a06ef0ff3a1c7fb261e52ec7f74e87f0614ea0b7411b859b2"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.1"
+    version: "2.5.2"
   http:
     dependency: transitive
     description:
@@ -517,10 +517,10 @@ packages:
     dependency: transitive
     description:
       name: riverpod_analyzer_utils
-      sha256: ee72770090078e6841d51355292335f1bc254907c6694283389dcb8156d99a4d
+      sha256: ac28d7bc678471ec986b42d88e5a0893513382ff7542c7ac9634463b044ac72c
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.3"
+    version: "0.5.4"
   riverpod_annotation:
     dependency: "direct main"
     description:
@@ -533,10 +533,10 @@ packages:
     dependency: "direct dev"
     description:
       name: riverpod_generator
-      sha256: "1ad626afbd8b01d168870b13c0b036f8a5bdb57c14cd426dc5b4595466bd6e2f"
+      sha256: "63311e361ffc578d655dfc31b48dfa4ed3bc76fd06f9be845e9bf97c5c11a429"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.2"
+    version: "2.4.3"
   rust_core:
     dependency: transitive
     description:
