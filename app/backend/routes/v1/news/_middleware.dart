@@ -1,5 +1,5 @@
-import 'package:backend/news/ferry_network_news_transformer.dart';
-import 'package:backend/news/ferry_news_remote_data_source.dart';
+import 'package:app_backend/news/ferry_network_news_transformer.dart';
+import 'package:app_backend/news/ferry_news_remote_data_source.dart';
 import 'package:dart_frog/dart_frog.dart';
 
 Handler middleware(Handler handler) {

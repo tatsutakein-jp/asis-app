@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 
-import 'package:backend/graphql/__generated__/schema.schema.gql.dart'
+import 'package:app_backend/graphql/__generated__/schema.schema.gql.dart'
     show
         GAchievementsBoolExp,
         GAchievementsOrderBy,
@@ -80,25 +80,25 @@ import 'package:backend/graphql/__generated__/schema.schema.gql.dart'
         GUsersStreamCursorInput,
         GUsersStreamCursorValueInput,
         GUuidComparisonExp;
-import 'package:backend/graphql/news/__generated__/GetNews.data.gql.dart'
+import 'package:app_backend/graphql/news/__generated__/GetNews.data.gql.dart'
     show GGetNewsData, GGetNewsData_news;
-import 'package:backend/graphql/news/__generated__/GetNews.req.gql.dart'
+import 'package:app_backend/graphql/news/__generated__/GetNews.req.gql.dart'
     show GGetNewsReq;
-import 'package:backend/graphql/news/__generated__/GetNews.var.gql.dart'
+import 'package:app_backend/graphql/news/__generated__/GetNews.var.gql.dart'
     show GGetNewsVars;
-import 'package:backend/graphql/quest/__generated__/GetQuests.data.gql.dart'
+import 'package:app_backend/graphql/quest/__generated__/GetQuests.data.gql.dart'
     show GGetQuestsData, GGetQuestsData_mainQuests;
-import 'package:backend/graphql/quest/__generated__/GetQuests.req.gql.dart'
+import 'package:app_backend/graphql/quest/__generated__/GetQuests.req.gql.dart'
     show GGetQuestsReq;
-import 'package:backend/graphql/quest/__generated__/GetQuests.var.gql.dart'
+import 'package:app_backend/graphql/quest/__generated__/GetQuests.var.gql.dart'
     show GGetQuestsVars;
-import 'package:backend/graphql/quest/__generated__/InsertMainQuest.data.gql.dart'
+import 'package:app_backend/graphql/quest/__generated__/InsertMainQuest.data.gql.dart'
     show GInsertMainQuestData, GInsertMainQuestData_insertMainQuestsOne;
-import 'package:backend/graphql/quest/__generated__/InsertMainQuest.req.gql.dart'
+import 'package:app_backend/graphql/quest/__generated__/InsertMainQuest.req.gql.dart'
     show GInsertMainQuestReq;
-import 'package:backend/graphql/quest/__generated__/InsertMainQuest.var.gql.dart'
+import 'package:app_backend/graphql/quest/__generated__/InsertMainQuest.var.gql.dart'
     show GInsertMainQuestVars;
-import 'package:backend/graphql/serializer/timestamptz_serializer.dart'
+import 'package:app_backend/graphql/serializer/timestamptz_serializer.dart'
     show TimestamptzSerializer;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';

@@ -4,7 +4,7 @@ targets:
       ferry_generator|graphql_builder:
         enabled: true
         options:
-          schema: backend|lib/graphql/schema.graphql
+          schema: app_backend|lib/graphql/schema.graphql
           type_overrides:
             uuid:
               name: String
@@ -13,12 +13,12 @@ targets:
       ferry_generator|serializer_builder:
         enabled: true
         options:
-          schema: backend|lib/graphql/schema.graphql
+          schema: app_backend|lib/graphql/schema.graphql
           type_overrides:
             uuid:
               name: String
             timestamptz:
               name: DateTime
           custom_serializers:
-            - import: 'package:backend/graphql/serializer/timestamptz_serializer.dart'
+            - import: 'package:app_backend/graphql/serializer/timestamptz_serializer.dart'
               name: TimestamptzSerializer

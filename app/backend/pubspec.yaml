@@ -1,4 +1,4 @@
-name: backend
+name: app_backend
 description: An new Dart Frog application
 version: 0.1.0
 publish_to: none

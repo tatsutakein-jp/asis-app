@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:backend/config/environment.dart';
+import 'package:app_backend/config/environment.dart';
 import 'package:dart_frog/dart_frog.dart';
 import 'package:dotenv/dotenv.dart';
 
