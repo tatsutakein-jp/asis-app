@@ -1,4 +1,4 @@
-part of 'package:mobile_app/router/app_router.dart';
+part of 'package:app_mobile/router/app_router.dart';
 
 /// TypedGoRoute for feature_auth
 const authRoute = TypedGoRoute<AuthRoute>(path: AppPagePath.auth);

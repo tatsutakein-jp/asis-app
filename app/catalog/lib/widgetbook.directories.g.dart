@@ -9,16 +9,16 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:catalog/designsystem/component/brand_icon.dart' as _i3;
-import 'package:catalog/designsystem/component/card.dart' as _i4;
-import 'package:catalog/designsystem/component/scaffold.dart' as _i2;
-import 'package:catalog/feature/auth/page/auth_page.dart' as _i5;
-import 'package:catalog/feature/home/page/home_page.dart' as _i6;
-import 'package:catalog/feature/my/page/settings_page.dart' as _i7;
-import 'package:catalog/feature/quest/page/quest_add_page.dart' as _i8;
-import 'package:catalog/feature/quest/page/quest_detail_page.dart' as _i9;
-import 'package:catalog/feature/quest/page/quest_page.dart' as _i10;
-import 'package:catalog/ui/component/quest_list_tile.dart' as _i11;
+import 'package:app_catalog/designsystem/component/brand_icon.dart' as _i3;
+import 'package:app_catalog/designsystem/component/card.dart' as _i4;
+import 'package:app_catalog/designsystem/component/scaffold.dart' as _i2;
+import 'package:app_catalog/feature/auth/page/auth_page.dart' as _i5;
+import 'package:app_catalog/feature/home/page/home_page.dart' as _i6;
+import 'package:app_catalog/feature/my/page/settings_page.dart' as _i7;
+import 'package:app_catalog/feature/quest/page/quest_add_page.dart' as _i8;
+import 'package:app_catalog/feature/quest/page/quest_detail_page.dart' as _i9;
+import 'package:app_catalog/feature/quest/page/quest_page.dart' as _i10;
+import 'package:app_catalog/ui/component/quest_list_tile.dart' as _i11;
 import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[

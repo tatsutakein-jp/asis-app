@@ -1,5 +1,5 @@
-import 'package:catalog/l10n/l10n.dart';
-import 'package:catalog/widgetbook.directories.g.dart';
+import 'package:app_catalog/l10n/l10n.dart';
+import 'package:app_catalog/widgetbook.directories.g.dart';
 import 'package:core_designsystem/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';

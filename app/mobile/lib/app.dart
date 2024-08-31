@@ -3,11 +3,11 @@ import 'package:core_domain/user_settings_use_case.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mobile_app/extension/theme.dart';
-import 'package:mobile_app/l10n/l10n.dart';
-import 'package:mobile_app/router/app_router.dart';
-import 'package:mobile_app/ui/app_force_updatable.dart';
-import 'package:mobile_app/ui/toast.dart';
+import 'package:app_mobile/extension/theme.dart';
+import 'package:app_mobile/l10n/l10n.dart';
+import 'package:app_mobile/router/app_router.dart';
+import 'package:app_mobile/ui/app_force_updatable.dart';
+import 'package:app_mobile/ui/toast.dart';
 
 final class AsisApp extends ConsumerWidget {
   const AsisApp({super.key});

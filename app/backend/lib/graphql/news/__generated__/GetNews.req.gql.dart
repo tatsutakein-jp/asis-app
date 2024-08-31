@@ -2,11 +2,13 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:backend/graphql/__generated__/serializers.gql.dart' as _i6;
-import 'package:backend/graphql/news/__generated__/GetNews.ast.gql.dart' as _i5;
-import 'package:backend/graphql/news/__generated__/GetNews.data.gql.dart'
+import 'package:app_backend/graphql/__generated__/serializers.gql.dart' as _i6;
+import 'package:app_backend/graphql/news/__generated__/GetNews.ast.gql.dart'
+    as _i5;
+import 'package:app_backend/graphql/news/__generated__/GetNews.data.gql.dart'
     as _i2;
-import 'package:backend/graphql/news/__generated__/GetNews.var.gql.dart' as _i3;
+import 'package:app_backend/graphql/news/__generated__/GetNews.var.gql.dart'
+    as _i3;
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:ferry_exec/ferry_exec.dart' as _i1;

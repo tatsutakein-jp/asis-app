@@ -1,5 +1,5 @@
-import 'package:backend/config/environment.dart';
-import 'package:backend/http_auth_link.dart';
+import 'package:app_backend/config/environment.dart';
+import 'package:app_backend/http_auth_link.dart';
 import 'package:dart_frog/dart_frog.dart';
 import 'package:ferry/ferry.dart';
 import 'package:gql_exec/gql_exec.dart';

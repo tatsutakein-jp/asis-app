@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mobile_app/gen/l10n/l10n.dart';
+import 'package:app_mobile/gen/l10n/l10n.dart';
 
 /// アプリで使用するボトムナビゲーションバー
 ///

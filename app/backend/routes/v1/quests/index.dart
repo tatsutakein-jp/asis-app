@@ -1,4 +1,4 @@
-import 'package:backend/quests/ferry_main_quest_remote_data_source.dart';
+import 'package:app_backend/quests/ferry_main_quest_remote_data_source.dart';
 import 'package:core_network_model/quest.dart';
 import 'package:dart_frog/dart_frog.dart';
 
