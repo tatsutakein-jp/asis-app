@@ -5,7 +5,7 @@ import 'package:feature_feed/feature_feed.dart';
 import 'package:feature_home/feature_home.dart';
 import 'package:feature_quest/feature_quest.dart';
 import 'package:feature_settings/feature_settings.dart';
-import 'package:mobile_app/gen/l10n/l10n.dart';
+import 'package:app_mobile/gen/l10n/l10n.dart';
 
 const appLocalizationsDelegates = [
   ...L10n.localizationsDelegates,

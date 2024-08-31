@@ -3,8 +3,8 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:mobile_app/auth/firebase_authenticator.dart';
-import 'package:mobile_app/flavor/flavor.dart';
+import 'package:app_mobile/auth/firebase_authenticator.dart';
+import 'package:app_mobile/flavor/flavor.dart';
 
 typedef InitializedValues = ({
   FirebaseAnalytics firebaseAnalytics,
