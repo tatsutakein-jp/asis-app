@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "1.18.0"
   core_authenticator:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/authenticator"
       relative: true
@@ -72,21 +72,21 @@ packages:
     source: path
     version: "1.0.0"
   core_data:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/database"
       relative: true
     source: path
     version: "1.0.0"
   core_datastore:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/datastore"
       relative: true
@@ -114,14 +114,14 @@ packages:
     source: path
     version: "1.0.0"
   core_network:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/network"
       relative: true
     source: path
     version: "1.0.0"
   core_network_model:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../../core/network_model"
       relative: true
@@ -145,10 +145,10 @@ packages:
     dependency: transitive
     description:
       name: dio
-      sha256: "0dfb6b6a1979dac1c1245e17cef824d7b452ea29bd33d3467269f9bef3715fb0"
+      sha256: "5598aa796bbf4699afd5c67c0f5f6e2ed542afc956884b9cd58c306966efc260"
       url: "https://pub.dev"
     source: hosted
-    version: "5.6.0"
+    version: "5.7.0"
   dio_web_adapter:
     dependency: transitive
     description:
@@ -389,10 +389,10 @@ packages:
     dependency: transitive
     description:
       name: retrofit
-      sha256: "1fceca35cc68d5f14ff70ae830acbf157263b42e1cdfd5b38045ca517535b734"
+      sha256: "479cc534c2d83296dac6ae16933dd77e7a52bb54cf7e75e6eb83ee51928c8465"
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.0"
+    version: "4.3.0"
   riverpod:
     dependency: transitive
     description:
@@ -567,5 +567,5 @@ packages:
     source: hosted
     version: "2.2.0"
 sdks:
-  dart: "3.5.1"
-  flutter: ">=3.24.1"
+  dart: "3.5.2"
+  flutter: ">=3.24.2"
