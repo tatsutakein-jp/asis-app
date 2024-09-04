@@ -4,8 +4,8 @@ publish_to: 'none'
 version: 1.0.0
 
 environment:
-  sdk: 3.5.1
-  flutter: 3.24.1
+  sdk: 3.5.2
+  flutter: 3.24.2
 
 dependencies:
   core_analytics_firebase:

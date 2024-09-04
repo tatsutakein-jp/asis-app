@@ -1,4 +1,4 @@
-FROM dart:3.5.1 AS builder
+FROM dart:3.5.2 AS builder
 
 WORKDIR /app/app/backend
 
