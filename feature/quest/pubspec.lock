@@ -331,10 +331,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_adaptive_scaffold
-      sha256: "93d20f0a4fbded8755571cc1f11a05a116cdc401ebaa15293ea2f87618fa2d18"
+      sha256: "6b587d439c7da037432bbfc78d9676e1d08f2d7490f08e8d689a20f08e049802"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.4"
+    version: "0.2.6"
   flutter_hooks:
     dependency: "direct main"
     description:
@@ -634,10 +634,10 @@ packages:
     dependency: transitive
     description:
       name: retrofit
-      sha256: "479cc534c2d83296dac6ae16933dd77e7a52bb54cf7e75e6eb83ee51928c8465"
+      sha256: f00d9b02c7d6c091c2b3347d8ed5f982cfa976e532c2567ed203608ee0edb50a
       url: "https://pub.dev"
     source: hosted
-    version: "4.3.0"
+    version: "4.4.0"
   riverpod:
     dependency: transitive
     description:
@@ -892,5 +892,5 @@ packages:
     source: hosted
     version: "2.2.0"
 sdks:
-  dart: "3.5.2"
-  flutter: ">=3.24.2"
+  dart: "3.5.3"
+  flutter: ">=3.24.3"
