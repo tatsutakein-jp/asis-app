@@ -710,10 +710,10 @@ packages:
     dependency: transitive
     description:
       name: retrofit
-      sha256: f00d9b02c7d6c091c2b3347d8ed5f982cfa976e532c2567ed203608ee0edb50a
+      sha256: "3c9885ef3dbc5dc4b3fb0a40c972ab52e4dad04d52dac9bba24dfa76cf100451"
       url: "https://pub.dev"
     source: hosted
-    version: "4.4.0"
+    version: "4.4.1"
   riverpod:
     dependency: transitive
     description:
@@ -979,10 +979,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: c2d881d0241525b36aa3777d0ac406d198528ed28b84ca73b7dd9f59189d6bb0
+      sha256: "08570e3568275c4c283cdf78409c125f86c96c9b4f94f0a390d6a163349e9934"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.0"
+    version: "3.2.0"
   widgetbook_generator:
     dependency: "direct dev"
     description:
