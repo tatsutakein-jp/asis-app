@@ -18,10 +18,10 @@ packages:
     dependency: transitive
     description:
       name: accessibility_tools
-      sha256: "0a16adc8dfa3a7ebd38775135d86443011a65d4ecbb438913e4992b5d29135fe"
+      sha256: "7c0b5ac466ea8b971c1b081f3ade0979e6563e8926da62c3b90def78c44dd96b"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "2.2.2"
   analyzer:
     dependency: transitive
     description:
@@ -971,10 +971,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: de5b9887f9ad663bdcc1f957bc22aa0eb4dd7b406ac0142158bf35c0fad4a4f2
+      sha256: "4db3ab02c3159dd898b362c8681b9cdabda33caae3a9d13e3fc71231a485ad33"
       url: "https://pub.dev"
     source: hosted
-    version: "3.8.1"
+    version: "3.9.0"
   widgetbook_annotation:
     dependency: "direct main"
     description:
@@ -987,10 +987,10 @@ packages:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: "7a5baf68bb76cbd8aeb093050172f99bb83b44360bf2a72c2b19b3785e3d29d0"
+      sha256: "5967de405c3e7e3d4ef56239c7b23f0affd69b181f7d041f8101f0fbdb9d4e2c"
       url: "https://pub.dev"
     source: hosted
-    version: "3.8.0"
+    version: "3.9.0"
   xml:
     dependency: transitive
     description:
