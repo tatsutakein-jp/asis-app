@@ -85,7 +85,8 @@
       "groupName": "widgetbook",
       "matchPackageNames": [
         "widgetbook",
-        "widgetbook_generator",
+        "widgetbook_annotation",
+        "widgetbook_generator"
       ]
     }
   ]
