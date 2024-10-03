@@ -22,7 +22,7 @@ dependencies:
   shelf_cors_headers: 0.1.5
 
 dev_dependencies:
-  build_runner: 2.4.12
+  build_runner: 2.4.13
   ferry_generator: 0.12.0
   mocktail: 1.0.4
   test: 1.25.8

@@ -98,10 +98,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: dd09dd4e2b078992f42aac7f1a622f01882a8492fef08486b27ddde929c19f04
+      sha256: "028819cfb90051c6b5440c7e574d1896f8037e3c96cf17aaeb054c9311cfbf4d"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.12"
+    version: "2.4.13"
   build_runner_core:
     dependency: transitive
     description:
@@ -674,10 +674,10 @@ packages:
     dependency: transitive
     description:
       name: rust_core
-      sha256: "475787b9a255e6e2096812e7c595fd785d3fd43951e6b9dcc078ef54ec454e67"
+      sha256: "381a85d9d46849c7ac59aed7c6f1537d04d54be38d1423a6896e8dabab41c8ce"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.1"
+    version: "1.3.2"
   shelf:
     dependency: transitive
     description:
