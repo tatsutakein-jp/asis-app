@@ -14,7 +14,7 @@ jobs:
     uses: ./.github/workflows/wc-changes.yml
 
   action:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: changes
     if: needs.changes.outputs.action == 'true'
     permissions:
@@ -35,7 +35,7 @@ jobs:
           reporter: github-pr-review
 
   cache-deps:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: changes
     if: needs.changes.outputs.dependencies == 'true'
     timeout-minutes: 10
@@ -56,7 +56,7 @@ jobs:
         uses: ./.github/actions/setup-pub
 
   analyze:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs:
       - changes
       - cache-deps
@@ -82,7 +82,7 @@ jobs:
         run: melos analyze
 
   test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs:
       - changes
       - cache-deps
@@ -111,7 +111,7 @@ jobs:
         run: melos run ci:test --no-select
 
   status-check:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs:
       - analyze
       - test
