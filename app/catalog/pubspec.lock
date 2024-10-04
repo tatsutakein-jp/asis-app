@@ -462,10 +462,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: "5cf5fdcf853b0629deb35891c7af643be900c3dcaed7489009f9e7dbcfe55ab6"
+      sha256: b4c1cce7eda99ff729bb69d10cd7555017a0665f66ca46ee574e6a03785b389d
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.8"
+    version: "14.2.9"
   graphs:
     dependency: transitive
     description:
@@ -899,10 +899,10 @@ packages:
     dependency: transitive
     description:
       name: video_player_android
-      sha256: "66090f295f98422408f310c9472d0ced04240171021079ef5f11439773f53831"
+      sha256: b5f318087fb009a1425eee29079eb99fbcbd9e2dc480aaa36dc5b6f40f5f8ae1
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.6"
+    version: "2.7.7"
   video_player_avfoundation:
     dependency: transitive
     description:

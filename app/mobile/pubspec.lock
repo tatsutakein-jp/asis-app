@@ -183,7 +183,7 @@ packages:
     source: hosted
     version: "3.1.1"
   core_analytics:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../core/analytics"
       relative: true
@@ -211,14 +211,14 @@ packages:
     source: path
     version: "1.0.0"
   core_data:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../core/data"
       relative: true
     source: path
     version: "1.0.0"
   core_database:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../core/database"
       relative: true
@@ -267,7 +267,7 @@ packages:
     source: path
     version: "1.0.0"
   core_network_model:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../core/network_model"
       relative: true
@@ -1280,10 +1280,10 @@ packages:
     dependency: transitive
     description:
       name: video_player_android
-      sha256: "66090f295f98422408f310c9472d0ced04240171021079ef5f11439773f53831"
+      sha256: b5f318087fb009a1425eee29079eb99fbcbd9e2dc480aaa36dc5b6f40f5f8ae1
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.6"
+    version: "2.7.7"
   video_player_avfoundation:
     dependency: transitive
     description:
