@@ -18,9 +18,9 @@ final class AppConfigTileContent extends ConsumerWidget {
         // アプリバージョン
         Text(l10n.settingsAppConfigAppVersion),
         if (kIsWeb)
-          Text(appConfig.version)
+          Text(appConfig.version.value)
         else
-          Text('${appConfig.version} (${appConfig.buildNumber})'),
+          Text('${appConfig.version.value} (${appConfig.buildNumber})'),
 
         // パッケージ名
         if (kDebugMode)

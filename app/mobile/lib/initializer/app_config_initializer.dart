@@ -1,6 +1,6 @@
+import 'package:app_mobile/env.dart';
 import 'package:core_model/config.dart';
 import 'package:flutter/services.dart';
-import 'package:app_mobile/env.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 Future<AppConfig> initializeAppConfig() async {
@@ -15,7 +15,7 @@ Future<AppConfig> initializeAppConfig() async {
     flavor: flavor,
     appName: packageInfo.appName,
     packageName: packageInfo.packageName,
-    version: packageInfo.version,
+    version: AppVersion.parse(packageInfo.version),
     buildNumber: packageInfo.buildNumber,
     buildSignature: packageInfo.buildSignature,
     installerStore: packageInfo.installerStore,

@@ -1,3 +1,4 @@
+import 'package:core_model/src/config/app_version.dart';
 import 'package:core_model/src/config/flavor.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -19,7 +20,7 @@ class AppConfig with _$AppConfig {
   const factory AppConfig({
     required String appName,
     required String packageName,
-    required String version,
+    required AppVersion version,
     required String buildNumber,
     required String buildSignature,
     required Flavor flavor,
@@ -33,7 +34,7 @@ class AppConfig with _$AppConfig {
 const fakeAppConfig = AppConfig(
   appName: 'Fake App',
   packageName: 'com.example.fake_app',
-  version: '1.0.0',
+  version: AppVersion(major: 1, minor: 0, patch: 0),
   buildNumber: '1',
   buildSignature: '1',
   flavor: Flavor.dev,

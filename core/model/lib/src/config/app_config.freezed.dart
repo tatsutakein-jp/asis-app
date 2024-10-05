@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppConfig {
   String get appName => throw _privateConstructorUsedError;
   String get packageName => throw _privateConstructorUsedError;
-  String get version => throw _privateConstructorUsedError;
+  AppVersion get version => throw _privateConstructorUsedError;
   String get buildNumber => throw _privateConstructorUsedError;
   String get buildSignature => throw _privateConstructorUsedError;
   Flavor get flavor => throw _privateConstructorUsedError;
@@ -41,13 +41,15 @@ abstract class $AppConfigCopyWith<$Res> {
   $Res call(
       {String appName,
       String packageName,
-      String version,
+      AppVersion version,
       String buildNumber,
       String buildSignature,
       Flavor flavor,
       String? installerStore,
       String backendUrl,
       String websiteUrl});
+
+  $AppVersionCopyWith<$Res> get version;
 }
 
 /// @nodoc
@@ -87,7 +89,7 @@ class _$AppConfigCopyWithImpl<$Res, $Val extends AppConfig>
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as String,
+              as AppVersion,
       buildNumber: null == buildNumber
           ? _value.buildNumber
           : buildNumber // ignore: cast_nullable_to_non_nullable
@@ -114,6 +116,16 @@ class _$AppConfigCopyWithImpl<$Res, $Val extends AppConfig>
               as String,
     ) as $Val);
   }
+
+  /// Create a copy of AppConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppVersionCopyWith<$Res> get version {
+    return $AppVersionCopyWith<$Res>(_value.version, (value) {
+      return _then(_value.copyWith(version: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -127,13 +139,16 @@ abstract class _$$AppConfigImplCopyWith<$Res>
   $Res call(
       {String appName,
       String packageName,
-      String version,
+      AppVersion version,
       String buildNumber,
       String buildSignature,
       Flavor flavor,
       String? installerStore,
       String backendUrl,
       String websiteUrl});
+
+  @override
+  $AppVersionCopyWith<$Res> get version;
 }
 
 /// @nodoc
@@ -171,7 +186,7 @@ class __$$AppConfigImplCopyWithImpl<$Res>
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as String,
+              as AppVersion,
       buildNumber: null == buildNumber
           ? _value.buildNumber
           : buildNumber // ignore: cast_nullable_to_non_nullable
@@ -219,7 +234,7 @@ class _$AppConfigImpl implements _AppConfig {
   @override
   final String packageName;
   @override
-  final String version;
+  final AppVersion version;
   @override
   final String buildNumber;
   @override
@@ -286,7 +301,7 @@ abstract class _AppConfig implements AppConfig {
   const factory _AppConfig(
       {required final String appName,
       required final String packageName,
-      required final String version,
+      required final AppVersion version,
       required final String buildNumber,
       required final String buildSignature,
       required final Flavor flavor,
@@ -299,7 +314,7 @@ abstract class _AppConfig implements AppConfig {
   @override
   String get packageName;
   @override
-  String get version;
+  AppVersion get version;
   @override
   String get buildNumber;
   @override
