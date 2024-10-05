@@ -1,0 +1,45 @@
+name: feature_onboarding
+description: "This package provides onboarding features."
+version: 1.0.0
+publish_to: "none"
+
+environment:
+  sdk: 3.5.3
+  flutter: 3.24.3
+
+dependencies:
+  core_common:
+    path: ../../core/common
+  core_designsystem:
+    path: ../../core/designsystem
+  core_domain:
+    path: ../../core/domain
+  core_model:
+    path: ../../core/model
+  core_ui:
+    path: ../../core/ui
+  flutter:
+    sdk: flutter
+  flutter_hooks: 0.20.5
+  flutter_localizations:
+    sdk: flutter
+  go_router: 14.3.0
+  hooks_riverpod: 2.5.2
+  intl: 0.19.0
+  lottie: 3.1.2
+
+dev_dependencies:
+  build_runner: 2.4.12
+  flutter_gen_runner: 5.7.0
+  yumemi_lints: 2.2.0
+
+flutter:
+  assets:
+    - assets/lottie/
+
+flutter_gen:
+  output: lib/src/gen/assets
+  assets:
+    outputs:
+      package_parameter_enabled: true
+
