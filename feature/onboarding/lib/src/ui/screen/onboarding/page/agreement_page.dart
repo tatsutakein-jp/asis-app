@@ -22,7 +22,6 @@ final class AgreementPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = L10n.of(context);
 
-
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(AsisSpace.l),
