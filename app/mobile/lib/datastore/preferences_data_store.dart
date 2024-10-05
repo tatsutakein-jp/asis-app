@@ -10,6 +10,12 @@ final class PreferencesDataStore implements DataStore {
   final SharedPreferences _preferences;
 
   @override
+  int? getInt(String key) => _preferences.getInt(key);
+
+  @override
+  Future<bool> setInt(String key, int value) => _preferences.setInt(key, value);
+
+  @override
   String? getString(String key) => _preferences.getString(key);
 
   @override
