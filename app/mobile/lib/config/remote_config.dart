@@ -27,7 +27,7 @@ UpdateVersion _resolveUpdateVersion(FirebaseRemoteConfig firebaseRemoteConfig) {
     firebaseRemoteConfig.getString(appVersionsKey),
   );
   return UpdateVersion(
-    force: updateVersions['force'] as String,
-    optional: updateVersions['optional'] as String,
+    force: AppVersion.parse(updateVersions['force'] as String),
+    optional: AppVersion.parse(updateVersions['optional'] as String),
   );
 }

@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UpdateVersion {
-  String get force => throw _privateConstructorUsedError;
-  String get optional => throw _privateConstructorUsedError;
+  AppVersion get force => throw _privateConstructorUsedError;
+  AppVersion get optional => throw _privateConstructorUsedError;
 
   /// Create a copy of UpdateVersion
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +32,10 @@ abstract class $UpdateVersionCopyWith<$Res> {
           UpdateVersion value, $Res Function(UpdateVersion) then) =
       _$UpdateVersionCopyWithImpl<$Res, UpdateVersion>;
   @useResult
-  $Res call({String force, String optional});
+  $Res call({AppVersion force, AppVersion optional});
+
+  $AppVersionCopyWith<$Res> get force;
+  $AppVersionCopyWith<$Res> get optional;
 }
 
 /// @nodoc
@@ -57,12 +60,32 @@ class _$UpdateVersionCopyWithImpl<$Res, $Val extends UpdateVersion>
       force: null == force
           ? _value.force
           : force // ignore: cast_nullable_to_non_nullable
-              as String,
+              as AppVersion,
       optional: null == optional
           ? _value.optional
           : optional // ignore: cast_nullable_to_non_nullable
-              as String,
+              as AppVersion,
     ) as $Val);
+  }
+
+  /// Create a copy of UpdateVersion
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppVersionCopyWith<$Res> get force {
+    return $AppVersionCopyWith<$Res>(_value.force, (value) {
+      return _then(_value.copyWith(force: value) as $Val);
+    });
+  }
+
+  /// Create a copy of UpdateVersion
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppVersionCopyWith<$Res> get optional {
+    return $AppVersionCopyWith<$Res>(_value.optional, (value) {
+      return _then(_value.copyWith(optional: value) as $Val);
+    });
   }
 }
 
@@ -74,7 +97,12 @@ abstract class _$$UpdateVersionImplCopyWith<$Res>
       __$$UpdateVersionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String force, String optional});
+  $Res call({AppVersion force, AppVersion optional});
+
+  @override
+  $AppVersionCopyWith<$Res> get force;
+  @override
+  $AppVersionCopyWith<$Res> get optional;
 }
 
 /// @nodoc
@@ -97,11 +125,11 @@ class __$$UpdateVersionImplCopyWithImpl<$Res>
       force: null == force
           ? _value.force
           : force // ignore: cast_nullable_to_non_nullable
-              as String,
+              as AppVersion,
       optional: null == optional
           ? _value.optional
           : optional // ignore: cast_nullable_to_non_nullable
-              as String,
+              as AppVersion,
     ));
   }
 }
@@ -113,9 +141,9 @@ class _$UpdateVersionImpl extends _UpdateVersion {
       : super._();
 
   @override
-  final String force;
+  final AppVersion force;
   @override
-  final String optional;
+  final AppVersion optional;
 
   @override
   String toString() {
@@ -146,14 +174,14 @@ class _$UpdateVersionImpl extends _UpdateVersion {
 
 abstract class _UpdateVersion extends UpdateVersion {
   const factory _UpdateVersion(
-      {required final String force,
-      required final String optional}) = _$UpdateVersionImpl;
+      {required final AppVersion force,
+      required final AppVersion optional}) = _$UpdateVersionImpl;
   const _UpdateVersion._() : super._();
 
   @override
-  String get force;
+  AppVersion get force;
   @override
-  String get optional;
+  AppVersion get optional;
 
   /// Create a copy of UpdateVersion
   /// with the given fields replaced by the non-null parameter values.
