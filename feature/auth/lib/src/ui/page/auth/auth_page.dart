@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:feature_auth/src/gen/l10n/l10n.dart';
 import 'package:feature_auth/src/ui/page/auth/components/sign_in_form.dart';
 import 'package:feature_auth/src/ui/page/auth/components/video_background_view.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ final class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = L10n.of(context);
     final focus = FocusScope.of(context);
 
     return GestureDetector(
@@ -27,22 +25,32 @@ final class AuthPage extends StatelessWidget {
       },
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          title: Text(l10n.authSignInAppBarTitle),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
         body: Stack(
           children: [
-            ImageFiltered(
-              imageFilter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-              child: const HeroBackground(),
-            ),
-            Positioned.fill(
-              child: SafeArea(
-                child: SignInForm(
-                  onLoginSuccess: _onLoginSuccess,
+            const HeroBackground(),
+            SafeArea(
+              child: Center(
+                child: Container(
+                  // padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.black.withOpacity(0.1),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaY: 5,
+                        sigmaX: 5,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: SignInForm(onLoginSuccess: _onLoginSuccess),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -15,6 +15,7 @@ final class SignInForm extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
     final l10n = L10n.of(context);
 
     final emailController = useTextEditingController();
@@ -34,11 +35,18 @@ final class SignInForm extends HookConsumerWidget {
             child: Column(
               children: [
                 ...[
+                  Text(
+                    l10n.authSignInAppBarTitle,
+                    style: theme.textTheme.headlineSmall,
+                  ),
+
                   TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
+                      icon: const Icon(Icons.email),
                       hintText: 'welcome@asis.quest',
                       labelText: l10n.authSignInFormEmailLabel,
                     ),
@@ -60,6 +68,8 @@ final class SignInForm extends HookConsumerWidget {
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
+                      icon: const Icon(Icons.lock),
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
                       hintText: 'Password',
                       labelText: l10n.authSignInFormPasswordLabel,
                     ),
@@ -78,7 +88,7 @@ final class SignInForm extends HookConsumerWidget {
                   // サインイン
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
+                    child: FilledButton(
                       onPressed: () async {
                         if (!formKey.currentState!.validate()) {
                           return;
