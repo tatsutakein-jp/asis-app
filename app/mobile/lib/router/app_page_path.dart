@@ -1,6 +1,7 @@
 /// アプリ内で使用するページのパス
 final class AppPagePath {
   static const auth = '/auth';
+  static const onboarding = '/onboarding';
   static const home = '/home';
   static const quests = '/quests';
   static const questDetail = ':questId';

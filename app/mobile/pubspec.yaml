@@ -37,6 +37,8 @@ dependencies:
     path: ../../feature/feed
   feature_home:
     path: ../../feature/home
+  feature_onboarding:
+    path: ../../feature/onboarding
   feature_quest:
     path: ../../feature/quest
   feature_settings:
