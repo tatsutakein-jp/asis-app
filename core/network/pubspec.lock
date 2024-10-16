@@ -422,10 +422,10 @@ packages:
     dependency: "direct dev"
     description:
       name: retrofit_generator
-      sha256: f20982392512587b1cce6cd34e3cf953a01a3fe8f82e4c34e10afe65e70c3556
+      sha256: "7e3fcd6cae522c558a797ae1cde7f00b35e8b85ca75b9c5591a50dc3810b0cc3"
       url: "https://pub.dev"
     source: hosted
-    version: "9.1.2"
+    version: "9.1.3"
   riverpod:
     dependency: transitive
     description:
@@ -462,10 +462,10 @@ packages:
     dependency: transitive
     description:
       name: rust_core
-      sha256: "381a85d9d46849c7ac59aed7c6f1537d04d54be38d1423a6896e8dabab41c8ce"
+      sha256: "1a2d77ea819742dbc73e536baab052938c134b3cc72137460d0844a583cda7c2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.2"
+    version: "1.3.3"
   shelf:
     dependency: transitive
     description:
