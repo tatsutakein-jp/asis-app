@@ -674,10 +674,10 @@ packages:
     dependency: transitive
     description:
       name: rust_core
-      sha256: "381a85d9d46849c7ac59aed7c6f1537d04d54be38d1423a6896e8dabab41c8ce"
+      sha256: "1a2d77ea819742dbc73e536baab052938c134b3cc72137460d0844a583cda7c2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.2"
+    version: "1.3.3"
   shelf:
     dependency: transitive
     description:
