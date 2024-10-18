@@ -1,4 +1,5 @@
 import 'package:core_common/extension.dart';
+import 'package:core_designsystem/component.dart';
 import 'package:core_designsystem/space.dart';
 import 'package:feature_onboarding/src/ui/screen/onboarding/component/page_indicator.dart';
 import 'package:feature_onboarding/src/ui/screen/onboarding/page/agreement_page.dart';
@@ -58,6 +59,10 @@ final class OnboardingScreen extends HookWidget {
           children: [
             PageView(
               controller: pageViewController,
+              physics: PageOverscrollPhysics(
+                viewportFraction: pageViewController.viewportFraction,
+              ),
+              pageSnapping: false,
               onPageChanged: (currentPageIndex) {
                 tabController.index = currentPageIndex;
                 currentPage.value = currentPageIndex;
