@@ -28,7 +28,7 @@ dependencies:
     path: ../../feature/settings
   flutter:
     sdk: flutter
-  flutter_riverpod: 2.5.1
+  flutter_riverpod: 2.6.1
   widgetbook: 3.10.0
   widgetbook_annotation: 3.2.0
 
