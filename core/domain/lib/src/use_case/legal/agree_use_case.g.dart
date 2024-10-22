@@ -156,6 +156,8 @@ class AgreeUseCaseProvider
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin AgreeUseCaseRef on AutoDisposeProviderRef<Raw<FutureResult<void>>> {
   /// The parameter `agreeRuleVersion` of this provider.
   RuleVersion get agreeRuleVersion;
@@ -171,4 +173,4 @@ class _AgreeUseCaseProviderElement
       (origin as AgreeUseCaseProvider).agreeRuleVersion;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
