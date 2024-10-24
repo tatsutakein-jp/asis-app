@@ -1,7 +1,7 @@
 name: app_mobile
-description: "ASIS Mobile App"
+description: "TOBE Mobile App"
 publish_to: 'none'
-version: 1.0.0
+version: 0.0.1+2
 
 environment:
   sdk: 3.5.3

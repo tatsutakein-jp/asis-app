@@ -42,7 +42,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "quest.asis.app"
+        applicationId "quest.tobe.app"
         minSdkVersion 30 // Android 11
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
@@ -62,7 +62,7 @@ android {
             release {
                 keyAlias = keystoreProperties["keyAlias"]
                 keyPassword = keystoreProperties["keyPassword"]
-                storeFile = project.file("prod.keystore")
+                storeFile = project.file("release.keystore")
                 storePassword = keystoreProperties["storePassword"]
             }
         }
