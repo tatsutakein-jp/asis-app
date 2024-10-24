@@ -7,7 +7,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: TappableCard,
   path: '[DesignSystem]/components',
 )
-Widget asisScaffoldUseCase(BuildContext context) {
+Widget tobeScaffoldUseCase(BuildContext context) {
   return TappableCard(
     onTap: () {
       // Navigator.pushNamed(context, AppPagePath.questDetail);

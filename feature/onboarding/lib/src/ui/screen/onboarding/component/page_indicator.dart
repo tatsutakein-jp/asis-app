@@ -28,7 +28,7 @@ final class PageIndicator extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AsisSpace.m),
+              padding: const EdgeInsets.symmetric(horizontal: TobeSpace.m),
               child: isLastPage
                   ? const SizedBox.shrink()
                   : TextButton(
@@ -49,7 +49,7 @@ final class PageIndicator extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AsisSpace.m),
+              padding: const EdgeInsets.symmetric(horizontal: TobeSpace.m),
               child: isLastPage
                   ? const SizedBox.shrink()
                   : IconButton.filled(

@@ -24,7 +24,7 @@ final class AgreementPage extends ConsumerWidget {
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(AsisSpace.l),
+        padding: const EdgeInsets.all(TobeSpace.l),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -63,7 +63,7 @@ final class AgreementPage extends ConsumerWidget {
             ].expand(
               (widget) => [
                 widget,
-                const Gap(AsisSpace.m),
+                const Gap(TobeSpace.m),
               ],
             ),
           ],

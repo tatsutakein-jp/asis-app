@@ -1,11 +1,11 @@
 {
-    "name": "Asis Catalog",
-    "short_name": "Asis Catalog",
+    "name": "TOBE Catalog",
+    "short_name": "TOBE Catalog",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#2F252E",
     "theme_color": "#0175C2",
-    "description": "Asis Catalog.",
+    "description": "TOBE Catalog.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

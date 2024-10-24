@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-final class AsisAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const AsisAppBar({
+final class TobeAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const TobeAppBar({
     super.key,
     Widget? title,
     List<Widget>? actions,

@@ -27,8 +27,8 @@ final class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = L10n.of(context);
 
-    return AsisScaffold(
-      appBar: AsisAppBar(
+    return TobeScaffold(
+      appBar: TobeAppBar(
         title: Text(l10n.settingsAppBarTitle),
       ),
       body: ListView(

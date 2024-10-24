@@ -24,9 +24,9 @@ jobs:
       contents: read
     with:
       gar-location: 'asia-northeast1'
-      project-id: 'asis-quest-stg'
+      project-id: 'tobe-quest-stg'
       repository: 'app-backend'
-      service: 'asis-app-backend'
+      service: 'tobe-app-backend'
     secrets:
       wif-provider: ${{ secrets.STG_WIF_PROVIDER }}
       wif-service-account: ${{ secrets.STG_WIF_SERVICE_ACCOUNT }}

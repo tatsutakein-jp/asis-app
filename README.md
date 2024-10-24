@@ -2,11 +2,11 @@
 [![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/invertase/melos)
 [![Powered by Dart Frog](https://img.shields.io/endpoint?url=https://tinyurl.com/dartfrog-badge)](https://dartfrog.vgv.dev)
 [![renovate](https://img.shields.io/badge/maintaied%20with-renovate-blue?logo=renovatebot)](https://app.renovatebot.com/dashboard)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d91f882c23e2b0143794/maintainability)](https://codeclimate.com/github/tatsutakein-jp/asis-app/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d91f882c23e2b0143794/maintainability)](https://codeclimate.com/github/tatsutakein-jp/tobe-app/maintainability)
 
-# asis-app
+# tobe-app
 
-The quest to live life as it is.
+Embark on the quest to be your true self.
 
 ## Features
 
@@ -63,8 +63,8 @@ TBD
 
 Thanks to our wonderful contributors!
 
-<a href="https://github.com/tatsutakein-jp/asis-app/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=tatsutakein-jp/asis-app"  alt="contributors"/>
+<a href="https://github.com/tatsutakein-jp/tobe-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=tatsutakein-jp/tobe-app"  alt="contributors"/>
 </a>
 
 ## Repo Activity
@@ -73,5 +73,5 @@ Thanks to our wonderful contributors!
 
 ## License
 
-asis app is distributed under the terms of the MIT License. See the [license](LICENSE) for more
+tobe app is distributed under the terms of the MIT License. See the [license](LICENSE) for more
 information.

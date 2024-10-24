@@ -1,4 +1,4 @@
-package quest.asis.app
+package quest.tobe.app
 
 import io.flutter.embedding.android.FlutterActivity
 

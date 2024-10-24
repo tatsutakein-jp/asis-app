@@ -1,28 +1,28 @@
 {
   "projects": {
-    "default": "asis-quest-dev",
-    "staging": "asis-quest-stg",
-    "production": "asis-quest"
+    "default": "tobe-quest-dev",
+    "staging": "tobe-quest-stg",
+    "production": "tobe-quest"
   },
   "targets": {
-    "asis-quest-dev": {
+    "tobe-quest-dev": {
       "hosting": {
         "catalog": [
-          "asis-quest-catalog-dev"
+          "tobe-quest-catalog-dev"
         ]
       }
     },
-    "asis-quest-stg": {
+    "tobe-quest-stg": {
       "hosting": {
         "catalog": [
-          "asis-quest-catalog-stg"
+          "tobe-quest-catalog-stg"
         ]
       }
     },
-    "asis-quest": {
+    "tobe-quest": {
       "hosting": {
         "catalog": [
-          "asis-quest-catalog"
+          "tobe-quest-catalog"
         ]
       }
     }

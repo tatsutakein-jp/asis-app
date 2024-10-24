@@ -1,4 +1,4 @@
-name: "asis-app"
+name: "tobe-app"
 
 services:
   backend:
@@ -9,8 +9,8 @@ services:
       - "12129:8080"
     networks:
       - default
-      - asis-network
+      - tobe-network
 
 networks:
-  asis-network:
+  tobe-network:
     external: true

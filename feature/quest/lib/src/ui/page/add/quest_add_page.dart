@@ -20,8 +20,8 @@ final class QuestAddPage extends HookConsumerWidget {
     final l10n = L10n.of(context);
     final isSubmitting = useState(false);
 
-    return AsisScaffold(
-      appBar: AsisAppBar(
+    return TobeScaffold(
+      appBar: TobeAppBar(
         title: Text(l10n.questAddAppBarTitle),
       ),
       body: SafeArea(

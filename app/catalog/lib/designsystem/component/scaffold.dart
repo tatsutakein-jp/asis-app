@@ -4,17 +4,17 @@ import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(
-  name: 'AsisScaffold',
-  type: AsisScaffold,
+  name: 'TobeScaffold',
+  type: TobeScaffold,
   path: '[DesignSystem]/components',
 )
-Widget asisScaffoldUseCase(BuildContext context) {
-  return AsisScaffold(
-    appBar: AsisAppBar(
+Widget tobeScaffoldUseCase(BuildContext context) {
+  return TobeScaffold(
+    appBar: TobeAppBar(
       title: Text(
         context.knobs.string(
           label: 'AppBar Title',
-          initialValue: 'AsisScaffold',
+          initialValue: 'TobeScaffold',
         ),
       ),
     ),
@@ -22,7 +22,7 @@ Widget asisScaffoldUseCase(BuildContext context) {
       child: Text(
         context.knobs.string(
           label: 'Body Text',
-          initialValue: 'AsisScaffold',
+          initialValue: 'TobeScaffold',
         ),
       ),
     ),

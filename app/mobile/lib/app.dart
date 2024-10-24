@@ -9,8 +9,8 @@ import 'package:app_mobile/router/app_router.dart';
 import 'package:app_mobile/ui/app_force_updatable.dart';
 import 'package:app_mobile/ui/toast.dart';
 
-final class AsisApp extends ConsumerWidget {
-  const AsisApp({super.key});
+final class TobeApp extends ConsumerWidget {
+  const TobeApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +25,7 @@ final class AsisApp extends ConsumerWidget {
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) {
         return MaterialApp.router(
-          title: 'ASIS',
+          title: 'TOBE',
           localizationsDelegates: appLocalizationsDelegates,
           supportedLocales: appSupportedLocales,
           theme: lightTheme(lightDynamic),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-final class AsisScaffold extends StatelessWidget {
-  const AsisScaffold({
+final class TobeScaffold extends StatelessWidget {
+  const TobeScaffold({
     super.key,
     PreferredSizeWidget? appBar,
     Widget? body,

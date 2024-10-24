@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyAeAdLVjn4x4JOQ2U3-T3e1bh6swTQaKHE</string>
+	<string>AIzaSyA0b0cn2Jwj8HHdARVNHKjTc62z9o0TNOw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>651997738463</string>
+	<string>1072330794106</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>quest.asis.app.dev</string>
+	<string>tobe.quest.app.dev</string>
 	<key>PROJECT_ID</key>
-	<string>asis-quest-dev</string>
+	<string>tobe-quest-dev</string>
 	<key>STORAGE_BUCKET</key>
-	<string>asis-quest-dev.appspot.com</string>
+	<string>tobe-quest-dev.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:651997738463:ios:02f8dd3c1ea62bb2b2c06a</string>
+	<string>1:1072330794106:ios:72f15843812569dab887c3</string>
 </dict>
 </plist>

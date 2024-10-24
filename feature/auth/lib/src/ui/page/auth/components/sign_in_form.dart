@@ -47,7 +47,7 @@ final class SignInForm extends HookConsumerWidget {
                     decoration: InputDecoration(
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       icon: const Icon(Icons.email),
-                      hintText: 'welcome@asis.quest',
+                      hintText: 'welcome@tobe.quest',
                       labelText: l10n.authSignInFormEmailLabel,
                     ),
                     autofillHints: const [AutofillHints.email],
