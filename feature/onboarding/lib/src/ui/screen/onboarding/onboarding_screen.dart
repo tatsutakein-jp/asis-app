@@ -74,7 +74,7 @@ final class OnboardingScreen extends HookWidget {
             SafeArea(
               top: false,
               child: Padding(
-                padding: const EdgeInsets.all(AsisSpace.l),
+                padding: const EdgeInsets.all(TobeSpace.l),
                 child: PageIndicator(
                   tabController: tabController,
                   currentPageIndex: currentPage.value,

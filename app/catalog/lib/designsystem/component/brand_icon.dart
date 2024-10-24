@@ -7,7 +7,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: BrandIcon,
   path: '[DesignSystem]/components',
 )
-Widget asisScaffoldUseCase(BuildContext context) {
+Widget tobeScaffoldUseCase(BuildContext context) {
   return const BrandIcon(
     width: 200,
     height: 200,

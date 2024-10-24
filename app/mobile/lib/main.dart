@@ -48,7 +48,7 @@ void main() async {
             [],
           );
 
-          return const AsisApp();
+          return const TobeApp();
         },
       ),
     ),

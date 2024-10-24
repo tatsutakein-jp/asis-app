@@ -24,8 +24,8 @@ final class FeedListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = L10n.of(context);
 
-    return AsisScaffold(
-      appBar: AsisAppBar(
+    return TobeScaffold(
+      appBar: TobeAppBar(
         title: Text(l10n.feedListAppBarTitle),
       ),
       body: SingleChildScrollView(

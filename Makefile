@@ -35,7 +35,7 @@ plop-gen-feature: # Create a feature package using the Plop.
 # Docker
 .PHONY: docker-create-network compose-up compose-down
 docker-create-network: # docker network create
-	@docker network create asis-network
+	@docker network create tobe-network
 compose-up: # docker compose up
 	@docker compose up -d --wait
 compose-down: # docker compose down

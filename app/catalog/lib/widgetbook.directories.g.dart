@@ -29,24 +29,24 @@ final directories = <_i1.WidgetbookNode>[
         name: 'components',
         children: [
           _i1.WidgetbookLeafComponent(
-            name: 'AsisScaffold',
+            name: 'TobeScaffold',
             useCase: _i1.WidgetbookUseCase(
-              name: 'AsisScaffold',
-              builder: _i2.asisScaffoldUseCase,
+              name: 'TobeScaffold',
+              builder: _i2.tobeScaffoldUseCase,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'BrandIcon',
             useCase: _i1.WidgetbookUseCase(
               name: 'BrandIcon',
-              builder: _i3.asisScaffoldUseCase,
+              builder: _i3.tobeScaffoldUseCase,
             ),
           ),
           _i1.WidgetbookLeafComponent(
             name: 'TappableCard',
             useCase: _i1.WidgetbookUseCase(
               name: 'TappableCard',
-              builder: _i4.asisScaffoldUseCase,
+              builder: _i4.tobeScaffoldUseCase,
             ),
           ),
         ],
@@ -130,7 +130,7 @@ final directories = <_i1.WidgetbookNode>[
             name: 'QuestListTile',
             useCase: _i1.WidgetbookUseCase(
               name: 'QuestListTile',
-              builder: _i11.asisScaffoldUseCase,
+              builder: _i11.tobeScaffoldUseCase,
             ),
           )
         ],

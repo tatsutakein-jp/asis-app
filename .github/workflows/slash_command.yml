@@ -48,7 +48,7 @@ jobs:
     with:
       gh-app-id: ${{ vars.BOT_APP_ID }}
       environment: 'development'
-      project-id: 'asis-quest-dev'
+      project-id: 'tobe-quest-dev'
     secrets:
       gh-app-private-key: ${{ secrets.BOT_PRIVATE_KEY }}
       firebase-service-account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}

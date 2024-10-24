@@ -8,7 +8,7 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
   type: QuestListTile,
   path: '[UI]/components',
 )
-Widget asisScaffoldUseCase(BuildContext context) {
+Widget tobeScaffoldUseCase(BuildContext context) {
   return QuestListTile(
     quest: Quest(
       id: '1',
@@ -19,7 +19,7 @@ Widget asisScaffoldUseCase(BuildContext context) {
       categoryId: null,
       status: QuestStatus.backlog,
       coverImageUrl:
-          'https://raw.githubusercontent.com/tatsutakein-jp/asis-app/main/.idea/icon.svg',
+          'https://raw.githubusercontent.com/tatsutakein-jp/tobe-app/main/.idea/icon.svg',
       note: 'note',
     ),
     onTap: (quest) {},
