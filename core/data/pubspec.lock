@@ -159,7 +159,7 @@ packages:
     source: hosted
     version: "3.1.2"
   core_authenticator:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../authenticator"
       relative: true
@@ -201,7 +201,7 @@ packages:
     source: path
     version: "1.0.0"
   core_network_model:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       path: "../network_model"
       relative: true
@@ -719,4 +719,4 @@ packages:
     source: hosted
     version: "2.2.0"
 sdks:
-  dart: "3.5.3"
+  dart: "3.5.4"
